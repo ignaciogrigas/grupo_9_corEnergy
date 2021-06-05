@@ -1,10 +1,10 @@
-# corEnergy
+ ### **corEnergy**
 
-## _About us_
+##### About us:
 
-corEnergy is a shopping website of fitness items to dispense with gyms and be able to workout on your own. We aim our products towards people who want to do their workout at home or by taking outdoor classes, providing them with the necessary tools and equipment to do so.
+**corEnergy** is a shopping website of fitness items to dispense with gyms and be able to workout on your own. We aim our products towards people who want to do their workout at home or by taking outdoor classes, providing them with the necessary tools and equipment to do so.
 
-## _Developers_
+##### Developers:
 
 - Ignacio Grigas: "breve reseña de ignacio"
 
@@ -16,15 +16,14 @@ And so, after a few weeks of meditating it, I decided to enroll myself for the c
 - Nicolas Alecci: " breve reseña de Nicolas"
 
 
-## Reference sites
-
+##### Reference sites:
 - [nombre de la pagina](url de la pagina) - que tomamos de esta pagina
 - [nombre de la pagina](url de la pagina) - que tomamos de esta pagina
 - [nombre de la pagina](url de la pagina) - que tomamos de esta pagina
 - [nombre de la pagina](url de la pagina) - que tomamos de esta pagina
 - [nombre de la pagina](url de la pagina) - que tomamos de esta pagina
 
-## Clients/Users
+##### Clients/Users:
 
 This website is mainly aimed and addressed to all those people seeking for tools and equipment in order to train and exercise on their own.
 Besides, this site becomes handy to those who give gymnastics classes such as personal trainers, for instance, and are looking for equipment for their clients to use or even for people who are already attending to these classes and want to own the equipment.
