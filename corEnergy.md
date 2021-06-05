@@ -13,15 +13,21 @@ I have lived my whole life in a city called Monte grande, nearby the airport in 
 Technology has always been of my interest and a few month ago I bumped into the full-stack web developer course while I was wandering the internet seeking mainly technology-related careers.
 And so, after a few weeks of meditating it, I decided to enroll myself for the course.
 
-- Nicolas Alecci: " breve reseña de Nicolas"
+- Nicolas Alecci: My name is Nicolas Alecci.I´m 32 year old and i live in Ciudad Autonoma de Buenos Aires. I have worked as an political analysts for the Argentine State for the last 5 years, where I had my first encounter with programming. Nowadays I am focusing on full-stack training so i can become a web developer.
 
 
 ##### Reference sites:
-- [nombre de la pagina](url de la pagina) - que tomamos de esta pagina
-- [nombre de la pagina](url de la pagina) - que tomamos de esta pagina
-- [nombre de la pagina](url de la pagina) - que tomamos de esta pagina
-- [nombre de la pagina](url de la pagina) - que tomamos de esta pagina
-- [nombre de la pagina](url de la pagina) - que tomamos de esta pagina
+
+![ML](/img/screen carrito Mercado Libre.png)
+- [Mercado Libre](https://www.mercadolibre.com.ar/gz/cart) - We take the simplicity of the page. It is visually clean and focuses the user's attention on the product, the price and the purchase button.
+![Adidas](/img/screen Login adiddas.png)
+- [Adidas](https://www.adidas.com.ar/account-login) - From here we take the idea of showing to the user the bennefits and discounts of the site in the log in/sing up page.
+![Equus](/img/Equus img.jpeg)
+- [Equus](https://www.equus.com.ar/16spcl0017n4-14-hoodie-golfo/p) - In this case we like the distribution of the different photos of the product, as well their variants. Also the "Customers who bought this item also bought" secction.
+![Fitbuy](/img/fitbuy img.jpeg)
+- [Fitbuy](https://www.fitbuy.com.mx/) - We like the header of this site. Where the search bar is predominant, making it easier for the user to see it and search for what they want
+![Mezan](/img/mezan img.jpeg)
+- [Mezan](https://www.behance.net/gallery/103870735/Mezan-brand-design?tracking_source=search_projects_recommended%7Cmezan) - On this site, we mainly liked the design and the color combination.
 
 ##### Clients/Users:
 
