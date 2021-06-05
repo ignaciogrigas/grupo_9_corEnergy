@@ -21,7 +21,7 @@ And so, after a few weeks of meditating it, I decided to enroll myself for the c
 - [Mercado Libre](https://www.mercadolibre.com.ar/gz/cart) - We take the simplicity of the page. It is visually clean and focuses the user's attention on the product, the price and the purchase button.
 
 
-![Mercado libre](/img/Mercado Libre.png)
+![Mercado_Libre](/img/Mercado_Libre.png)
 
 
 
