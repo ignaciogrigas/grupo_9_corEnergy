@@ -18,25 +18,39 @@ And so, after a few weeks of meditating it, I decided to enroll myself for the c
 
 ##### Reference sites:
 
-![Mercado libre](./img/Mercado Libre.png)
-
 - [Mercado Libre](https://www.mercadolibre.com.ar/gz/cart) - We take the simplicity of the page. It is visually clean and focuses the user's attention on the product, the price and the purchase button.
 
-![Adidas](/img/Adiddas.png)
+
+![Mercado libre](/img/Mercado Libre.png)
+
+
 
 - [Adidas](https://www.adidas.com.ar/account-login) - From here we take the idea of showing to the user the bennefits and discounts of the site in the log in/sing up page.
 
-![Equus](/img/Equus.jpeg)
+
+![Adidas](/img/Adiddas.png)
+
+
 
 - [Equus](https://www.equus.com.ar/16spcl0017n4-14-hoodie-golfo/p) - In this case we like the distribution of the different photos of the product, as well their variants. Also the "Customers who bought this item also bought" secction.
 
-![Fitbuy](/img/Fitbuy.jpeg)
+
+![Equus](/img/Equus.jpeg)
+
+
 
 - [Fitbuy](https://www.fitbuy.com.mx/) - We like the header of this site. Where the search bar is predominant, making it easier for the user to see it and search for what they want.
 
-![Mezan](/img/Mezan.jpeg)
+
+![Fitbuy](/img/Fitbuy.jpeg)
+
+
 
 - [Mezan](https://www.behance.net/gallery/103870735/Mezan-brand-design?tracking_source=search_projects_recommended%7Cmezan) - On this site, we mainly liked the design and the color combination.
+
+
+![Mezan](/img/Mezan.jpeg)
+
 
 ##### Clients/Users:
 
