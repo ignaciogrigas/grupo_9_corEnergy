@@ -6,7 +6,7 @@
 
 ##### Developers:
 
-- Ignacio Grigas: "breve reseña de ignacio"
+- Ignacio Grigas: My name is Ignacio Grigas and I am 21 years old. I live in Ciudad Autonoma de Buenos Aires and study industrial design at Universidad de Buenos Aires. I intend to mingle both my designing skills and porgramming skils in order to create aesthetic and functional websites. Hopefully, some time in the future I would be able to join the IoT world which I truly admire.
 
 - Luciano Benedetti: My name is Luciano Benedetti, i´m 25 years old. Currently, i´m working at Ezeiza international airport as an air traffic controller in the control tower.
 I have lived my whole life in a city called Monte grande, nearby the airport in which I work. 
@@ -18,35 +18,35 @@ And so, after a few weeks of meditating it, I decided to enroll myself for the c
 
 ##### Reference sites:
 
-- [Mercado Libre](https://www.mercadolibre.com.ar/gz/cart) - We take the simplicity of the page. It is visually clean and focuses the user's attention on the product, the price and the purchase button.
+- [Mercado Libre](https://www.mercadolibre.com.ar/gz/cart) - The page is aesthetically simple, in its colours and shapes. It is visually clean and focuses the user's attention on the product, the price and the purchase button.
 
 
 ![Mercado_Libre](/img/Mercado_Libre.png)
 
 
 
-- [Adidas](https://www.adidas.com.ar/account-login) - From here we take the idea of showing to the user the bennefits and discounts of the site in the log in/sing up page.
+- [Adidas](https://www.adidas.com.ar/account-login) - Adidas shows the user the bennefits and discounts of the site in the log in/sing up page, which makes enrollment more appelling.
 
 
 ![Adidas](/img/Adiddas.png)
 
 
 
-- [Equus](https://www.equus.com.ar/16spcl0017n4-14-hoodie-golfo/p) - In this case we like the distribution of the different photos of the product, as well their variants. Also the "Customers who bought this item also bought" secction.
+- [Equus](https://www.equus.com.ar/16spcl0017n4-14-hoodie-golfo/p) - The product is properly showned by the various photos available online. Even more, it encourages the customer to keep on shopping with the "Customers who bought this item also bought" secction.
 
 
 ![Equus](/img/Equus.jpeg)
 
 
 
-- [Fitbuy](https://www.fitbuy.com.mx/) - We like the header of this site. Where the search bar is predominant, making it easier for the user to see it and search for what they want.
+- [Fitbuy](https://www.fitbuy.com.mx/) - The header of the website is accurately designed. The central navegation bar makes the product quest easier.
 
 
 ![Fitbuy](/img/Fitbuy.jpeg)
 
 
 
-- [Mezan](https://www.behance.net/gallery/103870735/Mezan-brand-design?tracking_source=search_projects_recommended%7Cmezan) - On this site, we mainly liked the design and the color combination.
+- [Mezan](https://www.behance.net/gallery/103870735/Mezan-brand-design?tracking_source=search_projects_recommended%7Cmezan) - This project stands out for its branding techniques and its collor pallette.Their logo connotes the idea of the brand and it is perfectly aimed in terms of clientele.
 
 
 ![Mezan](/img/Mezan.jpeg)
@@ -54,6 +54,6 @@ And so, after a few weeks of meditating it, I decided to enroll myself for the c
 
 ##### Clients/Users:
 
-This website is mainly aimed and addressed to all those people seeking for tools and equipment in order to train and exercise on their own.
-Besides, this site becomes handy to those who give gymnastics classes such as personal trainers, for instance, and are looking for equipment for their clients to use or even for people who are already attending to these classes and want to own the equipment.
- Corenergy provides the client with the ultimate tools that are usable by anyone, therefore, age range and gender are indistinct.
+This website is mainly addressed to those seeking for exercise equipment for home use.
+Besides, this site becomes in handy for those who give gymnastics classes such as personal trainers,and would like to purchase fitness accesories for the class.Moreover, their students might also want their personal kit which could be bought at the site.
+ Corenergy provides the client with the ultimate fitness equipment, usable by any gender or person above 12 years old aproximatelly.
