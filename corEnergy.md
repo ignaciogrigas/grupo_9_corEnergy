@@ -2,7 +2,7 @@
 
 ##### About us:
 
-**corEnergy** is a shopping website of fitness items to dispense with gyms and be able to workout on your own. We aim our products towards people who want to do their workout at home or by taking outdoor classes, providing them with the necessary tools and equipment to do so.
+**corEnergy** is a shopping website of fitness items to dispense with gyms and be able to workout on your own. We aim our products at people who want to do their workout at home or by taking outdoor classes, providing them with the necessary equipment to do so.
 
 ##### Developers:
 
@@ -46,7 +46,7 @@ And so, after a few weeks of meditating it, I decided to enroll myself for the c
 
 
 
-- [Mezan](https://www.behance.net/gallery/103870735/Mezan-brand-design?tracking_source=search_projects_recommended%7Cmezan) - This project stands out for its branding techniques and its collor pallette.Their logo connotes the idea of the brand and it is perfectly aimed in terms of clientele.
+- [Mezan](https://www.behance.net/gallery/103870735/Mezan-brand-design?tracking_source=search_projects_recommended%7Cmezan) - This project stands out for its branding techniques and its collor pallette.Their logo connotes the idea of the brand and it is perfectly aimed in terms of clientele. 
 
 
 ![Mezan](/img/Mezan.jpeg)
