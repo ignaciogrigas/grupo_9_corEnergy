@@ -4,7 +4,7 @@
 
 ###### Colour Palette:
 
-![Colour](/img/Colour_palettet.jpg)
+![Colour](/img/Colour_palette.jpg)
 
 ###### Tipography:
 
@@ -26,11 +26,11 @@
 
 #### Log in page:
 
-![Log_in](/img/HLog_in_page.jpg)
+![Log_in](/img/Log_in_page.jpg)
 
 #### Sing up page:
 
-![Sing_up](/img/Sing_up_page.jpg)
+![Sing_up](/img/Sign_up_page.jpg)
 
 #### Shopping Cart:
 
