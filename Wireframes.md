@@ -12,8 +12,8 @@
 
 ###### Logo:
 
-![Logo](/img/logo.svg)
-![Logo](/img/logo_e.svg)
+![Logo](/img/logo_corenergy.svg)
+![Logo](/img/e_logo.svg)
 
 ###### Wireframes:
 
