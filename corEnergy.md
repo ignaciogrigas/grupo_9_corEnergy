@@ -6,7 +6,7 @@
 
 ##### Developers:
 
-- Ignacio Grigas: My name is Ignacio Grigas and I am 21 years old. I live in Ciudad Autonoma de Buenos Aires and study industrial design at Universidad de Buenos Aires. I intend to mingle both my designing skills and porgramming skils in order to create aesthetic and functional websites. Hopefully, some time in the future I would be able to join the IoT world which I truly admire.
+- Ignacio Grigas: My name is Ignacio Grigas and I am 21 years old. I live in Ciudad Autonoma de Buenos Aires and study industrial design at Universidad de Buenos Aires. I intend to mingle both my designing skills and porgramming skills in order to create aesthetic and functional websites. Hopefully, some time in the future I would be able to join the IoT world which I truly admire.
 
 - Luciano Benedetti: My name is Luciano Benedetti, i´m 25 years old. Currently, i´m working at Ezeiza international airport as an air traffic controller in the control tower.
 I have lived my whole life in a city called Monte grande, nearby the airport in which I work. 

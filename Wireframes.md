@@ -12,7 +12,8 @@
 
 ###### Logo:
 
-![Flowchart](/img/Flowchart.jpg)
+![Logo](/img/logo.svg)
+![Logo](/img/logo_e.svg)
 
 ###### Wireframes:
 
