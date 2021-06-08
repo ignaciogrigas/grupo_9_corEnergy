@@ -12,7 +12,7 @@
 
 ###### Logo:
 
-![Logo](/img/logo_corenergy.svg)
+<img src="/img/logo_corenergy.svg" width=100px>
 ![Logo](/img/e_logo.svg)
 
 ###### Wireframes:
