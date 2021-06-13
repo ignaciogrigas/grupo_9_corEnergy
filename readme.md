@@ -21,35 +21,35 @@ And so, after a few weeks of meditating it, I decided to enroll myself for the c
 - [Mercado Libre](https://www.mercadolibre.com.ar/gz/cart) - The page is aesthetically simple, in its colours and shapes. It is visually clean and focuses the user's attention on the product, the price and the purchase button.
 
 
-![Mercado_Libre](/img/Mercado_Libre.png)
+![Mercado_Libre](/Inspirations_and_Wireframes/Mercado_Libre.png)
 
 
 
 - [Adidas](https://www.adidas.com.ar/account-login) - Adidas shows the user the bennefits and discounts of the site in the log in/sing up page, which makes enrollment more appelling.
 
 
-![Adidas](/img/Adiddas.png)
+![Adidas](/Inspirations_and_Wireframes/Adiddas.png)
 
 
 
 - [Equus](https://www.equus.com.ar/16spcl0017n4-14-hoodie-golfo/p) - The product is properly showned by the various photos available online. Even more, it encourages the customer to keep on shopping with the "Customers who bought this item also bought" secction.
 
 
-![Equus](/img/Equus.jpeg)
+![Equus](/Inspirations_and_Wireframes/Equus.jpeg)
 
 
 
 - [Fitbuy](https://www.fitbuy.com.mx/) - The header of the website is accurately designed. The central navegation bar makes the product quest easier.
 
 
-![Fitbuy](/img/Fitbuy.jpeg)
+![Fitbuy](/Inspirations_and_Wireframes/Fitbuy.jpeg)
 
 
 
 - [Mezan](https://www.behance.net/gallery/103870735/Mezan-brand-design?tracking_source=search_projects_recommended%7Cmezan) - This project stands out for its branding techniques and its collor pallette.Their logo connotes the idea of the brand and it is perfectly aimed in terms of clientele. 
 
 
-![Mezan](/img/Mezan.jpeg)
+![Mezan](/Inspirations_and_Wireframes/Mezan.jpeg)
 
 
 ##### Clients/Users:

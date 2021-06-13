@@ -1,42 +1,42 @@
 ###### Flowchart:
 
-![Flowchart](/img/Flowchart.jpg)
+![Flowchart](/Inspirations_and_Wireframes/Flowchart.jpg)
 
 ###### Colour Palette:
 
-![Colour](/img/Colour_palette.jpg)
+![Colour](/Inspirations_and_Wireframes/Colour_palette.svg)
 
 ###### Tipography:
 
-![Tipography](/img/Tipography.jpg)
+![Tipography](/Inspirations_and_Wireframes/Tipography.svg)
 
 ###### Logo:
 
-<img src="/img/logo_corenergy.svg" width=100px>
-<img src="/img/e_logo.svg" width=100px>
+<img src="/Inspirations_and_Wireframes/Logo.svg" width=100px>
+<img src="/Inspirations_and_Wireframes/c_Logo.svg" width=100px>
 
 ###### Wireframes:
 
 #### Home page:
 
-![Home](/img/Home.jpg)
+![Home](/Inspirations_and_Wireframes/Home.svg)
 
 #### Product details:
 
-![Product](/img/Product_details.jpg)
+![Product](/Inspirations_and_Wireframes/Product_details.svg)
 
 #### Log in page:
 
-![Log_in](/img/Log_in_page.jpg)
+![Log_in](/Inspirations_and_Wireframes/Log_in_page.svg)
 
 #### Sing up page:
 
-![Sing_up](/img/Sign_up_page.jpg)
+![Sing_up](/Inspirations_and_Wireframes/Sign_up_page.svg)
 
 #### Shopping Cart:
 
-![Cart](/img/Shopping_cart.jpg)
+![Cart](/Inspirations_and_Wireframes/Shopping_cart.svg)
 
 #### Profile:
 
-![Home](/img/Profile.jpg)
+![Home](/Inspirations_and_Wireframes/Profile.svg)
