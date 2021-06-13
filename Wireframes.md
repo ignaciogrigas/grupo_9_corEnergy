@@ -12,8 +12,8 @@
 
 ###### Logo:
 
-<img src="/Inspirations_and_Wireframes/Logo.svg" width=100px>
-<img src="/Inspirations_and_Wireframes/c_Logo.svg" width=100px>
+<img src="/Inspirations_and_Wireframes/Logo.svg" width=300px>
+<img src="/Inspirations_and_Wireframes/c_Logo.svg" width=300px>
 
 ###### Wireframes:
 
