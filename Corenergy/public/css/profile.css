@@ -1,0 +1,95 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: #E5E5E5;
+    font-family: Exo 2;
+    font-size: 15;
+}
+.mainform1{
+    margin-left: 100px;
+}
+.title{
+    margin-left: 100px;
+    margin-top: 65px;
+}
+h1.create{
+    display: flex;
+    flex-direction: column;
+    font-size: 40px;
+    font-weight: bolder;
+    font-family: Exo 2;
+    color: black;
+    text-align: left;
+}
+.profile2{
+    display: flex;
+    width: 250px;
+    height: 250px;
+    align-self: flex-end;
+    justify-content: space-around;
+    margin-right: 200px;
+}
+
+.shipping{
+    color: white;
+    border-radius: 5px;
+    background-color: #69E4B9;
+    padding: 10px;
+    font-family: Exo2;
+    font-size: 17px;
+    border-radius: 20px;
+}
+.button{
+    color: white;
+    border-radius: 5px;
+    background-color: #69E4B9;
+    padding: 10px;
+    font-family: Exo2;
+    font-size: 17px;
+    border-radius: 20px;
+}
+.requiredfields{
+    color: #0c9464;
+    font-size: 13px;
+}
+.creditcard{
+    color: #0c9464;
+    font-family: exo 2;
+    font-size: 16px;
+}
+#City{
+    width: 30%;
+}
+#Address{
+    width: 30%;
+}
+#Floor{
+    width: 30%;
+}
+#zipcode{
+    width: 5%;
+}
+#creditcard{
+    width: 20%;
+}
+#secode{
+    width: 5%;
+}
+.methods{
+    display: flex;
+    width: 2rem;
+    height: 2rem;
+    justify-content: 7px;
+}
+.visa{
+    margin-right: 18px;
+}
+.mastercard{
+    margin-right: 18px;
+}
+.mp{
+    margin-right: 18px;
+}
