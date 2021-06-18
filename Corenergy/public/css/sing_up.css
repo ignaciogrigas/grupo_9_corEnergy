@@ -9,16 +9,19 @@ body{
     font-size: 15;
 }
 .button{
-    color: white;
+    color: black;
     border-radius: 20px;
     background-color: #69E4B9;
     padding: 10px;
     font-family: Exo2;
     font-size: 17px;
 }
+.button:hover{
+    background-color: #00ffa6;;
+}
 h6.requiredfields{
     color: #0c9464;
-    font-size: 13px;
+    font-size: 15px;
 }
 h1.create{
     font-size: 40px;
@@ -47,6 +50,51 @@ h1.create{
     background-color: #69E4B9;
     border-radius: 20px;
 }
+.submitphbutton:hover{
+    background-color: #0c9464;
+}
 .mainform{
     margin-left: 40px;
+}
+#Name{
+    width: 30%;
+    height: 2rem;
+}
+#Name:hover{
+background-color: #b8f5df;
+}
+#Surname{
+    width: 30%;
+    height: 2rem;
+}
+#Surname:hover{
+    background-color: #b8f5df;
+}
+#email{
+    width: 30%;
+    height: 2rem;
+}
+#email:hover{
+    background-color: #b8f5df;
+}
+#age{
+    width: 30%;
+    height: 2rem;
+}
+#age:hover{
+    background-color: #b8f5df;
+}
+#password{
+    width: 30%;
+    height: 2rem;
+}
+#password:hover{
+    background-color: #b8f5df;
+}
+#confirmation{
+    width: 30%;
+    height: 2rem;
+}
+#confirmation:hover{
+    background-color: #b8f5df;
 }
