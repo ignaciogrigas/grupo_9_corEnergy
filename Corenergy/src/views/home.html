@@ -5,8 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Corenergy</title>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/fonts.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+rel="stylesheet">
+
 </head>
 <body>
-    <h1>Hola</h1>
+    <header>
+      <div class="general">  
+        <div class="conteiner">
+            <div class="logo">
+                <figure><a href="home"> <img src="./img/logo.svg" alt="Corenergy"></a></figure>
+            </div>
+            <div class="search-bar">
+                <form action="/products/search" method="get" class="search-form">
+                 <input type="text" name="search" placeholder="Search your products" class="search-form_input">
+                 <button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+
+            <div class="cart">
+                <i class="fas fa-shopping-cart"></i>
+            </div>
+
+            <div class="login">
+                <i class="fas fa-user-circle"></i>
+                <p>Log in</p>
+            </div>
+        </div>
+        <nav class="navbar">
+            <ul class="bar">
+                <li><a href="Weigths">Weigths</a></li>
+                <li><a href="Elastic Bands">Elastic Bands</a></li>
+                <li><a href="Mats">Mats</a></li>
+                <li><a href="Bars">Bars</a></li>                    
+            </ul>            
+        </nav>
+      </div>      
+           
+    </header>
+<main>
+    
+
+</main>    
+    
 </body>
 </html>

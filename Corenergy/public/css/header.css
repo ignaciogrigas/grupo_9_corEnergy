@@ -1,0 +1,54 @@
+header{
+    width: 100%;
+    height: auto;
+    background-color: rgb(77, 88, 103)
+}
+
+.general{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.conteiner{
+    display: flex;
+    width: 95%;
+    height: 40px;
+    margin: auto;
+}
+
+.logo{
+    width: 20%;
+    height: 40px;
+    margin-top: 0.5rem;
+    box-sizing: border-box
+}
+
+.search-bar{
+    width: 60%;
+    height: 30px;
+    margin-top: 0.8rem;
+    margin-left: 0.8rem;
+    padding: 0px;
+}
+
+.search-bar input{
+    width: 92%;
+    box-sizing: border-box;
+}
+
+.search-bar button {
+    width: 4%;
+    color: black;
+    
+}
+
+nav ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li a{
+    text-decoration: none;
+}
