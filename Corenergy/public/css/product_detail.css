@@ -1,0 +1,88 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color:#E5E5E5 ;
+    font-family: "Exo 2"
+}
+
+#reviews_title{
+    color:black;
+    font-weight:700;
+    font-size: 1.125rem;
+    text-align: center;
+    padding: 1vh 0;
+    margin-top:3vh;
+}
+#reviews{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    background-color:#69E4B9;
+    margin-bottom:3vh ;
+}
+#reviews article{
+    width: 80vw;
+    padding:2vw;
+}
+#reviews article section{
+    display: flex;
+    flex-flow:row wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2vw 2vw 2vw 0;
+}
+#reviews article section h5{
+    color: black;
+    font-weight:600;
+    font-size: 1.1rem;
+    width: 60%;
+}
+#reviews article p{
+    font: size 0.8rem;
+    text-align:justify;
+}
+#best_seller{
+    background-color:#E5E5E5;
+}
+#best_seller h3{
+   color:white;
+   background-color: #4D5867;
+   font-weight:700;
+   font-size: 1.125rem;
+   text-align: center;
+   padding: 1vh 0;
+   margin-bottom:3vh;
+}
+div .products,
+ .products{
+    display:flex;
+    flex-flow:row wrap;
+    align-items: center;
+    justify-content: center;
+}
+.products article{
+    width: 80vw;
+    height: 80vw;
+}
+.products img{
+    max-width: 100%;
+    max-height: 100%;
+}
+.products .description{
+    visibility: hidden;
+    background-color: white;
+    padding:2vw;
+    color: black;
+    font-weight:500;
+    font-size: 1.1rem;
+}
+.products article:hover .description{
+    visibility: visible;
+}
+.description .price{
+    padding-top:1.5vw;
+    color: #69E4B9;
+    font-size: 0.8rem;
+}
