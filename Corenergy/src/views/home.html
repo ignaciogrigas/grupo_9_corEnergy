@@ -17,37 +17,46 @@
 
 </head>
 <body>
-    <header>
-      <div class="general">  
-        <div class="conteiner">
-            <div class="logo">
-                <figure><a href="home"> <img src="./img/logo.svg" alt="Corenergy"></a></figure>
-            </div>
-            <div class="search-bar">
-                <form action="/products/search" method="get" class="search-form">
-                 <input type="text" name="search" placeholder="Search your products" class="search-form_input">
-                 <button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
-                </form>
-            </div>
+    <header>                 
+        <figure>
+            <a href="home"> <img src="./img/logo.svg" alt="Corenergy"></a>
+        </figure>
+                    
+        <form action="/products/search" method="get" class="search-form">
+            <input type="text" name="search" placeholder="Search your products...">
+            <button type="submit">
+                <i class="fas fa-search"></i>
+            </button>
+        </form>
 
-            <div class="cart">
-                <i class="fas fa-shopping-cart"></i>
-            </div>
+        <section>    
+            <nav class="cart">
+                <a href="shopping_cart">
+                    <i class="fas fa-shopping-cart"></i>
+                </a>
+            </nav>
 
-            <div class="login">
-                <i class="fas fa-user-circle"></i>
-                <p>Log in</p>
-            </div>
-        </div>
-        <nav class="navbar">
-            <ul class="bar">
+            <div class="vl"></div>
+
+            <nav class="login">
+                <a href="log_in">
+                    <i class="fas fa-user-circle"></i>
+                    <div class="text">
+                        <p>Log in /</p>
+                        <p>Register</p>                    
+                </div>
+                </a>
+            </nav>
+        </section>    
+       
+        <nav>
+            <ul>
                 <li><a href="Weigths">Weigths</a></li>
                 <li><a href="Elastic Bands">Elastic Bands</a></li>
                 <li><a href="Mats">Mats</a></li>
                 <li><a href="Bars">Bars</a></li>                    
             </ul>            
-        </nav>
-      </div>      
+        </nav>           
            
     </header>
 <main>
