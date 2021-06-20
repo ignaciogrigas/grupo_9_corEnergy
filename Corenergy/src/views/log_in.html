@@ -9,10 +9,78 @@
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/fonts.css">
     <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
 rel="stylesheet">
 </head>
-<body>
-    <h1>Probando ruta4</h1>
+<body>    
+<header>                 
+    <figure>
+        <a href="home"> <img src="./img/logo.svg" alt="Corenergy"></a>
+    </figure>
+                
+    <form action="/products/search" method="get" class="search-form">
+        <input type="text" name="search" placeholder="Search your products...">
+        <button type="submit">
+            <i class="fas fa-search"></i>
+        </button>
+    </form>
+
+    <section>    
+        <nav class="cart">
+            <a href="shopping_cart">
+                <i class="fas fa-shopping-cart"></i>
+            </a>
+        </nav>
+
+        <div class="vl"></div>
+
+        <nav class="login">
+            <a href="log_in">
+                <i class="fas fa-user-circle"></i>
+                <div class="text">
+                    <p>Log in /</p>
+                    <p>Register</p>                    
+            </div>
+            </a>
+        </nav>
+    </section>    
+   
+    <nav class="products">
+        <ul>
+            <li><a href="Weigths">Weigths</a></li>
+            <li><a href="Elastic Bands">Elastic Bands</a></li>
+            <li><a href="Mats">Mats</a></li>
+            <li><a href="Bars">Bars</a></li>                    
+        </ul>            
+    </nav>           
+       
+</header>
+<main>
+    <h1>ola</h1>
+
+</main>
+<footer>
+    <nav class="info">
+        <ul>
+            <li><a href="Address">Address</a></li>
+            <li><a href="Telephone">Telephone</a></li>
+            <li><a href="Corenergy.co">Corenergy.co</a></li>                            
+        </ul>
+    </nav> 
+
+    <div class="vl"></div>
+
+    <nav class="social-media">
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-facebook-square"></i>
+    </nav>
+    <section>
+        <p>Terms & Conditions</p>
+    </section>
+    
+    
+</footer>
 </body>
 </html>
