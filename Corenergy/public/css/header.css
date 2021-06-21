@@ -1,54 +1,126 @@
-header{
-    width: 100%;
-    height: auto;
-    background-color: rgb(77, 88, 103)
-}
-
-.general{
-    display: flex;
-    flex-direction: column;
-    
-}
-
-.conteiner{
-    display: flex;
-    width: 95%;
-    height: 40px;
-    margin: auto;
-}
-
-.logo{
-    width: 20%;
-    height: 40px;
-    margin-top: 0.5rem;
-    box-sizing: border-box
-}
-
-.search-bar{
-    width: 60%;
-    height: 30px;
-    margin-top: 0.8rem;
-    margin-left: 0.8rem;
-    padding: 0px;
-}
-
-.search-bar input{
-    width: 92%;
+*{
     box-sizing: border-box;
 }
-
-.search-bar button {
-    width: 4%;
-    color: black;
-    
+header{
+    font-family: "Exo 2";
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: rgb(77, 88, 103);    
 }
-
-nav ul{
+.block1{
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 95%;    
 }
 
-nav ul li a{
-    text-decoration: none;
+.block1 figure img{
+    width: 100%;    
+    margin-top: 0.5rem;
+    box-sizing: border-box
+  }
+
+.block1 form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+} 
+.block1 form input{
+    height: 2rem;
+    width: 80%;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
 }
+.block1 form button{
+    border: none;
+    outline: none;
+    height: 2rem;
+    font-size: 1rem;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    cursor: pointer;
+}
+.icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+}
+.icons .cart a{
+    text-decoration: none;
+    font-size: 2rem;
+    color: rgba(105, 228, 185, 1);
+    height: 3rem;
+    width: 3.2rem;
+    padding: 0.5rem;    
+    margin-right: 2rem;
+    border: .1rem solid whitesmoke;
+    border-radius: .5rem; 
+}
+.icons .vl {
+    border-left: 0.5px solid whitesmoke;
+    height: 3rem;        
+  }
+.icons .login a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;    
+    height: 3.7rem;
+    width: 7rem;
+    color: rgb(105, 228, 185);
+    padding: 0.5rem;
+    margin-left: 2rem;
+    border: .1rem solid whitesmoke;
+    border-radius: .5rem;
+} 
+.icons .login a i{
+    font-size: 2rem;
+    margin-right: 5px;
+}
+.icons .login a .text{
+    font-size: 1rem;
+}
+.products ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 95%;    
+}
+.products ul li a{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1rem;
+    color: rgb(105, 228, 185); 
+    width: 13.5rem;
+    height: 2rem;
+    border: .05rem solid whitesmoke;      
+} 
+.products ul li a:hover{
+      background-color:rgb(105, 228, 185) ;
+      color:rgb(77, 88, 103)
+  }
+.left{
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+}  
+.right{
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+} 
+
+
+
+
+
+  
+  
+
