@@ -91,3 +91,23 @@ div .products,
     font: size 0.8rem;
     text-align:justify;
 }
+@media screen and (min-width:360px){
+    .products article{
+        width: 50vw;
+        height: 50vw;
+    }
+    #reviews article{
+        width: 50vw;
+        padding:2vw;
+    }
+}
+@media screen and (min-width:769px){
+    .products article{
+        width: 24vw;
+        height: 24vw;
+    }
+    #reviews article{
+        width: 25vw;
+        padding:2vw;
+    }
+}
