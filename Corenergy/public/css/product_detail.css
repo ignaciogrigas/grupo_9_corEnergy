@@ -5,7 +5,72 @@ body{
     background-color:#E5E5E5 ;
     font-family: "Exo 2"
 }
-
+#product{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content:space-between;
+    align-items: right;
+    padding:10vw;
+}
+#central_img{
+    width:80vw;
+    height:50vh;
+}
+#other_img{
+    display: flex;
+    flex-flow:row wrap;
+    width: 80vw;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 10vw;
+}
+/*#other_img img{
+    width: 20%;
+    height: 20%;
+}*/
+#product  article h3{
+    font-size: 2.375rem;
+    font-weight: 700;
+    padding-bottom: 2vh;
+}
+#product article #code{
+    font-size: 0.7rem;
+    font-weight: 200;
+    padding-bottom: 2vh;
+}
+#product article h5{
+    font-size: 1rem;
+    font-weight: 650;
+    padding-bottom: 2vh;
+}
+#product ul{
+    display: flex;
+    flex-flow:row wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 2vh;
+}
+#product article p{
+    font-size:1rem;
+    font-weight: 200;
+    padding-bottom: 2vh;
+}
+#purchase{
+    display: flex;
+    flex-flow:row wrap;
+    align-items:baseline;
+    justify-content: space-between;
+}
+#purchase button{
+    width:50%;
+    height: 100%;
+    background-color:#69E4B9;
+    color: white;
+    font-weight: bold;
+    font-size:1rem;
+    padding:0.25rem;
+    border: none;
+}
 #reviews_title{
     color:black;
     font-weight:700;
@@ -85,4 +150,39 @@ div .products,
     padding-top:1.5vw;
     color: #69E4B9;
     font-size: 0.8rem;
+}
+@media screen and (min-width:360px){
+    #product{
+        flex-flow: row wrap;
+    }
+    #central_img{
+        width:50vw;
+        height:50vh;
+    }
+    #other_img{
+        display: flex;
+        flex-flow:row wrap;
+        width: 50vw;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 10vw;
+    }
+    .products article{
+        width: 50vw;
+        height: 50vw;
+    }
+    #reviews article{
+        width: 50vw;
+        padding:2vw;
+    }
+}
+@media screen and (min-width:769px){
+    .products article{
+        width: 24vw;
+        height: 24vw;
+    }
+    #reviews article{
+        width: 25vw;
+        padding:2vw;
+    }
 }
