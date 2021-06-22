@@ -4,8 +4,7 @@
 header{
     font-family: "Exo 2";
     background-color: rgb(77, 88, 103);
-    text-align: center ;
-    padding:2vw;
+    padding:2vw 2vw 0;
 }
 
 #block1{
@@ -53,7 +52,7 @@ header{
     font-size: 1.2rem;
     color: white;
     width: 40%;
-    margin-right: 7px;
+    margin-right: 0.5vw;
 }
 #icons .vl {
     border-left: 0.5px solid whitesmoke;
@@ -63,6 +62,10 @@ header{
 .fa-bars{  
     height: 40%;
     color: white;
+    
+}
+#products{
+    margin: auto;
 }
 #products,
 #login,
@@ -114,7 +117,8 @@ header{
         font-size: 1rem;
         color: white; 
         width: 13.5rem;
-        height: 2rem;    
+        height: 2rem;
+        transition: all, 0.8s;    
     } 
     #products ul li a:hover{
           background-color:rgb(105, 228, 185) ;
@@ -123,9 +127,9 @@ header{
       .fa-bars,
       #half{
           display:none;
+          visibility:hidden;
       }
 }
-
 
 
 
