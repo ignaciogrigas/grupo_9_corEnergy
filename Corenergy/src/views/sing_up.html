@@ -13,44 +13,40 @@
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/footer.css">
     <link rel="stylesheet" href="/css/sing_up.css">
-    <title>Document</title>
 </head>
-<body><h1 class="create">Create an Account</h1><br>
-    
-    <img class="profile" src="/grupo_9_corEnergy/Corenergy/public/images/profile.jpg" alt="Profile"><br>
-    
-    <form class="addphoto" action="upload.php" method="post" enctype="multipart/form-data">
-        <input type="file" name="file" value="Choose a file">
-        <input class="submitphbutton" type="submit" name="submit" value="Upload photo">
-    </form>
-    
-    <form class="mainform"> 
-        <h5>Name*</h5>
-        <label for="Name"></label>
-        <input required type="text" name="Name" id="Name" placeholder="Name...">
-        
-        <h5>Surname*</h5>
-        <label for="Surname"></label>
-        <input required type="text" name="Surname" id="Surname" placeholder="Surname...">        
-        
-        <h5>E-mail*</h5>
-        <label for="email"></label>
-        <input required type="email" name="email" id="email" placeholder=" john@example.com">
-        
-        <h5>Birth Date*</h5>
-        <label for="age"></label>
-        <input required type="date" name="age" id="age" placeholder="Age...">
-        
-        <h5>Password*</h5>
-        <label for="password"></label>
-        <input required type="password" name="password" id="password" placeholder="Password...">
+<body>
+    <main>
+        <h1>Create an Account</h1>
+        <section id="profile_img">
+            <form action="" method="POST">
+                <figure>
+                    <img src="./images/profile.jpg" alt="Profile">
+                </figure>
+                <input type="file" name="file" placeholder="Choose file">
+            </form>
+        </section>
+        <section id="main_section">
+            <form> 
+                <label for="Name">Name<span>*</span></label>
+                <input required type="text" name="Name" id="Name">
+                
+                <label for="Surname">Surname<span>*</span></label>
+                <input required type="text" name="Surname" id="Surname">        
+                
+                <label for="Email">E-mail<span>*</span></label>
+                <input required type="email" name="Email" id="Email">
+                
+                <label for="Age">Birth Date<span>*</span></label>
+                <input required type="date" name="Age" id="Age">
+                
+                <label for="password">Password<span>*</span></label>
+                <input required type="password" name="password" id="password">
 
-        <h5>Confirmation*</h5>
-        <label for="confirmation"></label>
-        <input required type="password" name="confirmation" id="confirmation" placeholder="Confirmation..."><br><h6 class="requiredfields">Required fields*</h6><br><br>
-
-       <button class="button" type="submit">Sign up</button>
-       </form>
-    
+                <label for="conf_password"> Confirm Password<span>*</span></label>
+                <input required type="password" name="conf_password" id="conf_password">
+                <button class="button" type="submit">Sign up</button>
+            </form>
+        </section>
+    </main>
 </body>
 </html>

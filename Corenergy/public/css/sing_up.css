@@ -1,7 +1,127 @@
 *{
     box-sizing: border-box;
 }
-body{
+main{
+    display: flex;
+    flex-flow:column wrap;
+    background-color: #E5E5E5;
+    font-family: "Exo 2";
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    width: 100%;
+    text-align: center;
+    padding:6.8vh;
+    font-size:2rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+}
+#profile_img form{
+    display: flex;
+    flex-flow:column wrap;
+    justify-content: center;
+    align-items: center;
+}
+#profile_img figure{
+    max-width: 30.5vw;
+    max-height: 30.5vw;
+    overflow: hidden;
+    pointer-events: none;
+}
+#profile_img img{
+    position: relative;
+    width: 30.5vw;
+    z-index:1;
+}
+#profile_img input{
+    width: 30.5vw;
+    position:absolute;
+}
+#main_section{
+    margin:4.5vw
+}
+#main_section form{
+    display:flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+}
+form label,
+form h6{
+    margin:2vh 0vh;
+}
+form span,
+form h6{
+    color:#69E4B9;
+}
+form h6{
+    font-size: 0.7rem;
+    text-align: right;
+}
+form button{
+    border:none;
+    color:white;
+    background-color: #69E4B9;
+    border-radius: 1.25rem;
+    padding:1vh;
+    margin:2vh 0vh;
+    width:100%
+}
+form input{
+    border:none;
+    padding:1vh;
+    border-radius: 1.25rem;
+}
+[type=date]{
+    border:none;
+    width:100%;
+    background-color: white;
+    margin:2vh 0vh;
+    padding:1vh;
+    border-radius:1.25rem;
+    appearance: none;
+}
+form p{
+    margin:2vh 0vh
+}
+form ul{
+    display: flex;
+    flex-flow:row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+form ul img{
+    width: 20vw;
+}
+@media screen and (min-width:361px){
+    main{
+        display: flex;
+        flex-flow:row-reverse wrap;
+    }
+    #main_section{
+        width: 50vw;
+    }
+    #profile_img{
+        display:block;
+        margin:4.5vw;
+        width:30vw
+    }
+    #profile_img figure{
+        max-width: 30.5vw;
+        max-height: 30.5vw;
+        overflow: hidden;
+    }
+    #profile_img img{
+        width: 30.5vw;
+    }
+    form ul{
+        width: 50%;
+    }
+    form ul li img{
+        max-width: 5vw;
+    }
+}
+/*body{
     display: flex;
     flex-direction: column;
     background-color: #E5E5E5;
@@ -97,4 +217,4 @@ background-color: #b8f5df;
 }
 #confirmation:hover{
     background-color: #b8f5df;
-}
+}*/
