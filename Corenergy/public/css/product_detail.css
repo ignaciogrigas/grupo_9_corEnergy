@@ -10,7 +10,7 @@ body{
     flex-flow: column wrap;
     justify-content:space-between;
     align-items: right;
-    padding:10vw;
+    padding:8vw;
 }
 #central_img{
     width:80vw;
@@ -24,10 +24,6 @@ body{
     justify-content: space-between;
     padding-bottom: 10vw;
 }
-/*#other_img img{
-    width: 20%;
-    height: 20%;
-}*/
 #product  article h3{
     font-size: 2.375rem;
     font-weight: 700;
@@ -47,8 +43,14 @@ body{
     display: flex;
     flex-flow:row wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     padding-bottom: 2vh;
+}
+[type=radio]{
+    /*-webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;*/
+    border-radius: 1.25rem;
 }
 #product article p{
     font-size:1rem;
@@ -70,6 +72,7 @@ body{
     font-size:1rem;
     padding:0.25rem;
     border: none;
+    border-radius: 1.25rem;
 }
 #reviews_title{
     color:black;
@@ -154,17 +157,22 @@ div .products,
 @media screen and (min-width:360px){
     #product{
         flex-flow: row wrap;
+        justify-content: space-around;
+    }
+    #images{
+        position: relative;
     }
     #central_img{
         width:50vw;
         height:50vh;
     }
     #other_img{
+        position:absolute;
+        bottom:1vh;
         display: flex;
         flex-flow:row wrap;
         width: 50vw;
         align-items: center;
-        justify-content: space-between;
         padding-bottom: 10vw;
     }
     .products article{

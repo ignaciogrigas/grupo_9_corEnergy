@@ -7,93 +7,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
     <link rel="stylesheet" href="/css/profile.css">
     <title>Document</title>
 </head>
-<body> <div class="title">
-    <h1 class="create">Name, Surname</h1>
-    <h4>E-mail: digital.house@gmail.com</h4><br>
-    <button class="shipping">Add shipping address</button></div>
-
-    <img class="profile2" src="/grupo_9_corEnergy/Corenergy/public/images/profile.jpg" alt="Profile2">
-
-    <form class="mainform1"> 
-        <h5>City*</h5>
-        <label for="City"></label>
-        <input required type="text" name="City" id="City" placeholder="City">
+<body>
+    <main>
+        <section id="main_section">
+            <h1 id="create">Name, Surname</h1>
+            <h4>E-mail: digital.house@gmail.com</h4>
+            <div class="add"><h4>Add shipping address</h4><h4>+</h4></div>
+            <article>
+                <form class="mainform1" action="" method="POST"> 
+                    <label for="City">City<span>*</span></label>
+                    <input required type="text" name="City" id="City" placeholder="City">
         
-        <h5>Address*</h5>
-        <label for="Address"></label>
-        <input required type="text" name="Address" id="Address" placeholder="Address">
+                    <label for="Address">Address<span>*</span></label>
+                    <input required type="text" name="Address" id="Address" placeholder="Address">
         
-        <h5>Floor*</h5>
-        <label for="Floor"></label>
-        <input required type="text" name="Floor" id="Floor" placeholder="Floor"> 
-        
-        <h5>Zip Code*</h5>
-        <label for="zipcode"></label>
-        <input required type="number" name="zipcode" id="zipcode" placeholder="Zipcode">
-        
-        <h5>Telephone*</h5>
-        <label for="telephone"></label>
-        <input required type="number" name="telephone" id="telephone" placeholder="Telephone"><br><br>
-        <h6 class="requiredfields">Required fields*</h6><br><br><br>
+                    <label for="Floor">Floor<span>*</span></label>
+                    <input required type="text" name="Floor" id="Floor" placeholder="Floor"> 
+                    
+                    <label for="zipcode">Zip Code<span>*</span></label>
+                    <input required type="number" name="zipcode" id="zipcode" placeholder="Zipcode" maxlength="4">
+                    
+                    <label for="telephone">Telephone</label>
+                    <input  type="tel" name="telephone" id="telephone" placeholder="Telephone">
+                    <h6 >Required fields*</h6>
 
-       <button class="button" type="submit">Confirm</button><br><br><br>
-       
-    <h4 class="creditcard">Add Credit Card</h4><br><br><br>
-    
-    <h5>Credit Card*</h5>
-    <label for="creditcard"></label>
-    <input required type="number" name="creditcard" id="creditcard" placeholder="1111-2222-3333-4444"><br><br>
+                    <button class="button" type="submit">Confirm</button>
+                </form>
+            </article>
+            <div class="add"><h4>Add credit card</h4><h4>+</h4></div>
+            <article>
+                <form action="" method="POST">
+                    <label for="creditcard">Credit Card<span>*</span></label>
+                    <input required type="number" name="creditcard" id="creditcard" placeholder="1111-2222-3333-4444" maxlength="16">
 
-    <h5>Expiration Date*<br><br><br>
-        <select name='expireMM' id='expireMM'>
-        <option value=''>Month</option>
-        <option value='01'>January</option>
-        <option value='02'>February</option>
-        <option value='03'>March</option>
-        <option value='04'>April</option>
-        <option value='05'>May</option>
-        <option value='06'>June</option>
-        <option value='07'>July</option>
-        <option value='08'>August</option>
-        <option value='09'>September</option>
-        <option value='10'>October</option>
-        <option value='11'>November</option>
-        <option value='12'>December</option>
-    </select> 
-    <select name='expireYY' id='expireYY'>
-        <option value=''>Year</option>
-        <option value='21'>2021</option>
-        <option value='22'>2022</option>
-        <option value='23'>2023</option>
-        <option value='24'>2024</option>
-        <option value='24'>2025</option>
-        <option value='24'>2026</option>
-        <option value='24'>2027</option>
-        <option value='24'>2028</option>
-        <option value='24'>2029</option>
-        <option value='24'>2030</option>
-        <option value='20'>2031</option>
-    </select> 
-    <input class="inputCard" type="hidden" name="expiry" id="expiry" maxlength="4"/></h5><br>
+                    <label for="expireMM">Experitation Date<span>*</span></label>
+                        <select name='expireMM' id='expireMM'>
+                        <option value='' disabled>Month</option>
+                        <option value='01'>January</option>
+                        <option value='02'>February</option>
+                        <option value='03'>March</option>
+                        <option value='04'>April</option>
+                        <option value='05'>May</option>
+                        <option value='06'>June</option>
+                        <option value='07'>July</option>
+                        <option value='08'>August</option>
+                        <option value='09'>September</option>
+                        <option value='10'>October</option>
+                        <option value='11'>November</option>
+                        <option value='12'>December</option>
+                    </select> 
+                    <select name='expireYY' id='expireYY'>
+                        <option value='' disabled>Year</option>
+                        <option value='21'>2021</option>
+                        <option value='22'>2022</option>
+                        <option value='23'>2023</option>
+                        <option value='24'>2024</option>
+                        <option value='25'>2025</option>
+                        <option value='26'>2026</option>
+                        <option value='27'>2027</option>
+                        <option value='28'>2028</option>
+                        <option value='29'>2029</option>
+                        <option value='30'>2030</option>
+                        <option value='31'>2031</option>
+                    </select>
 
-    <h5>Security Code*</h5>
-        <label for="secode"></label>
-        <input required type="number" name="secode" id="secode" placeholder="123"><br><br><br><br>
+                        <label for="secode">Security Code<span>*</span></label>
+                        <input required type="number" name="secode" id="secode" placeholder="123" maxlength="4">
 
-
-        <label for="payment" id="payment">Online payment methods</label><br>
-        
-        <ul class="methods">
-        <img class="visa" src="/grupo_9_corEnergy/Corenergy/public/images/visa.png" alt="visa">
-        <img class="mastercard" src="/grupo_9_corEnergy/Corenergy/public/images/mastercard.jpg" alt="mastercard">
-        <img class="mp" src="/grupo_9_corEnergy/Corenergy/public/images/MercadoPago logo.jpg" alt="mp">
-        <img class="american" src="/grupo_9_corEnergy/Corenergy/public/images/AM.jpg" alt="am"><br><br><br>
-        </ul>
-    </form> 
-
+                        <p>Online payment methods</p>
+                        <ul class="methods">
+                            <li><figure><img class="visa" src="./images/visa.png" alt="visa"></figure></li>
+                            <li><figure><img class="visa" src="./images/visa.png" alt="visa"></figure></li>
+                            <li><figure><img class="visa" src="./images/visa.png" alt="visa"></figure></li>
+                            <li><figure><img class="visa" src="./images/visa.png" alt="visa"></figure></li>
+                        </ul>
+                    </article>
+                    <button class="button" type="submit">Confirm</button>
+                 </form>
+        </section>
+        <section>
+        <figure>
+            <img class="profile2" src="./images/profile.jpg" alt="Profile">
+        </figure>
+        </section>
+    </main>
 
 </body>
 </html>
