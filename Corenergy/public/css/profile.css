@@ -3,153 +3,112 @@
 }
 main{
     display: flex;
-    /*flex-flow:row wrap;*/
+    flex-flow:row wrap;
     background-color: #E5E5E5;
     font-family: "Exo 2";
 }
 #main_section{
     margin:4.5vw
 }
-/*.mainform1{
-    margin-left: 100px;
+h1{
+    font-size:2rem;
+    font-weight: bold;
+    line-height: 1rem;
 }
-.title{
-    margin-left: 100px;
-    margin-top: 65px;
+h4{
+    font-size:1rem;
+    line-height: 2rem;
 }
-h1.create{
-    display: flex;
-    flex-direction: column;
-    font-size: 50px;
-    font-weight: bolder;
-    font-family: "Exo 2";
-    color: black;
-    text-align: left;
+.add{
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    color:#69E4B9;
+    font-size:1rem
 }
-.profile2{
-    display: flex;
-    width: 250px;
-    height: 250px;
-    align-self: flex-end;
-    justify-content: space-around;
-    margin-right: 200px;
+/*main article{
+    visibility: hidden
 }
-.shipping{
-    color: white;
-    background-color: #69E4B9;
-    padding: 10px;
-    font-family: Exo2;
-    font-size: 17px;
-    border-radius: 20px;
-    border: 0;
-    width: 18%;
-}
-.shipping:hover{
-    background-color: #0c9464;
-}
-.button{
-    color: white;
-    background-color: #69E4B9;
-    padding: 10px;
-    font-family: "Exo2";
-    font-size: 17px;
-    border-radius: 20px;
-    border: 0;
-    width: 10%;
-}
-.button:hover{
-    background-color: #0c9464;
-}
-.requiredfields{
-    color: #0c9464;
-    font-size: 13px;
-    margin-left: 25%;
-
-}
-.creditcard{
-    color: #0c9464;
-    font-family: "Exo 2";
-    font-size: 24px;
-}
-#City{
-    width: 30%;
-    height: 2rem
-    }
-#City:hover {
-        background-color: #b8f5df;
-       }
-#Address{
-    width: 30%;
-    height: 2rem;
-}
-#Address:hover {
-    background-color: #b8f5df;
-   }
-#Floor{
-    width: 30%;
-    height: 2rem;
-}
-#Floor:hover {
-    background-color: #b8f5df;
-   }
-#zipcode{
-    width: 5%;
-    height: 2rem;
-}
-#zipcode:hover {
-    background-color: #b8f5df;
-   }
-#creditcard{
-    width: 20%;
-    height: 2rem;
-}
-#creditcard:hover {
-    background-color: #b8f5df;
-   }
-#secode{
-    width: 5%;
-    height: 2rem;
-}
-#secode:hover {
-    background-color: #b8f5df;
-   }
-#telephone{
-    width: 10%;
-    height: 2rem;
-}
-#telephone:hover {
-    background-color: #b8f5df;
-   }
-.methods{
-    display: flex;
-    width: 2rem;
-    height: 2rem;
-    justify-content: 7px;
-}
-.visa{
-    margin-right: 18px;
-}
-.mastercard{
-    margin-right: 18px;
-}
-.mp{
-    margin-right: 18px;
-}
-#expireMM{
-    width: 5%;
-    height: 2rem;
-}
-#expireMM:hover{
-    background-color: #b8f5df;
-}
-#expireYY{
-    width: 5%;
-    height: 2rem;
-}
-#expireYY:hover{
-    background-color: #b8f5df;
-}
-#payment{
-    font-family: "Exo 2";
-    font-size: 1.2rem;
+.add:hover main article{
+    visibility: visible;
 }*/
+article form{
+    display:flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+}
+form label,
+form h6{
+    margin:2vh 0vh;
+}
+form span,
+form h6{
+    color:#69E4B9;
+}
+form h6{
+    font-size: 0.7rem;
+    text-align: right;
+}
+form button{
+    border:none;
+    color:white;
+    background-color: #69E4B9;
+    border-radius: 1.25rem;
+    padding:1vh;
+    margin:2vh
+}
+form input{
+    border:none;
+    padding:1vh;
+    border-radius: 1.25rem;
+}
+form select{
+    border:none;
+    background-color: white;
+    margin:2vh 0vh;
+    padding:1.5vh;
+    border-radius:1.25rem;
+    appearance: none;
+}
+form p{
+    margin:2vh 0vh
+}
+form ul{
+    display: flex;
+    flex-flow:row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+form ul img{
+    width: 20vw;
+}
+#profile_img{
+    display:none
+}
+@media screen and (min-width:361px){
+    main{
+        display: flex;
+        flex-flow:row wrap;
+    }
+    #main_section{
+        width: 50vw;
+    }
+    #profile_img{
+        display:block;
+        margin:4.5vw;
+        width:30vw
+    }
+    #profile_img figure{
+        max-width: 360px;
+        max-height: 360px;
+        overflow: hidden;
+    }
+    form ul{
+        width: 50%;
+    }
+    form ul li img{
+        max-width: 5vw;
+    }
+}

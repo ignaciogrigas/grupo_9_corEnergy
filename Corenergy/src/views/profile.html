@@ -23,19 +23,19 @@
             <article>
                 <form class="mainform1" action="" method="POST"> 
                     <label for="City">City<span>*</span></label>
-                    <input required type="text" name="City" id="City" placeholder="City">
+                    <input required type="text" name="City" id="City" >
         
                     <label for="Address">Address<span>*</span></label>
-                    <input required type="text" name="Address" id="Address" placeholder="Address">
+                    <input required type="text" name="Address" id="Address" >
         
                     <label for="Floor">Floor<span>*</span></label>
-                    <input required type="text" name="Floor" id="Floor" placeholder="Floor"> 
+                    <input required type="text" name="Floor" id="Floor" > 
                     
                     <label for="zipcode">Zip Code<span>*</span></label>
-                    <input required type="number" name="zipcode" id="zipcode" placeholder="Zipcode" maxlength="4">
+                    <input required type="number" name="zipcode" id="zipcode"  maxlength="4">
                     
                     <label for="telephone">Telephone</label>
-                    <input  type="tel" name="telephone" id="telephone" placeholder="Telephone">
+                    <input  type="tel" name="telephone" id="telephone" >
                     <h6 >Required fields*</h6>
 
                     <button class="button" type="submit">Confirm</button>
@@ -45,7 +45,7 @@
             <article>
                 <form action="" method="POST">
                     <label for="creditcard">Credit Card<span>*</span></label>
-                    <input required type="number" name="creditcard" id="creditcard" placeholder="1111-2222-3333-4444" maxlength="16">
+                    <input required type="number" name="creditcard" id="creditcard"  maxlength="16">
 
                     <label for="expireMM">Experitation Date<span>*</span></label>
                         <select name='expireMM' id='expireMM'>
@@ -79,22 +79,23 @@
                     </select>
 
                         <label for="secode">Security Code<span>*</span></label>
-                        <input required type="number" name="secode" id="secode" placeholder="123" maxlength="4">
+                        <input required type="number" name="secode" id="secode" maxlength="4">
 
                         <p>Online payment methods</p>
-                        <ul class="methods">
+                        <ul>
                             <li><figure><img class="visa" src="./images/visa.png" alt="visa"></figure></li>
                             <li><figure><img class="visa" src="./images/visa.png" alt="visa"></figure></li>
                             <li><figure><img class="visa" src="./images/visa.png" alt="visa"></figure></li>
                             <li><figure><img class="visa" src="./images/visa.png" alt="visa"></figure></li>
                         </ul>
-                    </article>
-                    <button class="button" type="submit">Confirm</button>
-                 </form>
+                        <h6 >Required fields*</h6>
+                        <button class="button" type="submit">Confirm</button>
+                </form>
+            </article>
         </section>
-        <section>
+        <section id="profile_img">
         <figure>
-            <img class="profile2" src="./images/profile.jpg" alt="Profile">
+            <img src="./images/profile.jpg" alt="Profile">
         </figure>
         </section>
     </main>
