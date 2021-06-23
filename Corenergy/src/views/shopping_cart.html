@@ -4,15 +4,124 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Shopping Cart</title>
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/reset.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    rel="stylesheet">
     <link rel="stylesheet" href="/css/fonts.css">
     <link rel="stylesheet" href="/css/header.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-rel="stylesheet">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/shopping_cart.css">
     </head>
 <body>
-    <h1>Probando ruta3</h1>
+    <header>
+        <section id="block1">                
+            <figure id="full">
+                <a href="home"> <img src="./img/logo.svg" alt="Corenergy"></a>
+            </figure>
+            <figure id="half">
+                <a href="home"> <img src="./img/c_Logo.svg" alt="Corenergy"></a>
+            </figure>
+                        
+            <form action="/products/search" method="get" id="search-form">
+                <input type="text" name="search" placeholder="  Search your products...">
+                <button type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+            <nav id="icons">
+                <ul>  
+                <li id="cart">
+                    <a href="shopping_cart">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                    </li>
+                <li><div class="vl"></div></li>
+                <li id="login">
+                    <a href="log_in">
+                        <i class="fas fa-user-circle"></i>
+                        <div class="text">
+                            <p>Log in /</p>
+                            <p>Register</p>                    
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-bars"></i>
+                      </a>
+                </li>
+                </ul> 
+                </nav>
+        </section>
+        <section class="block2">
+        <nav id="products">
+            <ul>
+                <li><a href="Weights">Weights</a></li>
+                <li><a href="Elastic Bands">Elastic Bands</a></li>
+                <li><a href="Mats">Mats</a></li>
+                <li><a href="Bars">Bars</a></li>                    
+            </ul>            
+            </nav>
+        </section>  
+    </header>
+    
+    <main>
+        <section id="container">
+            <section id="title">
+                <h1>Your Cart</h1>
+                <select>
+                    <option selected value="Address1">calle falsa 123</option>
+                    <option value="Address1">Address 2</option>
+                    <option value="Address1">Address 3</option>                    
+                </select>
+            </section>
+
+            <section id="general">
+                <article id="product-box">
+                    <figure>
+                        <img src="./images/test.jpg"></a>
+                    </figure>
+                    <section class="detail">
+                        <h3>Dumbbells</h3>
+                        <p>2 kg weights, covered with high impact silicone</p> 
+                        <form action="" method="get"> 
+                            <input type="submit" class="" value="Delete">
+                        </form>
+                    </section>
+                    
+                    <section class="counter">
+                        <i class="fas fa-angle-down"></i>
+                        <input class="input-numer" type="text" value="1" min="0" max="10">
+                        <i class="fas fa-angle-up"></i>            
+                    </section>
+
+                    <section class="product-price">
+                        <h3>$ 500.00</h3>
+                    </section>                
+                </article>
+            </section>    
+
+            <section id="checkout">
+                <div class="shipping">
+                    <h3>Shipping free</h3>
+                    <h3>Price</h3>
+                </div>
+                <div class="final-price">
+                    <h2>Total Price</h2>
+                    <h2>Price</h2>
+                </div>
+                <select>
+                    <option selected value="card1">card 1</option>
+                    <option value="card2">card 2</option>
+                    <option value="card3">card 3</option>                    
+                </select>
+                <div class="checkout-box">               
+                    <button type="submit">Checkout</button>
+                </div>                
+            </section>            
+        </section> 
+    </main>   
 </body>
 </html>

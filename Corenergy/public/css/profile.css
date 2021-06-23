@@ -5,7 +5,7 @@ body{
     display: flex;
     flex-direction: column;
     background-color: #E5E5E5;
-    font-family: Exo 2;
+    font-family: "Exo 2";
     font-size: 15px;
 }
 .mainform1{
@@ -20,7 +20,7 @@ h1.create{
     flex-direction: column;
     font-size: 50px;
     font-weight: bolder;
-    font-family: Exo 2;
+    font-family: "Exo 2";
     color: black;
     text-align: left;
 }
@@ -49,7 +49,7 @@ h1.create{
     border-radius: 5px;
     background-color: #69E4B9;
     padding: 10px;
-    font-family: Exo2;
+    font-family: "Exo2";
     font-size: 17px;
     border-radius: 20px;
 }
@@ -62,7 +62,7 @@ h1.create{
 }
 .creditcard{
     color: #0c9464;
-    font-family: exo 2;
+    font-family: "exo 2";
     font-size: 24px;
 }
 #City{

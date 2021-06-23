@@ -5,7 +5,7 @@ body{
     display: flex;
     flex-direction: column;
     background-color: #E5E5E5;
-    font-family: Exo 2;
+    font-family: "Exo 2";
     font-size: 15;
 }
 .button{
@@ -13,7 +13,7 @@ body{
     border-radius: 20px;
     background-color: #69E4B9;
     padding: 10px;
-    font-family: Exo2;
+    font-family: "Exo2";
     font-size: 17px;
 }
 .button:hover{
@@ -41,7 +41,7 @@ h1.create{
 .addphoto{  
     display: flex;
     align-self: flex-end;
-    font-family: Exo 2;
+    font-family: "Exo 2";
     font-size: 15;
     margin-right: 50px;
 }
