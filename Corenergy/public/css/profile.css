@@ -1,11 +1,13 @@
 *{
     box-sizing: border-box;
 }
+body{
+    background-color: #E5E5E5;
+    font-family: "Exo 2";
+}
 main{
     display: flex;
     flex-flow:row wrap;
-    background-color: #E5E5E5;
-    font-family: "Exo 2";
 }
 #main_section{
     margin:4.5vw

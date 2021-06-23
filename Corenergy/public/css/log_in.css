@@ -1,0 +1,108 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: #E5E5E5;
+    font-family: "Exo 2";
+}
+main{
+    display: flex;
+    flex-flow:row wrap;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    width: 100%;
+    text-align: center;
+    padding:6.8vh;
+    font-size:2rem;
+    font-weight: bold;
+    line-height: 2.5rem;
+}
+#main_section{
+    margin:4.5vw;
+    width:90%
+}
+#main_section form{
+    display:flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+}
+form label,
+form h6{
+    margin:2vh 0vh;
+}
+form span,
+form h6{
+    color:#69E4B9;
+}
+form h6{
+    font-size: 0.7rem;
+    text-align: right;
+}
+
+button{
+    border:none;
+    color:white;
+    background-color: #69E4B9;
+    border-radius: 1.25rem;
+    padding:1vh;
+    margin:2vh 0vh;
+    width:100%
+}
+form input{
+    border:none;
+    padding:1vh;
+    border-radius: 1.25rem;
+}
+#benefits{
+    width: 90%;
+    text-align: center;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+#benefits h1,
+#benefits ul{
+    display:none
+}
+@media screen and (min-width:361px){
+    main{
+        display: flex;
+        flex-flow:row wrap;
+        justify-content: space-around;
+        align-items: baseline;
+    }
+    #main_section{
+        width: 35vw;
+    }
+    #benefits{
+        width: 50vw;
+    }
+    #benefits p{
+        display: none;
+    }
+    #benefits h1,
+    #benefits ul{
+    display:block
+    }
+    #benefits button{
+        width:75%
+    }
+    #benefits h1{
+        text-align: left;
+    }
+    #benefits ul{
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding-left: 6.8vh;
+        padding-bottom: 6.8vh;
+    }
+    #benefits li{
+        text-align: left;
+    }
+    
+}
