@@ -4,15 +4,16 @@
 header{
     font-family: "Exo 2";
     background-color: rgb(77, 88, 103);
-    text-align: center ;
-    padding:2vw;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    align-items: center;
 }
 
 #block1{
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    width:100%   
+    align-items: center; 
 }
 #half{
     width: 20%;
@@ -25,8 +26,8 @@ header{
     width: 65%;
 } 
 #block1 form input{
-    height: 2rem;
     font-size: 1rem;
+    height: 3vh;
     width: 100%;
     border: none;
     outline: none;
@@ -36,7 +37,7 @@ header{
 #block1 form button{
     border: none;
     outline: none;
-    height: 2rem;
+    height: 3vh;
     font-size: 1rem;
     border-top-right-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
@@ -70,6 +71,9 @@ header{
     display:none;
 }
 @media screen and (min-width:761px){
+    #header_content{
+        max-width: 1200px;
+    }
     #full{
         display:block;
         width: 20%;
@@ -96,8 +100,9 @@ header{
         font-size: 0.8rem;
     }
     #products{
-        max-width: 1200px;
-        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     #products ul{
         visibility:visible;
