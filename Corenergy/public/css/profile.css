@@ -34,24 +34,26 @@ h1.create{
 }
 .shipping{
     color: white;
-    border-radius: 5px;
     background-color: #69E4B9;
     padding: 10px;
     font-family: Exo2;
     font-size: 17px;
     border-radius: 20px;
+    border: 0;
+    width: 18%;
 }
 .shipping:hover{
     background-color: #0c9464;
 }
 .button{
     color: white;
-    border-radius: 5px;
     background-color: #69E4B9;
     padding: 10px;
     font-family: "Exo2";
     font-size: 17px;
     border-radius: 20px;
+    border: 0;
+    width: 10%;
 }
 .button:hover{
     background-color: #0c9464;
@@ -59,10 +61,12 @@ h1.create{
 .requiredfields{
     color: #0c9464;
     font-size: 13px;
+    margin-left: 25%;
+
 }
 .creditcard{
     color: #0c9464;
-    font-family: "exo 2";
+    font-family: "Exo 2";
     font-size: 24px;
 }
 #City{
@@ -142,4 +146,8 @@ h1.create{
 }
 #expireYY:hover{
     background-color: #b8f5df;
+}
+#payment{
+    font-family: "Exo 2";
+    font-size: 1.2rem;
 }
