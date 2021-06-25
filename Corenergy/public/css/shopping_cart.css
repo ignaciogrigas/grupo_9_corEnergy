@@ -1,4 +1,149 @@
 *{
+    box-sizing: border-box;
+    }
+    body{
+        background-color:#E5E5E5 ;
+        font-family: "Exo 2"
+    }
+    
+    #detail-container{
+        padding: 10px;    
+    }
+    table{
+        width: 100%;
+        border-collapse: collapse;
+        align-content: center;
+    }
+    .cart-info{
+        display: flex;
+        flex-wrap: wrap;    
+    }
+    .cart-info p{
+        display: none;       
+    }
+    th{
+        text-align: left;
+        padding:0.2rem ;
+        color: white;
+        background-color: rgb(105, 228, 185);
+        font-weight:normal;
+        }
+    td{
+        vertical-align:middle;
+        padding: 10px 0px;
+        border-bottom: 2px ridge white;     
+        }
+    td img{
+            width: 10rem;
+            height: 13rem;
+        }
+    td div{
+            padding: 10px; 
+        }
+    td h3{
+        font-size: 1rem;
+        font-weight: bold;
+    } 
+    td p{
+        font-size: 12px;
+    }   
+    td a{
+        font-size: 10px;
+        color:rgb(105, 228, 185);
+        text-decoration: none;
+        }   
+        
+    .counter{
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        align-items: center;
+        width: fit-content;
+        height: 1.5rem;    
+        background-color:rgb(105, 228, 185);
+        border-radius: 1.5rem;
+        margin-left: 10px;
+    }
+    td i{
+        font-size: 0.7rem;
+        color: white;
+        background-color:rgb(105, 228, 185); 
+           
+        }    
+    td input{
+        font-size: 0.7rem;
+        width: 1rem;
+        height: auto;
+        border: none;
+        background-color:rgb(105, 228, 185);  
+        text-align: center;
+        color: white;
+    }
+    tr .item-price{
+        font-size: 0.8rem;
+        width: 5rem;
+    }
+    #total-price{
+        display: flex;
+        flex-flow: column wrap;
+        justify-content:flex-end;
+        align-items:flex-end;
+        padding: 1rem 0;    
+    }
+    
+    #total-price ul{
+        display: flex;   
+        flex-flow: row; 
+        justify-content: flex-end;
+        align-items: center;    
+        padding: 10px;        
+    }
+    #total-price ul li{
+        padding-left: 1.5rem;
+    }
+    ul .li-price{
+        font-size: 1rem;
+        font-weight: bolder;
+    }
+    #total-price select{
+        padding: 1.2rem;
+        border: 0;
+        background-color:#E5E5E5;
+        color: rgb(105, 228, 185);
+        font-size: 1rem;    
+    }
+    #total-price button{
+        border: none;    
+        color:white;
+        font-size: 1.5rem;    
+        background-color:rgb(105, 228, 185);
+        border-radius: 1.5rem;
+        margin-top: 1rem;
+        padding: 1rem;    
+    }
+    
+    @media screen and (min-width:853px){
+        #detail-container{
+            padding: 4rem 10rem;    
+        }
+        .cart-info p{
+            display:block; 
+            margin-bottom: 8.5rem;      
+        }
+        td input{
+            font-size: 1rem;
+            width: 1.5rem;
+            height: auto;
+        }
+        
+    
+    }
+    
+
+
+
+
+/* *{
 box-sizing: border-box;
 }
 body{
@@ -147,4 +292,4 @@ section h1{
         visibility:visible;
         font-size: 2rem;    
     }
-}
+} */
