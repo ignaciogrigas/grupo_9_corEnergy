@@ -16,12 +16,13 @@
     </head>
 <body>
     <header>
+        <div id="header_content">
         <section id="block1">                
             <figure id="full">
                 <a href="home"> <img src="./img/logo.svg" alt="Corenergy"></a>
             </figure>
             <figure id="half">
-                <a href="home"> <img src="./img/c_Logo.svg" alt="Corenergy"></a>
+                <a href="home"> <img src="./images/c_logo.svg" alt="Corenergy"></a>
             </figure>
                         
             <form action="/products/search" method="get" id="search-form">
@@ -55,6 +56,8 @@
                 </ul> 
                 </nav>
         </section>
+        <section id="products">
+        <nav>
         <section class="block2">
         <nav id="products">
             <ul>
@@ -64,10 +67,109 @@
                 <li><a href="Bars">Bars</a></li>                    
             </ul>            
             </nav>
-        </section>  
+        </section>
+    </div>
     </header>
-    
     <main>
+        <section id="detail-container">
+            <table>
+                <tr>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+                <tr>
+                    <td>
+                        <section class="cart-info">
+                            <figure>
+                                <img src="./images/test.jpg">
+                            </figure>
+                            <div>
+                                <h3>Dumbbells</h3>
+                                <p>2 kg weights, covered with<br>high impact silicone</p>
+                                <a href="">Delete</a>
+                            </div>
+                        </section>
+                    </td>
+                    <td>
+                        <div class="counter">
+                            <i class="fas fa-angle-down"></i>
+                            <input type="number" value="1">
+                            <i class="fas fa-angle-up"></i> 
+                        </div> 
+                    </td>
+                    <td class="item-price">$ 1000.00</td>
+                </tr>
+                <tr>
+                    <td>
+                        <section class="cart-info">
+                            <figure>
+                                <img src="./images/test.jpg">
+                            </figure>
+                            <div>
+                                <h3>Dumbbells</h3>
+                                <p>2 kg weights, covered with<br>high impact silicone</p>
+                                <a href="">Delete</a>
+                            </div>
+                        </section>
+                    </td>
+                    <td>
+                        <div class="counter">
+                            <i class="fas fa-angle-down"></i>
+                            <input type="number" value="1">
+                            <i class="fas fa-angle-up"></i> 
+                        </div> 
+                    </td>
+                    <td class="item-price">$ 1000.00</td>
+                </tr>
+                <tr>
+                    <td>
+                        <section class="cart-info">
+                            <figure>
+                                <img src="./images/test.jpg">
+                            </figure>
+                            <div>
+                                <h3>Dumbbells</h3>
+                                <p>2 kg weights, covered with<br>high impact silicone</p>
+                                <a href="">Delete</a>
+                            </div>
+                        </section>
+                    </td>
+                    <td>
+                        <div class="counter">
+                            <i class="fas fa-angle-down"></i>
+                            <input type="number" value="1">
+                            <i class="fas fa-angle-up"></i> 
+                        </div> 
+                    </td>
+                    <td class="item-price">$ 1000.00</td>
+                </tr>
+            </table>
+
+            <section id="total-price">                
+                <ul>
+                    <li>Shipping free</li>
+                    <li class="li-price">$3000.00</li>
+                </ul>
+                <ul>
+                    <li>Total Price</li>
+                    <li class="li-price">$3000.00</li>
+                </ul>
+                
+                <select>
+                    <option selected value="card1">1516 1214 2311 5555</option>
+                    <option value="card2">card 2</option>
+                    <option value="card3">card 3</option>                    
+                </select>
+                               
+                <button type="submit">Checkout</button>
+                
+            </section>
+
+        </section>
+    </main>        
+    
+    <!-- <main>
         <section id="container">
             <section id="title">
                 <h1>Your Cart</h1>
@@ -122,6 +224,6 @@
                 </div>                
             </section>            
         </section> 
-    </main>   
+    </main>    -->
 </body>
 </html>
