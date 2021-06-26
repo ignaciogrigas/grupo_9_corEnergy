@@ -247,13 +247,15 @@ form button{
     #images{
         position: relative;
     }
-    #central_img {
-        width:50vw;
-        height:50vh;
+    #central_img{
+        max-width:50vw;
+    }
+    #central_img img{
+        width: 100%;
     }
     #other_img{
         position:absolute;
-        bottom:1.5vh;
+        bottom:1.5vw;
         display: flex;
         flex-flow:row wrap;
         width: 50vw;
