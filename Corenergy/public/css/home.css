@@ -95,15 +95,17 @@ body{
         width: 50vw;
         height: 50vw;
     }
-    #reviews article{
-        width: 50vw;
-        padding:2vw;
+    #best_seller,
+    #reviews_title{
+        font-size: 1.5rem;
     }
-    .products .description{
-        font-size: 1.8rem;
+    .products .description,
+    #reviews article section h5{
+        font-size: 1.25rem;
     }
-    .description .price{
-      font-size: 1.2rem;  
+    .description .price,
+    #reviews article p{
+      font-size: 1.1rem;  
     }
 }
 @media screen and (min-width:769px){

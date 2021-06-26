@@ -19,41 +19,41 @@
     <section id="product">
      <article id="images">
          <figure>
-             <img src="#" id="central_img">
+             <img src="./images/test.jpg" id="central_img">
          </figure>
              <ul id="other_img">
                  <li>
                     <figure>
-                        <img src="#">
+                        <img src="./images/test.jpg">
                     </figure>
                  </li>
                  <li>
                     <figure>
-                        <img src="#">
+                        <img src="./images/test.jpg">
                     </figure>
                  </li>
                  <li>
                     <figure>
-                        <img src="#">
+                        <img src="./images/test.jpg">
                     </figure>
                  </li>
                  <li>
                     <figure>
-                        <img src="#">
+                        <img src="./images/test.jpg">
                     </figure>
                  </li>
                  <li>
                     <figure>
-                        <img src="#">
+                        <img src="./images/test.jpg">
                     </figure>
                  </li>
              </ul>
      </article>
      <article>
-         <h3>Title</h3>
-         <p id="code">Product code</p>
-         <section>
-             <h5>Choice</h5>
+        <h3>Title</h3>
+        <p id="code">Product code</p>
+        <section>
+            <h5>Choice</h5>
             <form>
                 <ul>
                     <li>
@@ -78,18 +78,28 @@
                     </li>
                 </ul>
             </form>
-            <p>Product description</p>
-            <div id="purchase">
-                <h5>Price</h5>
-                <button type="submit">Buy</button>
-            </div>
-            </section>
+        </section>
+        <p>Product description</p>
+        <section id="purchase">
+            <h5>Price</h5>
+            <button type="submit">Buy</button>
+        </section>
      </article>   
     </section>
-    <section>
-        <h3 id="reviews_title">Reviews</h3>
-        <section id="reviews">
-            <article>
+    <h3 class="reviews_title">Reviews</h3>
+    <section id="reviews">
+        <article>
+            <section>
+            <h5>Review title</h5>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i> 
+            </section>
+            <p>Review itselfReview itselfReview itselfReview itselfReview itselfReview itselfReview itselfReview itselfReview itselfReview itselfReview itselfReview itselfReview itself</p>
+        </article>
+        <article>
                 <section>
                 <h5>Review title</h5>
                     <i class="fas fa-star"></i>
@@ -99,8 +109,8 @@
                     <i class="fas fa-star"></i> 
                 </section>
                 <p>Review itselfReview itselfReview itselfReview itselfReview itselfReview itselfReview itselfReview itselfReview itselfReview itselfReview itselfReview itselfReview itself</p>
-            </article>
-            <article>
+        </article>
+        <article>
                     <section>
                     <h5>Review title</h5>
                         <i class="fas fa-star"></i>
@@ -110,19 +120,42 @@
                         <i class="fas fa-star"></i> 
                     </section>
                     <p>Review itselfReview itselfReview itselfReview itselfReview itselfReview itselfReview itselfReview itselfReview itselfReview itselfReview itselfReview itselfReview itself</p>
-            </article>
-            <article>
-                        <section>
-                        <h5>Review title</h5>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i> 
-                        </section>
-                        <p>Review itselfReview itselfReview itselfReview itselfReview itselfReview itselfReview itselfReview itselfReview itselfReview itselfReview itselfReview itselfReview itself</p>
-            </article>
-        </section>
+        </article>
+        <article id="add">
+            <h3 class="reviews_title">Add Review +</h3>
+            <form action="" method="POST">
+                <h5><label for="new_review_title"></label>Title</label></h5>
+                <input type="text" name="new_review_title" id="new_review_title">
+
+                <ul>
+                    <label for="star1">
+                        <i class="fas fa-star"></i>
+                    </label>
+                    <input type="checkbox" name="star1" id="star1" value="star1">
+                    <label for="star2">
+                        <i class="fas fa-star"></i>
+                    </label>
+                    <input type="checkbox" name="star2" id="star2" value="star2">
+                    <label for="star3">
+                        <i class="fas fa-star"></i>
+                    </label>
+                    <input type="checkbox" name="star3" id="star3" value="star3">
+                    <label for="star4">
+                        <i class="fas fa-star"></i>
+                    </label>
+                    <input type="checkbox" name="star4" id="star4" value="star4">
+                    <label for="star5">
+                        <i class="fas fa-star"></i>
+                    </label>
+                    <input type="checkbox" name="star5" id="star5" value="star5">
+                </ul>
+
+                <h5><label for="comments"></label>Comments</label></h5>
+                <textarea></textarea>
+                <button type="submit">Submit your answer</button>
+            </form>
+        </article>
+    </section>
         <h3 id="best_seller">Customers who bought this item also bought</h3>
         <section class="products">
             <article>

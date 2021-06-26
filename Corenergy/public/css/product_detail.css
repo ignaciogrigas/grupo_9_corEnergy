@@ -9,8 +9,13 @@ body{
     display: flex;
     flex-flow: column wrap;
     justify-content:space-between;
-    align-items: right;
     padding:8vw;
+}
+#images{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
 }
 #central_img{
     width:80vw;
@@ -21,8 +26,14 @@ body{
     flex-flow:row wrap;
     width: 80vw;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     padding-bottom: 10vw;
+}
+#other_img figure{
+    width:15vw
+}
+#other_img img{
+    width: 100%;
 }
 #product  article h3{
     font-size: 2.375rem;
@@ -30,7 +41,7 @@ body{
     padding-bottom: 2vh;
 }
 #product article #code{
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     font-weight: 200;
     padding-bottom: 2vh;
 }
@@ -43,8 +54,7 @@ body{
     display: flex;
     flex-flow:row wrap;
     align-items: center;
-    justify-content: space-around;
-    padding-bottom: 2vh;
+    margin: 2vh 0;
 }
 #product label{
     background-color: white;
@@ -52,18 +62,24 @@ body{
     border-radius: 1.25rem;
     color:#4D5867;
     cursor:pointer;
+    margin:0 1.2vh 0 0;
+}
+#product label:hover{
+    background-color:#69E4B9;
+    color:white
 }
 #product label:hover{
     background-color:#69E4B9 ;
     color:white;
 }
-[type=radio]{
-    visibility:hidden
+[type=radio],
+[type=checkbox]{
+    display:none
 }
 #product article p{
     font-size:1rem;
     font-weight: 200;
-    padding-bottom: 2vh;
+    padding: 2vh 0;
 }
 #purchase{
     display: flex;
@@ -82,7 +98,7 @@ body{
     border: none;
     border-radius: 1.25rem;
 }
-#reviews_title{
+.reviews_title{
     color:black;
     font-weight:700;
     font-size: 1.125rem;
@@ -109,7 +125,8 @@ body{
     justify-content: space-between;
     padding: 2vw 2vw 2vw 0;
 }
-#reviews article section h5{
+#reviews article section h5,
+#add form h5{
     color: black;
     font-weight:600;
     font-size: 1.1rem;
@@ -118,6 +135,43 @@ body{
 #reviews article p{
     font: size 0.8rem;
     text-align:justify;
+}
+#add form{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+#add form h5{
+    width: 100%;
+}
+#add form ul{
+    width: 100%;
+    margin:2vh 0vh;
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+#add form i{
+    font-size: 1.4rem;
+}
+#add form input,
+#add form textarea{
+    border:none;
+    padding:1vh;
+    border-radius: 1.25rem;
+    width: 100%;
+    margin:2vh 0vh;
+}
+form button{
+    border:none;
+    color:white;
+    background-color: #4D5867;
+    border-radius: 1.25rem;
+    padding:1vh;
+    margin:2vh 0vh;
+    width:100%
 }
 #best_seller{
     background-color:#E5E5E5;
@@ -128,7 +182,7 @@ body{
    font-weight:700;
    font-size: 1.125rem;
    text-align: center;
-   padding: 1vh 0;
+   padding: 1vh;
    margin-bottom:3vh;
 }
 .products{
@@ -161,7 +215,31 @@ body{
     color: #69E4B9;
     font-size: 0.8rem;
 }
-@media screen and (min-width:360px){
+@media screen and (min-width:369px){
+    .products article{
+        width: 50vw;
+        height: 50vw;
+    }
+    #best_seller,
+    #reviews_title{
+        font-size: 1.5rem;
+    }
+    .products .description,
+    #reviews article section h5,
+    #product article h5,
+    #product article p,
+    #add form h5,
+    #add button,
+    #purchase button{
+        font-size: 1.25rem;
+    }
+    .description .price,
+    #reviews article p,
+    #product article #code{
+      font-size: 1.1rem;  
+    }
+}
+@media screen and (min-width:769px){
     #product{
         flex-flow: row wrap;
         justify-content: space-around;
@@ -169,41 +247,43 @@ body{
     #images{
         position: relative;
     }
-    #central_img{
+    #central_img {
         width:50vw;
         height:50vh;
     }
     #other_img{
         position:absolute;
-        bottom:1vh;
+        bottom:1.5vh;
         display: flex;
         flex-flow:row wrap;
         width: 50vw;
         align-items: center;
-        padding-bottom: 10vw;
+        justify-content: center;
+        padding-bottom: 0;
     }
-    .products article{
-        width: 50vw;
-        height: 50vw;
+    #other_img figure{
+        width:5vw;
+        margin:0 1.2vh 0 0 
     }
-    #reviews article{
-        width: 50vw;
-        padding:2vw;
+    #other_img img{
+        width: 100%;
     }
-    .products .description{
-        font-size: 1.8rem;
-    }
-    .description .price{
-      font-size: 1.2rem;  
-    }
-}
-@media screen and (min-width:769px){
     .products article{
         width: 24vw;
         height: 24vw;
     }
-    #reviews article{
-        width: 25vw;
+    #reviews article:not(#add){
+        width: 33vw;
         padding:2vw;
+    }
+    #add form{
+        align-items: center;
+    }
+    #add form input,
+    #add form ul{
+        width: 47%;
+    }
+    #add form input{
+        text-align: left;
     }
 }
