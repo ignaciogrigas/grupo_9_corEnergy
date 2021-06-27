@@ -7,14 +7,14 @@ body{
 }
 #banner{
     display: block;
-    width: 100vw;
+    width: 100%;
     height:25vh;
     margin-bottom:4vh;
 }
 #best_seller{
     background-color:#E5E5E5;
 }
-#best_seller h3{
+#best_seller{
    color:white;
    background-color: #4D5867;
    font-weight:700;
@@ -23,7 +23,6 @@ body{
    padding: 1vh 0;
    margin-bottom:3vh;
 }
-div .products,
  .products{
     display:flex;
     flex-flow:row wrap;
@@ -96,9 +95,17 @@ div .products,
         width: 50vw;
         height: 50vw;
     }
-    #reviews article{
-        width: 50vw;
-        padding:2vw;
+    #best_seller,
+    #reviews_title{
+        font-size: 1.5rem;
+    }
+    .products .description,
+    #reviews article section h5{
+        font-size: 1.25rem;
+    }
+    .description .price,
+    #reviews article p{
+      font-size: 1.1rem;  
     }
 }
 @media screen and (min-width:769px){

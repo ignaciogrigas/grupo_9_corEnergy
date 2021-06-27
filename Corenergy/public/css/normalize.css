@@ -348,3 +348,12 @@
     display: none;
   }
   
+  /**
+  * Addition to erease the outlines
+  */
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}

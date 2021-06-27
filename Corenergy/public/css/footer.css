@@ -1,53 +1,49 @@
 footer{
     font-family: "Exo 2";
+    background-color: rgb(77, 88, 103);
+    display: flex;
+    align-items:center;
+    justify-content: center;    
+}
+#footer_content{
     display: flex;
     flex-direction: column;
     width: 100%;
-    background-color: rgb(77, 88, 103);    
+    max-width: 1200px;
 }
 #f-block1{
     display: flex;
-    justify-content: space-between;
-    align-content: center;
-    padding:2wh;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2vw;
 }
-#info ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items:flex-start; 
-    padding: 2vh;
+#info{
+    width: 90%;
 }
 #info ul li {
-    margin-bottom: 0.5vh;
-    line-height: 0.5rem; 
+    line-height: 1.8rem; 
 }
 #info ul li a{
     text-decoration: none;
     color: white;
-    font-size: 0.5rem;    
+    font-size: 1rem;    
 }
 #f-media{
+    width: 8%;
     display: flex;
-    justify-content:flex-end;
-    align-items: center;        
-    }
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+}
 #f-media #vl{  
-    height: 7vh;
-    padding:3vh;  
+    height: 7vh;  
     border-left: 0.5px solid whitesmoke;
 }
 #f-media #social-media{ 
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items:center ;  
-    font-size: 0.5rem;
+    font-size: 1rem;
     color: white;
-    margin-top: 1rem;;
-}
-#f-media #social-media i{
-    margin-bottom: 3vh;
+    line-height: 1.8;
 }
 #f-block2{
     display: flex;
@@ -57,4 +53,3 @@ footer{
     color: whitesmoke;
     padding: 0.8rem;
 }
-

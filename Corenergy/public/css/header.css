@@ -4,139 +4,134 @@
 header{
     font-family: "Exo 2";
     background-color: rgb(77, 88, 103);
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: space-between;
-    align-items: center;
-    padding:2vw 2vw 0;
+    padding:5vw
+}
+#full,
+.log_in,
+#nav_products,
+#icons ul li #second{
+    display: none;
 }
 
-#block1{
+#header_content section{
+    width: 100%;
     display: flex;
+    flex-flow: row wrap;
+    align-items: center;
     justify-content: space-between;
-    align-items: center; 
 }
 #half{
-    width: 20%;
-    margin-top: 0.5rem
+    width:10%;
 }
-#block1 form{
+header form{
     display: flex;
     justify-content: center;
     align-items: center;
     width: 65%;
-} 
-#block1 form input{
-    font-size: 1rem;
-    height: 3vh;
+}
+header form input{
+    width:40%;
+    font-size: 0.8rem;
+    height: 4vh;
     width: 100%;
     border: none;
     outline: none;
     border-top-left-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem;
 }
-#block1 form button{
+header form button{
     border: none;
     outline: none;
-    height: 3vh;
-    font-size: 1rem;
+    height: 4vh;
+    font-size: 0.8rem;
     border-top-right-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
     cursor: pointer;
 }
-#icons ul{
-    display: flex;
-    flex-flow:row wrap;
-    align-items: center;
-    justify-content: space-around;
-}
-#icons #cart a{
-    text-decoration: none;
-    font-size: 1.2rem;
+#icons i{
     color: white;
-    width: 40%;
-    margin-right: 0.5vw;
 }
 #icons .vl {
     border-left: 0.5px solid whitesmoke;
-    height: 2rem;
-    margin-right: 7px     
+    height: 4vh;  
   }
-.fa-bars{  
-    height: 40%;
-    color: white;
-    
+#icons{
+    width: 20%;
 }
-#products{
-    margin: auto;
+#icons ul{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
 }
-#products,
-#login,
-#full{
-    display:none;
-}
-@media screen and (min-width:761px){
+@media screen and (min-width:769px){
+    header{
+        padding: 0;
+        display: flex;
+        flex-flow: row wrap;
+        align-content: center;
+        justify-content: center;
+    }
     #header_content{
-        max-width: 1200px;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2vw 2vw 0;
+        width: 100%;
+    }
+    #full,
+    .log_in,
+    #nav_products{
+        display: block;
+    }
+    #half,
+    #icons .fa-bars{
+        display:none;
     }
     #full{
-        display:block;
-        width: 20%;
-        margin-top: 0.5rem
+        width: 10%;
     }
-    #products,
-    #login{
-    display:block;
-}
-    #icons #login a{
-        visibility:visible;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-decoration: none;    
-        height: 40%;
+    #icons{
+        width: 10%;
+    }
+    .log_in a{
+        text-decoration: none;
         color: white;
-    } 
-    #icons #login a i{
-        font-size: 1..2rem;
-        margin-right: 5px;
     }
-    #icons #login a .text{
-        font-size: 0.8rem;
+    #nav_products{
+        width: 90%;
     }
-    #products{
+    #nav_products ul{
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
+        flex-flow: row wrap;
+        padding-top: 2vw; 
     }
-    #products ul{
-        visibility:visible;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;   
-    }
-    #products ul li a{
+    #nav_products ul li a{
         display:flex;
         justify-content: center;
         align-items: center;
         text-decoration: none;
         font-size: 1rem;
         color: white; 
-        width: 13.5rem;
+        width: 100%;
         height: 2rem;
         transition: all, 0.8s;    
-    } 
-    #products ul li a:hover{
+    }
+    #nav_products li{
+        width: 25%;
+    }
+    #nav_products ul li a:hover{
           background-color:rgb(105, 228, 185) ;
           color:rgb(77, 88, 103)
-      }
-      .fa-bars,
-      #half{
-          display:none;
-          visibility:hidden;
-      }
+    }
+    #header_content{
+        max-width: 1200px;
+    }
 }
+
 
 
 

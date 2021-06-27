@@ -14,7 +14,7 @@ main{
 h1{
     width: 100%;
     text-align: center;
-    padding:6.8vh;
+    padding:6vh;
     font-size:2rem;
     font-weight: bold;
     line-height: 2.5rem;
@@ -28,20 +28,20 @@ h1{
     flex-flow: column wrap;
     justify-content: flex-start;
 }
-form label,
-form h6{
+main form label,
+main form h6{
     margin:2vh 0vh;
 }
-form span,
-form h6{
+main form span,
+main form h6{
     color:#69E4B9;
 }
-form h6{
+main form h6{
     font-size: 0.7rem;
     text-align: right;
 }
 
-button{
+main button{
     border:none;
     color:white;
     background-color: #69E4B9;
@@ -50,10 +50,16 @@ button{
     margin:2vh 0vh;
     width:100%
 }
-form input{
+main form input{
     border:none;
     padding:1vh;
     border-radius: 1.25rem;
+}
+#main_section a{
+    font-size: 0.6rem;
+    text-align: center;
+    color: black;
+    cursor: pointer;    
 }
 #benefits{
     width: 90%;
@@ -93,13 +99,17 @@ a{
     #benefits h1{
         text-align: left;
     }
+    #main_section h1{
+        text-align: left;
+        padding:6vh 6vh 6vh 0
+    }
     #benefits ul{
         display: flex;
         flex-flow: column nowrap;
         justify-content: flex-start;
         align-items: flex-start;
-        padding-left: 6.8vh;
-        padding-bottom: 6.8vh;
+        padding-left: 6vh;
+        padding-bottom: 6vh;
     }
     #benefits li{
         text-align: left;
