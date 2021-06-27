@@ -3,7 +3,8 @@ footer{
     background-color: rgb(77, 88, 103);
     display: flex;
     align-items:center;
-    justify-content: center;    
+    justify-content: center;
+    margin-top: 2vh;    
 }
 #footer_content{
     display: flex;
@@ -30,7 +31,7 @@ footer{
     font-size: 1rem;    
 }
 #f-media{
-    width: 8%;
+    width: 10%;
     display: flex;
     flex-flow: row wrap;
     align-items: center;

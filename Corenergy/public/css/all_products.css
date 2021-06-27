@@ -1,0 +1,128 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color:#E5E5E5 ;
+    font-family: "Exo 2"
+}
+#filters{
+    display:none
+}
+main{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+#sort_by{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: baseline;
+    justify-content:flex-end;
+    width: 80vw;
+    padding: 2vh 0;
+}
+#sort_by select{
+    padding: 1vh;
+    border: 0;
+    background-color:#E5E5E5;
+    color: rgb(77, 88, 103);
+    font-size: 1rem;    
+}
+#best_seller{
+    width: 100vw;
+   color:white;
+   background-color: #69E4B9;
+   font-weight:700;
+   font-size: 1.125rem;
+   text-align: center;
+   padding: 1vh 0;
+   margin:3vh 0 0 0;
+}
+ #products{
+    display:flex;
+    flex-flow:row wrap;
+    align-items: center;
+    justify-content: center;
+}
+#products article{
+    width: 80vw;
+    height: 80vw;
+}
+#products img{
+    max-width: 100%;
+    max-height: 100%;
+}
+#products .description{
+    background-color: white;
+    padding:2vw;
+    color: black;
+    font-weight:500;
+    font-size: 1.1rem;
+}
+.description .price{
+    padding-top:1.5vw;
+    color: #69E4B9;
+    font-size: 0.8rem;
+}
+
+@media screen and (min-width:360px){
+    main{
+        align-items: flex-end;
+    }
+    #sort_by{
+        padding: 2vh;
+    }
+    #products article{
+        width: 50vw;
+        height: 50vw;
+    }
+    #best_seller{
+        font-size: 1.5rem;
+    }
+    #products .description{
+        font-size: 1.25rem;
+    }
+    .description .price{
+      font-size: 1.1rem;  
+    }
+}
+@media screen and (min-width:769px){
+    main{
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    #best_seller,
+    #sort_by{
+        width: 100%;
+    }    
+    #filters{
+        display: flex;
+        flex-flow: column wrap;
+        width:15vw;
+        padding-left: 3vh;
+    }
+    #filters h5{
+        font-size: 2rem;
+        font-weight: 750;
+        padding-bottom: 2vw;
+    }
+    #filters li{
+        margin-bottom: 1vw
+    }
+    #filters a{
+        text-decoration: none;
+        color:rgb(77, 88, 103);
+        font-size: 1.2rem;
+    }
+    #products{
+        justify-content: space-between;
+        width: 80vw;
+        padding-right: 2vh;
+    }
+    #products article{
+        width: 26vw;
+        height: 26vw;
+    }
+}
