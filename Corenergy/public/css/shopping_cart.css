@@ -5,7 +5,14 @@
         background-color:#E5E5E5 ;
         font-family: "Exo 2"
     }
-    
+    h1{
+        width: 100%;
+        text-align: left;
+        padding:0 0 6vh 0;
+        font-size:2rem;
+        font-weight: bold;
+        line-height: 2.5rem;
+    }
     #detail-container{
         padding: 10px;    
     }
@@ -22,21 +29,19 @@
         display: none;       
     }
     th{
-        text-align: left;
-        padding:0.2rem ;
-        color: white;
-        background-color: rgb(105, 228, 185);
-        font-weight:normal;
+        visibility: hidden;
         }
     td{
         vertical-align:middle;
         padding: 10px 0px;
         border-bottom: 2px ridge white;     
         }
-    td img{
-            width: 10rem;
-            height: 13rem;
+    td figure{
+            width: 45vw;
         }
+    td img{
+        width:100%
+    }
     td div{
             padding: 10px; 
         }
@@ -48,7 +53,7 @@
         font-size: 12px;
     }   
     td a{
-        font-size: 10px;
+        font-size: 0.7rem;
         color:rgb(105, 228, 185);
         text-decoration: none;
         }   
@@ -115,16 +120,16 @@
     #total-price button{
         border: none;    
         color:white;
-        font-size: 1.5rem;    
+        font-size: 1 rem;    
         background-color:rgb(105, 228, 185);
         border-radius: 1.5rem;
         margin-top: 1rem;
-        padding: 1rem;    
+        padding: 2vh;    
     }
     
-    @media screen and (min-width:853px){
+    @media screen and (min-width:369px){
         #detail-container{
-            padding: 4rem 10rem;    
+            padding: 4vw 10vw;    
         }
         .cart-info p{
             display:block; 
@@ -135,7 +140,27 @@
             width: 1.5rem;
             height: auto;
         }
-        
+        tr .item-price{
+            font-size: 1.1rem;
+            width: 5rem;
+        }
+        #total-price button{
+            font-size: 1.25rem;
+        }
+        td a{
+            font-size: 1rem;
+        }
+        td figure{
+            width: 25vw;
+        }
+        th{
+            visibility: visible;
+            text-align: left;
+            padding:0.8vw ;
+            color: white;
+            background-color: rgb(105, 228, 185);
+            font-weight:normal;
+            }
     
     }
     

@@ -19,7 +19,9 @@ body{
 }
 #central_img{
     width:80vw;
-    height:50vh;
+}
+#central_img img{
+    width: 100%;
 }
 #other_img{
     display: flex;
@@ -155,6 +157,7 @@ body{
 }
 #add form i{
     font-size: 1.4rem;
+    cursor:pointer;
 }
 #add form input,
 #add form textarea{
@@ -164,7 +167,7 @@ body{
     width: 100%;
     margin:2vh 0vh;
 }
-form button{
+main form button{
     border:none;
     color:white;
     background-color: #4D5867;
