@@ -27,7 +27,7 @@
         color: white;
         background-color: rgb(105, 228, 185);
         font-weight:normal;
-        }
+        }       
     td{
         vertical-align:middle;
         padding: 10px 0px;
@@ -130,6 +130,10 @@
             display:block; 
             margin-bottom: 8.5rem;      
         }
+        .column1{
+            width: 62%;
+        }
+        
         td input{
             font-size: 1rem;
             width: 1.5rem;
