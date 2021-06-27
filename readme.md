@@ -57,3 +57,8 @@ And so, after a few weeks of meditating it, I decided to enroll myself for the c
 This website is mainly addressed to those seeking for exercise equipment for home use.
 Besides, this site becomes in handy for those who give gymnastics classes such as personal trainers,and would like to purchase fitness accesories for the class.Moreover, their students might also want their personal kit which could be bought at the site.
  Corenergy provides the client with the ultimate fitness equipment, usable by any gender or person above 12 years old aproximatelly.
+ 
+ 
+ ##### Link to Trello:
+ 
+ - https://trello.com/b/QmXXlQh9/corenergy
