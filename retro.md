@@ -1,6 +1,9 @@
 ### **Retrospective**
 
 
+
+
+
 **Stop doing**
 
 Asking all team members to write a daily report with detailed activities, when those details are not useful especially when a few-minutes conversation is more than enough.
@@ -28,6 +31,10 @@ Find and reconcile the best and the longest amount of time in order to get toget
 
 
 
+
+
+
 ##### Our team conceptboard:
+
 
 ![Conceptboard](/Inspirations_and_Wireframes/Starfish_Retrospective.png)
