@@ -84,6 +84,11 @@
         text-align: center;
         color: white;
     }
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { 
+      -webkit-appearance: none; 
+      margin: 0; 
+    }
     tr .item-price{
         font-size: 0.8rem;
         width: 5rem;
