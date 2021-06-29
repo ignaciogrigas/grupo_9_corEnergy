@@ -30,12 +30,6 @@ h4{
     color:#69E4B9;
     font-size:1rem
 }
-/*main article{
-    visibility: hidden
-}
-.add:hover main article{
-    visibility: visible;
-}*/
 main article form{
     display:flex;
     flex-flow: column wrap;
@@ -88,6 +82,11 @@ main form ul img{
 }
 #profile_img{
     display:none
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }
 @media screen and (min-width:361px){
     main{
