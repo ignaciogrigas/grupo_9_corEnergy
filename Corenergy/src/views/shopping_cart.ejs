@@ -1,0 +1,68 @@
+<%-include("./includes/head")%>
+<body>
+    <%-include("./includes/header")%>
+    <main>
+            <h1>Your Cart</h1>
+            <table>
+                <tr>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+                <% for ( let i = 0 ; i < ProductsBought ; i ++){%>
+                    <tr>
+                        <td>
+                            <section class="cart-info">
+                                <figure>
+                                    <img src="./images/test.jpg">
+                                </figure>
+                                <div>
+                                    <h3>Dumbbells</h3>
+                                    <p>2 kg weights, covered with high impact silicone</p>
+                                    <a href="">Delete</a>
+                                </div>
+                            </section>
+                        </td>
+                        <td>
+                            <div class="counter">
+                                <i class="fas fa-angle-down"></i>
+                                <input type="number" value="1">
+                                <i class="fas fa-angle-up"></i> 
+                            </div> 
+                        </td>
+                        <td class="item-price">$ 1000.00</td>
+                    </tr>
+                    <tr>
+                <%}%>
+            </table>
+
+            <form action="" method="POST" id="total-price">
+                <select>
+                    <option selected value="defualt">Address</option>
+                    <% for (let i = 0 ; i< registeredAddress){%>
+                        <option value="address<% = i%>">address 2</option>  
+                    <%}%>
+                </select>               
+                <ul>
+                    <li>Shipping fee</li>
+                    <li class="li-price">$3000.00</li>
+                </ul>
+                <ul>
+                    <li>Total Price</li>
+                    <li class="li-price">$3000.00</li>
+                </ul>
+                
+                <select>
+                    <option selected value="defAUlt">Credit Card</option>
+                    <% for (let i = 0 ; i< registeredCreditCards){%>
+                        <option value="card<% = i%>">card 2</option>  
+                    <%}%>               
+                </select>
+                               
+                <button type="submit">Checkout</button>
+                
+            </form>
+    </main>
+<%-include("./includes/footer")%>      
+</body>
+</html>

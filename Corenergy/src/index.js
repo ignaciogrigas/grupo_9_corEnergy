@@ -9,3 +9,7 @@ app.use(express.static(path.resolve(__dirname, "../public")))
 
 //rutas
 app.use(require("./routes/web"));
+
+//app settings
+app.set("view engine", "ejs")
+app.set("views","./views")

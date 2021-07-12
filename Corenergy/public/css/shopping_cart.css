@@ -13,7 +13,7 @@
         font-weight: bold;
         line-height: 2.5rem;
     }
-    #detail-container{
+    main{
         padding: 10px;    
     }
     table{
@@ -51,13 +51,24 @@
     } 
     td p{
         font-size: 12px;
-    }   
-    td a{
-        font-size: 0.7rem;
-        color:rgb(105, 228, 185);
-        text-decoration: none;
-        }   
+    }
+    .cart-info div{
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
         
+        position: relative;
+    }   
+    .cart-info a{
+        font-size: 0.6rem;
+        color:rgb(105, 228, 185);
+        text-decoration: none;        
+        border-radius: 0.5rem;
+        text-decoration: none;
+        position: absolute;
+        top: 85%; 
+        } 
     .counter{
         display: flex;
         flex-wrap: wrap;
@@ -125,21 +136,30 @@
     #total-price button{
         border: none;    
         color:white;
-        font-size: 1 rem;    
+        font-size: 1rem;    
         background-color:rgb(105, 228, 185);
         border-radius: 1.5rem;
         margin-top: 1rem;
-        padding: 2vh;    
+        padding: 1.5vh;    
     }
-    
+    @media screen and (min-width:786px){
+        .cart-info a{    
+            padding: 0.3rem;               
+            transition: all 0.8s;
+            }
+        .cart-info a:hover{
+            background-color:rgb(105, 228, 185);
+            color: white;
+            border-radius: 1rem;
+        }  
+    }    
     @media screen and (min-width:369px){
-        #detail-container{
+        main{
             padding: 4vw 10vw;    
-        }
+        }       
         .cart-info p{
-            display:block; 
-            margin-bottom: 8.5rem;      
-        }
+            display:block;                   
+        }       
         .column1{
             width: 62%;
         }
@@ -154,7 +174,7 @@
             width: 5rem;
         }
         #total-price button{
-            font-size: 1.25rem;
+            font-size: 1rem;
         }
         td a{
             font-size: 1rem;

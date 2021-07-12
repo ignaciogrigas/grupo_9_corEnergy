@@ -1,0 +1,48 @@
+.products{
+    display:flex;
+    flex-flow:row wrap;
+    align-items: center;
+    justify-content: center;
+}
+.products article{
+    width: 80vw;
+    height: 80vw;
+}
+.products img{
+    max-width: 100%;
+    max-height: 100%;
+}
+.products .description{
+    visibility: hidden;
+    background-color: white;
+    padding:2vw;
+    color: black;
+    font-weight:500;
+    font-size: 1.1rem;
+}
+.products article:hover .description{
+    visibility: visible;
+}
+.description .price{
+    padding-top:1.5vw;
+    color: #69E4B9;
+    font-size: 0.8rem;
+}
+@media screen and (min-width:360px){
+    .products article{
+        width: 50vw;
+        height: 50vw;
+    }
+    .products .description{
+        font-size: 1.25rem;
+    }
+    .description .price{
+      font-size: 1.1rem;  
+    }
+}
+@media screen and (min-width:769px){
+    .products article{
+        width: 24vw;
+        height: 24vw;
+    }
+}

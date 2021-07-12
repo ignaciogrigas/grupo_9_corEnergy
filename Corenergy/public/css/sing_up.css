@@ -49,32 +49,7 @@ h1{
     flex-flow: column wrap;
     justify-content: flex-start;
 }
-main form label,
-main form h6{
-    margin:2vh 0vh;
-}
-main form span,
-main form h6{
-    color:#69E4B9;
-}
-main form h6{
-    font-size: 0.7rem;
-    text-align: right;
-}
-main form button{
-    border:none;
-    color:white;
-    background-color: #69E4B9;
-    border-radius: 1.25rem;
-    padding:1vh;
-    margin:2vh 0vh;
-    width:100%
-}
-main form input{
-    border:none;
-    padding:1vh;
-    border-radius: 1.25rem;
-}
+
 [type=date]{
     border:none;
     width:100%;
@@ -84,18 +59,7 @@ main form input{
     border-radius:1.25rem;
     appearance: none;
 }
-main form p{
-    margin:2vh 0vh
-}
-main form ul{
-    display: flex;
-    flex-flow:row wrap;
-    justify-content: space-between;
-    align-items: center;
-}
-main form ul img{
-    width: 20vw;
-}
+
 @media screen and (min-width:361px){
     main{
         display: flex;
