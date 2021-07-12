@@ -57,6 +57,7 @@ header form button{
   }
 #icons{
     width: 20%;
+    max-width: 60px;
 }
 #icons ul{
     display: flex;
@@ -94,6 +95,7 @@ header form button{
     }
     #icons{
         width: 10%;
+        max-width: 120px;
     }
     .log_in a{
         text-decoration: none;
@@ -130,6 +132,7 @@ header form button{
     #header_content{
         max-width: 1200px;
     }
+    
 }
 
 
