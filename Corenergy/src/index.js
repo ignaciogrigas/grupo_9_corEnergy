@@ -1,15 +1,23 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+const methodOverried = require ("method-override")
 
-app.listen(3000,() => console.log("Server on http://localhost:3000/home"));
-
-//public acces
-app.use(express.static(path.resolve(__dirname, "../public")))
-
-//rutas
-app.use(require("./routes/web"));
+app.set("port",process.env.PORT || 3000)
+app.listen(app.get("port"),()=>console.log("Server on http://localhost:" + app.get("port")))
 
 //app settings
 app.set("view engine", "ejs")
 app.set("views","./views")
+
+//public acces
+app.use(express.static(path.resolve(__dirname, "../public")))
+
+app.use/methodOverried("_method");
+app.use(express.urlencoded({extended:false}));
+app.use(express.json());
+
+//rutas
+app.use(require("./routes/home"));
+app.use("/products",require("./routes/products"));
+

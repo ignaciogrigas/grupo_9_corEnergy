@@ -1,13 +1,13 @@
 
 <section class="products">
-    <% for (let i = 0 ; i < productsShown ; i++){%>
+    <% for (let i = 0 ; i < listOfProducts.length ; i++){%>
         <article>
             <figure>
-                <a href="product_detail.ejs"><img src="./images/test.jpg"></a>
+                <a href="product_detail.ejs"><img src="<%= listOfProducts[i].images[0]%>"></a>
             </figure>
             <section class="description">
-                <p>Title</p>
-                <p class="price">Price</p>
+                <p><%= listOfProducts[i].name%></p>
+                <p class="price"><%= listOfProducts[i].price%></p>
             </section>
         </article> 
     <%}%>

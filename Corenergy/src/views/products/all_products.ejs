@@ -1,8 +1,8 @@
-<%-include("./includes/head")%>
+<%-include("../includes/head")%>
 <body>
-<%-include("./includes/header")%>
+<%-include("../includes/header")%>
     <main>
-        <h3 id="best_seller"><% = title%></h3>
+        <h3 id="best_seller"><%= title%></h3>
         <section name="sort_by" id="sort_by">
             <p>Sort by </p>
             <select>
@@ -15,12 +15,11 @@
             <article>
                 <h5>Categories</h5>
                 <ul>
-                    <li>
-                        <a href="#">Category1</a> <!--CAMBIAR!!!!-->
-                    </li>
-                    <li>
-                        <a href="#">Category2</a>
-                    </li>
+                    <% for (let i=0 ; i<listOfSubCategories ; i++){%>
+                        <li>
+                            <a href="#">><%= listOfSubCategories[i].name%></a>
+                        </li>
+                    <%}%>
                 </ul>
             </article>
             <br>
@@ -39,8 +38,8 @@
                 </ul>
             </article>
         </section>
-        <%-include("./includes/list_of_articles")%>
+        <%-include("../includes/list_of_articles")%>
     </main>    
-    <%-include("./includes/footer")%>
+    <%-include("../includes/footer")%>
 </body>
 </html>

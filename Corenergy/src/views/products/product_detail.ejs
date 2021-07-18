@@ -1,0 +1,79 @@
+<%-include("../includes/head")%>
+<body>
+<%-include("../includes/header")%>
+    <main>
+    <section id="product">
+     <article id="images">
+         <figure id="central_img">
+             <img src="<%= singleProduct.images[0]%>" >
+         </figure>
+             <ul id="other_img">
+                <% for (let i = 1 ; i<singleProduct.images.lenght ;i++){%>
+                    <li>
+                    <figure>
+                        <img src="<%= singleProduct.images[i]%>">
+                    </figure>
+                 </li>
+                <%}%>
+             </ul>
+     </article>
+     <article>
+        <h3><%= singleProduct.name%></h3>
+        <p id="code"><%= singleProduct.code%></p>
+        <% if (singleProduct.category !="bars") {%> 
+            <section>
+            <h5>
+                <% if (singleProduct.category == "weights"){%>
+                Weight 
+                <% } else { %>
+                Color
+                <%}%>
+            </h5>
+            <form>
+                <ul>
+                    <% for ( let i = 0 ; i<singleProduct.subCategory.lenght;i++){%>
+                        <li>
+                            <label for="<%= singleProduct.subCategory[i]%>"><%= singleProduct.subCategory[i]%></label>
+                            <input type="radio" name="choice" id="<%= singleProduct.subCategory[i]%>" value="<%= singleProduct.subCategory[i]%>">
+                        </li>
+                    <%}%>
+                </ul>
+            </form>
+        </section>
+        <%}%>
+        <p><%= singleProduct.description%></p>
+        <section id="purchase">
+            <h5><%= singleProduct.price%></h5>
+            <button type="submit">Buy</button>
+        </section>
+     </article>   
+    </section>
+    <h3 class="reviews_title">Reviews</h3>
+    <section id="reviews">
+        <%-include("../includes/reviews")%>
+        <article id="add">
+            <h3 class="reviews_title">Add Review +</h3>
+            <form action="" method="POST">
+                <h5><label for="new_review_title"></label>Title</label></h5>
+                <input type="text" name="new_review_title" id="new_review_title">
+
+                <ul>
+                    <% for (let i =1 ; i<6 ;i++){%>
+                        <label for="star<%= i%>">
+                        <i class="far fa-star"></i>
+                    </label>
+                    <input type="checkbox" name="star<%= i%>" id="star<%= i%>" value="star<%= i%>">
+                    <%}%>
+                </ul>
+                <h5><label for="comments"></label>Comments</label></h5>
+                <textarea></textarea>
+                <button type="submit">Submit your answer</button>
+            </form>
+        </article>
+    </section>
+        <h3 id="best_seller">Customers who bought this item also bought</h3>
+        <%-include("../includes/list_of_articles")%>
+    </main>
+    <%-include("../includes/footer")%>
+</body>
+</html>

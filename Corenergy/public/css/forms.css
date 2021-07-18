@@ -1,12 +1,12 @@
-main form label,
-main form h6{
+main  label,
+main  h6{
     margin:2vh 0vh;
 }
-main form span,
-main form h6{
+main  span,
+main  h6{
     color:#69E4B9;
 }
-main form h6{
+main h6{
     font-size: 0.7rem;
     text-align: right;
 }
@@ -18,9 +18,10 @@ main button{
     border-radius: 1.25rem;
     padding:1vh;
     margin:2vh 0vh;
-    width:100%
+    width:100%;
+    cursor:pointer
 }
-main form input{
+main  input{
     border:none;
     padding:1vh;
     border-radius: 1.25rem;

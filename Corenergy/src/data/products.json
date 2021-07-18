@@ -1,0 +1,13 @@
+[
+  {
+      "id":1,
+      "name":"russian weight",
+      "code":12323525,
+      "category":1,
+      "subCategory":[1,2,3],
+      "description":"hola com estas",
+      "images":[],
+      "price":100,
+      "reviews":[{"rate":5,"comments":"hola me gusto"}]
+  }  
+]

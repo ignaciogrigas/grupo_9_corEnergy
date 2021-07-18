@@ -1,0 +1,101 @@
+<%- include("../includes/head")%>
+<body>
+    <%- include("../includes/header")%>
+    <main>
+        <h1>Add a product</h1>
+        <form action="/save" method="POST">
+            <section id="profile_img">
+                    <label for="productImages">
+                        <img src="../images/profile.jpg" alt="Product Images">
+                        <p>Upload up to 6 photos </p>
+                    </label>
+                <input type="file" name="productImages" id="productImages" multiple>
+            </section>
+            <section id="main_section">
+                <label for="productName">Product name</label>
+                <input required type="text" name="productName" id="productName">
+
+                <label for="description">Description</label>
+                <textarea required type="text" name="description" id="description"></textarea>        
+                
+                <label for="productCode">Product code</label>
+                <input required type="number" name="productCode" id="productName">
+
+                <select required name="category" id="category">
+                    <option value="defualt"selected disabled>Category</option>
+                    <option value="1">Weights</option>
+                    <option value="2">Bars</option>
+                    <option value="3">Elastic Bands</option>
+                    <option value="4">Mats</option>
+                </select>
+                <ul id="choice_weights">
+                    <li>
+                        <label for="2kg">2 KG</label>
+                        <input type="checkbox" name="choice" id="2kg" value="1g">
+                    </li>
+                    <li>
+                        <label for="5kg">5 KG</label>
+                        <input type="checkbox" name="choice" id="5kg" value="2">
+                    </li>
+                    <li>
+                        <label for="10kg">10 KG</label>
+                        <input type="checkbox" name="choice" id="10kg" value="3">
+                    </li>
+                    <li>
+                        <label for="20kg">20 KG</label>
+                        <input type="checkbox" name="choice" id="20kg" value="4">
+                    </li>
+                </ul>
+                <ul id="choice_elasticBands">
+                    <li>
+                        <label for="red">Red</label>
+                        <input type="checkbox" name="choice" id="red" value="1">
+                    </li>
+                    <li>
+                        <label for="blue">Blue</label>
+                        <input type="checkbox" name="choice" id="blue" value="2">
+                    </li>
+                    <li>
+                        <label for="green">Green</label>
+                        <input type="checkbox" name="choice" id="green" value="3">
+                    </li>
+                    <li>
+                        <label for="yellow">Yellow</label>
+                        <input type="checkbox" name="choice" id="yelloww" value="4">
+                    </li>
+                    <li>
+                        <label for="Black">Black</label>
+                        <input type="checkbox" name="choice" id="black" value="5">
+                    </li>
+                </ul>
+                <ul id="choice_mats">
+                    <li>
+                        <label for="red">Red</label>
+                        <input type="checkbox" name="choice" id="red" value="1">
+                    </li>
+                    <li>
+                        <label for="blue">Blue</label>
+                        <input type="checkbox" name="choice" id="blue" value="2">
+                    </li>
+                    <li>
+                        <label for="green">Green</label>
+                        <input type="checkbox" name="choice" id="green" value="3">
+                    </li>
+                    <li>
+                        <label for="purple">Purple</label>
+                        <input type="checkbox" name="choice" id="purple" value="4">
+                    </li>
+                    <li>
+                        <label for="pink">Pink</label>
+                        <input type="checkbox" name="choice" id="pink" value="5">
+                    </li>
+                </ul>
+                <label for="price">Price</label>
+                <input required type="number" name="price" id="price">
+                <button class="button" type="submit">Add</button>
+            </section>
+        </form>
+            
+    </main>
+    <%- include("../includes/footer")%>
+</body>
