@@ -35,31 +35,7 @@ main article form{
     flex-flow: column wrap;
     justify-content: flex-start;
 }
-main form label,
-main form h6{
-    margin:2vh 0vh;
-}
-main form span,
-main form h6{
-    color:#69E4B9;
-}
-main form h6{
-    font-size: 0.7rem;
-    text-align: right;
-}
-main form button{
-    border:none;
-    color:white;
-    background-color: #69E4B9;
-    border-radius: 1.25rem;
-    padding:1vh;
-    margin:2vh
-}
-main form input{
-    border:none;
-    padding:1vh;
-    border-radius: 1.25rem;
-}
+
 main form select{
     border:none;
     background-color: white;
@@ -68,18 +44,7 @@ main form select{
     border-radius:1.25rem;
     appearance: none;
 }
-main form p{
-    margin:2vh 0vh
-}
-main form ul{
-    display: flex;
-    flex-flow:row wrap;
-    justify-content: space-between;
-    align-items: center;
-}
-main form ul img{
-    width: 20vw;
-}
+
 #profile_img{
     display:none
 }
@@ -87,6 +52,34 @@ input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button { 
   -webkit-appearance: none; 
   margin: 0; 
+}
+@media screen and (min-width:361px){
+    main{
+        display: flex;
+        flex-flow:row wrap;
+    }
+    #main_section{
+        width: 50vw;
+    }
+    #profile_img{
+        display:block;
+        margin:4.5vw;
+        width:30vw
+    }
+    #profile_img figure{
+        max-width: 30.5vw;
+        max-height: 30.5vw;
+        overflow: hidden;
+    }
+    #profile_img img{
+        width: 30.5vw;
+    }
+    main form ul{
+        width: 50%;
+    }
+    main form ul li img{
+        max-width: 5vw;
+    }
 }
 @media screen and (min-width:361px){
     main{
