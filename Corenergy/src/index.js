@@ -20,4 +20,5 @@ app.use(express.json());
 //rutas
 app.use(require("./routes/home"));
 app.use("/products",require("./routes/products"));
+app.use("/users",require("./routes/users"));
 
