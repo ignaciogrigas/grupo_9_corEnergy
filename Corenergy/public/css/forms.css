@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-main form label,
-main form h6{
-    margin:2vh 0vh;
-}
-main form span,
-main form h6{
-    color:#69E4B9;
-}
-main form h6{
-=======
 main  label,
 main  h6{
     margin:2vh 0vh;
@@ -18,7 +7,6 @@ main  h6{
     color:#69E4B9;
 }
 main h6{
->>>>>>> 79cd11c3e75c1e015f32ca8a32532b4fba93aba2
     font-size: 0.7rem;
     text-align: right;
 }
@@ -30,16 +18,10 @@ main button{
     border-radius: 1.25rem;
     padding:1vh;
     margin:2vh 0vh;
-<<<<<<< HEAD
-    width:100%
-}
-main form input{
-=======
     width:100%;
     cursor:pointer
 }
 main  input{
->>>>>>> 79cd11c3e75c1e015f32ca8a32532b4fba93aba2
     border:none;
     padding:1vh;
     border-radius: 1.25rem;

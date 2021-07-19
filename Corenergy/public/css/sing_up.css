@@ -60,37 +60,6 @@ h1{
     appearance: none;
 }
 
-<<<<<<< HEAD
-@media screen and (min-width:361px){
-    main{
-        display: flex;
-        flex-flow:row-reverse wrap;
-    }
-    #main_section{
-        width: 50vw;
-    }
-    #profile_img{
-        display:block;
-        margin:4.5vw;
-        width:30vw
-    }
-    #profile_img figure{
-        max-width: 30.5vw;
-        max-height: 30.5vw;
-        overflow: hidden;
-    }
-    #profile_img img{
-        width: 30.5vw;
-    }
-    main form ul{
-        width: 50%;
-    }
-    main form ul li img{
-        max-width: 5vw;
-    }
-}
-=======
->>>>>>> 79cd11c3e75c1e015f32ca8a32532b4fba93aba2
 @media screen and (min-width:361px){
     main form {
         display:flex;

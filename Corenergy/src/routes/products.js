@@ -12,7 +12,7 @@ router.get("/:id", products.byId)
 
 router.post("/save",upload.any("productImage"),products.save)
 
-router.get("/edit/:id", products.create) //ver//
+router.get("/edit/:id", products.modify) //ver//
 
 router.get("/cart" , products.cart)
 

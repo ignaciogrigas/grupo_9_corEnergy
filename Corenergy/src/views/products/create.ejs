@@ -7,19 +7,19 @@
             <section id="profile_img">
                     <label for="productImages">
                         <img src="../images/profile.jpg" alt="Product Images">
-                        <p>Upload up to 6 photos </p>
+                        <%= product ?%> <p>Reload product images</p> product.name : '' %>Upload up to 6 photos
                     </label>
                 <input type="file" name="productImages" id="productImages" multiple>
             </section>
             <section id="main_section">
                 <label for="productName">Product name</label>
-                <input required type="text" name="productName" id="productName">
+                <input required type="text" name="productName" value="<%= product ? product.name : '' %>" id="productName">
 
                 <label for="description">Description</label>
-                <textarea required type="text" name="description" id="description"></textarea>        
-                
+                <textarea required type="text"  name="description" id="description"><%= product ? product.description : '' %></textarea>
+
                 <label for="productCode">Product code</label>
-                <input required type="number" name="productCode" id="productName">
+                <input required type="number" value="<%= product ? product.code : '' %>" name="productCode" id="productName">
 
                 <select required name="category" id="category">
                     <option value="defualt"selected disabled>Category</option>
@@ -95,7 +95,7 @@
                 <button class="button" type="submit">Add</button>
             </section>
         </form>
-            
+
     </main>
     <%- include("../includes/footer")%>
 </body>
