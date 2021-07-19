@@ -13,7 +13,7 @@
         font-weight: bold;
         line-height: 2.5rem;
     }
-    #detail-container{
+    main{
         padding: 10px;    
     }
     table{
@@ -127,11 +127,14 @@
         font-weight: bolder;
     }
     #total-price select{
-        padding: 1.2rem;
-        border: 0;
-        background-color:#E5E5E5;
         color: rgb(105, 228, 185);
-        font-size: 1rem;    
+        font-size: 1rem;
+        appearance:none;
+        -moz-appearance:none;
+        -webkit-appearance:none;
+        border:none;
+        background: url(../img/ico-arrow.png) no-repeat scroll right center transparent;
+        padding-right: 1vw;    
     }
     #total-price button{
         border: none;    
@@ -154,7 +157,7 @@
         }  
     }    
     @media screen and (min-width:369px){
-        #detail-container{
+        main{
             padding: 4vw 10vw;    
         }       
         .cart-info p{

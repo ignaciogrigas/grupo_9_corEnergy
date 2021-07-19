@@ -39,32 +39,13 @@ main{
    padding: 1vh 0;
    margin:3vh 0 0 0;
 }
- #products{
-    display:flex;
-    flex-flow:row wrap;
-    align-items: center;
-    justify-content: center;
+.products{
+    width: 75vw;
 }
-#products article{
-    width: 80vw;
-    height: 80vw;
+.products .description{
+    visibility: visible
 }
-#products img{
-    max-width: 100%;
-    max-height: 100%;
-}
-#products .description{
-    background-color: white;
-    padding:2vw;
-    color: black;
-    font-weight:500;
-    font-size: 1.1rem;
-}
-.description .price{
-    padding-top:1.5vw;
-    color: #69E4B9;
-    font-size: 0.8rem;
-}
+
 
 @media screen and (min-width:360px){
     main{
@@ -73,18 +54,8 @@ main{
     #sort_by{
         padding: 2vh;
     }
-    #products article{
-        width: 50vw;
-        height: 50vw;
-    }
     #best_seller{
         font-size: 1.5rem;
-    }
-    #products .description{
-        font-size: 1.25rem;
-    }
-    .description .price{
-      font-size: 1.1rem;  
     }
 }
 @media screen and (min-width:769px){
@@ -115,14 +86,5 @@ main{
         text-decoration: none;
         color:rgb(77, 88, 103);
         font-size: 1.2rem;
-    }
-    #products{
-        justify-content: space-between;
-        width: 80vw;
-        padding-right: 2vh;
-    }
-    #products article{
-        width: 26vw;
-        height: 26vw;
     }
 }

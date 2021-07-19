@@ -1,0 +1,44 @@
+#reviews{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    background-color:#69E4B9;
+    margin-bottom:3vh ;
+}
+#reviews article{
+    width: 80vw;
+    padding:2vw;
+}
+#reviews article section{
+    display: flex;
+    flex-flow:row wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2vw 2vw 2vw 0;
+}
+#reviews article section h5{
+    color: black;
+    font-weight:600;
+    font-size: 1.1rem;
+    width: 60%;
+}
+#reviews article p{
+    font: size 0.8rem;
+    text-align:justify;
+}
+@media screen and (min-width:360px){
+
+    #reviews article section h5{
+        font-size: 1.25rem;
+    }
+    #reviews article p{
+      font-size: 1.1rem;  
+    }
+}
+@media screen and (min-width:769px){
+    #reviews article{
+        width: 25vw;
+        padding:2vw;
+    }
+}

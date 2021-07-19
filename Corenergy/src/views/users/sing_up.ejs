@@ -1,0 +1,39 @@
+<%-include("./includes/head")%>
+<body>
+    <%-include("./includes/header")%>
+    <main>
+        <h1>Create an Account</h1>
+        <form action="" method="POST">
+            <section id="profile_img">
+                    <label for="file">
+                            <img src="../images/profile.jpg" alt="Profile">
+                    </label>
+                <input type="file" name="file" id="file">
+            </section>
+            <section id="main_section">
+                <label for="name">Name<span>*</span></label>
+                <input required type="text" name="name" id="name">
+                
+                <label for="surname">Surname<span>*</span></label>
+                <input required type="text" name="surname" id="surname">        
+                
+                <label for="email">E-mail<span>*</span></label>
+                <input required type="email" name="email" id="email">
+                
+                <label for="age">Birth Date<span>*</span></label>
+                <input required type="date" name="age" id="age">
+                
+                <label for="password">Password<span>*</span></label>
+                <input required type="password" name="password" id="password">
+
+                <label for="conf_password"> Confirm Password<span>*</span></label>
+                <input required type="password" name="conf_password" id="conf_password">
+                <h6 >Required fields*</h6>
+                <button class="button" type="submit">Sign up</button>
+            </section>
+        </form>
+            
+    </main>
+    <%-include("./includes/footer")%>
+</body>
+</html>

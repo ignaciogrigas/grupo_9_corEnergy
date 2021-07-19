@@ -24,16 +24,16 @@ h1{
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 75%;
 }
 #profile_img figure{
-    max-width: 25.5vw;
-    max-height: 25.5vw;
+    max-width: 30.5vw;
+    max-height: 30.5vw;
     overflow: hidden;
     pointer-events:all;
 }
 #profile_img img{
-    width: 25.5vw;
+    width: 30.5vw;
     z-index:1;
     cursor: pointer;
 }
@@ -41,9 +41,14 @@ h1{
     visibility: hidden;
     width:50%
 }
+#profile_img label p{
+    margin-top:1vh;
+    font-weight: 600;
+    font-size: 1.1rem;
+
+}
 #main_section{
     margin:4.5vw
-    
 }
 #main_section {
     display:flex;
@@ -59,38 +64,48 @@ h1{
     border-radius:1.25rem;
     appearance: none;
 }
-
-<<<<<<< HEAD
-@media screen and (min-width:361px){
-    main{
-        display: flex;
-        flex-flow:row-reverse wrap;
-    }
-    #main_section{
-        width: 50vw;
-    }
-    #profile_img{
-        display:block;
-        margin:4.5vw;
-        width:30vw
-    }
-    #profile_img figure{
-        max-width: 30.5vw;
-        max-height: 30.5vw;
-        overflow: hidden;
-    }
-    #profile_img img{
-        width: 30.5vw;
-    }
-    main form ul{
-        width: 50%;
-    }
-    main form ul li img{
-        max-width: 5vw;
-    }
+form textarea{
+    border:none;
+    padding:1vh;
+    border-radius: 1.25rem;
+    width: 100%;
 }
-=======
->>>>>>> 79cd11c3e75c1e015f32ca8a32532b4fba93aba2
+form select{
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    border:none;
+    background: url(../img/ico-arrow.png) no-repeat scroll right center transparent;
+    padding-right: 1vw;
+    margin:2vh 0vh;  
+}
+main form ul{
+    display: flex;
+    flex-flow:row wrap;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 2vh 0;
+    width: 100%;
+}
+form li label{
+    background-color: white;
+    padding:1.5vh;
+    border-radius: 1.25rem;
+    color:#4D5867;
+    cursor:pointer;
+    margin:0 1.2vh 0 0;
+}
+form li {
+    margin:3vh 0 2vh 0;
+}
+li label:hover{
+    background-color:#69E4B9;
+    color:white
+}
+
+[type=checkbox]{
+    display:none
+}
 @media screen and (min-width:361px){
     main form {
         display:flex;
@@ -104,7 +119,7 @@ h1{
     #profile_img{
         display:block;
         margin:4.5vw;
-        width:30vw
+        width:25vw
     }
     #profile_img figure{
         max-width: 25.5vw;
@@ -114,9 +129,7 @@ h1{
     #profile_img img{
         width: 25.5vw;
     }
-    main form ul{
-        width: 50%;
-    }
+    
     main form ul li img{
         max-width: 5vw;
     }

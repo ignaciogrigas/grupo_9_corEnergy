@@ -1,0 +1,14 @@
+
+<section class="products">
+    <% for (let i = 0 ; i < listOfProducts.length ; i++){%>
+        <article>
+            <figure>
+                <a href="product_detail.ejs"><img src="<%= listOfProducts[i].images[0]%>"></a>
+            </figure>
+            <section class="description">
+                <p><%= listOfProducts[i].name%></p>
+                <p class="price"><%= listOfProducts[i].price%></p>
+            </section>
+        </article> 
+    <%}%>
+</section>

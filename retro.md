@@ -1,4 +1,4 @@
-### **Retrospective**
+### **Retrospective: HTML + CSS**
 
 
 
@@ -38,3 +38,49 @@ Find and reconcile the best and the longest amount of time in order to get toget
 
 
 ![Conceptboard](/Inspirations_and_Wireframes/Starfish_Retrospective.png)
+
+
+
+
+
+
+
+### **Retrospective: Template Engines**
+
+
+
+
+
+**Stop doing**
+
+Don´t leave things and chores to the last minute.
+
+**Do less of**
+
+Just focus on the current sprint demand 
+
+**Keep doing**
+
+Keep coding live with all the members of the group. 
+
+**Do more of**
+
+Continue working together and helping each other.
+
+**Start doing**
+
+Start managing time more efficiently in order to have better results.
+
+
+
+
+
+
+##### Our team conceptboard:
+
+
+![Conceptboard](/Inspirations_and_Wireframes/Starfish_Retrospective2.png)
+
+
+
+
