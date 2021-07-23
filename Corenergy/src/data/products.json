@@ -7,7 +7,6 @@
       "subCategory":[1,2,3],
       "description":"hola com estas",
       "images":[],
-      "price":100,
-      "reviews":[{"rate":5,"comments":"hola me gusto"}]
+      "price":100
   }  
 ]

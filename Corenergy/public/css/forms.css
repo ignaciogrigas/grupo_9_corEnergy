@@ -38,3 +38,7 @@ main form ul{
 main form ul img{
     width: 20vw;
 }
+.errorMsg{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
