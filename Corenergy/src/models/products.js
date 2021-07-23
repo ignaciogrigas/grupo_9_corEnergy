@@ -69,8 +69,8 @@ const subCategoryWeights = require ("./sub_category_weights.js");
             id:all.lenght> 0 ? all[all.lenght-1].id + 1 : 1 ,
             name:data.productName,
             code:data.productCode,
-            category:parseInt(data.category),//xq parseINT?
-            subCategroy:[data.subCategory], //revisar//
+            category:parseInt(data.category),
+            subCategroy:[data.subCategory],
             images:files.forEach(element => {
                 element.url
             }),
@@ -90,8 +90,8 @@ const subCategoryWeights = require ("./sub_category_weights.js");
             if(product.id == id){
                 product.name=data.productName,
                 product.code=data.productCode,
-                product.category=parseInt(data.category),//xq parseINT?
-                product.subCategroy=[data.subCategory], //revisar//
+                product.category=parseInt(data.category),
+                product.subCategroy=[data.subCategory], 
                 product.images=files.forEach(element => {
                     element.url
                 }),
