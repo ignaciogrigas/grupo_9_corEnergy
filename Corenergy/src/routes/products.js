@@ -8,18 +8,18 @@ const upload = multer({storage:storage});
 
 router.get("/create", products.showCreateTemplate);
 
+router.get("/cart" , products.cart);
+
 router.get("/all/:category", products.category);
 
 router.get("/:id", products.byId);
 
-router.post("/save",upload.array("productImage"[6]),products.save);
-
 router.get("/:id/edit", products.modify);
+
+router.post("/save",upload.array("productImage"[6]),products.save);
 
 router.put("/update/:id" ,upload.array("productImage"[6]),products.edit);
 
 router.delete ("/delete/:id",products.delete);
-
-router.get("/cart" , products.cart);
 
 module.exports = router;
