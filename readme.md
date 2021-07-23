@@ -8,12 +8,12 @@
 
 - Ignacio Grigas: My name is Ignacio Grigas and I am 21 years old. I live in Ciudad Autonoma de Buenos Aires and study industrial design at Universidad de Buenos Aires. I intend to mingle both my designing skills and porgramming skills in order to create aesthetic and functional websites. Hopefully, some time in the future I would be able to join the IoT world which I truly admire.
 
-- Luciano Benedetti: My name is Luciano Benedetti, i´m 25 years old. Currently, i´m working at Ezeiza international airport as an air traffic controller in the control tower.
+- Luciano Benedetti: My name is Luciano Benedetti, I´m 25 years old. Currently, I´m working at Ezeiza international airport as an air traffic controller in the control tower.
 I have lived my whole life in a city called Monte grande, nearby the airport in which I work. 
 Technology has always been of my interest and a few month ago I bumped into the full-stack web developer course while I was wandering the internet seeking mainly technology-related careers.
 And so, after a few weeks of meditating it, I decided to enroll myself for the course.
 
-- Nicolas Alecci: My name is Nicolas Alecci.I´m 32 year old and i live in Ciudad Autonoma de Buenos Aires. I have worked as an political analysts for the Argentine State for the last 5 years, where I had my first encounter with programming. Nowadays I am focusing on full-stack training so i can become a web developer.
+- Nicolas Alecci: My name is Nicolas Alecci. I´m 32 year old and I live in Ciudad Autonoma de Buenos Aires. I have worked as an political analysts for the Argentinian State for the last 5 years, where I had my first encounter with programming. Nowadays, I am focusing on full-stack training so I can become a web developer.
 
 
 ##### Reference sites:
