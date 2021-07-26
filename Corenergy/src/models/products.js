@@ -72,7 +72,7 @@ const subCategoryWeights = require ("./sub_category_weights.js");
             category:parseInt(data.category),
             subCategroy:[data.subCategory],
             images:files.forEach(element => {
-                element.url
+                element.filename
             }),
             price:data.price
         };
@@ -93,7 +93,7 @@ const subCategoryWeights = require ("./sub_category_weights.js");
                 product.category=parseInt(data.category),
                 product.subCategroy=[data.subCategory], 
                 product.images=files.forEach(element => {
-                    element.url
+                    element.filename
                 }),
                 product.price=data.price
             }
