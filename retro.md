@@ -84,3 +84,42 @@ Start managing time more efficiently in order to have better results.
 
 
 
+### **Retrospective: JSON + Métodos HTTP**
+
+
+
+
+
+**Stop doing**
+
+Do not overtake or advance more than what we are asked in the current sprint.
+
+**Do less of**
+
+-
+
+**Keep doing**
+
+ Keep on having fun while working.
+
+ Continue getting to know each member of the team by spending time coding live and sharing points of view.
+
+**Do more of**
+
+Continue working together and helping each other.
+
+After each team gathering, seek out any doubts that may have arisen in the previous meeting and then try to bring back possible solutions for the problems in the next meeting. 
+
+**Start doing**
+
+Find at least 3 days to get together in order to work more at ease in the proyect.
+
+
+
+
+
+
+##### Our team conceptboard:
+
+
+![Conceptboard](/Inspirations_and_Wireframes/Starfish_Retrospective3.png)
