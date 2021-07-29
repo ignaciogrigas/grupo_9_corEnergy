@@ -9,7 +9,7 @@ const fs = require("fs")
     },
 
     one:function(id){
-        return this.all().find(element => element == id)
+        return this.all().find(element => element.id == id)
     }
 
  }

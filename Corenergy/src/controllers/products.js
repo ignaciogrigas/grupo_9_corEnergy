@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const path = require("path");
 const products = require("../data/products.json")
-const productsModel = require ("../models/products.js")
+const productsModel = require ("../models/products")
 module.exports = {
     byId:(req,res)=> res.render("./products/product_detail",{
         style:"/css/product_detail.css",

@@ -2,18 +2,17 @@
 <body>
     <%- include("../includes/header")%>
     <main>
-        <h1>Add a product</h1>
-        <form action="<% locals.product ?%> /products/save <%:%> /products/update?_method=PUT" method=POST enctype="multipart/form-data">
+        <h1><%= locals.product? "Edit Product" : "Add Product" %></h1>
+        <form action=<%=locals.product ? "/products/update?_method=PUT" : "/products/save" %> method="POST" enctype="multipart/form-data">
             <section id="profile_img">
                     <label for="productImages">
                         <img src="../images/profile.jpg" alt="Product Images">
-                        <%= locals.product ?%> <p>Reload product images</p><%:%><p>Upload up to 6 photos</p>
+                        <p><%= locals.product ? "Reload product images":"Upload up to 6 photos" %></p>
                     </label>
                 <input type="file" name="productImages" id="productImages" multiple>
             </section>
             <section id="main_section">
-                <% locals && locals.errorMsg ?%><p class="errorMsg"><%= errorMsg %></p><% : "" %>
-
+                
                 <label for="productName">Product name</label>
                 <input required type="text" name="productName" value="<%= locals.product ? product.name : '' %>" id="productName">
 
@@ -24,11 +23,11 @@
                 <input required type="number" value="<%= locals.product ? product.code : '' %>" name="productCode" id="productName">
 
                 <select required name="category" id="category">
-                    <option value="defualt"<%= locals.product ? " " :%>selected<% %> disabled>Category</option>
-                    <option value="1"<%= locals.product && product.category == 1 ? %> selected <% : " " %>>Weights</option>
-                    <option value="2"<%= locals.product && product.category == 2 ? %> selected <% : " " %>>Bars</option>
-                    <option value="3"<%= locals.product && product.category == 3 ? %> selected <% : " " %>>Elastic Bands</option>
-                    <option value="4"<%= locals.product && product.category == 4 ? %> selected <% : " " %>>Mats</option>
+                    <option value="defualt"<%= locals.product ? " " : "selected" %> disabled>Category</option>
+                    <option value="1"<%= locals.product && product.category == 1 ? "selected"  : " " %>>Weights</option>
+                    <option value="2"<%= locals.product && product.category == 2 ? "selected"  : " " %>>Bars</option>
+                    <option value="3"<%= locals.product && product.category == 3 ? "selected"  : " " %>>Elastic Bands</option>
+                    <option value="4"<%= locals.product && product.category == 4 ? "selected" : " " %>>Mats</option>
                 </select>
                 <ul id="choice_weights">
                     <li>

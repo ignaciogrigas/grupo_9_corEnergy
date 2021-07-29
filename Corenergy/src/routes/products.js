@@ -10,7 +10,7 @@ router.get("/create", products.showCreateTemplate);
 
 router.get("/cart" , products.cart);
 
-router.get("/all/:category", products.category);
+router.get("/:category", products.category);
 
 router.get("/:id", products.byId);
 

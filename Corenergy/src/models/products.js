@@ -1,9 +1,9 @@
 const path = require ("path");
 const fs = require("fs");
-const category = require ("./category.js");
-const subCategoryMats = require ("./sub_category_mats.js");
-const subCategoryElasticBands = require ("./sub_category_elastic_bands.js");
-const subCategoryWeights = require ("./sub_category_weights.js");
+const category = require ("./category");
+const subCategoryMats = require ("./sub_category_mats");
+const subCategoryElasticBands = require ("./sub_category_elastic_bands");
+const subCategoryWeights = require ("./sub_category_weights");
 
  module.exports= {
     directory: path.resolve(__dirname,"../data/products.json"),
@@ -20,16 +20,17 @@ const subCategoryWeights = require ("./sub_category_weights.js");
     allWithExtra: function(){
         return this.all().map(element =>{
             if(element.category == 1){
-                element.category=category.one(element.category).name
+                element.category = category.one(element.category).name
                 element.subCat =element.subCategory.map(element => subCategoryWeights.one(element))
             } else if (element.category == 3){
-                element.category=category.one(element.category).name
+                element.category = category.one(element.category).name
                 element.subCat =element.subCategory.map(element => subCategoryElasticBands.one(element))
             } else if (element.category == 4) {
-                element.category=category.one(element.category).name
+                element.category = category.one(element.category).name
                 element.subCat =element.subCategory.map(element => subCategoryMats.one(element))
+            } else {
+                element.category = category.one(element.category).name
             }
-            element.category=category.one(element.category).name
         })
     },
 
@@ -48,14 +49,15 @@ const subCategoryWeights = require ("./sub_category_weights.js");
     },
 
     byCategory: function(cat){
-        return this.allWithExtra().filter(element => element.category == cat)
-    },
+        let all = this.allWithExtra()
+        return all.filter(element => element.category == cat)
+    }, //no nos lee category
 
     title: function(category){
         if(category != "elastic-bands"){
-            return UpperCase(category.charAt(0)) + category.slice(1) 
+            return category.charAt(0).toUpperCase() + category.slice(1) 
         } else {
-            return UpperCase(category.charAt(0))+ category.slice(1,6) + " " + UpperCase(category.charAt(8))+ category.slice(8,12)
+            return category.charAt(0).toUpperCase()+ category.slice(1,6) + " " + category.charAt(8).toUpperCase()+ category.slice(8,12)
         }
     },//va aca o en el html?
 
@@ -66,7 +68,7 @@ const subCategoryWeights = require ("./sub_category_weights.js");
     new:function(data,files){
         let all = this.all();
         let newProduct = {
-            id:all.lenght> 0 ? all[all.lenght-1].id + 1 : 1 ,
+            id: all.length > 0 ? all[all.length-1].id + 1 : 1 ,
             name:data.productName,
             code:data.productCode,
             category:parseInt(data.category),

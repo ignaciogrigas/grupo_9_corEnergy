@@ -8,6 +8,6 @@ router.get("/profile", users.profile);
 
 router.get("/log-in", users.logIn);
 
-router.get("/sing-up", users.singUp);
+router.get("/sign-up", users.singUp);
 
 module.exports = router;
