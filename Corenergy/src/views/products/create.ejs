@@ -2,92 +2,93 @@
 <body>
     <%- include("../includes/header")%>
     <main>
-        <h1>Add a product</h1>
-        <form action="/save" method="POST">
+        <h1><%= locals.product? "Edit Product" : "Add Product" %></h1>
+        <form action=<%=locals.product ? "/products/update?_method=PUT" : "/products/save" %> method="POST" enctype="multipart/form-data">
             <section id="profile_img">
                     <label for="productImages">
                         <img src="../images/profile.jpg" alt="Product Images">
-                        <%= product ?%> <p>Reload product images</p> product.name : '' %>Upload up to 6 photos
+                        <p><%= locals.product ? "Reload product images":"Upload up to 6 photos" %></p>
                     </label>
                 <input type="file" name="productImages" id="productImages" multiple>
             </section>
             <section id="main_section">
+                
                 <label for="productName">Product name</label>
-                <input required type="text" name="productName" value="<%= product ? product.name : '' %>" id="productName">
+                <input required type="text" name="productName" value="<%= locals.product ? product.name : '' %>" id="productName">
 
                 <label for="description">Description</label>
-                <textarea required type="text"  name="description" id="description"><%= product ? product.description : '' %></textarea>
+                <textarea required type="text"  name="description" id="description"><%= locals.product ? product.description : '' %></textarea>
 
                 <label for="productCode">Product code</label>
-                <input required type="number" value="<%= product ? product.code : '' %>" name="productCode" id="productName">
+                <input required type="number" value="<%= locals.product ? product.code : '' %>" name="productCode" id="productName">
 
                 <select required name="category" id="category">
-                    <option value="defualt" selected disabled>Category</option>
-                    <option value="1">Weights</option>
-                    <option value="2">Bars</option>
-                    <option value="3">Elastic Bands</option>
-                    <option value="4">Mats</option>
+                    <option value="defualt"<%= locals.product ? " " : "selected" %> disabled>Category</option>
+                    <option value="1"<%= locals.product && product.category == 1 ? "selected"  : " " %>>Weights</option>
+                    <option value="2"<%= locals.product && product.category == 2 ? "selected"  : " " %>>Bars</option>
+                    <option value="3"<%= locals.product && product.category == 3 ? "selected"  : " " %>>Elastic Bands</option>
+                    <option value="4"<%= locals.product && product.category == 4 ? "selected" : " " %>>Mats</option>
                 </select>
                 <ul id="choice_weights">
                     <li>
                         <label for="2kg">2 KG</label>
-                        <input type="checkbox" name="choice" id="2kg" value="1g">
+                        <input type="checkbox" name="choice" id="1" value="1">
                     </li>
                     <li>
                         <label for="5kg">5 KG</label>
-                        <input type="checkbox" name="choice" id="5kg" value="2">
+                        <input type="checkbox" name="choice" id="2" value="2">
                     </li>
                     <li>
                         <label for="10kg">10 KG</label>
-                        <input type="checkbox" name="choice" id="10kg" value="3">
+                        <input type="checkbox" name="choice" id="3" value="3">
                     </li>
                     <li>
                         <label for="20kg">20 KG</label>
-                        <input type="checkbox" name="choice" id="20kg" value="4">
+                        <input type="checkbox" name="choice" id="4" value="4">
                     </li>
                 </ul>
                 <ul id="choice_elasticBands">
                     <li>
                         <label for="red">Red</label>
-                        <input type="checkbox" name="choice" id="red" value="1">
+                        <input type="checkbox" name="choice" id="1" value="1">
                     </li>
                     <li>
                         <label for="blue">Blue</label>
-                        <input type="checkbox" name="choice" id="blue" value="2">
+                        <input type="checkbox" name="choice" id="2" value="2">
                     </li>
                     <li>
                         <label for="green">Green</label>
-                        <input type="checkbox" name="choice" id="green" value="3">
+                        <input type="checkbox" name="choice" id="3" value="3">
                     </li>
                     <li>
                         <label for="yellow">Yellow</label>
-                        <input type="checkbox" name="choice" id="yelloww" value="4">
+                        <input type="checkbox" name="choice" id="4" value="4">
                     </li>
                     <li>
                         <label for="Black">Black</label>
-                        <input type="checkbox" name="choice" id="black" value="5">
+                        <input type="checkbox" name="choice" id="5" value="5">
                     </li>
                 </ul>
                 <ul id="choice_mats">
                     <li>
                         <label for="red">Red</label>
-                        <input type="checkbox" name="choice" id="red" value="1">
+                        <input type="checkbox" name="choice" id="1" value="1">
                     </li>
                     <li>
                         <label for="blue">Blue</label>
-                        <input type="checkbox" name="choice" id="blue" value="2">
+                        <input type="checkbox" name="choice" id="2" value="2">
                     </li>
                     <li>
                         <label for="green">Green</label>
-                        <input type="checkbox" name="choice" id="green" value="3">
+                        <input type="checkbox" name="choice" id="3" value="3">
                     </li>
                     <li>
                         <label for="purple">Purple</label>
-                        <input type="checkbox" name="choice" id="purple" value="4">
+                        <input type="checkbox" name="choice" id="4" value="4">
                     </li>
                     <li>
                         <label for="pink">Pink</label>
-                        <input type="checkbox" name="choice" id="pink" value="5">
+                        <input type="checkbox" name="choice" id="5" value="5">
                     </li>
                 </ul>
                 <label for="price">Price</label>

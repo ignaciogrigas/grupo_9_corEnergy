@@ -17,6 +17,16 @@ const subCategoryWeights = require ("./sub_category_weights");
         return this.all().find(element => element == id)
     },
 
+    getProductReviews: function(id) {
+        return [
+            'review 1',
+            'review 2',
+            'review 3',
+            'review 4',
+            'review 5',
+        ]
+     },
+
     allWithExtra: function(){
         const productsInDB = this.all()
 
@@ -25,18 +35,18 @@ const subCategoryWeights = require ("./sub_category_weights");
             if(product.category == 1){
 
                 enrichedProduct.category = category.one(product.category).name
-                enrichedProduct.subCat =product.subCategory.map(element => subCategoryWeights.one(element))
+                enrichedProduct.subCat = product.subCategory.map(element => subCategoryWeights.one(element))
 
                 return enrichedProduct
             } else if (product.category == 3){
 
                 enrichedProduct.category = category.one(product.category).name
-                enrichedProduct.subCat =product.subCategory.map(element => subCategoryElasticBands.one(element))
+                enrichedProduct.subCat = product.subCategory.map(element => subCategoryElasticBands.one(element))
 
                 return enrichedProduct
             } else if (product.category == 4) {
                 enrichedProduct.category = category.one(product.category).name
-                enrichedProduct.subCat =product.subCategory.map(element => subCategoryMats.one(element))
+                enrichedProduct.subCat = product.subCategory.map(element => subCategoryMats.one(element))
                 return enrichedProduct
             } else {
                 enrichedProduct.category = category.one(product.category).name

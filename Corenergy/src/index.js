@@ -8,12 +8,12 @@ app.listen(app.get("port"),()=>console.log("Server on http://localhost:" + app.g
 
 //app settings
 app.set("view engine", "ejs")
-app.set("views","./views")
+app.set("views",path.resolve(__dirname, "./views"))
 
 //public acces
 app.use(express.static(path.resolve(__dirname, "../public")))
 
-app.use/methodOverried("_method");
+app.use(methodOverried("_method"));
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 
