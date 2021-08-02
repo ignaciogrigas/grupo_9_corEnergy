@@ -1,15 +1,15 @@
 const path = require ("path");
 const fs = require("fs");
-const category = require ("./category.js");
-const subCategoryMats = require ("./sub_category_mats.js");
-const subCategoryElasticBands = require ("./sub_category_elastic_bands.js");
-const subCategoryWeights = require ("./sub_category_weights.js");
+const category = require ("./category");
+const subCategoryMats = require ("./sub_category_mats");
+const subCategoryElasticBands = require ("./sub_category_elastic_bands");
+const subCategoryWeights = require ("./sub_category_weights");
 
  module.exports= {
     directory: path.resolve(__dirname,"../data/products.json"),
 
     all:function(){
-        const file= fs.readFileSync(this.directory)
+        const file= fs.readFileSync(this.directory,"utf-8")
         return JSON.parse(file)
     },
 
@@ -18,16 +18,40 @@ const subCategoryWeights = require ("./sub_category_weights.js");
     },
 
     allWithExtra: function(){
-        return this.all().map(element =>{
-            if(element.category == 1){
-                element.subCat =element.subCategory.map(element => subCategoryWeights.one(element))
-            } else if (element.category == 3){
-                element.subCat =element.subCategory.map(element => subCategoryElasticBands.one(element))
-            } else if (element.category == 4) {
-                element.subCat =element.subCategory.map(element => subCategoryMats.one(element))
+        const productsInDB = this.all()
+
+        return productsInDB.map(product =>{
+            const enrichedProduct = Object.assign({}, product)
+            if(product.category == 1){
+
+                enrichedProduct.category = category.one(product.category).name
+                enrichedProduct.subCat =product.subCategory.map(element => subCategoryWeights.one(element))
+
+                return enrichedProduct
+            } else if (product.category == 3){
+
+                enrichedProduct.category = category.one(product.category).name
+                enrichedProduct.subCat =product.subCategory.map(element => subCategoryElasticBands.one(element))
+
+                return enrichedProduct
+            } else if (product.category == 4) {
+                enrichedProduct.category = category.one(product.category).name
+                enrichedProduct.subCat =product.subCategory.map(element => subCategoryMats.one(element))
+                return enrichedProduct
+            } else {
+                enrichedProduct.category = category.one(product.category).name
+
+                return enrichedProduct
             }
-            element.category=category.one(element.category).name
         })
+    },
+
+    oneWithExtra:function(id){
+        const products = this.allWithExtra()
+
+        const product = products.find(element => element.id == id)
+
+        return product
     },
 
     allSubcategories:function(cat){
@@ -41,26 +65,68 @@ const subCategoryWeights = require ("./sub_category_weights.js");
     },
 
     byCategory: function(cat){
-        return this.allWithExtra().filter(element => element.category == cat)
-    },
+        let all = this.allWithExtra()
+        return all.filter(element => element.category == cat)
+    }, //no nos lee category
+
+    title: function(category){
+        if(category != "elastic-bands"){
+            return category.charAt(0).toUpperCase() + category.slice(1) 
+        } else {
+            return category.charAt(0).toUpperCase()+ category.slice(1,6) + " " + category.charAt(8).toUpperCase()+ category.slice(8,12)
+        }
+    },//va aca o en el html?
+
     bySubcategories: function(cat){
         return this.byCategory.filter(element => element.subCategory.find(element=> element == cat))
     },
 
-    create:function(data,files){
+    new:function(data,files){
         let all = this.all();
-        all.push({
-            id:all.lenght> 0 ? all[all.lenght-1].id + 1 : 1 ,
+        let newProduct = {
+            id: all.length > 0 ? all[all.length-1].id + 1 : 1 ,
             name:data.productName,
             code:data.productCode,
-            category:data.category,
-            subCategroy:[data.subCategory], //revisar//
-            description:data.description,
+            category:parseInt(data.category),
+            subCategroy:[data.subCategory],
             images:files.forEach(element => {
-                element.url
+                element.filename
             }),
             price:data.price
+        };
+        all.push(newProduct);
+        fs.writeFileSync(this.directory,JSON.stringify(all,null,2));
+        return true;
+    },
+
+    edit:function(data,files,id){
+        let all= this.all();
+        let updated = this.one(id)
+        let imagesToDelete = path.resolve(__dirname,"../../public/uploads/products",updated.images)
+        let exists= fs.existsSync(imagesToDelete) ? updated.images.forEach(image =>fs.unlinkSync(image)): "";
+        all.map(product => {
+            if(product.id == id){
+                product.name=data.productName,
+                product.code=data.productCode,
+                product.category=parseInt(data.category),
+                product.subCategroy=[data.subCategory], 
+                product.images=files.forEach(element => {
+                    element.filename
+                }),
+                product.price=data.price
+            }
         })
-        fs.writeFileSync(this.directory,JSON.stringify(all,null,2))
+        fs.writeFileSync(this.directory,JSON.stringify(all,null,2));
+        return true;
+    },
+
+    delete:function(id){
+        let all= this.all();
+        let deleted = this.one(id)
+        let imagesToDelete = path.resolve(__dirname,"../../public/uploads/products",deleted.images)
+        let exists= fs.existsSync(imagesToDelete) ? updated.images.forEach(image =>fs.unlinkSync(image)): "";
+        all = all.filter(product => product.id != deleted.id );
+        fs.writeFileSync(directory,JSON.stringify(all,null,2));
+        return true
     }
  }

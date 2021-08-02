@@ -44,7 +44,10 @@
         <p><%= singleProduct.description%></p>
         <section id="purchase">
             <h5><%= singleProduct.price%></h5>
-            <button type="submit">Buy</button>
+            <button type="submit">Buy</button> <a><button type="submit">Edit</button></a>
+            <form action="/products/delete?_method=DELETE" method=POST>
+                <button type="submit">Delete</button>
+            </form>
         </section>
      </article>   
     </section>

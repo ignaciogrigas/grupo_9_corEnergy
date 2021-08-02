@@ -2,18 +2,24 @@ const express = require("express");
 const router = express.Router();
 const path = require("path");
 const products = require("../controllers/products");
-const upload = require("../middlewares/products_multer");
+const multer = require("multer");
+const storage = require("../middlewares/products_multer");
+const upload = multer({storage:storage});
 
-router.get("/create", products.create);
+router.get("/create", products.showCreateTemplate);
 
-router.get("/all/:category", products.category)
+router.get("/cart" , products.cart);
 
-router.get("/:id", products.byId)
+//router.get("/:category", products.category);
 
-router.post("/save",upload.any("productImage"),products.save)
+router.get("/:id", products.byId);
 
-router.get("/edit/:id", products.modify) //ver//
+router.get("/:id/edit", products.modify);
 
-router.get("/cart" , products.cart)
+router.post("/save",upload.array("productImage"[6]),products.save);
+
+router.put("/update/:id" ,upload.array("productImage"[6]),products.edit);
+
+router.delete ("/delete/:id",products.delete);
 
 module.exports = router;
