@@ -123,3 +123,46 @@ Find at least 3 days to get together in order to work more at ease in the proyec
 
 
 ![Conceptboard](/Inspirations_and_Wireframes/Starfish_Retrospective3.png)
+
+
+
+
+### **Retrospective: Middlewares + Auth**
+
+
+
+
+
+**Stop doing**
+
+Nothing to stop doing. The team works just fine. We managed to stop thinking ahead in order to be able to be present to the moment and  not to advance more than what we are asked in the current sprint.
+
+**Do less of**
+
+Nothing to correct for now. 
+
+**Keep doing**
+
+ Keep on finding at least 3 days for each sprint to fully commit to the proyect.
+
+ Continue getting to know each other by spending time coding live and sharing points of view.
+
+**Do more of**
+
+Seek out any doubts that may have arisen in the previous meeting and then try to bring back possible solutions for the problems in the next meeting. 
+
+**Start doing**
+
+At the beginning of each sprint, get organized in order to find as much time as we can to devote to the proyect.
+
+
+
+
+
+
+##### Our team conceptboard:
+
+
+![Conceptboard](/Inspirations_and_Wireframes/Starfish_Retrospective4.png)
+
+
