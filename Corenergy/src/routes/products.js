@@ -1,25 +1,27 @@
 const express = require("express");
 const router = express.Router();
 const path = require("path");
-const products = require("../controllers/products");
+const productsController = require("../controllers/products");
 const multer = require("multer");
 const storage = require("../middlewares/products_multer");
 const upload = multer({storage:storage});
 
-router.get("/create", products.showCreateTemplate);
+router.get("/create", productsController.showCreateTemplate);
 
-router.get("/cart" , products.cart);
+router.get("/cart" , productsController.cart);
 
-//router.get("/:category", products.category);
+router.get("/:id", productsController.byId);
 
-router.get("/:id", products.byId);
+router.get("/:id/edit", productsController.modify);
 
-router.get("/:id/edit", products.modify);
+router.get("/category/:nameCategory", productsController.category);
 
-router.post("/save",upload.array("productImage"[6]),products.save);
+router.post("/save",upload.array("productImage"[6]),productsController.save);
 
-router.put("/update/:id" ,upload.array("productImage"[6]),products.edit);
+router.post("/save-new-review",productsController.newReview)
 
-router.delete ("/delete/:id",products.delete);
+router.put("/update/:id" ,upload.array("productImage"[6]),productsController.edit);
+
+router.delete ("/delete/:id",productsController.delete);
 
 module.exports = router;

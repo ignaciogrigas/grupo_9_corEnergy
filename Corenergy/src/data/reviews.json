@@ -1,0 +1,13 @@
+[
+  {
+    "id": 1,
+    "idProduct": 2,
+    "titleReview": "Very good",
+    "comments": "laalllalalalla",
+    "stars": [
+      "star1",
+      "star2",
+      "star3"
+    ]
+  }
+]

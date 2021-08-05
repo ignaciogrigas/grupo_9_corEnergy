@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const path = require("path");
-const products = require("../data/products.json")
+const productsData = require("../data/products.json")
 const productsModel = require ("../models/products")
 module.exports = {
     byId:(req,res)=> res.render("./products/product_detail",{
@@ -9,13 +9,14 @@ module.exports = {
         title:req.params.id,
         singleProduct:productsModel.oneWithExtra(req.params.id),
         listOfProducts: [],
-        listOfReviews: productsModel.getProductReviews(req.params.id)
+        listOfReviews: productsModel.getProductReviews(req.params.id),
+        idProduct:req.params.id
     }),
     category:(req,res)=> res.render("./products/all_products",{
         style:"/css/all_products.css",
-        title:productsModel.title(req.params.category),
-        listOfProducts:productsModel.byCategory(req.params.category),
-        listOfSubCategories:productsModel.allSubcategories(req.params.category)
+        title:productsModel.titleArrange(req.params.nameCategory),
+        listOfProducts:productsModel.byCategory(req.params.nameCategory),
+        listOfSubCategories:productsModel.allSubcategories(req.params.nameCategory)
     }),
 
     showCreateTemplate:(req,res)=> {
@@ -61,6 +62,11 @@ module.exports = {
     delete:(req,res)=>{
         let result = productsModel.delete(req.params.id);
         return result == true ? res.redirect("/") : res.send("Error 404") // mandar a 404
+    },
+
+    newReview:(req,res)=> {
+        let newReview = productsModel.newReview(req.body);
+        return newReview == true ? res.redirect("back") : " "
     },
 
     cart:(req,res)=> res.render("./products/shopping_cart")

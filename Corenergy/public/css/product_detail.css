@@ -11,14 +11,14 @@ body{
     justify-content:space-between;
     padding:8vw;
 }
-#images{
+#product_images{
     display: flex;
     flex-flow: column wrap;
     align-items: center;
     justify-content: center;
 }
 #central_img{
-    width:80vw;
+    width:100%;
 }
 #central_img img{
     width: 100%;
@@ -29,10 +29,11 @@ body{
     width: 80vw;
     align-items: center;
     justify-content: space-around;
-    padding-bottom: 10vw;
+    padding-top:4vw;
+    padding-bottom: 10vw ;
 }
 #other_img figure{
-    width:15vw
+    width:10vw
 }
 #other_img img{
     width: 100%;
@@ -89,7 +90,8 @@ body{
     align-items:baseline;
     justify-content: space-between;
 }
-#purchase button{
+#purchase button,
+#delete_form button{
     width:50%;
     height: 100%;
     background-color:#69E4B9;
@@ -99,6 +101,12 @@ body{
     padding:0.25rem;
     border: none;
     border-radius: 1.25rem;
+}
+#delete_form {
+    width:100%
+}
+#delete_form button{
+    width:100%
 }
 .reviews_title{
     color:black;
@@ -246,25 +254,30 @@ main form button{
     #product{
         flex-flow: row wrap;
         justify-content: space-around;
+        padding: 2vw;
     }
-    #images{
+    #product article {
+        width:45%
+    }
+    #product_images{
+        display:block;
+        margin:auto;
         position: relative;
     }
-    #central_img{
-        max-width:50vw;
-    }
     #central_img img{
-        width: 100%;
+        position: relative;
+        top: 0;
+        left: 0;
     }
     #other_img{
-        position:absolute;
         bottom:1.5vw;
         display: flex;
         flex-flow:row wrap;
-        width: 50vw;
+        width: 100%;
         align-items: center;
         justify-content: center;
         padding-bottom: 0;
+        position: absolute;
     }
     #other_img figure{
         width:5vw;
@@ -272,6 +285,12 @@ main form button{
     }
     #other_img img{
         width: 100%;
+    }
+    #other_img li{
+        opacity:0.7
+    }
+    #other_img li :hover{
+        cursor:pointer
     }
     .products article{
         width: 24vw;

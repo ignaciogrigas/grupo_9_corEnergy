@@ -57,11 +57,11 @@ const subCategoryWeights = require ("./sub_category_weights");
     },
 
     oneWithExtra:function(id){
-        const products = this.allWithExtra()
+        const allProductsWithExtra = this.allWithExtra()
 
-        const product = products.find(element => element.id == id)
+        const productWithExtra = allProductsWithExtra.find(element => element.id == id)
 
-        return product
+        return productWithExtra
     },
 
     allSubcategories:function(cat){
@@ -79,11 +79,11 @@ const subCategoryWeights = require ("./sub_category_weights");
         return all.filter(element => element.category == cat)
     }, //no nos lee category
 
-    title: function(category){
+    titleArrange: function(category){
         if(category != "elastic-bands"){
             return category.charAt(0).toUpperCase() + category.slice(1) 
         } else {
-            return category.charAt(0).toUpperCase()+ category.slice(1,6) + " " + category.charAt(8).toUpperCase()+ category.slice(8,12)
+            return category.charAt(0).toUpperCase()+ category.slice(1,7) + " " + category.charAt(8).toUpperCase()+ category.slice(9,13)
         }
     },//va aca o en el html?
 
@@ -138,5 +138,26 @@ const subCategoryWeights = require ("./sub_category_weights");
         all = all.filter(product => product.id != deleted.id );
         fs.writeFileSync(directory,JSON.stringify(all,null,2));
         return true
+    },
+
+    directoryReviews: path.resolve(__dirname,"../data/reviews.json"),
+
+    allReviews:function(){
+        const file= fs.readFileSync(this.directoryReviews,"utf-8")
+        return JSON.parse(file)
+    },
+
+    newReview:function(data){
+        let allReviews = this.allReviews();
+        let newReview = {
+            id: allReviews.length > 0 ? allReviews[allReviews.length-1].id + 1 : 1 ,
+            idProduct:parseInt(data.idProduct),
+            titleReview : data.newReviewTitle,
+            comments: data.comments,
+            stars:[]
+        };
+        allReviews.push(newReview);
+        fs.writeFileSync(this.directoryReviews,JSON.stringify(allReviews,null,2));
+        return true;
     }
  }

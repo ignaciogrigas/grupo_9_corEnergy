@@ -3,73 +3,73 @@
 <%-include("../includes/header")%>
     <main>
     <section id="product">
-     <article id="images">
-         <figure id="central_img">
-             <img src="<%= singleProduct.images[0]%>" >
-         </figure>
-             <ul id="other_img">
-                <% for (let i = 1 ; i<singleProduct.images.lenght ;i++){%>
-                    <li>
-                    <figure>
-                        <img src="<%= singleProduct.images[i]%>">
-                    </figure>
-                 </li>
-                <%}%>
-             </ul>
-     </article>
-     <article>
-        <h3><%= singleProduct.name%></h3>
-        <p id="code"><%= singleProduct.code%></p>
-        <% if (singleProduct.category !="bars") {%> 
-            <section>
-            <h5>
-                <% if (singleProduct.category == "weights"){%>
-                Weight 
-                <% } else { %>
-                Color
-                <%}%>
-            </h5>
-            <form>
-                <ul>
-                    <% for ( let i = 0 ; i<singleProduct.subCategory.lenght;i++){%>
+        <article id="product_images">
+            <figure id="central_img">
+                <img src="/images/uploads/products/<%= singleProduct.images[0]%>" alt="">
+            </figure>
+                <ul id="other_img">
+                    <% for (let i = 1 ; i<singleProduct.images.length ;i++){%>
                         <li>
-                            <label for="<%= singleProduct.subCategory[i]%>"><%= singleProduct.subCategory[i]%></label>
-                            <input type="radio" name="choice" id="<%= singleProduct.subCategory[i]%>" value="<%= singleProduct.subCategory[i]%>">
-                        </li>
+                        <figure>
+                            <img src="/images/uploads/products/<%= singleProduct.images[i]%>">
+                        </figure>
+                    </li>
                     <%}%>
                 </ul>
-            </form>
-        </section>
-        <%}%>
-        <p><%= singleProduct.description%></p>
-        <section id="purchase">
-            <h5><%= singleProduct.price%></h5>
-            <button type="submit">Buy</button> <a><button type="submit">Edit</button></a>
-            <form action="/products/delete?_method=DELETE" method=POST>
-                <button type="submit">Delete</button>
-            </form>
-        </section>
-     </article>   
+        </article>
+        <article>
+            <h3><%= singleProduct.name%></h3>
+            <p id="code"><%= singleProduct.code%></p>
+            <% if (singleProduct.category !="bars") {%> 
+                <section>
+                <h5>
+                    <% if (singleProduct.category == "weights"){%>
+                    Weight 
+                    <% } else { %>
+                    Color
+                    <%}%>
+                </h5>
+                <form>
+                    <ul>
+                        <% for ( let i = 0 ; i<singleProduct.subCategory.lenght;i++){%>
+                            <li>
+                                <label for="<%= singleProduct.subCategory[i]%>"><%= singleProduct.subCategory[i]%></label>
+                                <input type="radio" name="choice" id="<%= singleProduct.subCategory[i]%>" value="<%= singleProduct.subCategory[i]%>">
+                            </li>
+                        <%}%>
+                    </ul>
+                </form>
+            </section>
+            <%}%>
+            <p><%= singleProduct.description%></p>
+            <section id="purchase">
+                <h5><%= singleProduct.price%></h5>
+                <button type="submit">Buy</button> <!--<a><button type="submit">Edit</button></a>--> <!-- ver si es admin o no!!-->
+                <form id="delete_form" action="/products/delete?_method=DELETE" method=POST>
+                    <button type="submit">Delete</button> <!-- ver si es admin o no!!-->
+                </form>
+            </section>
+        </article>   
     </section>
     <h3 class="reviews_title">Reviews</h3>
     <section id="reviews">
         <%-include("../includes/reviews")%>
         <article id="add">
             <h3 class="reviews_title">Add Review +</h3>
-            <form action="" method="POST">
-                <h5><label for="new_review_title"></label>Title</label></h5>
-                <input type="text" name="new_review_title" id="new_review_title">
-
+            <form action="/products/save-new-review" method="POST">
+                <input hidden type="number" name="idProduct" id="idProduct" value="<%= idProduct%>">
+                <h5><label for="newReviewTitle"></label>Title</label></h5>
+                <input type="text" name="newReviewTitle" id="newReviewTitle">
                 <ul>
                     <% for (let i =1 ; i<6 ;i++){%>
                         <label for="star<%= i%>">
                         <i class="far fa-star"></i>
                     </label>
-                    <input type="checkbox" name="star<%= i%>" id="star<%= i%>" value="star<%= i%>">
+                    <input type="checkbox" name="star" id="star<%= i%>" value="star<%= i%>">
                     <%}%>
                 </ul>
                 <h5><label for="comments"></label>Comments</label></h5>
-                <textarea></textarea>
+                <textarea type="text"  name="comments" id="comments"></textarea>
                 <button type="submit">Submit your answer</button>
             </form>
         </article>
