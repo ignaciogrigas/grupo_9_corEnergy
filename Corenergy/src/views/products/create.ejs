@@ -3,7 +3,7 @@
     <%- include("../includes/header")%>
     <main>
         <h1><%= locals.product? "Edit Product" : "Add Product" %></h1>
-        <form action=<%=locals.product ? "/products/update?_method=PUT" : "/products/save" %> method="POST" enctype="multipart/form-data">
+        <form action=<%=locals.product ? `/products/update/${product.id}?_method=PUT` : "/products/save" %> method="POST" enctype="multipart/form-data">
             <section id="profile_img">
                     <label for="productImages">
                         <img src="../images/profile.jpg" alt="Product Images">
@@ -92,7 +92,7 @@
                     </li>
                 </ul>
                 <label for="price">Price</label>
-                <input required type="number" name="price" id="price">
+                <input required type="number" name="price" id="price"  value="<%= locals.product ? product.price : '' %>">
                 <button class="button" type="submit">Add</button>
             </section>
         </form>

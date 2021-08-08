@@ -124,7 +124,9 @@ const subCategoryWeights = require ("./sub_category_weights");
                     element.filename
                 }),
                 product.price=data.price
+                return product
             }
+            return product
         })
         fs.writeFileSync(this.directory,JSON.stringify(all,null,2));
         return true;

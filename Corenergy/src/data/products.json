@@ -16,7 +16,7 @@
       "product_1b.jpg",
       "product_1c.jpg"
     ],
-    "price": "$154.18"
+    "price": 154.18
   },
   {
     "id": 2,
@@ -35,7 +35,7 @@
       "product_2.jpg",
       "product_2.jpg"
     ],
-    "price": "$271.49"
+    "price": "271.49"
   },
   {
     "id": 3,
@@ -55,7 +55,7 @@
       "product_3.jpg",
       "product_3.jpg"
     ],
-    "price": "$18.92"
+    "price": "18.92"
   },
   {
     "id": 4,
@@ -70,7 +70,7 @@
       "product_4.jpg",
       "product_4.jpg"
     ],
-    "price": "$160.51"
+    "price": "160.51"
   },
   {
     "id": 5,
@@ -86,7 +86,7 @@
       "product_5.jpg",
       "product_5.jpg"
     ],
-    "price": "$20.13"
+    "price": "20.13"
   },
   {
     "id": 6,
@@ -105,7 +105,7 @@
       "product_6.jpg",
       "product_6.jpg"
     ],
-    "price": "$485.80"
+    "price": "485.80"
   },
   {
     "id": 7,
@@ -123,7 +123,7 @@
       "product_7.jpg",
       "product_7.jpg"
     ],
-    "price": "$240.66"
+    "price": "240.66"
   },
   {
     "id": 8,
@@ -141,7 +141,7 @@
       "product_8.jpg",
       "product_8.jpg"
     ],
-    "price": "$306.45"
+    "price": "306.45"
   },
   {
     "id": 9,
@@ -159,7 +159,7 @@
       "product_9.jpg",
       "product_9.jpg"
     ],
-    "price": "$368.59"
+    "price": "368.59"
   },
   {
     "id": 10,
@@ -181,7 +181,7 @@
       "product_10.jpg",
       "product_10.jpg"
     ],
-    "price": "$388.93"
+    "price": "388.93"
   },
   {
     "id": 11,
@@ -203,7 +203,7 @@
       "product_11.jpg",
       "product_11.jpg"
     ],
-    "price": "$105.56"
+    "price": "105.56"
   },
   {
     "id": 12,
@@ -225,7 +225,7 @@
       "product_12.jpg",
       "product_12.jpg"
     ],
-    "price": "$250.74"
+    "price": "250.74"
   },
   {
     "id": 13,
@@ -246,7 +246,7 @@
       "product_13.jpg",
       "product_13.jpg"
     ],
-    "price": "$458.27"
+    "price": "458.27"
   },
   {
     "id": 14,
@@ -267,7 +267,7 @@
       "product_14.jpg",
       "product_14.jpg"
     ],
-    "price": "$367.71"
+    "price": "367.71"
   },
   {
     "id": 15,
@@ -285,7 +285,7 @@
       "product_15.jpg",
       "product_15.jpg"
     ],
-    "price": "$154.56"
+    "price": "154.56"
   },
   {
     "id": 16,
@@ -302,7 +302,7 @@
       "product_16.jpg",
       "product_16.jpg"
     ],
-    "price": "$348.75"
+    "price": "348.75"
   },
   {
     "id": 17,
@@ -321,7 +321,7 @@
       "product_17.jpg",
       "product_17.jpg"
     ],
-    "price": "$88.50"
+    "price": "88.50"
   },
   {
     "id": 18,
@@ -339,7 +339,7 @@
       "product_18.jpg",
       "product_18.jpg"
     ],
-    "price": "$437.44"
+    "price": "437.44"
   },
   {
     "id": 19,
@@ -359,7 +359,7 @@
       "product_19.jpg",
       "product_19.jpg"
     ],
-    "price": "$90.42"
+    "price": "90.42"
   },
   {
     "id": 20,
@@ -376,7 +376,7 @@
       "product_20.jpg",
       "product_20.jpg"
     ],
-    "price": "$474.61"
+    "price": "474.61"
   },
   {
     "id": 21,
@@ -395,7 +395,7 @@
       "product_21.jpg",
       "product_21.jpg"
     ],
-    "price": "$266.51"
+    "price": "266.51"
   },
   {
     "id": 22,
@@ -416,7 +416,7 @@
       "product_22.jpg",
       "product_22.jpg"
     ],
-    "price": "$73.66"
+    "price": "73.66"
   },
   {
     "id": 23,
@@ -437,7 +437,7 @@
       "product_23.jpg",
       "product_23.jpg"
     ],
-    "price": "$158.78"
+    "price": "158.78"
   },
   {
     "id": 24,
@@ -456,7 +456,7 @@
       "product_24.jpg",
       "product_24.jpg"
     ],
-    "price": "$257.85"
+    "price": "257.85"
   },
   {
     "id": 25,
@@ -475,7 +475,7 @@
       "product_25.jpg",
       "product_25.jpg"
     ],
-    "price": "$154.96"
+    "price": "154.96"
   },
   {
     "id": 26,
@@ -496,7 +496,7 @@
       "product_26.jpg",
       "product_26.jpg"
     ],
-    "price": "$453.93"
+    "price": "453.93"
   },
   {
     "id": 27,
@@ -513,7 +513,7 @@
       "product_27.jpg",
       "product_27.jpg"
     ],
-    "price": "$165.87"
+    "price": "165.87"
   },
   {
     "id": 28,
@@ -534,7 +534,7 @@
       "product_28.jpg",
       "product_28.jpg"
     ],
-    "price": "$441.65"
+    "price": "441.65"
   },
   {
     "id": 29,
@@ -554,7 +554,7 @@
       "product_29.jpg",
       "product_29.jpg"
     ],
-    "price": "$269.03"
+    "price": "269.03"
   },
   {
     "id": 30,
@@ -572,7 +572,7 @@
       "product_30.jpg",
       "product_30.jpg"
     ],
-    "price": "$220.86"
+    "price": "220.86"
   },
   {
     "id": 31,
@@ -592,7 +592,7 @@
       "product_31.jpg",
       "product_31.jpg"
     ],
-    "price": "$17.85"
+    "price": "17.85"
   },
   {
     "id": 32,
@@ -615,7 +615,7 @@
       "product_32.jpg",
       "product_32.jpg"
     ],
-    "price": "$337.34"
+    "price": "337.34"
   },
   {
     "id": 33,
@@ -635,7 +635,7 @@
       "product_33.jpg",
       "product_33.jpg"
     ],
-    "price": "$383.90"
+    "price": "383.90"
   },
   {
     "id": 34,
@@ -653,7 +653,7 @@
       "product_34.jpg",
       "product_34.jpg"
     ],
-    "price": "$44.64"
+    "price": "44.64"
   },
   {
     "id": 35,
@@ -676,7 +676,7 @@
       "product_35.jpg",
       "product_35.jpg"
     ],
-    "price": "$15.82"
+    "price": "15.82"
   },
   {
     "id": 36,
@@ -691,7 +691,7 @@
       "product_36.jpg",
       "product_36.jpg"
     ],
-    "price": "$90.55"
+    "price": "90.55"
   },
   {
     "id": 37,
@@ -710,7 +710,7 @@
       "product_37.jpg",
       "product_37.jpg"
     ],
-    "price": "$467.39"
+    "price": "467.39"
   },
   {
     "id": 38,
@@ -731,7 +731,7 @@
       "product_38.jpg",
       "product_38.jpg"
     ],
-    "price": "$80.31"
+    "price": "80.31"
   },
   {
     "id": 39,
@@ -753,7 +753,7 @@
       "product_39.jpg",
       "product_39.jpg"
     ],
-    "price": "$116.04"
+    "price": "116.04"
   },
   {
     "id": 40,
@@ -772,7 +772,7 @@
       "product_40.jpg",
       "product_40.jpg"
     ],
-    "price": "$34.11"
+    "price": "34.11"
   },
   {
     "id": 41,
@@ -791,7 +791,7 @@
       "product_41.jpg",
       "product_41.jpg"
     ],
-    "price": "$48.81"
+    "price": "48.81"
   },
   {
     "id": 42,
@@ -806,7 +806,7 @@
       "product_42.jpg",
       "product_42.jpg"
     ],
-    "price": "$56.44"
+    "price": "56.44"
   },
   {
     "id": 43,
@@ -825,7 +825,7 @@
       "product_43.jpg",
       "product_43.jpg"
     ],
-    "price": "$334.97"
+    "price": "334.97"
   },
   {
     "id": 44,
@@ -843,7 +843,7 @@
       "product_44.jpg",
       "product_44.jpg"
     ],
-    "price": "$423.31"
+    "price": "423.31"
   },
   {
     "id": 45,
@@ -859,7 +859,7 @@
       "product_45.jpg",
       "product_45.jpg"
     ],
-    "price": "$428.59"
+    "price": "428.59"
   },
   {
     "id": 46,
@@ -876,7 +876,7 @@
       "product_46.jpg",
       "product_46.jpg"
     ],
-    "price": "$10.79"
+    "price": "10.79"
   },
   {
     "id": 47,
@@ -895,7 +895,7 @@
       "product_47.jpg",
       "product_47.jpg"
     ],
-    "price": "$21.47"
+    "price": "21.47"
   },
   {
     "id": 48,
@@ -916,7 +916,7 @@
       "product_48.jpg",
       "product_48.jpg"
     ],
-    "price": "$65.42"
+    "price": "65.42"
   },
   {
     "id": 49,
@@ -934,7 +934,7 @@
       "product_49.jpg",
       "product_49.jpg"
     ],
-    "price": "$191.03"
+    "price": "191.03"
   },
   {
     "id": 50,
@@ -957,7 +957,7 @@
       "product_50.jpg",
       "product_50.jpg"
     ],
-    "price": "$127.95"
+    "price": "127.95"
   },
   {
     "id": 51,
@@ -976,7 +976,7 @@
       "product_51.jpg",
       "product_51.jpg"
     ],
-    "price": "$230.44"
+    "price": "230.44"
   },
   {
     "id": 52,
@@ -991,7 +991,7 @@
       "product_52.jpg",
       "product_52.jpg"
     ],
-    "price": "$302.87"
+    "price": "302.87"
   },
   {
     "id": 53,
@@ -1012,7 +1012,7 @@
       "product_53.jpg",
       "product_53.jpg"
     ],
-    "price": "$428.45"
+    "price": "428.45"
   },
   {
     "id": 54,
@@ -1028,7 +1028,7 @@
       "product_54.jpg",
       "product_54.jpg"
     ],
-    "price": "$76.28"
+    "price": "76.28"
   },
   {
     "id": 55,
@@ -1049,7 +1049,7 @@
       "product_55.jpg",
       "product_55.jpg"
     ],
-    "price": "$165.69"
+    "price": "165.69"
   },
   {
     "id": 56,
@@ -1070,7 +1070,7 @@
       "product_56.jpg",
       "product_56.jpg"
     ],
-    "price": "$103.07"
+    "price": "103.07"
   },
   {
     "id": 57,
@@ -1088,7 +1088,7 @@
       "product_57.jpg",
       "product_57.jpg"
     ],
-    "price": "$44.80"
+    "price": "44.80"
   },
   {
     "id": 58,
@@ -1106,7 +1106,7 @@
       "product_58.jpg",
       "product_58.jpg"
     ],
-    "price": "$320.98"
+    "price": "320.98"
   },
   {
     "id": 59,
@@ -1125,7 +1125,7 @@
       "product_59.jpg",
       "product_59.jpg"
     ],
-    "price": "$369.26"
+    "price": "369.26"
   },
   {
     "id": 60,
@@ -1143,7 +1143,7 @@
       "product_60.jpg",
       "product_60.jpg"
     ],
-    "price": "$309.09"
+    "price": "309.09"
   },
   {
     "id": 61,
@@ -1160,7 +1160,7 @@
       "product_61.jpg",
       "product_61.jpg"
     ],
-    "price": "$363.62"
+    "price": "363.62"
   },
   {
     "id": 62,
@@ -1176,7 +1176,7 @@
       "product_62.jpg",
       "product_62.jpg"
     ],
-    "price": "$192.52"
+    "price": "192.52"
   },
   {
     "id": 63,
@@ -1197,7 +1197,7 @@
       "product_63.jpg",
       "product_63.jpg"
     ],
-    "price": "$320.72"
+    "price": "320.72"
   },
   {
     "id": 64,
@@ -1218,7 +1218,7 @@
       "product_64.jpg",
       "product_64.jpg"
     ],
-    "price": "$310.66"
+    "price": "310.66"
   },
   {
     "id": 65,
@@ -1238,7 +1238,7 @@
       "product_65.jpg",
       "product_65.jpg"
     ],
-    "price": "$200.59"
+    "price": "200.59"
   },
   {
     "id": 66,
@@ -1260,7 +1260,7 @@
       "product_66.jpg",
       "product_66.jpg"
     ],
-    "price": "$160.46"
+    "price": "160.46"
   },
   {
     "id": 67,
@@ -1281,7 +1281,7 @@
       "product_67.jpg",
       "product_67.jpg"
     ],
-    "price": "$448.11"
+    "price": "448.11"
   },
   {
     "id": 68,
@@ -1302,7 +1302,7 @@
       "product_68.jpg",
       "product_68.jpg"
     ],
-    "price": "$242.11"
+    "price": "242.11"
   },
   {
     "id": 69,
@@ -1321,7 +1321,7 @@
       "product_69.jpg",
       "product_69.jpg"
     ],
-    "price": "$209.50"
+    "price": "209.50"
   },
   {
     "id": 70,
@@ -1337,7 +1337,7 @@
       "product_70.jpg",
       "product_70.jpg"
     ],
-    "price": "$81.57"
+    "price": "81.57"
   },
   {
     "id": 71,
@@ -1356,7 +1356,7 @@
       "product_71.jpg",
       "product_71.jpg"
     ],
-    "price": "$46.00"
+    "price": "46.00"
   },
   {
     "id": 72,
@@ -1376,7 +1376,7 @@
       "product_72.jpg",
       "product_72.jpg"
     ],
-    "price": "$456.85"
+    "price": "456.85"
   },
   {
     "id": 73,
@@ -1396,7 +1396,7 @@
       "product_73.jpg",
       "product_73.jpg"
     ],
-    "price": "$85.13"
+    "price": "85.13"
   },
   {
     "id": 74,
@@ -1417,7 +1417,7 @@
       "product_74.jpg",
       "product_74.jpg"
     ],
-    "price": "$446.26"
+    "price": "446.26"
   },
   {
     "id": 75,
@@ -1437,7 +1437,7 @@
       "product_75.jpg",
       "product_75.jpg"
     ],
-    "price": "$449.65"
+    "price": "449.65"
   },
   {
     "id": 76,
@@ -1457,7 +1457,7 @@
       "product_76.jpg",
       "product_76.jpg"
     ],
-    "price": "$301.61"
+    "price": "301.61"
   },
   {
     "id": 77,
@@ -1476,7 +1476,7 @@
       "product_77.jpg",
       "product_77.jpg"
     ],
-    "price": "$187.06"
+    "price": "187.06"
   },
   {
     "id": 78,
@@ -1493,7 +1493,7 @@
       "product_78.jpg",
       "product_78.jpg"
     ],
-    "price": "$118.64"
+    "price": "118.64"
   },
   {
     "id": 79,
@@ -1508,7 +1508,7 @@
       "product_79.jpg",
       "product_79.jpg"
     ],
-    "price": "$370.27"
+    "price": "370.27"
   },
   {
     "id": 80,
@@ -1525,7 +1525,7 @@
       "product_80.jpg",
       "product_80.jpg"
     ],
-    "price": "$338.07"
+    "price": "338.07"
   },
   {
     "id": 81,
@@ -1545,7 +1545,7 @@
       "product_81.jpg",
       "product_81.jpg"
     ],
-    "price": "$456.83"
+    "price": "456.83"
   },
   {
     "id": 82,
@@ -1561,7 +1561,7 @@
       "product_82.jpg",
       "product_82.jpg"
     ],
-    "price": "$183.25"
+    "price": "183.25"
   },
   {
     "id": 83,
@@ -1580,7 +1580,7 @@
       "product_83.jpg",
       "product_83.jpg"
     ],
-    "price": "$202.92"
+    "price": "202.92"
   },
   {
     "id": 84,
@@ -1598,7 +1598,7 @@
       "product_84.jpg",
       "product_84.jpg"
     ],
-    "price": "$52.57"
+    "price": "52.57"
   },
   {
     "id": 85,
@@ -1618,7 +1618,7 @@
       "product_85.jpg",
       "product_85.jpg"
     ],
-    "price": "$59.56"
+    "price": "59.56"
   },
   {
     "id": 86,
@@ -1638,7 +1638,7 @@
       "product_86.jpg",
       "product_86.jpg"
     ],
-    "price": "$33.30"
+    "price": "33.30"
   },
   {
     "id": 87,
@@ -1656,7 +1656,7 @@
       "product_87.jpg",
       "product_87.jpg"
     ],
-    "price": "$244.76"
+    "price": "244.76"
   },
   {
     "id": 88,
@@ -1675,7 +1675,7 @@
       "product_88.jpg",
       "product_88.jpg"
     ],
-    "price": "$242.69"
+    "price": "242.69"
   },
   {
     "id": 89,
@@ -1693,7 +1693,7 @@
       "product_89.jpg",
       "product_89.jpg"
     ],
-    "price": "$21.87"
+    "price": "21.87"
   },
   {
     "id": 90,
@@ -1709,7 +1709,7 @@
       "product_90.jpg",
       "product_90.jpg"
     ],
-    "price": "$421.94"
+    "price": "421.94"
   },
   {
     "id": 91,
@@ -1725,7 +1725,7 @@
       "product_91.jpg",
       "product_91.jpg"
     ],
-    "price": "$170.13"
+    "price": "170.13"
   },
   {
     "id": 92,
@@ -1747,7 +1747,7 @@
       "product_92.jpg",
       "product_92.jpg"
     ],
-    "price": "$80.32"
+    "price": "80.32"
   },
   {
     "id": 93,
@@ -1770,7 +1770,7 @@
       "product_93.jpg",
       "product_93.jpg"
     ],
-    "price": "$230.18"
+    "price": "230.18"
   },
   {
     "id": 94,
@@ -1789,7 +1789,7 @@
       "product_94.jpg",
       "product_94.jpg"
     ],
-    "price": "$319.98"
+    "price": "319.98"
   },
   {
     "id": 95,
@@ -1811,7 +1811,7 @@
       "product_95.jpg",
       "product_95.jpg"
     ],
-    "price": "$31.51"
+    "price": "31.51"
   },
   {
     "id": 96,
@@ -1832,7 +1832,7 @@
       "product_96.jpg",
       "product_96.jpg"
     ],
-    "price": "$467.56"
+    "price": "467.56"
   },
   {
     "id": 97,
@@ -1851,7 +1851,7 @@
       "product_97.jpg",
       "product_97.jpg"
     ],
-    "price": "$413.38"
+    "price": "413.38"
   },
   {
     "id": 98,
@@ -1872,7 +1872,7 @@
       "product_98.jpg",
       "product_98.jpg"
     ],
-    "price": "$468.70"
+    "price": "468.70"
   },
   {
     "id": 99,
@@ -1892,7 +1892,7 @@
       "product_99.jpg",
       "product_99.jpg"
     ],
-    "price": "$224.53"
+    "price": "224.53"
   },
   {
     "id": 100,
@@ -1910,7 +1910,7 @@
       "product_100.jpg",
       "product_100.jpg"
     ],
-    "price": "$467.57"
+    "price": "467.57"
   },
   {
     "id": 101,
@@ -1925,7 +1925,7 @@
       "product_101.jpg",
       "product_101.jpg"
     ],
-    "price": "$39.19"
+    "price": "39.19"
   },
   {
     "id": 102,
@@ -1944,7 +1944,7 @@
       "product_102.jpg",
       "product_102.jpg"
     ],
-    "price": "$340.09"
+    "price": "340.09"
   },
   {
     "id": 103,
@@ -1963,7 +1963,7 @@
       "product_103.jpg",
       "product_103.jpg"
     ],
-    "price": "$17.46"
+    "price": "17.46"
   },
   {
     "id": 104,
@@ -1981,7 +1981,7 @@
       "product_104.jpg",
       "product_104.jpg"
     ],
-    "price": "$215.26"
+    "price": "215.26"
   },
   {
     "id": 105,
@@ -2001,7 +2001,7 @@
       "product_105.jpg",
       "product_105.jpg"
     ],
-    "price": "$314.60"
+    "price": "314.60"
   },
   {
     "id": 106,
@@ -2019,7 +2019,7 @@
       "product_106.jpg",
       "product_106.jpg"
     ],
-    "price": "$344.30"
+    "price": "344.30"
   },
   {
     "id": 107,
@@ -2041,7 +2041,7 @@
       "product_107.jpg",
       "product_107.jpg"
     ],
-    "price": "$183.59"
+    "price": "183.59"
   },
   {
     "id": 108,
@@ -2058,7 +2058,7 @@
       "product_108.jpg",
       "product_108.jpg"
     ],
-    "price": "$380.52"
+    "price": "380.52"
   },
   {
     "id": 109,
@@ -2076,7 +2076,7 @@
       "product_109.jpg",
       "product_109.jpg"
     ],
-    "price": "$222.01"
+    "price": "222.01"
   },
   {
     "id": 110,
@@ -2092,7 +2092,7 @@
       "product_110.jpg",
       "product_110.jpg"
     ],
-    "price": "$13.27"
+    "price": "13.27"
   },
   {
     "id": 111,
@@ -2112,7 +2112,7 @@
       "product_111.jpg",
       "product_111.jpg"
     ],
-    "price": "$258.06"
+    "price": "258.06"
   },
   {
     "id": 112,
@@ -2130,7 +2130,7 @@
       "product_112.jpg",
       "product_112.jpg"
     ],
-    "price": "$40.07"
+    "price": "40.07"
   },
   {
     "id": 113,
@@ -2152,7 +2152,7 @@
       "product_113.jpg",
       "product_113.jpg"
     ],
-    "price": "$442.01"
+    "price": "442.01"
   },
   {
     "id": 114,
@@ -2173,7 +2173,7 @@
       "product_114.jpg",
       "product_114.jpg"
     ],
-    "price": "$108.29"
+    "price": "108.29"
   },
   {
     "id": 115,
@@ -2189,7 +2189,7 @@
       "product_115.jpg",
       "product_115.jpg"
     ],
-    "price": "$456.19"
+    "price": "456.19"
   },
   {
     "id": 116,
@@ -2209,7 +2209,7 @@
       "product_116.jpg",
       "product_116.jpg"
     ],
-    "price": "$254.99"
+    "price": "254.99"
   },
   {
     "id": 117,
@@ -2228,7 +2228,7 @@
       "product_117.jpg",
       "product_117.jpg"
     ],
-    "price": "$427.11"
+    "price": "427.11"
   },
   {
     "id": 118,
@@ -2244,7 +2244,7 @@
       "product_118.jpg",
       "product_118.jpg"
     ],
-    "price": "$360.95"
+    "price": 360.95
   },
   {
     "id": 119,
@@ -2261,7 +2261,7 @@
       "product_119.jpg",
       "product_119.jpg"
     ],
-    "price": "$126.65"
+    "price": 126.65
   },
   {
     "id": 120,
@@ -2276,6 +2276,6 @@
       "product_120.jpg",
       "product_120.jpg"
     ],
-    "price": "$173.40"
+    "price": 173.40
   }
 ]

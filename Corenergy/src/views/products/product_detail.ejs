@@ -43,9 +43,9 @@
             <%}%>
             <p><%= singleProduct.description%></p>
             <section id="purchase">
-                <h5><%= singleProduct.price%></h5>
+                <h5>$ <%= singleProduct.price%></h5>
                 <button type="submit">Buy</button> <!--<a><button type="submit">Edit</button></a>--> <!-- ver si es admin o no!!-->
-                <form id="delete_form" action="/products/delete?_method=DELETE" method=POST>
+                <form id="delete_form" action="/products/delete?_method=DELETE" method=POST> <!--FALTA ID!!-->
                     <button type="submit">Delete</button> <!-- ver si es admin o no!!-->
                 </form>
             </section>

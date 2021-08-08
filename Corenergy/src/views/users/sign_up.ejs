@@ -3,16 +3,16 @@
     <%-include("../includes/header")%>
     <main>
         <h1>Create an Account</h1>
-        <form action="" method="POST">
+        <form action="/users/save" method="POST" enctype="multipart/form-data">
             <section id="profile_img">
-                    <label for="file">
-                            <img src="../images/profile.jpg" alt="Profile">
+                    <label for="profileImage">
+                            <img src="../images/profile.jpg" alt="Profile Image">
                     </label>
-                <input type="file" name="file" id="file">
+                <input type="file" name="profileImage" id="profileImage">
             </section>
             <section id="main_section">
                 <label for="name">Name<span>*</span></label>
-                <input required type="text" name="name" id="name">
+                <input required type="text" name="name" id="name" required>
                 
                 <label for="surname">Surname<span>*</span></label>
                 <input required type="text" name="surname" id="surname">        
@@ -20,8 +20,8 @@
                 <label for="email">E-mail<span>*</span></label>
                 <input required type="email" name="email" id="email">
                 
-                <label for="age">Birth Date<span>*</span></label>
-                <input required type="date" name="age" id="age">
+                <label for="birthDate">Birth Date<span>*</span></label>
+                <input required type="date" name="birthDate" id="birthDate">
                 
                 <label for="password">Password<span>*</span></label>
                 <input required type="password" name="password" id="password">

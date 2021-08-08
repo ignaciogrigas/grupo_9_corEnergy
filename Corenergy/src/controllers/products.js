@@ -37,10 +37,9 @@ module.exports = {
         //const id = req.params.id;
         //const productId = Number(id)
         const productToBeEdited = productsModel.oneWithExtra(req.params.id)
-        if (!productToBeEdited) {
+        //if (!productToBeEdited) {
               // mandar a 404
-        }
-
+        //}
         return res.render("./products/create",{
             title:"Add",
             style:"/css/create.css",
