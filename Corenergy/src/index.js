@@ -15,11 +15,12 @@ app.set("views",path.resolve(__dirname, "./views"))
 //public acces
 app.use(express.static(path.resolve(__dirname, "../public")))
 
-app.use(methodOverried("_method"));
+//app middlewares
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
-app.use(session({secret:"Corenergy",resave:true,saveUninitialized:true}));
+app.use(methodOverried("_method"));
 app.use(cookie());
+app.use(session({secret:"Corenergy",resave:false,saveUninitialized:true}));
 
 //rutas
 app.use(require("./routes/home"));

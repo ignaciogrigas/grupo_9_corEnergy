@@ -49,7 +49,7 @@ module.exports = {
 
     edit:(req,res)=>{
         const productToBeEdited = productsModel.oneWithExtra(req.params.id)
-        let result = productsModel.edit(req.body,req.file,req.params.id)
+        let result = productsModel.edit(req.body,req.files,req.params.id)
         return result == true ? res.redirect("/") : res.render("./products/create",{
             title:"Add",
             style:"/css/create.css",
