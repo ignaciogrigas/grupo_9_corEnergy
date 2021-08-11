@@ -14,7 +14,7 @@ const subCategoryWeights = require ("./sub_category_weights");
     },
 
     one:function(id){
-        return this.all().find(element => element == id)
+        return this.all().find(element => element.id == id)
     },
 
     getProductReviews: function(id) {
@@ -112,15 +112,16 @@ const subCategoryWeights = require ("./sub_category_weights");
     edit:function(data,files,id){
         let all= this.all();
         let updated = this.one(id)
-        let imagesToDelete = path.resolve(__dirname,"../../public/uploads/products",updated.images)
-        let exists= fs.existsSync(imagesToDelete) ? updated.images.forEach(image =>fs.unlinkSync(image)): "";
+        let imagesToDelete = false //path.resolve(__dirname,"../../public/uploads/products",updated.images)
+        let exists= fs.existsSync(imagesToDelete) ? updated.images.forEach(image =>fs.unlinkSync(image)): "";//que hace?
         all.map(product => {
             if(product.id == id){
                 product.name=data.productName,
                 product.code=data.productCode,
+                product.description= data.description
                 product.category=parseInt(data.category),
                 product.subCategroy=[data.subCategory], 
-                product.images=files.forEach(element => {
+                product.images=files.map(element => {
                     element.filename
                 }),
                 product.price=data.price
@@ -135,10 +136,10 @@ const subCategoryWeights = require ("./sub_category_weights");
     delete:function(id){
         let all= this.all();
         let deleted = this.one(id)
-        let imagesToDelete = path.resolve(__dirname,"../../public/uploads/products",deleted.images)
-        let exists= fs.existsSync(imagesToDelete) ? updated.images.forEach(image =>fs.unlinkSync(image)): "";
+        let imagesToDelete = false//path.resolve(__dirname,"../../public/uploads/products",deleted.images)
+        let exists= fs.existsSync(imagesToDelete) ? updated.images.forEach(image =>fs.unlinkSync(image)): "";//que hace?
         all = all.filter(product => product.id != deleted.id );
-        fs.writeFileSync(directory,JSON.stringify(all,null,2));
+        fs.writeFileSync(this.directory,JSON.stringify(all,null,2));
         return true
     },
 
