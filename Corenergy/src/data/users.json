@@ -1213,9 +1213,19 @@
     "name": "Ignacio",
     "surname": "Grigas",
     "birthDate": "1999-11-06",
-    "email": "nacho@corenergy",
+    "email": "nacho@corenergy.com",
     "category": "admin",
     "password": "$2b$10$K.UnL.vgaXUyIVdeTadJeOXA.0janStcgfnQ91JGW/6TpNBeKRTTG",
     "profileImage": "profileImage1628543482308.jpg"
+  },
+  {
+    "id": 123,
+    "name": "Luciano",
+    "surname": "Benedetti",
+    "birthDate": "1985-02-03",
+    "email": "lucho@gmail.com",
+    "category": "user",
+    "password": "$2b$10$7o6sfQjIXGiNVzIQk2Hx7OM4h6R29ivE4HWICRrrqGaVHk3.nxZjq",
+    "profileImage": "profileImage1628965558985.jpg"
   }
 ]

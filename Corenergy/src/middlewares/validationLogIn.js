@@ -1,15 +1,15 @@
-const { check } = require("express-validator");
+const { body } = require("express-validator");
 const bcrypt = require("bcrypt");
 const userModel = require("../models/users");
 module.exports = [
-  check("email").isEmail().custom(value => {
+  body("email").isEmail().custom(value => {
     let registered = userModel.findByEmail(value);
     if (!registered) {
       return Promise.reject('E-mail not found');
     }
     return true
   }),
-  check("password").custom((value, { req }) => {
+  body("password").custom((value, { req }) => {
 
     let registered = userModel.findByEmail(req.body.email);
 

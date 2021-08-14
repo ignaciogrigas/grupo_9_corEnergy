@@ -6,12 +6,23 @@
             <h1>Log in</h1>
             <form action="/users/access" method="POST"> 
                 <label for="email">Username or E-mail<span>*</span></label>
-                <input required type="email" name="email" id="email">           
+                <input required type="email" name="email" id="email"> 
+                <% if (locals.errors && errors.email) { %>
+                    <p class="error">
+                      <%= errors.email.msg %> 
+                    </p>
+                    <% } %>          
                 
                 <label for="password">Password<span>*</span></label>
                 <input required type="password" name="password" id="password">
-                
+                <% if (locals.errors && errors.password) { %>
+                    <p class="error">
+                      <%= errors.password.msg %> 
+                    </p>
+                  <% } %>
                 <h6 >Required fields*</h6>
+                <label for="remember">Remember me</label>
+                <input type="checkbox" name="remember" id="remember">
 
                 <button class="button" type="submit">Log in</button>
             </form>

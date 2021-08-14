@@ -38,12 +38,12 @@ module.exports={
               style:"/css/log_in.css"
              });
         }else{
-          let user = userModel.findByEmail(req.body.email);
+          let user = usersModel.findByEmail(req.body.email);
           if(req.body.remember){
-            res.cookie("email",req.body.email,{maxAge:300000})
+            res.cookie("user",req.body.email,{maxAge:300000})
           }
-          req.session.user = user;
-          return res.redirect("/")
+          req.session.user = user; 
+          return res.redirect("/")//,console.log(req.cookie.user) 
         }
-      },
+    }
 }

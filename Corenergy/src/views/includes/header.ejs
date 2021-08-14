@@ -29,9 +29,15 @@
                         </a>
                     </li>
                     <li class="log_in">
-                        <a href="log_in">
-                            <p>Log in</p>
-                        </a>
+                        <% if (locals.user){%>
+                            <a href="profile">
+                                <p><%=locals.user.name%></p>
+                            </a>
+                        <%}else{%>
+                            <a href="log_in">
+                                <p>Log in</p>
+                            </a>
+                        <%}%>
                     </li>
                     <li>
                         <i class="fas fa-bars"></i>

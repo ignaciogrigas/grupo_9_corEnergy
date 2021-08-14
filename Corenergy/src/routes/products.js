@@ -4,11 +4,12 @@ const path = require("path");
 const productsController = require("../controllers/products");
 const multer = require("multer");
 const storage = require("../middlewares/products_multer");
+const validationIsLogged = require("../middlewares/validationIsLogged");
 const upload = multer({storage:storage});
 
 router.get("/create", productsController.showCreateTemplate);
 
-router.get("/cart" , productsController.cart);
+router.get("/cart" ,validationIsLogged, productsController.cart);
 
 router.get("/:id", productsController.byId);
 

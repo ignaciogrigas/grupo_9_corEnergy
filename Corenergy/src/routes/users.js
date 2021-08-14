@@ -6,8 +6,9 @@ const usersController = require("../controllers/users")
 const storage = require("../middlewares/users_multer");
 const upload = multer({storage:storage});
 const validationLogIn = require("../middlewares/validationLogIn");
+const validationIsLogged = require("../middlewares/validationIsLogged");
 
-router.get("/profile", usersController.profile);
+router.get("/profile",validationIsLogged, usersController.profile);
 
 router.get("/log-in", usersController.logIn);
 

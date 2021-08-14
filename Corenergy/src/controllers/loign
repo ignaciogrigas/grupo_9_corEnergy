@@ -1,0 +1,17 @@
+const results = validationResult(req);
+        if (!results.isEmpty()) {
+          return res.render("./users/log_in",{ 
+              errors: results.errors.mapped(),
+              title:"Log In", 
+              old:req.body,
+              style:"/css/log_in.css"
+             });
+        }else{
+          let user = usersModel.findByEmail(req.body.email);
+          if(req.body.remember){
+            res.cookie("user",req.body.email,{maxAge:300000})
+            return console.log(res.cookie.user)
+          }
+          req.session.user = user;
+          return res.redirect("/") 
+        }
