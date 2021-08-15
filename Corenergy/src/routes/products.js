@@ -5,13 +5,14 @@ const productsController = require("../controllers/products");
 const multer = require("multer");
 const storage = require("../middlewares/products_multer");
 const validationIsLogged = require("../middlewares/validationIsLogged");
+const validationProduct = require("../middlewares/validationProduct");
 const upload = multer({storage:storage});
 
 router.get("/create", productsController.showCreateTemplate);
 
 router.get("/cart" ,validationIsLogged, productsController.cart);
 
-router.get("/:id", productsController.byId);
+router.get("/:id", validationProduct,productsController.byId);
 
 router.get("/edit/:id", productsController.modify);
 
@@ -24,5 +25,6 @@ router.post("/save-new-review",productsController.newReview)
 router.put("/update/:id" ,upload.array("productImage"[6]),productsController.edit);
 
 router.delete ("/delete/:id",productsController.delete);
+
 
 module.exports = router;
