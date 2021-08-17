@@ -99,7 +99,7 @@ const subCategoryWeights = require ("./sub_category_weights");
             code:data.productCode,
             category:parseInt(data.category),
             subCategroy:[data.subCategory],
-            images:files.forEach(element => {
+            images:files.map(element => {
                 element.filename
             }),
             price:data.price
@@ -112,8 +112,10 @@ const subCategoryWeights = require ("./sub_category_weights");
     edit:function(data,files,id){
         let all= this.all();
         let updated = this.one(id)
-        let imagesToDelete = false //path.resolve(__dirname,"../../public/uploads/products",updated.images)
-        let exists= fs.existsSync(imagesToDelete) ? updated.images.forEach(image =>fs.unlinkSync(image)): "";//que hace?
+        let imagesToDelete = updated.images.map(image=>path.resolve(__dirname,"../../public/images/uploads/products",image))
+        if(imagesToDelete.length>0){
+            imagesToDelete.forEach(image =>fs.existsSync(image) ? fs.unlinkSync(image): null)
+        }
         all.map(product => {
             if(product.id == id){
                 product.name=data.productName,
@@ -136,8 +138,10 @@ const subCategoryWeights = require ("./sub_category_weights");
     delete:function(id){
         let all= this.all();
         let deleted = this.one(id)
-        let imagesToDelete = false//path.resolve(__dirname,"../../public/uploads/products",deleted.images)
-        let exists= fs.existsSync(imagesToDelete) ? updated.images.forEach(image =>fs.unlinkSync(image)): "";//que hace?
+        let imagesToDelete = deleted.images.map(image=>path.resolve(__dirname,"../../public/images/uploads/products",image))
+        if(imagesToDelete.length>0){
+            imagesToDelete.forEach(image =>fs.existsSync(image) ? fs.unlinkSync(image): null)
+        }
         all = all.filter(product => product.id != deleted.id );
         fs.writeFileSync(this.directory,JSON.stringify(all,null,2));
         return true
