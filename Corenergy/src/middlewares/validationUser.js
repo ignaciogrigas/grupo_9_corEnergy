@@ -1,9 +1,9 @@
 const usersModel = require("../models/users")
 
 module.exports = function(req, res, next){
-    if(usersModel.findByEmail(req.body.id)){
+    if(usersModel.findByEmail(req.body.email)){
   return next();
     }else{
-       return res.send("Error 404")
+       return res.send("Not registered yet!")
     }
 }

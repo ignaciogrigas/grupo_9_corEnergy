@@ -12,7 +12,7 @@ router.get("/create", productsController.showCreateTemplate);
 
 router.get("/cart" ,validationIsLogged, productsController.cart);
 
-router.get("/:id", validationProduct,productsController.byId);
+router.get("/:id", validationProduct, productsController.byId);
 
 router.get("/edit/:id", productsController.modify);
 
