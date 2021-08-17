@@ -3,8 +3,8 @@
     <%-include("../includes/header")%>
     <main>
         <section id="main_section">
-            <h1>Name, Surname</h1>
-            <h4>E-mail: digital.house@gmail.com</h4>
+            <h1><%= locals.user ? user.name : '' %>,<%= locals.user ? user.surname : '' %></h1>
+            <h4><%= locals.user ? user.email : '' %></h4>
             <div class="add"><h4>Add shipping address</h4><h4>+</h4></div>
             <article>
                 <form class="mainform1" action="" method="POST"> 
@@ -77,11 +77,14 @@
                         <h6 >Required fields*</h6>
                         <button class="button" type="submit">Confirm</button>
                 </form>
+                <% if (locals.user && locals.user.category == "admin"){%>
+                    <a href="/products/create"><button class="button" type="submit">Create Product</button></a>
+                <%}%>
             </article>
         </section>
         <section id="profile_img">
         <figure>
-            <img src="./images/profile.jpg" alt="Profile">
+            <img src="/images/uploads/users/<%= locals.user ? user.profileImage : '' %>" alt="Profile">
         </figure>
         </section>
     </main>

@@ -3,10 +3,10 @@
     <% for (let i = 0 ; i < listOfProducts.length ; i++){%>
         <article>
             <figure>
-                <a href="product_detail.ejs"><img src="<%= listOfProducts[i].images[0]%>"></a>
+                <a href="/products/<%= listOfProducts[i].id%>"><img src="<%= listOfProducts[i].images[0]%>"></a>
             </figure>
             <section class="description">
-                <p><%= listOfProducts[i].name%></p>
+                <a href="/products/<%= listOfProducts[i].id%>"><p><%= listOfProducts[i].name%></p></a>
                 <p class="price"><%= listOfProducts[i].price%></p>
             </section>
         </article> 

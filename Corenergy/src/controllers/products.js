@@ -6,7 +6,7 @@ const productsModel = require ("../models/products")
 module.exports = {
     byId:(req,res)=> res.render("./products/product_detail",{
         style:"/css/product_detail.css",
-        title:req.params.id,
+        title:productsModel.oneWithExtra(req.params.id).name,
         singleProduct:productsModel.oneWithExtra(req.params.id),
         listOfProducts: [],
         listOfReviews: productsModel.getProductReviews(req.params.id),
@@ -27,7 +27,7 @@ module.exports = {
     },
     save:(req,res)=> {
         let newProduct = productsModel.new(req.body,req.files)
-        return newProduct == true ? res.redirect("/") : res.render("./products/create",{
+        return newProduct == true ? res.redirect("back") : res.render("./products/create",{
             title:"Add",
             style:"/css/create.css",
             errorMsg:"Try again,errors in your upload"
@@ -37,9 +37,9 @@ module.exports = {
         //const id = req.params.id;
         //const productId = Number(id)
         const productToBeEdited = productsModel.oneWithExtra(req.params.id)
-        //if (!productToBeEdited) {
-              // mandar a 404
-        //}
+        if (!productToBeEdited) {
+            res.render("error_404")
+        }
         return res.render("./products/create",{
             title:"Add",
             style:"/css/create.css",
@@ -60,7 +60,7 @@ module.exports = {
 
     delete:(req,res)=>{
         let result = productsModel.delete(req.params.id);
-        return result == true ? res.redirect("/") : res.send("Error 404") // mandar a 404
+        return result == true ? res.redirect("/") : res.render("error_404")
     },
 
     newReview:(req,res)=> {

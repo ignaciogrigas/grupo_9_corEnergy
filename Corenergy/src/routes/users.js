@@ -14,6 +14,8 @@ router.get("/log-in", usersController.logIn);
 
 router.get("/sign-up", usersController.signUp);
 
+router.get("/log-out", usersController.logOut);
+
 router.post("/save",upload.single("profileImage"),usersController.create)
 
 router.post("/access",validationLogIn,usersController.access)

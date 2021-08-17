@@ -45,5 +45,11 @@ module.exports={
           req.session.user = user; 
           return res.redirect("/")//,console.log(req.cookie.user) 
         }
+    },
+
+    logOut:(req,res) => {
+        req.session.destroy();
+        res.cookie("user",null,{maxAge:-1});
+        res.redirect("/")
     }
 }

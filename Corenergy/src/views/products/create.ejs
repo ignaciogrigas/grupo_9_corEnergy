@@ -6,7 +6,7 @@
         <form action=<%=locals.product ? `/products/update/${product.id}?_method=PUT` : "/products/save" %> method="POST" enctype="multipart/form-data">
             <section id="profile_img">
                     <label for="productImages">
-                        <img src="../images/profile.jpg" alt="Product Images">
+                        <img src="/images/default_and_logos/c_logo.svg" alt="Product Images">
                         <p><%= locals.product ? "Reload product images":"Upload up to 6 photos" %></p>
                     </label>
                 <input type="file" name="productImages" id="productImages" multiple>
@@ -22,8 +22,9 @@
                 <label for="productCode">Product code</label>
                 <input required type="number" value="<%= locals.product ? product.code : '' %>" name="productCode" id="productName">
 
+                <label for="category">Category</label>
                 <select required name="category" id="category">
-                    <option value="defualt"<%= locals.product ? " " : "selected" %> disabled>Category</option>
+                    <option value="defualt"<%= locals.product ? " " : "selected" %> disabled>Select category</option>
                     <option value="1"<%= locals.product && product.category == 1 ? "selected"  : " " %>>Weights</option>
                     <option value="2"<%= locals.product && product.category == 2 ? "selected"  : " " %>>Bars</option>
                     <option value="3"<%= locals.product && product.category == 3 ? "selected"  : " " %>>Elastic Bands</option>
@@ -92,7 +93,7 @@
                     </li>
                 </ul>
                 <label for="price">Price</label>
-                <input required type="number" name="price" id="price"  value="<%= locals.product ? product.price : '' %>">
+                <input required  name="price" id="price"  value="<%= locals.product ? product.price : '' %>" type="number">
                 <button class="button" type="submit">Add</button>
             </section>
         </form>

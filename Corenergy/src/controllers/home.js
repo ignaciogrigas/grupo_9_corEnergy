@@ -7,5 +7,9 @@ module.exports={
     title:"Home",
     style:"/css/home.css",
     listOfProducts:4
-})
+}),
+    error:(req,res)=>res.render("error_404",{
+        title:"Error 404",
+        style:"/css/error_404.css"
+    })
 }

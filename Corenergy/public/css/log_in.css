@@ -88,5 +88,8 @@ a{
     #benefits li{
         text-align: left;
     }
+    h5{
+        font-size: 0.8rem;
+    }
     
 }

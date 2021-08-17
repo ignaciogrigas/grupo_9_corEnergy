@@ -49,7 +49,7 @@ const subCategoryWeights = require ("./sub_category_weights");
                 enrichedProduct.subCat = product.subCategory.map(element => subCategoryMats.one(element))
                 return enrichedProduct
             } else {
-                enrichedProduct.category = category.one(product.category).name
+                enrichedProduct.category = "bars"
 
                 return enrichedProduct
             }

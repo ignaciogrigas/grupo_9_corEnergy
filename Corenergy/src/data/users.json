@@ -1216,7 +1216,7 @@
     "email": "nacho@corenergy.com",
     "category": "admin",
     "password": "$2b$10$K.UnL.vgaXUyIVdeTadJeOXA.0janStcgfnQ91JGW/6TpNBeKRTTG",
-    "profileImage": "profileImage1628543482308.jpg"
+    "profileImage": "profileImage1628965558985.jpg"
   },
   {
     "id": 123,
@@ -1226,6 +1226,6 @@
     "email": "lucho@gmail.com",
     "category": "user",
     "password": "$2b$10$7o6sfQjIXGiNVzIQk2Hx7OM4h6R29ivE4HWICRrrqGaVHk3.nxZjq",
-    "profileImage": "profileImage1628965558985.jpg"
+    "profileImage": "profileImage1628965558785.jpg"
   }
 ]

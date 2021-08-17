@@ -38,3 +38,9 @@ main form ul{
 main form ul img{
     width: 20vw;
 }
+
+.error{
+    color:#9d0208;
+    font-size:0.85rem;
+    margin-top:0.8vh;
+}

@@ -44,10 +44,12 @@
             <p><%= singleProduct.description%></p>
             <section id="purchase">
                 <h5>$ <%= singleProduct.price%></h5>
-                <button type="submit">Buy</button> <!--<a><button type="submit">Edit</button></a>--> <!-- ver si es admin o no!!-->
-                <form id="delete_form" action="/products/delete/<%= singleProduct.id%>?_method=DELETE" method=POST enctype="multipart/form-data"> <!--FALTA ID!!-->
-                    <button type="submit">Delete</button> <!-- ver si es admin o no!!-->
-                </form>
+                <button type="submit"><%= locals.user && locals.user.category == "admin" ? "Edit" : "Buy"%></button>
+                <% if (locals.user && locals.user.category == "admin"){%>
+                    <form id="delete_form" action="/products/delete/<%= singleProduct.id%>?_method=DELETE" method=POST enctype="multipart/form-data"> <!--FALTA ID!!-->
+                        <button type="submit">Delete</button>
+                    </form>
+                <%}%>
             </section>
         </article>   
     </section>

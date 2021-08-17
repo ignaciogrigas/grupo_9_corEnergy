@@ -5,4 +5,6 @@ const home = require ("../controllers/home")
 
 router.get("/",home.show);
 
+router.get("/error-404",home.error)
+
 module.exports=router;

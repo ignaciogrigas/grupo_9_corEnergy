@@ -2,10 +2,10 @@
     <div id="header_content">
         <section>
             <figure id="full">
-                <a href="home"><img src="./images/Logo.svg" alt="Corenergy"></a>
+                <a href="/"><img src="/images/default_and_logos/Logo.svg" alt="Corenergy"></a>
             </figure>
             <figure id="half">
-                <a href="home"> <img src="./images/c_logo.svg" alt="Corenergy"></a>
+                <a href="/"> <img src="/images/default_and_logos/c_logo.svg" alt="Corenergy"></a>
             </figure>
             <form action="" method="GET">
                 <input type="text" name="search" placeholder="  Search your products...">
@@ -16,7 +16,7 @@
             <nav id="icons">
                 <ul>
                     <li id="cart">
-                        <a href="shopping_cart">
+                        <a href="/products/cart">
                             <i class="fas fa-shopping-cart"></i>
                         </a>
                     </li>
@@ -30,11 +30,11 @@
                     </li>
                     <li class="log_in">
                         <% if (locals.user){%>
-                            <a href="profile">
+                            <a href="/users/profile">
                                 <p><%=locals.user.name%></p>
                             </a>
                         <%}else{%>
-                            <a href="users/log-in">
+                            <a href="/users/log-in">
                                 <p>Log in</p>
                             </a>
                         <%}%>
@@ -42,15 +42,21 @@
                     <li>
                         <i class="fas fa-bars"></i>
                     </li>
+                    <% if (locals.user){%>
+                        <li class="log_in">
+                            <a href="/users/log-out"><i class="fas fa-sign-out-alt"></i></a>
+                        </li>
+                        
+                    <%}%>
                 </ul>
             </nav>
         </section>
         <nav id="nav_products">
             <ul>
-                <li><a href="weights">Weights</a></li>
-                <li><a href="elastic-bands">Elastic Bands</a></li>
-                <li><a href="mats">Mats</a></li>
-                <li><a href="bars">Bars</a></li>                    
+                <li><a href="/products/category/weights">Weights</a></li>
+                <li><a href="/products/category/elastic-bands">Elastic Bands</a></li>
+                <li><a href="/products/category/mats">Mats</a></li>
+                <li><a href="/products/category/bars">Bars</a></li>                    
             </ul>            
         </nav>
     </div>
