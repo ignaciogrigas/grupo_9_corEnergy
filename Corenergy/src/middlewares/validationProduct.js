@@ -20,8 +20,81 @@ module.exports =  [
   .isCurrency()
 ]
 
+/*addProduct: [
 
-//la idea era validarlos tmb con precio > 0 
+  check('name').isLength({min: 1}).withMessage('El campo nombre no puede estar vacío'),
 
-//validar tmb para q todos los campos sean requeridos aunque en el form ya se puede pedir eso
+  check('price').isNumeric({min: 0}).withMessage('Este campo debe ser numérico'),
 
+  check('stock').isNumeric({min: 0}).withMessage('Este campo debe ser numérico'),
+
+  check('description').isLength({min: 1}).withMessage('El campo descripción no puede estar vacío'),
+  
+  check('measurements').isLength({min: 1}).withMessage('El campo medidas no puede estar vacío'),
+ 
+  check('weigth').isNumeric({min: 0}).withMessage('Este campo debe ser numérico'),
+
+  body('collection').custom((value, {
+      req
+  }) => {
+      if (!req.body.collection) {
+          return false
+      }
+      return true
+  }).withMessage('El campo colección no puede estar vacío'),
+
+  body('category').custom((value, {
+      req
+  }) => {
+      if (!req.body.category) {
+          return false
+      }
+      return true
+  }).withMessage('El campo categoría no puede estar vacío'),
+
+
+  body('discount').custom((value, {
+      req
+  }) => {
+      //console.log("validando!" + req.body.discount)
+
+      if (!req.body.discount) {
+          return false
+      }
+      return true
+  }).withMessage('El campo descuento no puede estar vacío'),
+
+
+  body('image').custom((value, {
+      req
+  }) => {
+      //console.log("validando!" + req.body.discount)
+
+      if (!req.file) {
+          return false
+      }
+      return true
+  }).withMessage('El campo imagen no puede estar vacío'),
+
+
+     //Aquí obligo a que el usuario seleccione su avatar
+body('image').custom(function (value, { req }) {
+  let ext;
+  //console.log('Foto'+req.file.filename);
+  if(req.file.filename == ''){
+      return false
+  }else{
+      ext = path.extname(req.file.filename).toLowerCase();
+  }
+  //console.log(ext);
+  if (
+      ext == ".jpg" ||
+      ext == ".jpeg" ||
+      ext == ".png" ||
+      ext == ".gif"){
+          return true;
+      }
+      return false;
+}).withMessage('Solo archivos JPG, JPEG, PNG o GIF')
+
+]*/
