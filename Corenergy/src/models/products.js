@@ -35,7 +35,7 @@ const subCategoryWeights = require ("./sub_category_weights");
             if(product.category == 1){
 
                 enrichedProduct.category = category.one(product.category).name
-                enrichedProduct.subCat = product.subCategory.map(element => subCategoryWeights.one(element))
+                //enrichedProduct.subCat = product.subCategory.map(element => subCategoryWeights.one(element))
 
                 return enrichedProduct
             } else if (product.category == 3){
@@ -99,9 +99,7 @@ const subCategoryWeights = require ("./sub_category_weights");
             code:data.productCode,
             category:parseInt(data.category),
             subCategroy:[data.subCategory],
-            images:files.map(element => {
-                element.filename
-            }),
+            images:files.map(element => element.filename),
             price:data.price
         };
         all.push(newProduct);
@@ -123,9 +121,7 @@ const subCategoryWeights = require ("./sub_category_weights");
                 product.description= data.description
                 product.category=parseInt(data.category),
                 product.subCategroy=[data.subCategory], 
-                product.images=files.map(element => {
-                    element.filename
-                }),
+                product.images=files.map(element => element.filename),
                 product.price=data.price
                 return product
             }

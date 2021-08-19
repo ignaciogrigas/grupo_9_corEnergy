@@ -91,29 +91,10 @@
     "price": "20.13"
   },
   {
-    "id": 6,
-    "name": "Sugar - White Packet",
-    "code": 71236,
-    "category": 3,
-    "subCategory": [
-      2,
-      2
-    ],
-    "description": "nulla nunc purus phasellus in felis donec semper sapien a libero nam dui proin leo odio porttitor id consequat in consequat",
-    "images": [
-      "product_6.jpg",
-      "product_6.jpg",
-      "product_6.jpg",
-      "product_6.jpg",
-      "product_6.jpg"
-    ],
-    "price": "485.80"
-  },
-  {
     "id": 7,
     "name": "Swiss Chard - Red",
-    "code": 89083,
-    "category": 3,
+    "code": "89083",
+    "category": 1,
     "subCategory": [
       2,
       1,
@@ -122,28 +103,27 @@
     ],
     "description": "eget tempus vel pede morbi porttitor lorem id ligula suspendisse ornare consequat lectus in est risus auctor sed tristique in tempus sit amet sem fusce consequat nulla nisl nunc nisl duis bibendum felis sed interdum venenatis turpis enim blandit mi in porttitor pede justo eu massa donec dapibus duis at",
     "images": [
-      "product_7.jpg",
-      "product_7.jpg"
+      null
     ],
-    "price": "240.66"
+    "price": "240.66",
+    "subCategroy": [
+      null
+    ]
   },
   {
     "id": 8,
     "name": "Soup - Knorr, Chicken Noodle",
-    "code": 40498,
-    "category": 3,
+    "code": "40498",
+    "category": 1,
     "subCategory": [
       3
     ],
     "description": "rutrum nulla nunc purus phasellus in felis donec semper sapien a libero nam dui proin leo odio porttitor id consequat in consequat ut nulla sed accumsan felis ut at dolor quis odio consequat varius integer ac leo pellentesque ultrices mattis odio donec vitae nisi nam ultrices libero non mattis pulvinar nulla pede ullamcorper augue a suscipit nulla elit ac nulla sed vel enim",
-    "images": [
-      "product_8.jpg",
-      "product_8.jpg",
-      "product_8.jpg",
-      "product_8.jpg",
-      "product_8.jpg"
-    ],
-    "price": "306.45"
+    "images": [],
+    "price": "306.45",
+    "subCategroy": [
+      null
+    ]
   },
   {
     "id": 9,
@@ -188,8 +168,8 @@
   {
     "id": 11,
     "name": "Tart - Lemon",
-    "code": 20731,
-    "category": 4,
+    "code": "20731",
+    "category": 1,
     "subCategory": [
       1,
       5,
@@ -198,20 +178,20 @@
     ],
     "description": "posuere cubilia curae nulla dapibus dolor vel est donec odio justo sollicitudin ut suscipit a feugiat et eros vestibulum ac est lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue aliquam erat volutpat in congue etiam justo etiam pretium iaculis justo in hac habitasse",
     "images": [
-      "product_11.jpg",
-      "product_11.jpg",
-      "product_11.jpg",
-      "product_11.jpg",
-      "product_11.jpg",
-      "product_11.jpg"
+      null,
+      null,
+      null
     ],
-    "price": "105.56"
+    "price": "105.56",
+    "subCategroy": [
+      null
+    ]
   },
   {
     "id": 12,
     "name": "Flower - Daisies",
-    "code": 83235,
-    "category": 3,
+    "code": "83235",
+    "category": 1,
     "subCategory": [
       2,
       5,
@@ -221,13 +201,14 @@
     ],
     "description": "ac consequat metus sapien ut nunc vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae mauris viverra diam vitae quam suspendisse potenti nullam porttitor lacus at turpis donec posuere metus vitae ipsum aliquam",
     "images": [
-      "product_12.jpg",
-      "product_12.jpg",
-      "product_12.jpg",
-      "product_12.jpg",
-      "product_12.jpg"
+      "productImages1629338304754.jpg",
+      "productImages1629338304758.jpg",
+      "productImages1629338304763.jpg"
     ],
-    "price": "250.74"
+    "price": "250.74",
+    "subCategroy": [
+      null
+    ]
   },
   {
     "id": 13,
@@ -366,19 +347,22 @@
   {
     "id": 20,
     "name": "Cookie Double Choco",
-    "code": 71011,
-    "category": 4,
+    "code": "71011",
+    "category": 1,
     "subCategory": [
       2,
       5
     ],
     "description": "donec ut dolor morbi vel lectus in quam fringilla rhoncus mauris enim leo rhoncus sed vestibulum sit amet cursus id turpis integer aliquet massa id lobortis convallis tortor risus dapibus augue vel accumsan tellus nisi eu orci mauris lacinia sapien quis libero nullam sit amet turpis elementum ligula vehicula consequat morbi a ipsum integer a nibh",
     "images": [
-      "product_20.jpg",
-      "product_20.jpg",
-      "product_20.jpg"
+      null,
+      null,
+      null
     ],
-    "price": "474.61"
+    "price": "474.61",
+    "subCategroy": [
+      null
+    ]
   },
   {
     "id": 21,
@@ -2275,5 +2259,20 @@
       null
     ],
     "price": "300"
+  },
+  {
+    "id": 121,
+    "name": "laalal",
+    "code": "121212",
+    "category": 1,
+    "subCategroy": [
+      null
+    ],
+    "images": [
+      "productImages1629337943812.jpg",
+      "productImages1629337943821.jpg",
+      "productImages1629337943827.jpg"
+    ],
+    "price": "21"
   }
 ]

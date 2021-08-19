@@ -92,7 +92,6 @@ body{
 }
 #purchase button,
 #delete_form button{
-    width:50%;
     height: 100%;
     background-color:#69E4B9;
     color: white;
@@ -101,6 +100,9 @@ body{
     padding:0.25rem;
     border: none;
     border-radius: 1.25rem;
+}
+#purchase a{
+    width:50%
 }
 #delete_form {
     width:100%

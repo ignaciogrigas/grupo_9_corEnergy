@@ -44,9 +44,13 @@
             <p><%= singleProduct.description%></p>
             <section id="purchase">
                 <h5>$ <%= singleProduct.price%></h5>
-                <button type="submit"><%= locals.user && locals.user.category == "admin" ? "Edit" : "Buy"%></button>
                 <% if (locals.user && locals.user.category == "admin"){%>
-                    <form id="delete_form" action="/products/delete/<%= singleProduct.id%>?_method=DELETE" method=POST enctype="multipart/form-data"> <!--FALTA ID!!-->
+                        <a href="/products/edit/<%= singleProduct.id%>"><button type="submit">Edit</button></a>
+                <%}else{%>
+                    <a href="/"><button type="submit">Buy</button></a>
+                <%}%>
+                <% if (locals.user && locals.user.category == "admin"){%>
+                    <form id="delete_form" action="/products/delete/<%= singleProduct.id%>?_method=DELETE" method=POST enctype="multipart/form-data">
                         <button type="submit">Delete</button>
                     </form>
                 <%}%>
