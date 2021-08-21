@@ -7,19 +7,36 @@
             <h4><%= locals.user ? user.email : '' %></h4>
             <div class="add"><h4>Add shipping address</h4><h4>+</h4></div>
             <article>
-                <form class="mainform1" action="" method="POST"> 
-                    <label for="City">City<span>*</span></label>
-                    <input required type="text" name="City" id="City" >
+                <form class="mainform1" action="/users/save-new-address?_method=PATCH" method="POST">
+                    <input hidden type="number" name="idUser" id="idUser" value="<%= user.id%>"> 
+
+                    <label for="city">City<span>*</span></label>
+                    <input  type="text" name="city" id="city">
+                    <% if (locals.errors && errors.city) { %>
+                        <p class="error">
+                          <%= errors.city.msg %> 
+                        </p>
+                      <% } %>
+
+                    <label for="address">Address<span>*</span></label>
+                    <input  type="text" name="address" id="address" >
+                    <% if (locals.errors && errors.address) { %>
+                        <p class="error">
+                          <%= errors.address.msg %> 
+                        </p>
+                      <% } %>
         
-                    <label for="Address">Address<span>*</span></label>
-                    <input required type="text" name="Address" id="Address" >
-        
-                    <label for="Floor">Floor<span>*</span></label>
-                    <input required type="text" name="Floor" id="Floor" > 
+                    <label for="floor">Floor</label>
+                    <input type="text" name="floor" id="floor" > 
                     
                     <label for="zipcode">Zip Code<span>*</span></label>
-                    <input required type="number" name="zipcode" id="zipcode"  maxlength="4">
-                    
+                    <input  type="number" name="zipcode" id="zipcode"  maxlength="4" >
+                    <% if (locals.errors && errors.zipcode) { %>
+                        <p class="error">
+                          <%= errors.zipcode.msg %> 
+                        </p>
+                      <% } %>
+
                     <label for="telephone">Telephone</label>
                     <input  type="tel" name="telephone" id="telephone" >
                     <h6 >Required fields*</h6>
@@ -29,12 +46,18 @@
             </article>
             <div class="add"><h4>Add credit card</h4><h4>+</h4></div>
             <article>
-                <form action="" method="POST">
+                <form action="/users/save-new-card?_method=PATCH" method="POST">
+                    <input hidden type="number" name="idUser" id="idUser" value="<%= user.id%>">
                     <label for="creditcard">Credit Card<span>*</span></label>
-                    <input required type="number" name="creditcard" id="creditcard"  maxlength="16">
+                    <input  type="number" name="creditcard" id="creditcard" >
+                    <% if (locals.errors && errors.creditcard) { %>
+                        <p class="error">
+                          <%= errors.creditcard.msg %> 
+                        </p>
+                      <% } %>
 
                     <label for="expireMM">Experitation Date<span>*</span></label>
-                        <select name='expireMM' id='expireMM'>
+                        <select name='expireMM' id='expireMM' >
                         <option value='' disabled>Month</option>
                         <option value='01'>January</option>
                         <option value='02'>February</option>
@@ -48,7 +71,13 @@
                         <option value='10'>October</option>
                         <option value='11'>November</option>
                         <option value='12'>December</option>
-                    </select> 
+                    </select>
+                    <% if (locals.errors && errors.expireMM) { %>
+                        <p class="error">
+                          <%= errors.expireMM.msg %> 
+                        </p>
+                      <% } %>
+
                     <select name='expireYY' id='expireYY'>
                         <option value='' disabled>Year</option>
                         <option value='21'>2021</option>
@@ -63,9 +92,19 @@
                         <option value='30'>2030</option>
                         <option value='31'>2031</option>
                     </select>
+                    <% if (locals.errors && errors.expireYY) { %>
+                        <p class="error">
+                          <%= errors.expireYY.msg %> 
+                        </p>
+                      <% } %>
 
                         <label for="secode">Security Code<span>*</span></label>
-                        <input required type="number" name="secode" id="secode" maxlength="4">
+                        <input  type="number" name="secode" id="secode">
+                        <% if (locals.errors && errors.secode) { %>
+                            <p class="error">
+                              <%= errors.secode.msg %> 
+                            </p>
+                          <% } %>
 
                         <p>Online payment methods</p>
                         <ul>

@@ -1,6 +1,28 @@
-const usersModel = require("../models/users")
+const userModel = require("../models/users");
+const { body } = require("express-validator");
 
-module.exports = function(req, res, next){
+module.exports = [
+    body("name").isEmpty().withMessage("You must sign up with a name"),
+    body("birthDate").isEmpty().withMessage("You must sign uo with a name"),
+    body("email").isEmpty().isEmail().custom(value => {
+        let registered = userModel.findByEmail(value);
+        if (registered) {
+          return Promise.reject('E-mail already registered');
+        }
+        return true
+      }),
+    body("password").isEmpty().isLength({ min: 8 }).withMessage("Password not strong enough"),
+    body("conf_password").equals("password").withMessage('Passwords do not match')
+    /*body("conf_password").custom((value, { req }) => {
+        let firstPassword = req.body.password;
+        if (value != firstPassword) {
+          return Promise.reject('Passwords do not match');
+        }
+        return true;
+      })*/
+]
+
+/*module.exports = function(req, res, next){
     if(usersModel.findByEmail(req.body.email)){
   return next();
     }else{

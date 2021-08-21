@@ -21,11 +21,19 @@ module.exports={
     }),
 
     create:(req,res)=>{
-        let newUser = usersModel.create(req.body,req.file)
-        return newUser == true ? res.redirect("/") : res.render("./users/sign_up",{
-            title:"Sign Up",
-            style:"/css/sign_up.css",
-        }) 
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            return res.render("./users/sign_up",{ 
+                errors: errors.mapped(),
+                title:"Sign Up", 
+                old:req.body,
+                style:"/css/sign_up.css"
+               });
+          }else{
+            let newUser = usersModel.create(req.body,req.file)
+            req.session.newUser = user; 
+            return res.redirect("/")
+          }
     },
 
     access:(req,res) => {
@@ -43,7 +51,7 @@ module.exports={
             res.cookie("user",req.body.email,{maxAge:300000})
           }
           req.session.user = user; 
-          return res.redirect("/")//,console.log(req.cookie.user) 
+          return res.redirect("/")
         }
     },
 
@@ -51,5 +59,23 @@ module.exports={
         req.session.destroy();
         res.cookie("user",null,{maxAge:-1});
         res.redirect("/")
+    },
+    newCard:(req,res) => {
+        const errors = validationResult(req);
+        let result = usersModel.newCard(req.body)
+        return result == true ? res.redirect("back") : res.render("./users/profile",{
+            title:"Profile",
+            style: "/css/profile.css",
+            errors: errors.mapped()
+        })  
+    },
+    newAddress:(req,res) => {
+        const errors = validationResult(req);
+        let result = usersModel.newAddress(req.body)
+        return result == true ? res.redirect("back") : res.render("./users/profile",{
+            title:"Profile",
+            style: "/css/profile.css",
+            errors: errors.mapped()
+        })  
     }
 }

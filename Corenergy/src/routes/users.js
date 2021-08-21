@@ -7,6 +7,9 @@ const storage = require("../middlewares/users_multer");
 const upload = multer({storage:storage});
 const validationLogIn = require("../middlewares/validationLogIn");
 const validationIsLogged = require("../middlewares/validationIsLogged");
+const validationUser = require("../middlewares/validationUser");
+const validationNewCard = require("../middlewares/validationUser");
+const validationNewAddress = require("../middlewares/validationNewAddress");
 
 router.get("/profile",validationIsLogged, usersController.profile);
 
@@ -16,8 +19,12 @@ router.get("/sign-up", usersController.signUp);
 
 router.get("/log-out", usersController.logOut);
 
-router.post("/save",upload.single("profileImage"),usersController.create)
+router.post("/save",[validationUser,upload.single("profileImage")],usersController.create);
 
-router.post("/access",validationLogIn,usersController.access)
+router.post("/access",validationLogIn,usersController.access);
+
+router.patch("/save-new-card",validationNewCard,usersController.newCard);
+
+router.patch("/save-new-address",validationNewAddress,usersController.newAddress);
 
 module.exports = router;

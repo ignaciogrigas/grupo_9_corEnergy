@@ -1,8 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const path = require("path");
-const productsData = require("../data/products.json")
-const productsModel = require ("../models/products")
+const productsData = require("../data/products.json");
+const productsModel = require ("../models/products");
+const { validationResult } = require('express-validator');
+
 module.exports = {
     byId:(req,res)=> res.render("./products/product_detail",{
         style:"/css/product_detail.css",
@@ -26,12 +28,17 @@ module.exports = {
         })
     },
     save:(req,res)=> {
-        let newProduct = productsModel.new(req.body,req.files)
-        return newProduct == true ? res.redirect("back") : res.render("./products/create",{
-            title:"Add",
-            style:"/css/create.css",
-            errorMsg:"Try again,errors in your upload"
-        })
+        let newProduct = productsModel.new(req.body,req.files);
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            return res.render("./products/create",{ 
+                errors: errors.mapped(),
+                title:"Add",
+                style:"/css/create.css"
+               });
+          }else{
+            return newProduct , res.redirect("back");
+          }
     },
     modify:(req,res)=> {
         //const id = req.params.id;

@@ -37,4 +37,64 @@ module.exports = {
     findByEmail: function (email){
     return this.all().find(user => user.email == email)
     },
+
+    newCard:function(data){
+        let all= this.all();
+        let id = data.idUser;
+        all.map(user => {
+            if(user.id == id && user.creditCard == undefined){
+                user.creditCard=[
+                    {
+                        number:data.creditcard,
+                        expirationMonth:data.expireMM,
+                        expirationYear:data.expireYY,
+                        securityCode:data.secode
+                    }
+                ]
+                return user
+            } else if (user.id == id && user.creditCard != undefined){
+                user.creditCard.push({
+                    number:data.creditcard,
+                    expirationMonth:data.expireMM,
+                    expirationYear:data.expireYY,
+                    securityCode:data.secode
+                })
+                return user
+            }
+            return user
+        })
+        fs.writeFileSync(this.directory,JSON.stringify(all,null,2));
+        return true;
+    },
+
+    newAddress:function(data){
+        let all= this.all();
+        let id = data.idUser;
+        all.map(user => {
+            if(user.id == id && user.creditCard == undefined){
+                user.addresses=[
+                    {
+                        city:data.city,
+                        address:data.address,
+                        floor:data.floor,
+                        zipcode:data.zipcode,
+                        telephone:data.telephone
+                    }
+                ]
+                return user
+            } else if (user.id == id && user.addresses != undefined){
+                user.creditCard.push({
+                    city:data.city,
+                    address:data.address,
+                    floor:data.floor,
+                    zipcode:data.zipcode,
+                    telephone:data.telephone
+                })
+                return user
+            }
+            return user
+        })
+        fs.writeFileSync(this.directory,JSON.stringify(all,null,2));
+        return true;
+    },
 }

@@ -6,7 +6,7 @@
             <h1>Log in</h1>
             <form action="/users/access" method="POST"> 
                 <label for="email">Username or E-mail<span>*</span></label>
-                <input required type="email" name="email" id="email"> 
+                <input required type="email" name="email" id="email" value="<%= locals.old && old.email ? old.email : ""%>"> 
                 <% if (locals.errors && errors.email) { %>
                     <p class="error">
                       <%= errors.email.msg %> 
@@ -39,7 +39,7 @@
                 <li>Multiple Benefits</li>
                 <li>Multiple Benefits</li>
             </ul>
-            <a href="./sing_up"><button>Sing Up</button></a>
+            <a href="/users/sign-up"><button>Sing Up</button></a>
         </section>
     </main>
     <%-include("../includes/footer")%>
