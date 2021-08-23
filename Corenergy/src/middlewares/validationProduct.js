@@ -3,8 +3,7 @@ const productModel = require("../models/products")
 
 module.exports =  [
   body("productName")
-.notEmpty().withMessage('The product must have a title'),
-//.isLength({ min: 4, max: undefined }).withMessage('The name of the product has to be longer'),
+    .isEmpty().withMessage('The product must have a title'),
 
  /* body("choice_weights")
   .notEmpty().withMessage('You have to pick a weight amount').bail(),
@@ -16,10 +15,11 @@ module.exports =  [
   .notEmpty().withMessage('You have to pick a mat color').bail(),*/
 
   body("price")
-  .notEmpty().withMessage('You have to price your product'),
+  .isEmpty().withMessage('You have to price your product'),
 
   body("productCode")
-  .isLength({ min: 6, max: 6 }).withMessage('The products´s code must have 6 digits')
+  .isEmpty().withMessage("Invalid product code").bail()
+  .isLength({ min: 6, max: 6 }).withMessage("The products's code must have 6 digits")
 ]
 
 /*addProduct: [

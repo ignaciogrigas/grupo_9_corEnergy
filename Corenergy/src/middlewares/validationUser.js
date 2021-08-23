@@ -5,8 +5,8 @@ module.exports = [
     body("name")
     .isEmpty().withMessage("You must sign up with a name"),
     body("email")
-    .isEmpty({ ignore_whitespace:false }).withMessage("You must sign up with an e-mail").bail()
-    .isEmail({ ignore_whitespace:false }).withMessage("Invalid e-mail").bail()
+    .isEmpty().withMessage("You must sign up with an e-mail").bail()
+    .isEmail().withMessage("Invalid e-mail").bail()
     .custom(value => {
         let registered = userModel.findByEmail(value);
         if (registered) {
@@ -14,9 +14,11 @@ module.exports = [
         }
         return true
       }),
-    body("password").isEmpty({ ignore_whitespace:false }).withMessage("Invalid password").bail()
+    body("password")
+    .isEmpty().withMessage("Invalid password").bail()
     .isLength({ min: 8 }).withMessage("Password not strong enough"),
     body("conf_password")
+    .isEmpty().bail()
     .equals("password").withMessage('Passwords do not match')
 ]
 

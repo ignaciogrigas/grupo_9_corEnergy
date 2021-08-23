@@ -31,7 +31,7 @@ module.exports={
                });
           }else{
             let newUser = usersModel.create(req.body,req.file)
-            req.session.newUser = user; 
+            req.session.user = newUser; 
             return res.redirect("/")
           }
     },
