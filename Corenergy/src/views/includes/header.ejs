@@ -15,11 +15,13 @@
             </form>
             <nav id="icons">
                 <ul>
+                    <% if (locals.user){%>
                     <li id="cart">
                         <a href="/products/cart">
                             <i class="fas fa-shopping-cart"></i>
                         </a>
                     </li>
+                    <%}%>
                     <li>
                         <div class="vl"></div>
                     </li>
