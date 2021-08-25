@@ -1,9 +1,7 @@
 const path = require ("path");
 const fs = require("fs");
 const category = require ("./category");
-const subCategoryMats = require ("./sub_category_mats");
-const subCategoryElasticBands = require ("./sub_category_elastic_bands");
-const subCategoryWeights = require ("./sub_category_weights");
+const subCategories = require ("./sub_categories");
 
  module.exports= {
     directory: path.resolve(__dirname,"../data/products.json"),
@@ -29,32 +27,15 @@ const subCategoryWeights = require ("./sub_category_weights");
 
     allWithExtra: function(){
         const productsInDB = this.all()
-
         return productsInDB.map(product =>{
             const enrichedProduct = Object.assign({}, product)
-            if(product.category == 1){
-
-                enrichedProduct.category = category.one(product.category).name
-                //enrichedProduct.subCat = product.subCategory.map(element => subCategoryWeights.one(element))
-
-                return enrichedProduct
-            } else if (product.category == 3){
-
-                enrichedProduct.category = category.one(product.category).name
-                enrichedProduct.subCat = product.subCategory.map(element => subCategoryElasticBands.one(element))
-
-                return enrichedProduct
-            } else if (product.category == 4) {
-                enrichedProduct.category = category.one(product.category).name
-                enrichedProduct.subCat = product.subCategory.map(element => subCategoryMats.one(element))
-                return enrichedProduct
-            } else {
-                enrichedProduct.category = "bars"
-
-                return enrichedProduct
+            enrichedProduct.category = category.one(product.category).name
+            if(product.subCategory != undefined && product.subCategory.lenght > 0){
+                enrichedProduct.subCategory = product.subCategory.map(element => subCategories.one(element).name)
             }
+            return enrichedProduct
         })
-    },
+    },//va un solo map subcategoria mayor a cero != undefined y map y vaya cabiando los valores
 
     oneWithExtra:function(id){
         const allProductsWithExtra = this.allWithExtra()
@@ -72,12 +53,12 @@ const subCategoryWeights = require ("./sub_category_weights");
         } else if(cat == "mats"){
             return subCategoryMats.all()
         } 
-    },
+    },//VER?
 
     byCategory: function(cat){
         let all = this.allWithExtra()
         return all.filter(element => element.category == cat)
-    }, //no nos lee category
+    },
 
     titleArrange: function(category){
         if(category != "elastic-bands"){
@@ -85,11 +66,11 @@ const subCategoryWeights = require ("./sub_category_weights");
         } else {
             return category.charAt(0).toUpperCase()+ category.slice(1,7) + " " + category.charAt(8).toUpperCase()+ category.slice(9,13)
         }
-    },//va aca o en el html?
+    },
 
     bySubcategories: function(cat){
         return this.byCategory.filter(element => element.subCategory.find(element=> element == cat))
-    },
+    },//VER
 
     new:function(data,files){
         let all = this.all();

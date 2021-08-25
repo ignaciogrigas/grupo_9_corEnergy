@@ -1227,5 +1227,15 @@
     "category": "user",
     "password": "$2b$10$7o6sfQjIXGiNVzIQk2Hx7OM4h6R29ivE4HWICRrrqGaVHk3.nxZjq",
     "profileImage": "profileImage1628965558785.jpg"
+  },
+  {
+    "id": 124,
+    "name": "Ignacio Grigas",
+    "surname": "zxsax",
+    "birthDate": "2021-08-23",
+    "email": "lala@corenergy.com",
+    "category": "admin",
+    "password": "$2b$10$g9kUY3CmhZcdzRSesW7Y.e60lCp7nYI9Oiq2pbe.yRAAU//D0T9TW",
+    "profileImage": "profileImage1629769181966.jpg"
   }
 ]

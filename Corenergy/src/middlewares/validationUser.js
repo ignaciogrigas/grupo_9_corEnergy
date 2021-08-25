@@ -2,24 +2,16 @@ const userModel = require("../models/users");
 const { body } = require("express-validator");
 
 module.exports = [
-    body("name")
-    .isEmpty().withMessage("You must sign up with a name"),
-    body("email")
-    .isEmpty().withMessage("You must sign up with an e-mail").bail()
-    .isEmail().withMessage("Invalid e-mail").bail()
-    .custom(value => {
+    body("name").isEmpty()/*.withMessage("You must sign up with a name")*/,
+    body("email").isEmail().custom(value => {
         let registered = userModel.findByEmail(value);
         if (registered) {
-          return Promise.reject('E-mail already registered');
+          return Promise.reject('E-mail not found');
         }
         return true
       }),
-    body("password")
-    .isEmpty().withMessage("Invalid password").bail()
-    .isLength({ min: 8 }).withMessage("Password not strong enough"),
-    body("conf_password")
-    .isEmpty().bail()
-    .equals("password").withMessage('Passwords do not match')
+    body("password").isEmpty()/*.withMessage("Invalid password")*/.isLength({ min: 8 })/*.withMessage("Password not strong enough")*/,
+    body("conf_password").isEmpty().equals("password")/*.withMessage('Passwords do not match')*/
 ]
 
  /*body("conf_password").custom((value, { req }) => {

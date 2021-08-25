@@ -57,7 +57,9 @@ body{
     display: flex;
     flex-flow:row wrap;
     align-items: center;
+    justify-content: flex-start;
     margin: 2vh 0;
+    
 }
 #product label{
     background-color: white;

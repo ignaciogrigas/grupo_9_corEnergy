@@ -1,7 +1,7 @@
 const path = require ("path");
 const fs = require("fs")
  module.exports= {
-    directory: path.resolve(__dirname,"../data/sub_category_elastic_bands.json"),
+    directory: path.resolve(__dirname,"../data/sub_categories.json"),
 
     all:function(){
         const file= fs.readFileSync(this.directory)

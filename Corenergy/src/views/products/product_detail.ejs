@@ -20,25 +20,23 @@
         <article>
             <h3><%= singleProduct.name%></h3>
             <p id="code"><%= singleProduct.code%></p>
-            <% if (singleProduct.category !="bars") {%> 
-                <section>
-                <h5>
-                    <% if (singleProduct.category == "weights"){%>
-                    Weight 
-                    <% } else { %>
-                    Color
+            <% if (singleProduct.category == "weights" || singleProduct.category == "elastic-bands" || singleProduct.category == "mats") {%> 
+            <section>
+                    <% if(singleProduct.category == "weights"){%>
+                    <h5>Weight</h5>
+                    <% } else if (singleProduct.category == "elastic-bands" || singleProduct.category == "mats")  { %>
+                    <h5>Color</h5>
                     <%}%>
-                </h5>
-                <form>
-                    <ul>
-                        <% for ( let i = 0 ; i<singleProduct.subCategory.length;i++){%>
-                            <li>
-                                <label for="<%= singleProduct.subCategory[i]%>"><%= singleProduct.subCategory[i]%></label>
-                                <input type="radio" name="choice" id="<%= singleProduct.subCategory[i]%>" value="<%= singleProduct.subCategory[i]%>">
-                            </li>
-                        <%}%>
-                    </ul>
-                </form>
+                        <form>
+                            <ul>
+                                <% for ( let i = 0 ; i<singleProduct.subCategory.length;i++){%>
+                                    <li>
+                                        <label for="<%= singleProduct.subCategory[i]%>"><%= singleProduct.subCategory[i]%></label>
+                                        <input type="radio" name="choice" id="<%= singleProduct.subCategory[i]%>" value="<%= singleProduct.subCategory[i]%>">
+                                    </li>
+                                <%}%>
+                            </ul>
+                        </form>
             </section>
             <%}%>
             <p><%= singleProduct.description%></p>
