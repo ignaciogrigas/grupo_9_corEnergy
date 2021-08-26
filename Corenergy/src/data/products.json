@@ -2227,48 +2227,5 @@
       "product_118.jpg"
     ],
     "price": 360.95
-  },
-  {
-    "id": 119,
-    "name": "laalal",
-    "code": "121212",
-    "category": null,
-    "subCategroy": [
-      null
-    ],
-    "images": [
-      null,
-      null
-    ],
-    "price": "300"
-  },
-  {
-    "id": 120,
-    "name": "laalal",
-    "code": "121212",
-    "category": null,
-    "subCategroy": [
-      null
-    ],
-    "images": [
-      null,
-      null
-    ],
-    "price": "300"
-  },
-  {
-    "id": 121,
-    "name": "laalal",
-    "code": "121212",
-    "category": 1,
-    "subCategroy": [
-      null
-    ],
-    "images": [
-      "productImages1629337943812.jpg",
-      "productImages1629337943821.jpg",
-      "productImages1629337943827.jpg"
-    ],
-    "price": "21"
   }
 ]

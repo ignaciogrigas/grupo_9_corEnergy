@@ -30,7 +30,7 @@ const subCategories = require ("./sub_categories");
         return productsInDB.map(product =>{
             const enrichedProduct = Object.assign({}, product)
             enrichedProduct.category = category.one(product.category).name
-            if(product.subCategory != undefined && product.subCategory.lenght > 0){
+            if(product.subCategory != undefined && product.subCategory.length > 0){
                 enrichedProduct.subCategory = product.subCategory.map(element => subCategories.one(element).name)
             }
             return enrichedProduct
@@ -45,19 +45,19 @@ const subCategories = require ("./sub_categories");
         return productWithExtra
     },
 
-    allSubcategories:function(cat){
+     allSubcategories:function(cat){
         if(cat == "weights"){
-            return subCategoryWeights.all()
+            return "subCategoryElasticBands.all()"
         } else if(cat == "elastic-bands"){
-            return subCategoryElasticBands.all()
+            return "subCategoryElasticBands.all()"
         } else if(cat == "mats"){
-            return subCategoryMats.all()
+            return "subCategoryMats.all("
         } 
-    },//VER?
+    },
 
     byCategory: function(cat){
         let all = this.allWithExtra()
-        return all.filter(element => element.category == cat)
+        return all.filter(element => element.category.includes(cat))
     },
 
     titleArrange: function(category){
