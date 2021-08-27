@@ -8,7 +8,7 @@ const upload = multer({storage:storage});
 const validationLogIn = require("../middlewares/validationLogIn");
 const validationIsLogged = require("../middlewares/validationIsLogged");
 const validationUser = require("../middlewares/validationUser");
-const validationNewCard = require("../middlewares/validationUser");
+const validationNewCard = require("../middlewares/validationNewCard");
 const validationNewAddress = require("../middlewares/validationNewAddress");
 
 router.get("/profile",validationIsLogged, usersController.profile);

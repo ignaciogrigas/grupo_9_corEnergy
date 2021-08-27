@@ -28,14 +28,14 @@ module.exports = {
           email: String(data.email),
           category: String(data.email).includes("@corenergy") ? "admin": "user",
           password: bcrypt.hashSync(data.password,10),
-          profileImage: file.filename
+          profileImage: file && file.filename
         };
         users.push(newUser);
         this.write(users)
     },
 
     findByEmail: function (email){
-    return this.all().find(user => user.email == email)
+    return this.all().find(user => user.email === email)
     },
 
     newCard:function(data){

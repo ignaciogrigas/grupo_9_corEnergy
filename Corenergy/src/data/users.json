@@ -1237,5 +1237,14 @@
     "category": "admin",
     "password": "$2b$10$g9kUY3CmhZcdzRSesW7Y.e60lCp7nYI9Oiq2pbe.yRAAU//D0T9TW",
     "profileImage": "profileImage1629769181966.jpg"
+  },
+  {
+    "id": 125,
+    "name": "nicolas",
+    "surname": "nico",
+    "birthDate": "1989-04-21",
+    "email": "nicolas_alecci@hotmail.com",
+    "category": "user",
+    "password": "$2b$10$waruX2IQmqUGICYdS1E.auGzUllIdvmq7lTsncqCWhAc2kHgo14yK"
   }
 ]

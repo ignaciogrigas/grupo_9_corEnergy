@@ -1,17 +1,38 @@
 const userModel = require("../models/users");
 const { body } = require("express-validator");
 
+const checkIfUserEmailAlreadyExist = value => {
+    let registered = userModel.findByEmail(value);
+
+    // check if email was already used
+    if (registered) {
+        return Promise.reject('E-mail already registered');
+    }
+
+    return false
+}
+
+const checkIfPasswordsMatch = (value, { req }) => {
+    return value === req.body.password
+}
+
 module.exports = [
-    body("name").isEmpty()/*.withMessage("You must sign up with a name")*/,
-    body("email").isEmail().custom(value => {
-        let registered = userModel.findByEmail(value);
-        if (registered) {
-          return Promise.reject('E-mail not found');
-        }
-        return true
-      }),
-    body("password").isEmpty()/*.withMessage("Invalid password")*/.isLength({ min: 8 })/*.withMessage("Password not strong enough")*/,
-    body("conf_password").isEmpty().equals("password")/*.withMessage('Passwords do not match')*/
+    // Check name
+    body("name")
+    .notEmpty()
+    .withMessage("You must sign up with a name"),
+    // Check email
+    body("email")
+    .notEmpty().withMessage("You must sign up with an e-mail")
+    .isEmail().not().withMessage("Invalid e-mail nico kpo")
+    .custom(checkIfUserEmailAlreadyExist),
+    // Check password
+    body("password")
+    .notEmpty().withMessage("Invalid password").bail()
+    .isLength({ min: 8 }).not().withMessage("Password not strong enough"),
+    // Check confirm password
+    body("conf_password")
+    .custom(checkIfPasswordsMatch).withMessage("Passwords should match")
 ]
 
  /*body("conf_password").custom((value, { req }) => {
