@@ -24,7 +24,7 @@ module.exports = [
     // Check email
     body("email")
     .notEmpty().withMessage("You must sign up with an e-mail")
-    .isEmail().not().withMessage("Invalid e-mail nico kpo")
+    .isEmail().not().withMessage("Invalid e-mail")
     .custom(checkIfUserEmailAlreadyExist),
     // Check password
     body("password")

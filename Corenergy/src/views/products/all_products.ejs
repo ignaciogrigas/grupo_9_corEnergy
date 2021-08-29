@@ -12,16 +12,18 @@
             </select>
         </section>
         <section id="filters">
-            <article>
-                <h5>Categories</h5>
-                <ul>
-                    <% for (let i=0 ; i<listOfSubCategories ; i++){%>
-                        <li>
-                            <a href="#"><%= listOfSubCategories[i]%></a>
-                        </li>
-                    <%}%>
-                </ul>
-            </article>
+            <% if(listOfSubCategories){%>
+                <article>
+                    <h5>Categories</h5>
+                    <ul>
+                        <% for (let i=0 ; i<listOfSubCategories.length ; i++){%>
+                            <li>
+                                <a href="#"><%= listOfSubCategories[i]%></a>
+                            </li>
+                        <%}%>
+                    </ul>
+                </article>
+            <%}%>            
             <br>
             <article>
                 <h5>Price</h5>

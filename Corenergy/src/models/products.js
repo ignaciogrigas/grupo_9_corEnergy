@@ -35,7 +35,7 @@ const subCategories = require ("./sub_categories");
             }
             return enrichedProduct
         })
-    },//va un solo map subcategoria mayor a cero != undefined y map y vaya cabiando los valores
+    },
 
     oneWithExtra:function(id){
         const allProductsWithExtra = this.allWithExtra()
@@ -46,12 +46,12 @@ const subCategories = require ("./sub_categories");
     },
 
      allSubcategories:function(cat){
-        if(cat == "weights"){
-            return "subCategoryElasticBands.all()"
-        } else if(cat == "elastic-bands"){
-            return "subCategoryElasticBands.all()"
-        } else if(cat == "mats"){
-            return "subCategoryMats.all("
+        if(cat.includes("weights")){
+            return ["2KG","5KG","10KG","15KG","20KG"]
+        } else if(cat.includes("elastic-bands") ){
+            return ["Red","Blue","Green","Yellow","Black"]
+        } else if(cat.includes("mats")){
+            return ["Red","Blue","Green","Purple","Pink"]
         } 
     },
 

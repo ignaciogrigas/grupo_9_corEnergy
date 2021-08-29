@@ -18,7 +18,8 @@ module.exports = {
         style:"/css/all_products.css",
         title:productsModel.titleArrange(req.params.nameCategory),
         listOfProducts:productsModel.byCategory(req.params.nameCategory),
-        listOfSubCategories:productsModel.allSubcategories(req.params.nameCategory)
+        listOfSubCategories:productsModel.allSubcategories(req.params.nameCategory)        
+
     }),
 
     showCreateTemplate:(req,res)=> {
