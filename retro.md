@@ -166,3 +166,45 @@ At the beginning of each sprint, get organized in order to find as much time as 
 ![Conceptboard](/Inspirations_and_Wireframes/Starfish_Retrospective4.png)
 
 
+
+
+
+### **Retrospective: Bases de datos**
+
+
+
+
+
+**Stop doing**
+
+Nothing to stop doing. The team working just fine. We managed to solve former problems such as thinking ahead and not focusing completely in the current sprint.
+
+**Do less of**
+
+Nothing to do less for now. 
+
+**Keep doing**
+
+ Keep on finding as much time as we can on each sprint to fully commit to the proyect.
+
+ Continue getting to know each other by spending time coding live and sharing points of view.
+
+**Do more of**
+
+Ask professors when we are lost or when we don´t know how to carry on. 
+
+**Start doing**
+
+Face each sprint right away so that we have some spare time and we don´t have to be in a last-minute rush to finish something.
+
+
+
+
+
+##### Our team conceptboard:
+
+
+![Conceptboard](/Inspirations_and_Wireframes/Starfish_Retrospective5.png)
+
+
+
