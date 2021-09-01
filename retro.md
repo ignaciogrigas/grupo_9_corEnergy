@@ -204,7 +204,7 @@ Face each sprint right away so that we have some spare time and we don´t have t
 ##### Our team conceptboard:
 
 
-![Conceptboard](/Inspirations_and_Wireframes/Starfish_Retrospective5.png)
+![Conceptboard](/Inspirations_and_Wireframes/Starfish_Retrospective5.jpg)
 
 
 
