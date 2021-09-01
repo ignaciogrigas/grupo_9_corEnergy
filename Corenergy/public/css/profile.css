@@ -75,9 +75,13 @@ input[type=number]::-webkit-outer-spin-button {
         width: 30.5vw;
     }
     main form ul{
-        width: 50%;
+        width: 40%;
     }
-    main form ul li img{
-        max-width: 5vw;
+    .fa-cc-visa,
+    .fa-cc-amex,
+    .fa-paypal,
+    .fa-cc-mastercard{
+        font-size: 2rem;
+        color: #4d5867;
     }
 }

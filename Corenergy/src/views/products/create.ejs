@@ -6,7 +6,7 @@
         <form action=<%=locals.product ? `/products/update/${product.id}?_method=PUT` : "/products/save" %> method="POST" enctype="multipart/form-data">
             <section id="profile_img">
                     <label for="productImages">
-                        <img src="/images/default_and_logos/c_logo.svg" alt="Product Images">
+                        <img src="/images/default_and_logos/default_product.svg" alt="Product Images">
                         <p><%= locals.product ? "Reload product images":"Upload up to 6 photos" %></p>
                     </label>
                 <input type="file" name="productImages" id="productImages" multiple>

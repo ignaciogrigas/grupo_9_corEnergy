@@ -2,6 +2,19 @@
 <body>
 <%-include("../includes/header")%>
     <main>
+        <section>
+            <figure>
+                <% if (title.includes("Weights")){%>
+                    <img src="/images/default_and_logos/weights_banner.jpg" id="banner">
+                <%} else if (title.includes("Elastic")){%>
+                    <img src="/images/default_and_logos/elastic_bands_banner.jpg" id="banner">
+                <%} else if (title.includes("Mats")){%>
+                    <img src="/images/default_and_logos/mats_banner.jpg" id="banner">
+                <%} else {%>
+                    <img src="/images/default_and_logos/bars_banner.jpg" id="banner">
+                <%}%>
+            </figure> 
+        </section>
         <h3 id="best_seller"><%= title%></h3>
         <section name="sort_by" id="sort_by">
             <p>Sort by </p>
