@@ -71,7 +71,7 @@ module.exports = {
         let all= this.all();
         let id = data.idUser;
         all.map(user => {
-            if(user.id == id && user.creditCard == undefined){
+            if(user.id == id && user.addresses == undefined){
                 user.addresses=[
                     {
                         city:data.city,
@@ -83,7 +83,7 @@ module.exports = {
                 ]
                 return user
             } else if (user.id == id && user.addresses != undefined){
-                user.creditCard.push({
+                user.addresses.push({
                     city:data.city,
                     address:data.address,
                     floor:data.floor,

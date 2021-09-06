@@ -3,11 +3,11 @@
     <%-include("../includes/header")%>
     <main>
         <section id="main_section">
-            <h1><%= locals.user ? user.name : '' %>,<%= locals.user ? user.surname : '' %></h1>
+            <h1><%= locals.user ? user.name : '' %> <%= locals.user ? user.surname : '' %></h1>
             <h4><%= locals.user ? user.email : '' %></h4>
             <div class="add"><h4>Add shipping address</h4><h4>+</h4></div>
             <article>
-                <form class="mainform1" action="/users/save-new-address?_method=PATCH" method="POST">
+                <form class="mainform1" action="/users/save-new-address" method="POST">
                     <input hidden type="number" name="idUser" id="idUser" value="<%= user.id%>"> 
 
                     <label for="city">City<span>*</span></label>
@@ -46,10 +46,11 @@
             </article>
             <div class="add"><h4>Add credit card</h4><h4>+</h4></div>
             <article>
-                <form action="/users/save-new-card?_method=PATCH" method="POST">
+                <form action="/users/save-new-card" method="POST">
                     <input hidden type="number" name="idUser" id="idUser" value="<%= user.id%>">
                     <label for="creditcard">Credit Card<span>*</span></label>
                     <input  type="number" name="creditcard" id="creditcard" >
+                    <%= JSON.stringify(locals.nico) %> 
                     <% if (locals.errors && errors.creditcard) { %>
                         <p class="error">
                           <%= errors.creditcard.msg %> 

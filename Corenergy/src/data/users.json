@@ -1245,6 +1245,29 @@
     "birthDate": "1989-04-21",
     "email": "nicolas_alecci@hotmail.com",
     "category": "user",
-    "password": "$2b$10$waruX2IQmqUGICYdS1E.auGzUllIdvmq7lTsncqCWhAc2kHgo14yK"
+    "password": "$2b$10$waruX2IQmqUGICYdS1E.auGzUllIdvmq7lTsncqCWhAc2kHgo14yK",
+    "creditCard": [
+      {
+        "number": "",
+        "expirationMonth": "01",
+        "expirationYear": "21",
+        "securityCode": ""
+      },
+      {
+        "number": "8458402048487976",
+        "expirationMonth": "01",
+        "expirationYear": "21",
+        "securityCode": "121"
+      }
+    ],
+    "addresses": [
+      {
+        "city": "buenos aires",
+        "address": "calle falsa 123",
+        "floor": "1",
+        "zipcode": "1352",
+        "telephone": "1169878956"
+      }
+    ]
   }
 ]

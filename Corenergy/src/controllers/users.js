@@ -60,22 +60,34 @@ module.exports={
         res.cookie("user",null,{maxAge:-1});
         res.redirect("/")
     },
-    newCard:(req,res) => {
+    newCard:(req,res) => {        
         const errors = validationResult(req);
-        let result = usersModel.newCard(req.body)
-        return result == true ? res.redirect("back") : res.render("./users/profile",{
-            title:"Profile",
-            style: "/css/profile.css",
-            errors: errors.mapped()
-        })  
+        
+
+        if (errors.errors.length > 0) {
+            return res.render("./users/profile",{
+                title:"Profile",
+                style: "/css/profile.css",
+                errors: errors.mapped()
+            })
+        }
+
+        usersModel.newCard(req.body)
+
+        return res.redirect("/")
     },
     newAddress:(req,res) => {
         const errors = validationResult(req);
-        let result = usersModel.newAddress(req.body)
-        return result == true ? res.redirect("back") : res.render("./users/profile",{
-            title:"Profile",
-            style: "/css/profile.css",
-            errors: errors.mapped()
-        })  
+
+        if (errors.errors.length > 0) {
+            return res.render("./users/profile",{
+                title:"Profile",
+                style: "/css/profile.css",
+                errors: errors.mapped()
+            })
+        }
+        usersModel.newAddress(req.body)
+
+        return res.redirect("/") 
     }
 }

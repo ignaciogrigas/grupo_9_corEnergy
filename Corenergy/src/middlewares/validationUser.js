@@ -2,14 +2,7 @@ const userModel = require("../models/users");
 const { body } = require("express-validator");
 
 const checkIfUserEmailAlreadyExist = value => {
-    let registered = userModel.findByEmail(value);
-
-    // check if email was already used
-    if (registered) {
-        return Promise.reject('E-mail already registered');
-    }
-
-    return false
+    return userModel.findByEmail(value)
 }
 
 const checkIfPasswordsMatch = (value, { req }) => {
@@ -25,7 +18,7 @@ module.exports = [
     body("email")
     .notEmpty().withMessage("You must sign up with an e-mail")
     .isEmail().not().withMessage("Invalid e-mail")
-    .custom(checkIfUserEmailAlreadyExist),
+    .custom(checkIfUserEmailAlreadyExist).withMessage("E mail already exists"),
     // Check password
     body("password")
     .notEmpty().withMessage("Invalid password").bail()
