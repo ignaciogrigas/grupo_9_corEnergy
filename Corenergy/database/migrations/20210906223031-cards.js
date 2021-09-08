@@ -12,10 +12,7 @@ module.exports = {
     },
     creditcard:{
       type:Sequelize.BIGINT,
-      references: {
-        model:"users",
-        key:"id"
-      }
+      allowNull:false
     },
     expirationMM:{
       type:Sequelize.INTEGER,

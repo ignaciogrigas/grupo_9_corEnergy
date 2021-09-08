@@ -1,5 +1,5 @@
 module.exports = (Sequelize,DataType)=>{
-    return Sequelize.define("CategoryUser",{
+    const CategoryUser =  Sequelize.define("CategoryUser",{
         id:{
           type:DataType.INTEGER,
           primaryKey:true,
@@ -16,4 +16,5 @@ module.exports = (Sequelize,DataType)=>{
             tableName:"categoriesUser",
             timestamps:false
         });
+        return CategoryUser
     }

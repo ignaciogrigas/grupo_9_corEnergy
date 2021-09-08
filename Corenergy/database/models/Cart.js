@@ -1,5 +1,5 @@
 module.exports = (Sequelize,DataType)=>{
-    return Sequelize.define("Cart",{
+    const Cart = Sequelize.define("Cart",{
       id:{
         type:Sequelize.INTEGER,
         primaryKey:true,
@@ -7,19 +7,23 @@ module.exports = (Sequelize,DataType)=>{
         unique:true,
         allowNull:false
     },
-      userId:{
-        type:DataType.INTEGER,
-        references: {
-          model:"user",
-          key:"id"
-        }
-      },
       totalPrice:{
         type:DataType.FLOAT(6,2),
         allowNull:false
+      },
+      deletedAt:{
+        type:DataType.DATE,
+        defaultValue:null
       }
     },{        
         timestamps:false, 
         tableName:"cart"
     });
+    Cart.associate = function(models){
+      Cart.hasOne(models.Order,{
+        as:"order",
+        foreignKey:"cartId"
+      })
+    }
+    return Cart
 }

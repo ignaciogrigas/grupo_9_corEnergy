@@ -1,5 +1,5 @@
 module.exports = (Sequelize,DataType)=>{
-    return Sequelize.define("User",{
+    const User = Sequelize.define("User",{
         id:{
           type:DataType.INTEGER,
           primaryKey:true,
@@ -47,4 +47,27 @@ module.exports = (Sequelize,DataType)=>{
             tableName:"users",
             timestamps:false
         });
+        User.associate = function(models){
+          User.hasMany (models.Image,{
+            as: "imageCreator",
+            foreignKey: "createdBy"
+          })
+          User.hasMany (models.Image,{
+            as: "whoDeletedImage",
+            foreignKey: "deletedBy"
+          })
+          User.hasMany (models.Product,{
+            as: "imageCreator",
+            foreignKey: "createdBy"
+          })
+          User.hasMany(models.Product,{
+            as: "whoDeletedProduct",
+            foreignKey: "deletedBy"
+          })
+          User.hasMany (models.Product,{
+            as: "whoUpdatedProduct",
+            foreignKey: "updatedBy"
+          })
+        }
+        return User
     }

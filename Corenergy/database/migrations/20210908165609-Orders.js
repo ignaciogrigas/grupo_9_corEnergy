@@ -13,7 +13,7 @@ module.exports = {
       cartId:{
         type:Sequelize.INTEGER,
         references: {
-          model:"cart",
+          model:"carts",
           key:"id"
         }
       },

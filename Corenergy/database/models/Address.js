@@ -1,5 +1,5 @@
 module.exports = (Sequelize,DataType)=>{
-    return Sequelize.define("UsersAddress",{
+    const Address = Sequelize.define("Address",{
 
       id: {
           type: dataTypes.INTEGER,
@@ -21,7 +21,7 @@ module.exports = (Sequelize,DataType)=>{
       telephone: {
         type: dataTypes.INTEGER,
     },
-        tableName:"UsersAddresses",
+        tableName:"addresses",
         timestamps:false,
      })
 }

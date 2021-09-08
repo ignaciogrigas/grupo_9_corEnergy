@@ -1,5 +1,5 @@
 module.exports = (Sequelize,DataType)=>{
-    return Sequelize.define("Orders",{
+    const Order = Sequelize.define("Order",{
         id:{
             type:Sequelize.INTEGER,
             primaryKey:true,
@@ -32,4 +32,19 @@ module.exports = (Sequelize,DataType)=>{
         timestamps:false, 
         tableName:"orders"
     });
+    Order.associate = function(models){
+      Order.belongsTo(models.Address,{
+        as:"address",
+        foreignKey: "addressId"
+      });
+      Order.belongsTo(models.Card,{
+        as:"card",
+        foreignKey: "cardId"
+      })
+      Order.belongsTo(models.Cart,{
+        as:"cart",
+        foreignKey: "cartId"
+      })
+    }
+    return Order
 }

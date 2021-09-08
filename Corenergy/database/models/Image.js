@@ -1,5 +1,5 @@
 module.exports = (Sequelize,DataType)=>{
-    return Sequelize.define("Images",{
+    const Image =  Sequelize.define("Image",{
         id:{
             type:Sequelize.INTEGER,
             primaryKey:true,
@@ -51,4 +51,21 @@ module.exports = (Sequelize,DataType)=>{
         timestamps:false, 
         tableName:"images"
     });
+
+    Image.associate = function (models){
+      Image.belongsTo (models.Product,{
+        as: "product",
+        foreignKey: "productId"
+      })
+      Image.belongsTo (models.User,{
+        as: "createdBy",
+        foreignKey: "createdBy"
+      })
+      Image.belongsTo (models.User,{
+        as: "deletedBy",
+        foreignKey: "deletedBy"
+      })
+    }
+
+    return Image
 }

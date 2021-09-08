@@ -23,7 +23,8 @@ module.exports = {
         model:"addresses",
         key:"id"
       }
-    }, 
+    }
+    
     });
      
   },

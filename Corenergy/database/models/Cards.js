@@ -1,5 +1,5 @@
 module.exports = (Sequelize,DataType)=>{
-    return Sequelize.define("Card",{
+    const Card = Sequelize.define("Card",{
         id:{
             type:Sequelize.INTEGER,
             primaryKey:true,
@@ -9,10 +9,7 @@ module.exports = (Sequelize,DataType)=>{
         },
         creditcard:{
             type:Sequelize.BIGINT,
-            references: {
-            model:"users",
-            key:"id"
-            }
+            allowNull:false
         },
         expirationMM:{
             type:Sequelize.INTEGER,
@@ -30,4 +27,5 @@ module.exports = (Sequelize,DataType)=>{
             tableName:"cards",
             timestamps:false
         });
+    return Card
     }

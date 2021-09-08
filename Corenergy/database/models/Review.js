@@ -1,5 +1,5 @@
 module.exports = (Sequelize,DataType)=>{
-    return Sequelize.define("Reviews",{
+    const Review = Sequelize.define("Review",{
         id:{
         type:DataType.INTEGER,
         primaryKey:true,
@@ -29,4 +29,11 @@ module.exports = (Sequelize,DataType)=>{
         tableName:"reviews",
         timestamps:false,
     });
+    Review.associate = function(models){
+      Review.belongsTo(models.Product,{
+        as:"productId",
+        foreignKey:"productId"
+      })
+    }
+    return Review
 }

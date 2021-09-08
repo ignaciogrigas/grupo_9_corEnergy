@@ -1,5 +1,5 @@
 module.exports = (Sequelize,DataType)=>{
-    return Sequelize.define("Product",{
+    const Product = Sequelize.define("Product",{
         id:{
           type:DataType.INTEGER,
           primaryKey:true,
@@ -71,4 +71,27 @@ module.exports = (Sequelize,DataType)=>{
           tableName:"products",
           timestamps:false
       });
+      Product.associate = function (models){
+        Product.hasMany (models.Image,{
+          as: "image",
+          foreignKey: "productId"
+        })
+        Product.belongsTo (models.User,{
+          as: "createdBy",
+          foreignKey: "createdBy"
+        })
+        Product.belongsTo (models.User,{
+          as: "deletedBy",
+          foreignKey: "deletedBy"
+        })
+        Product.belongsTo (models.User,{
+          as: "updatedBy",
+          foreignKey: "updatedBy"
+        })
+        Product.hasMany(models.Review,{
+          as:"review",
+          foreignKey:"productId"
+        })
+      }
+      return Product
     }

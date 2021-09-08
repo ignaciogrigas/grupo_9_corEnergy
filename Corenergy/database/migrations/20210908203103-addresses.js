@@ -8,11 +8,7 @@ module.exports = {
       primaryKey:true,
       autoIncrement: true,
       unique:true,
-      allowNull:false,
-      references: {
-        model:"usersAddresses",
-        key:"addressId"
-      }
+      allowNull:false
     },
     city:{
       type:Sequelize.STRING,
@@ -30,12 +26,12 @@ module.exports = {
         allowNull:false,
       },
     zipcode:{
-        type: dataTypes.INTEGER,
+        type: Sequelize.INTEGER,
         unique:true,
         allowNull:false,
       },
     telephone:{
-        type: dataTypes.DECIMAL,
+        type: Sequelize.DECIMAL,
         unique:true,
         allowNull:false,
       },

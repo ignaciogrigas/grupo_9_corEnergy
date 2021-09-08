@@ -2,7 +2,7 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('cart', { 
+    await queryInterface.createTable('carts', { 
     id:{
       type:Sequelize.INTEGER,
       primaryKey:true,
@@ -10,21 +10,18 @@ module.exports = {
       unique:true,
       allowNull:false
   },
-    userId:{
-      type:DataType.INTEGER,
-      references: {
-        model:"user",
-        key:"id"
-      }
-    },
     totalPrice:{
-      type:DataType.FLOAT(6,2),
+      type:Sequelize.FLOAT(6,2),
       allowNull:false
+    },
+    deletedAt:{
+      type:Sequelize.DATE,
+      defaultValue:null
     }
   });
 },
 down: async (queryInterface, Sequelize) => {
-  await queryInterface.dropTable('cart')
+  await queryInterface.dropTable('carts')
  
 }
 };
