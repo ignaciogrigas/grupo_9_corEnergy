@@ -5,6 +5,8 @@ const home = require ("../controllers/home")
 
 router.get("/",home.show);
 
-router.get("/error-404",home.error)
+router.get("/error-404",home.error);
+
+router.get("/search/query",home.search);
 
 module.exports=router;
