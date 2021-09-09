@@ -7,6 +7,6 @@ router.get("/",home.show);
 
 router.get("/error-404",home.error);
 
-router.get("/search/query",home.search);
+router.get("/search/keywords",home.search);
 
 module.exports=router;

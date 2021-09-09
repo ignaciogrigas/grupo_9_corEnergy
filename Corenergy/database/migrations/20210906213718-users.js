@@ -29,10 +29,6 @@ module.exports = {
         type:Sequelize.STRING,
         allowNull:false
       },
-      surname:{
-        type:Sequelize.STRING,
-        allowNull:false
-      },
       categoryUserId:{
         type:Sequelize.INTEGER,
         references: {
@@ -43,7 +39,7 @@ module.exports = {
       },
       profileImage:{
         type:Sequelize.STRING,
-        defaultValeu:"/images/default_and_logos/default_avatar.svg"
+        defaultValue:"/images/default_and_logos/default_avatar.svg"
       }
       });
   },
