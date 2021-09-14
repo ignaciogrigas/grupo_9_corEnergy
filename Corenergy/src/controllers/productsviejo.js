@@ -1,49 +1,40 @@
 const express = require("express");
 const router = express.Router();
 const path = require("path");
-const Sequelize = require("sequelize")
-const {Op} = Sequelize
-const db = require ("../database/models")
-const {Product,Review,ProductCart,Cart,UserCart} = db
+const productsModel = require ("../modelsNuevo/products");
+// const Sequelize = require("sequelize")
+// const {Op} = Sequelize
+// const db = require ("../database/models")
+// const {Product,Review,ProductCart,Cart,UserCart} = db
+
 module.exports = {
     byId:async(req,res) => {
-        try{
-        const singleProduct = await Product.findByPk(req.params.id,{include:["image","subcategories","review"]});
-        console.log(singleProduct)}
-        /*const productId =req.params.id
-        const usersWhoBought = []
-        const carts = await ProductCart.findAll({
-            where:{
-                productId : productId
-            }
-        },{include:["cart"]})
-        const usersWhoBoughtWithExtra = await carts.forEach(cart => {
-            return usersWhoBought.append(cart.cartId.userId)            
-        });
-        const newCarts = await usersWhoBought.map(user =>{
-            UserCart.findAll({
-                where:{
-                    userId:user
-                }
-            }).cartId
-        })*/
-        
-        /*res.render("./products/product_detail",{
-        style:"/css/product_detail.css",
-        title:singleProduct.name,
-        singleProduct:singleProduct,
-        listOfProducts: [],
-        listOfReviews: productsModel.getProductReviews(req.params.id),
-        idProduct:req.params.id})
-   }*/catch (error){
-       console.log(console.error)
+        try {
+
+        const singleProduct = await productsModel.one(parseInt(req.params.id));
+            res.render("./products/product_detail",{
+                style:"/css/product_detail.css",
+                singleProduct,
+                title: 'TESTING'
+            });
+        } catch (error){
        res.render("error_404",{
            title:"Error 404",
            style:"/css/error_404.css"
        })
-   }}/*
-    
-    
+   }},
+    category:(req,res)=> res.render("./products/all_products",{
+        style:"/css/all_products.css",
+        title:'hollaaa',
+        listOfProducts:productsModel.byCategory(req.params.nameCategory),
+        listOfSubCategories:[]
+
+    }),
+    /*
+
+
+
+
     (req,res)=> res.render("./products/product_detail",{
         style:"/css/product_detail.css",
         title:productsModel.oneWithExtra(req.params.id).name,
@@ -56,7 +47,7 @@ module.exports = {
         style:"/css/all_products.css",
         title:productsModel.titleArrange(req.params.nameCategory),
         listOfProducts:productsModel.byCategory(req.params.nameCategory),
-        listOfSubCategories:productsModel.allSubcategories(req.params.nameCategory)        
+        listOfSubCategories:productsModel.allSubcategories(req.params.nameCategory)
 
     }),
 
@@ -70,7 +61,7 @@ module.exports = {
         let newProduct = productsModel.new(req.body,req.files);
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
-            return res.render("./products/create",{ 
+            return res.render("./products/create",{
                 errors: errors.mapped(),
                 title:"Add",
                 style:"/css/create.css"
@@ -101,7 +92,7 @@ module.exports = {
             style:"/css/create.css",
             errorMsg:"Try again,errors in your upload",
             product: productToBeEdited,
-        }) 
+        })
     },
 
     delete:(req,res)=>{

@@ -17,7 +17,7 @@ module.exports = {
     address:{
       type:Sequelize.STRING,
       allowNull:false,
-    }, 
+    },
     floor:{
         type:Sequelize.INTEGER,
         allowNull:false,
@@ -27,11 +27,11 @@ module.exports = {
         allowNull:false,
       },
     telephone:{
-        type: Sequelize.DECIMAL,
+        type: Sequelize.STRING,
         allowNull:false,
       },
     });
-     
+
   },
 
   down: async (queryInterface, Sequelize) => {

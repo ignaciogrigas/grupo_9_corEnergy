@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const path = require("path");
-const productsController = require("../controllers/products");
+const productsController = require("../controllers/productsviejo");
 //const multer = require("multer");
 //const storage = require("../middlewares/products_multer");
 //const upload = multer({storage:storage});
@@ -16,7 +16,7 @@ router.get("/:id", productsController.byId);
 
 //router.get("/edit/:id", productsController.modify);
 
-//router.get("/category/:nameCategory", productsController.category);
+router.get("/category/:nameCategory", productsController.category);
 
 //router.post("/save",[validationProduct,upload.array("productImages",[6])],productsController.save);
 
