@@ -12,7 +12,7 @@ app.listen(app.get("port"),()=>console.log("Server on http://localhost:" + app.g
 app.set("view engine", "ejs")
 app.set("views",path.resolve(__dirname, "./views"))
 
-//public acces
+//public access
 app.use(express.static(path.resolve(__dirname, "../public")))
 
 //app middlewares
@@ -25,6 +25,6 @@ app.use(session({secret:"Corenergy",resave:false,saveUninitialized:true}));
 
 //rutas
 app.use(require("./routes/home"));
-//app.use("/products",require("./routes/products"));
-//app.use("/users",require("./routes/users"));
+app.use("/products",require("./routes/products"));
+app.use("/users",require("./routes/users"));
 

@@ -10,15 +10,15 @@ const productsController = require("../controllers/products");
 
 //router.get("/create", productsController.showCreateTemplate);
 
-//router.get("/cart" ,validationIsLogged, productsController.cart);
+//router.get("/cart" /*,validationIsLogged*/, productsController.cart);
 
 router.get("/:id", productsController.byId);
 
 //router.get("/edit/:id", productsController.modify);
 
-//router.get("/category/:nameCategory", productsController.category);
+router.get("/category/:nameCategory", productsController.category);
 
-//router.post("/save",[validationProduct,upload.array("productImages",[6])],productsController.save);
+//router.post("/save",[/*validationProduct,*/upload.array("productImages",[6])],productsController.save);
 
 //router.post("/save-new-review",productsController.newReview)
 

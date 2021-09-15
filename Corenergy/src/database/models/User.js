@@ -36,7 +36,7 @@ module.exports = (Sequelize,DataTypes)=>{
         },
         profileImage:{
           type:DataTypes.STRING,
-          defaultValeu:"/images/default_and_logos/default_avatar.svg"
+          defaultValue:"/images/default_and_logos/default_avatar.svg"
         }
         },
         {
