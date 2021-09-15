@@ -1,13 +1,13 @@
-    <% for (let i = 0; i<3; i++){%>
+    <% for (let i = 0; i<listOfReviews.length; i++){%>
         <article>
             <section>
-            <h5>Review title</h5>
+            <h5><%= listOfReviews[i].titleReview%></h5>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i> 
             </section>
-            <p>Review itselfReview itselfReview itselfReview itselfReview itselfReview itselfReview itselfReview itselfReview itselfReview itselfReview itselfReview itselfReview itself</p>
+            <p><%= listOfReviews[i].comments%></p>
         </article>
     <%}%>
