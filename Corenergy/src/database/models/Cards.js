@@ -30,8 +30,9 @@ module.exports = (Sequelize,DataTypes)=>{
     Card.associate = function(models){
         Card.belongsToMany(models.User,{
             as:"users",
-            through:"usersAddresses",
-            foreignKey:"cardId"
+            through:"usersCards",
+            foreignKey:"cardId",
+            timestamps:false
         })
         Card.hasMany(models.Order,{
             as:"order",

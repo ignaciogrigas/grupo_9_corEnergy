@@ -76,6 +76,10 @@ module.exports = (Sequelize,DataTypes)=>{
           as: "image",
           foreignKey: "productId"
         })
+        Product.belongsTo(models.Category,{
+          as:"category",
+          foreignKey:"categoryId"
+        })
         Product.belongsTo (models.User,{
           as: "created_by",
           foreignKey: "createdBy"
@@ -95,12 +99,14 @@ module.exports = (Sequelize,DataTypes)=>{
         Product.belongsToMany(models.ProductCart,{
           as:"cart",
           through:"productscarts",
-          foreignKey:"productId"
+          foreignKey:"productId",
+          timestamps:false
       })
       Product.belongsToMany(models.SubCategory,{
         as:"subcategories",
         through:"productsSubCategories",
-        foreignKey:"productId"
+        foreignKey:"productId",
+        timestamps:false
       })
       }
       return Product

@@ -25,8 +25,9 @@ module.exports = (Sequelize,DataTypes)=>{
           deletedAt:{
             type:DataTypes.DATE,
             defaultValue:null
-          },
-          tableName:"productsCarts",
+          }
+      },{
+        tableName:"productsCarts",
           timestamps:false
       });
 
@@ -34,12 +35,14 @@ module.exports = (Sequelize,DataTypes)=>{
           ProductCart.belongsToMany(models.Product,{
               as:"product",
               through:"productscarts",
-              foreignKey:"productId"
+              foreignKey:"productId",
+              timestamps:false
           }),
           ProductCart.belongsToMany(models.Cart,{
             as:"cart",
             through:"productscarts",
-            foreignKey:"cartId"
+            foreignKey:"cartId",
+            timestamps:false
         })
       }
       return ProductCart

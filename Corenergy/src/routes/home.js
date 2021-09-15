@@ -9,4 +9,6 @@ router.get("/error-404",home.error);
 
 router.get("/search",home.search);
 
+router.get("/prueba",home.prueba);
+
 module.exports=router;

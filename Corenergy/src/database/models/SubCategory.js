@@ -20,7 +20,8 @@ module.exports = (Sequelize,DataTypes)=>{
           SubCategory.belongsToMany(models.Product,{
             as:"product",
             through:"productsSubCategories",
-            foreignKey:"subCategoryId"
+            foreignKey:"subCategoryId",
+            timestamps:false
           })
         }
         return SubCategory
