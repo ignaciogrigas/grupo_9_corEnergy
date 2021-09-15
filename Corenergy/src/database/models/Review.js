@@ -25,10 +25,10 @@ module.exports = (Sequelize,DataTypes)=>{
             model:"products",
             key:"id"
         }
-    },
-        tableName:"reviews",
-        timestamps:false,
-    });
+    }},{
+      tableName:"reviews",
+      timestamps:false
+  });
     Review.associate = function(models){
       Review.belongsTo(models.Product,{
         as:"product_id",
