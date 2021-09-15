@@ -1,34 +1,22 @@
 const express = require("express");
 const router = express.Router();
 const path = require("path");
-const Sequelize = require("sequelize")
-const {Op} = Sequelize
-const db = require ("../database/models")
-const {Product,Review,ProductCart} = db
+const homeModel = require("../models/home")
+const productModel = require("../models/products")
+
 
 module.exports={
-    search:async(req,res) => {
-        try{
-             const results = await Product.findAll({
-                where:{
-                    title:{
-                        [Op.like]:"%" + req.query.keywords + "%"
-                    }
-                }},{include:["image"]}
-            )
+    search:(req,res)=> {
+        console.log(homeModel.bestReviews())
+        
+    },
+    /*search:(req,res) => 
             res.render("query_results",{
                 title:"Results",
                 style:"cual",
-                queryResults : results
-            })
-        }catch (error){
-            console.log(console.error)
-            res.render("error_404",{
-                title:"Error 404",
-                style:"/css/error_404.css"
-            })
-        }
-    },
+                queryResults: homeModel.bestReviews(),
+                //listOfProducts:homeModel.bestSellers()
+            }),*/
     show:async(req,res)=>{
         try{
             /*const groupsProducts = await ProductCart.findAll(
