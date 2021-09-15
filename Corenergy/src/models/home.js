@@ -1,18 +1,19 @@
 const Sequelize = require("sequelize")
+const { sequelize } = require("../database/models")
 const {Op} = Sequelize
 const db = require ("../database/models")
 const {Product,Review,ProductCart} = db
 
  module.exports = {
-     search:function(keywords){
-         Product.findAll({
+     search:async function(keywords){
+         return await Product.findAll({
              where:{
-                 title:{[Op.like]:"%" + keywords + "%"}
+                 name:{[Op.like]:`%${keywords}%`}
              },
              include: [
                 {model: db.Image, as: "image"},
                 {model: db.Category, as: "category"},
-                {model: db.SubCategory, as: "subCategory" }
+                {model: db.SubCategory, as: "subcategories" }
             ]
          })
      },
@@ -26,14 +27,17 @@ const {Product,Review,ProductCart} = db
         })
     },
 
-     bestSellers:function (){
-        ProductCart.findAll({
-            group: "product",
+     bestSellers:async function (){
+        let bestSellers = await ProductCart.findAll({
+            group: "productId",
+            attribute: [sequelize.fn("COUNT",sequelize.col("ProductCart.productId")),"COUNT"],
             limit: 8,
+            order : [["COUNT","DESC"]],
             include : [
-                {model: Product, as: "product"},
-                {model: db.Image, as: "image"}
+                {model: Product, as: "product"}
             ]
         })
+        return bestSellers
      }
+     
  } 

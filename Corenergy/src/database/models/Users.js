@@ -71,17 +71,20 @@ module.exports = (Sequelize,DataTypes)=>{
           User.belongsToMany(models.Card,{
             as:"cards",
             through:"usersCards",
-            foreignKey:"UserId"
+            foreignKey:"UserId",
+            timestamps:false
           })
           User.belongsToMany(models.Address,{
             as:"addresses",
             through:"usersAddresses",
-            foreignKey:"UserId"
+            foreignKey:"UserId",
+            timestamps:false
           })
           User.belongsToMany(models.UserCart,{
             as:"carts",
             through:"userscarts",
-            foreignKey:"userId"
+            foreignKey:"userId",
+            timestamps:false
         })
         }
         return User
