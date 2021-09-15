@@ -7,7 +7,7 @@ module.exports= {
         // return JSON.parse(file)
     },
 
-    allWithExtra: function(catName){
+    allWithExtra: function(catName){//no esta al pedo si el extra son los includes //el name entiende q es de ctegory el name
         return Product.findAll({
             where: { name: catName },
             include: [
