@@ -30,14 +30,14 @@ const {Product,Review,ProductCart} = db
      bestSellers:async function (){
         let bestSellers = await ProductCart.findAll({
             group: "productId",
-            attribute: [sequelize.fn("COUNT",sequelize.col("ProductCart.productId")),"COUNT"],
+            //attribute: [sequelize.fn("COUNT",sequelize.col("ProductCart.productId")),"COUNT"],
             limit: 8,
-            order : [["COUNT","DESC"]],
-            include : [
+            order : [["productId","DESC"]],
+            /*include : [
                 {model: Product, as: "product"}
-            ]
+            ]*/
         })
         return bestSellers
-     }
+     }//no sabemos
      
  } 

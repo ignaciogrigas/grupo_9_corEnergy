@@ -5,13 +5,13 @@
     <section id="product">
         <article id="product_images">
             <figure id="central_img">
-                <img src="/images/uploads/products/<%= singleProduct.images[0]%>" alt="">
+                <img src="/images/uploads/products/<%= singleProduct.image[0]%>" alt="">
             </figure>
                 <ul id="other_img">
-                    <% for (let i = 1 ; i<singleProduct.images.length ;i++){%>
+                    <% for (let i = 1 ; i<singleProduct.image.length ;i++){%>
                         <li>
                         <figure>
-                            <img src="/images/uploads/products/<%= singleProduct.images[i]%>">
+                            <img src="/images/uploads/products/<%= singleProduct.image[i]%>">
                         </figure>
                     </li>
                     <%}%>

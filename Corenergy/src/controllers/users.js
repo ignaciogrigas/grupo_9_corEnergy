@@ -30,7 +30,7 @@ module.exports={
                 style:"/css/sign_up.css"
                });
           }else{
-              console.log(req)
+              console.log(req.file, req.body)
             let newUser = usersModel.create(req.body,req.file)
             req.session.user = newUser; 
             return res.redirect("/")
