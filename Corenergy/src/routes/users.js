@@ -5,14 +5,14 @@ const multer = require("multer");
 const usersController = require("../controllers/users")
 const storage = require("../middlewares/users_multer");
 const upload = multer({storage:storage});
-/*const validationLogIn = require("../middlewares/validationLogIn");
+const validationLogIn = require("../middlewares/validationLogIn");
 const validationIsLogged = require("../middlewares/validationIsLogged");
 const validationUser = require("../middlewares/validationUser");
 const validationNewAddress = require("../middlewares/validationNewAddress");
-const validationNewCard = require("../middlewares/validationNewCard");*/
+const validationNewCard = require("../middlewares/validationNewCard");
 
 
-router.get("/profile"/*,validationIsLogged*/, usersController.profile);
+router.get("/profile",validationIsLogged, usersController.profile);
 
 router.get("/log-in", usersController.logIn);
 

@@ -12,7 +12,7 @@ module.exports={
           email: String(data.email),
           categoryUserId: String(data.email).includes("@corenergy") ? 1: 2,
           password: bcrypt.hashSync(data.password,10),
-          profileImage: file && file.filename? file.url : "/images/default_and_logos/default_avatar.svg" //no pasa la imagen!
+          profileImage: file? file.filename : "/images/default_and_logos/default_avatar.svg" //no pasa la imagen!
         }
         const user = await User.create(userData)
         return user

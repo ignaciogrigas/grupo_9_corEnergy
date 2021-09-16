@@ -21,8 +21,7 @@ module.exports= {
         })
     },
     byCategory: async function(catName){
-        try{
-            /*let cat = await db.Category.findOne({
+        let cat = await db.Category.findOne({
                 where:{
                     name:catName
                 }
@@ -36,12 +35,8 @@ module.exports= {
                     {model: db.SubCategory, as: "subcategories" },
                     {model: db.Category, as: "category"}
                 ]
-            })*/
-            return listOfProducts//nos tira promise rejected del cat 1 y 2 de las otras no!
-        } catch(error){
-            console.log(error)
-        }
-        
+            })
+            return listOfProducts//nos tira promise rejected del cat 1 y 2 de las otras no!       
     },
     allSubcategories:function(cat){
         if(cat.includes("weights")){
@@ -75,6 +70,19 @@ module.exports= {
         }
         let newProduct = await Product.Create(newProductData)
         //newProduct.setSubcategories({}) asi va para pivotes!!
+        for (file in files){
+            let imageData={
+                name:file.filename,
+                url:file.path,
+                productId: newProduct.id,
+                createdAt: Date.now(),
+                createdBy: user.id,
+                deletedAt:null,
+                deletedBy:null
+            }
+        let newImage = await db.Image.Create(imageData)
+        return newImage
+        }
         return newProduct
     }
     /*new:function(data,files){

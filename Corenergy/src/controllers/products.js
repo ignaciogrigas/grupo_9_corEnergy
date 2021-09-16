@@ -17,6 +17,7 @@ module.exports = {
         })
     },
     category:async (req,res)=> {
+        let listOfProducts = await productsModel.byCategory(req.params.nameCategory)
             res.render("./products/all_products",{
             style:"/css/all_products.css",
             title:productsModel.titleArrange(req.params.nameCategory),
@@ -31,7 +32,7 @@ module.exports = {
         })
     },
     save:async(req,res)=> {
-        let newProduct = await productsModel.new(req.body,req.files);
+        let newProduct = await productsModel.new(req.body,req.files,req.session.user);
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
             return res.render("./products/create",{ 

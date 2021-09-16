@@ -21,7 +21,7 @@ app.use(express.json());
 app.use(methodOverried("_method"));
 app.use(cookie());
 app.use(session({secret:"Corenergy",resave:false,saveUninitialized:true}));
-//app.use(require("./middlewares/shareUser"));
+app.use(require("./middlewares/shareUser"));
 
 //rutas
 app.use(require("./routes/home"));
