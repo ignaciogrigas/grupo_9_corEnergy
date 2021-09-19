@@ -1,12 +1,12 @@
 const db = require ("../database/models");
-const {Product,Review } = db
+const {Product,Review,Image } = db
 
 module.exports= {
     one: async function(id){
         return await Product.findOne({
             where: {id},
             include: [
-                {model: db.Image, as: "image"},
+                {model: Image, as: "image"},
                 {model: db.Category, as: "category"},
                 {model: db.SubCategory, as: "subcategories" }
             ]
@@ -31,7 +31,7 @@ module.exports= {
                     categoryId:cat.id
                 },
                 include:[
-                    {model: db.Image, as: "image"},
+                    {model: Image, as: "image"},
                     {model: db.SubCategory, as: "subcategories" },
                     {model: db.Category, as: "category"}
                 ]
@@ -54,7 +54,7 @@ module.exports= {
             return category.charAt(0).toUpperCase()+ category.slice(1,7) + " " + category.charAt(8).toUpperCase()+ category.slice(9,13)
         }
     },
-    new:async function(data,files,user){
+    new:async function(data,files){//(data,files,user){
         let newProductData={
             name:data.productName,
             code:data.productCode,
@@ -62,42 +62,123 @@ module.exports= {
             description:data.description,
             price:data.price,
             createdAt: Date.now(),
-            createdBy: user.id,
+            createdBy: 25,//user.id, poner tmb arriba quien esta en seession fslta
             updatedAt: null,
             updatedBy:null,
             deletedAt:null,
             deletedBy:null
         }
-        let newProduct = await Product.Create(newProductData)
-        //newProduct.setSubcategories({}) asi va para pivotes!!
-        for (file in files){
-            let imageData={
-                name:file.filename,
-                url:file.path,
-                productId: newProduct.id,
-                createdAt: Date.now(),
-                createdBy: user.id,
-                deletedAt:null,
-                deletedBy:null
-            }
-        let newImage = await db.Image.Create(imageData)
-        return newImage
+        let newProduct = await Product.create(newProductData)
+
+        //await newProduct.setSubcategories(Array.from(subcategories))
+
+        const images = await Promise.all(
+            files.map(async (file) => {
+                return await Image.create({
+                    name:file.filename,
+                    url:file.path,
+                    productId:newProduct.id,
+                    createdAt: Date.now(),
+                    createdBy: 30,//user.id, poner tmb arriba quien esta en seession fslta
+                    deletedAt:null,
+                    deletedBy:null
+                })
+            })
+        )
+
+        return newProduct,images
+    },
+    edit: async function(data,files,id){
+        let productToBeEdited = await Product.findOne({
+            where: {id},
+            include: [
+                {model: Image, as: "image"},
+                {model: db.Category, as: "category"},
+                {model: db.SubCategory, as: "subcategories" }
+            ]
+        });
+        let updatedData={
+                name:data.productName,
+                code:data.productCode,
+                categoryId:parseInt(data.category),
+                description:data.description,
+                price:data.price,
+                updatedAt: Date.now(),
+                updatedBy:35,//user.id poner tmb arriba quien esta en seession fslta
         }
-        return newProduct
+        let updatedProduct = await Product.update(updatedData,{
+            where:{id:id}
+        })
+        //await result.setSubcategories(Array.from(subcategories))
+        if (files){
+            const images = await productToBeEdited.getImage();
+            const deletedImages = await Promise.all(
+                images.map(async (image) => {
+                    let imageId = image.id
+                    return await Image.update({
+                        deletedAt:Date.now(),
+                        deletedBy:35,//user.id poner tmb arriba quien esta en seession fslta
+                    },{
+                        where:{id:imageId}
+                    })
+                })
+            )
+            const newImages = await Promise.all(
+            files.map(async (file) => {
+                return await Image.create({
+                    name:file.filename,
+                    url:file.path,
+                    productId:id,
+                    createdAt: Date.now(),
+                    createdBy: 30,//user.id, poner tmb arriba quien esta en seession fslta
+                    deletedAt:null,
+                    deletedBy:null
+                })
+            })
+        )
+        return newImages,deletedImages
+        }
+        return updatedProduct
+    },
+    delete:async function(id){
+        let productToBeEdited = await Product.findOne({
+            where: {id},
+            include: [
+                {model: Image, as: "image"},
+                {model: db.Category, as: "category"},
+                {model: db.SubCategory, as: "subcategories" }
+            ]
+        });
+        let deletedData={
+                deletedAt: Date.now(),
+                deletedBy:35,//user.id poner tmb arriba quien esta en seession fslta
+        }
+        let deletedProduct = await Product.update(deletedData,{
+            where:{id:id}
+        })
+            const images = await productToBeEdited.getImage();
+            const deletedImages = await Promise.all(
+                images.map(async (image) => {
+                    let imageId = image.id
+                    return await Image.update({
+                        deletedAt:Date.now(),
+                        deletedBy:35,//user.id poner tmb arriba quien esta en seession fslta
+                    },{
+                        where:{id:imageId}
+                    })
+                })
+            )
+        return deletedProduct,deletedImages
+    },
+    newReview:async function(data){
+        let ReviewData = {
+            titleReview:data.title,
+            comments:data.comments,
+            stars:5,
+            productId:parseInt(data.idProduct)
+
+        }
+        let newReview = await Review.create(ReviewData)
+        return newReview
+    },
     }
-    /*new:function(data,files){
-        let all = this.all();
-        let newProduct = {
-            id: all.length > 0 ? all[all.length-1].id + 1 : 1 ,
-            name:data.productName,
-            code:data.productCode,
-            category:parseInt(data.category),
-            subCategroy:[data.subCategory],
-            images:files.map(element => element.filename),
-            price:data.price
-        };
-        all.push(newProduct);
-        fs.writeFileSync(this.directory,JSON.stringify(all,null,2));
-        return true;
-    },*/
-}

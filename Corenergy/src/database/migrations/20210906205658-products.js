@@ -48,7 +48,6 @@ module.exports = {
       },
       updatedAt:{
         type:Sequelize.DATE,
-        allowNull:false
       },
       updatedBy:{
         type:Sequelize.INTEGER,
@@ -56,7 +55,6 @@ module.exports = {
           model:"users",
           key:"id"
         },
-        allowNull:false
       },
       deletedAt:{
         type:Sequelize.DATE,
