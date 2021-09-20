@@ -82,7 +82,7 @@ module.exports = (Sequelize,DataTypes)=>{
           })
           User.belongsToMany(models.UserCart,{
             as:"carts",
-            through:"userscarts",
+            through:"usersCarts",
             foreignKey:"userId",
             timestamps:false
         })

@@ -22,6 +22,14 @@ module.exports = (Sequelize,DataTypes)=>{
               key:"id"
             }
           },
+          productPrice:{
+            type:DataTypes.INTEGER,
+            allowNull:false
+          },
+          productQuantity:{
+            type:DataTypes.INTEGER,
+            allowNull:false
+          },
           deletedAt:{
             type:DataTypes.DATE,
             defaultValue:null

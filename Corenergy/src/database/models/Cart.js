@@ -17,7 +17,7 @@ module.exports = (Sequelize,DataTypes)=>{
       }
     },{        
         timestamps:false, 
-        tableName:"cart"
+        tableName:"carts"
     });
     Cart.associate = function(models){
       Cart.hasOne(models.Order,{
@@ -32,7 +32,7 @@ module.exports = (Sequelize,DataTypes)=>{
     })
     Cart.belongsToMany(models.UserCart,{
       as:"users",
-      through:"userscarts",
+      through:"usersCarts",
       foreignKey:"cartId",
       timestamps:false
   })

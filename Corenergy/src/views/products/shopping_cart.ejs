@@ -1,6 +1,6 @@
-<%-include("./includes/head")%>
+<%-include("../includes/head")%>
 <body>
-    <%-include("./includes/header")%>
+    <%-include("../includes/header")%>
     <main>
             <h1>Your Cart</h1>
             <table>
@@ -39,8 +39,8 @@
             <form action="" method="POST" id="total-price">
                 <select>
                     <option selected value="defualt">Address</option>
-                    <% for (let i = 0 ; i< registeredAddress){%>
-                        <option value="address<% = i%>">address 2</option>  
+                    <% for (let i = 0 ; i< registeredAddress; i ++){%>
+                        <option value="address<%= i%>">address 2</option>  
                     <%}%>
                 </select>               
                 <ul>
@@ -54,8 +54,8 @@
                 
                 <select>
                     <option selected value="default">Credit Card</option>
-                    <% for (let i = 0 ; i< registeredCreditCards){%>
-                        <option value="card<% = i%>">card 2</option>  
+                    <% for (let i = 0 ; i< registeredCreditCards; i ++){%>
+                        <option value="card<%= i%>">card 2</option>  
                     <%}%>               
                 </select>
                                
@@ -63,6 +63,6 @@
                 
             </form>
     </main>
-<%-include("./includes/footer")%>      
+<%-include("../includes/footer")%>      
 </body>
 </html>

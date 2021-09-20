@@ -25,6 +25,14 @@ module.exports = {
           key:"id"
         }
       },
+      productPrice:{
+        type:Sequelize.INTEGER,
+        allowNull:false
+      },
+      productQuantity:{
+        type:Sequelize.INTEGER,
+        allowNull:false
+      },
       deletedAt:{
         type:Sequelize.DATE,
         defaultValue:null

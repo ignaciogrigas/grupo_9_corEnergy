@@ -45,10 +45,12 @@
                 <% if (locals.user && locals.user.category == "admin"){%>
                         <a href="/products/edit/<%= singleProduct.id%>"><button type="submit">Edit</button></a>
                 <%}else{%>
-                    <a href=<%= locals.user ? "/" : "/users/sign-up" %>><button type="submit">Buy</button></a>
+                    <form id = "buy_form" action ="<%= locals.user ? `/products/buy/${singleProduct.id}?_method=PUT` : "/users/sign-up" %>"method=POST enctype="multipart/form-data">
+                        <button type="submit">Buy</button>
+                    </form>
                 <%}%>
                 <% if (locals.user && locals.user.categoryUserId == 1){%>
-                    <form id="delete_form" action="/products/delete/<%= singleProduct.id%>?_method=PUT" method=POST enctype="multipart/form-data">
+                    <form id="delete_form" action= <%= `/products/delete/${singleProduct.id}?_method=PUT`%> method=POST enctype="multipart/form-data">
                         <button type="submit">Delete</button>
                     </form>
                 <%}%>
@@ -79,7 +81,7 @@
         </article>
     </section>
         <h3 id="best_seller">Customers who bought this item also bought</h3>
-        <%-include("../includes/list_of_articles")%>
+        <%-include("../includes/list_of_articles_customers")%>
     </main>
     <%-include("../includes/footer")%>
 </body>

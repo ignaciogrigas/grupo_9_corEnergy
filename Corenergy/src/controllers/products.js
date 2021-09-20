@@ -8,11 +8,12 @@ module.exports = {
     byId:async(req,res) => {
         let singleProduct = await productsModel.one(req.params.id)
         let listOfReviews = await productsModel.getProductReviews(req.params.id)
+        let otherProducts = await productsModel.customersWhoAlsoBought(req.params.id)
         res.render("./products/product_detail",{
             style:"/css/product_detail.css",
             title:singleProduct.name,
             singleProduct:singleProduct,
-            listOfProducts: [],
+            listOfProducts: otherProducts,
             listOfReviews:listOfReviews,
             idProduct:req.params.id
         })
@@ -61,8 +62,8 @@ module.exports = {
 
     edit:async(req,res)=>{
         const productToBeEdited = await productsModel.one(req.params.id)
-        let result = productsModel.edit(req.body,req.files,req.params.id)
-        return result == true ? res.redirect("/") : res.render("./products/create",{
+        let result = await productsModel.edit(req.body,req.files,req.params.id)
+        return result ? res.redirect("/") : res.render("./products/create",{
             title:"Add",
             style:"/css/create.css",
             errorMsg:"Try again,errors in your upload",
@@ -76,6 +77,22 @@ module.exports = {
     },
     newReview:async (req,res)=> {
         let newReview = await productsModel.newReview(req.body);
-        return newReview == true ? res.redirect("back") : " "
+        return newReview ? res.redirect("back") : " "
+    },
+    cart: (req,res)=> {
+        res.render("./products/shopping_cart",{
+        title:"Add",
+        style:"/css/shopping_cart.css",
+        registeredCreditCards:2,
+        registeredAddress:2,
+        ProductsBought:3
+    })},
+    buy:async(req,res) =>{
+        let prueba = await productsModel.buy(2)
+        res.send(prueba)
+    },
+    customersWhoAlsoBought:async(req,res) =>{
+        let otherProducts = await productsModel.customersWhoAlsoBought(req.params.id)
+        res.send(otherProducts)
     },
 }

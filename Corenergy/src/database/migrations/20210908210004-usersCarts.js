@@ -24,10 +24,6 @@ module.exports = {
           model:"carts",
           key:"id"
         }
-      },
-      deletedAt:{
-        type:Sequelize.DATE,
-        defaultValue:null
       }
     });
   },

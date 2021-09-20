@@ -21,12 +21,9 @@ module.exports = (Sequelize,DataTypes)=>{
               model:"carts",
               key:"id"
             }
-          },
-          deletedAt:{
-            type:DataTypes.DATE,
-            defaultValue:null
-          },
-          tableName:"usersCarts",
+          }
+      },{
+        tableName:"usersCarts",
           timestamps:false
       });
 

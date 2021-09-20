@@ -1,5 +1,7 @@
+const Sequelize = require("sequelize")
+const { Op } = Sequelize;
 const db = require ("../database/models");
-const {Product,Review,Image } = db
+const {Product,Review,Image,UserCart } = db
 
 module.exports= {
     one: async function(id){
@@ -154,8 +156,7 @@ module.exports= {
                 deletedBy:35,//user.id poner tmb arriba quien esta en seession fslta
         }
         let deletedProduct = await Product.update(deletedData,{
-            where:{id:id}
-        })
+            where:{id:id}})
             const images = await productToBeEdited.getImage();
             const deletedImages = await Promise.all(
                 images.map(async (image) => {
@@ -181,4 +182,37 @@ module.exports= {
         let newReview = await Review.create(ReviewData)
         return newReview
     },
+    customersWhoAlsoBought: async function(id){
+        let carts = await db.ProductCart.findAll({
+            where:{
+                productId:id
+            }
+        })
+        let otherProducts = await Promise.all(
+            carts.map(async (cart)=>{
+                let cartId= cart.cartId
+                let productsInCarts = await db.ProductCart.findAll({
+                    where:{id:cartId},
+                    include:[ {model: Product, as:"product"}]
+                })
+                let products=[]
+                productsInCarts.forEach((product)=> products.push(product.product))
+                return products
+            })
+        )
+        return otherProducts
+    },
+    buy:async function(user){
+        let userSessionId =  user //user.id
+        let userActiveCart = await UserCart.findOne({
+            where:{
+                    userId:userSessionId
+            }
+            ,include: [
+                {model: db.Cart, as: "cart"},
+                {model: db.User, as: "user"}
+            ]
+        })
+        return userActiveCart
+    }
     }
