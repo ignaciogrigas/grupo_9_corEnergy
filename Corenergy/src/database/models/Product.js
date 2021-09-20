@@ -45,7 +45,6 @@ module.exports = (Sequelize,DataTypes)=>{
         },
         updatedAt:{
           type:DataTypes.DATE,
-          allowNull:false
         },
         updatedBy:{
           type:DataTypes.INTEGER,
@@ -53,7 +52,6 @@ module.exports = (Sequelize,DataTypes)=>{
             model:"users",
             key:"id"
           },
-          allowNull:false
         },
         deletedAt:{
           type:DataTypes.DATE,

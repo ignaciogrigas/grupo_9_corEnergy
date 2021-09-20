@@ -6,7 +6,7 @@ const multer = require("multer");
 const storage = require("../middlewares/products_multer");
 const upload = multer({storage:storage});
 //const validationIsLogged = require("../middlewares/validationIsLogged");
-//const validationProduct = require("../middlewares/validationProduct");
+const validationProduct = require("../middlewares/validationProduct");
 
 router.get("/create", productsController.showCreateTemplate);
 
@@ -14,17 +14,17 @@ router.get("/create", productsController.showCreateTemplate);
 
 router.get("/:id", productsController.byId);
 
-//router.get("/edit/:id", productsController.modify);
+router.get("/edit/:id", productsController.modify);
 
 router.get("/category/:nameCategory", productsController.category);
 
-router.post("/save",[/*validationProduct,*/upload.array("productImages",[6])],productsController.save);
+router.post("/save",[validationProduct,upload.array("productImages",[6])],productsController.save);
 
-//router.post("/save-new-review",productsController.newReview)
+router.post("/save-new-review",productsController.newReview)
 
-//router.put("/update/:id" ,upload.array("productImages",[6]),productsController.edit);
+router.put("/update/:id" ,upload.array("productImages",[6]),productsController.edit);
 
-//router.delete ("/delete/:id",productsController.delete);
+router.put ("/delete/:id",productsController.delete);
 
 
 module.exports = router;

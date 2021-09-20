@@ -1,7 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const path = require("path");
-const productsModel = require("../models/products")
+const productsModel = require("../models/products");
+const { validationResult } = require('express-validator');
 
 module.exports = {
     byId:async(req,res) => {
@@ -32,7 +33,7 @@ module.exports = {
         })
     },
     save:async(req,res)=> {
-        let newProduct = await productsModel.new(req.body,req.files,req.session.user);
+        let newProduct = await productsModel.new(req.body,req.files)//(req.body,req.files,req.session.user);
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
             return res.render("./products/create",{ 
@@ -43,5 +44,38 @@ module.exports = {
           }else{
             return newProduct , res.redirect("back");
           }
+    },
+    modify:async(req,res)=> {
+        //const id = req.params.id;
+        //const productId = Number(id)
+        const productToBeEdited = await productsModel.one(req.params.id)
+        if (!productToBeEdited) {
+            res.render("error_404")
+        }
+        return res.render("./products/create",{
+            title:"Update",
+            style:"/css/create.css",
+            product: productToBeEdited,
+        })
+    },
+
+    edit:async(req,res)=>{
+        const productToBeEdited = await productsModel.one(req.params.id)
+        let result = productsModel.edit(req.body,req.files,req.params.id)
+        return result == true ? res.redirect("/") : res.render("./products/create",{
+            title:"Add",
+            style:"/css/create.css",
+            errorMsg:"Try again,errors in your upload",
+            product: productToBeEdited,
+        }) 
+    },
+
+    delete:async(req,res)=>{
+        let result = await productsModel.delete(req.params.id);
+        return result ? res.redirect("/") : res.render("error_404")
+    },
+    newReview:async (req,res)=> {
+        let newReview = await productsModel.newReview(req.body);
+        return newReview == true ? res.redirect("back") : " "
     },
 }

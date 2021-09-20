@@ -1,7 +1,6 @@
 const db = require ("../database/models")
 const bcrypt = require("bcrypt");
-const Address = require("../database/models/Address");
-const {User,Card} = db
+const {User,Card,Address} = db
 
 module.exports={
     create:async function(data,file){
@@ -12,7 +11,7 @@ module.exports={
           email: String(data.email),
           categoryUserId: String(data.email).includes("@corenergy") ? 1: 2,
           password: bcrypt.hashSync(data.password,10),
-          profileImage: file? file.filename : "/images/default_and_logos/default_avatar.svg" //no pasa la imagen!
+          profileImage: file? `/uploads/users/${file.filename}` : "/default_and_logos/default_avatar.svg" 
         }
         const user = await User.create(userData)
         return user
@@ -25,18 +24,22 @@ module.exports={
         })
     },
     newCard:async function(data){
-        let id = data.idUser
+        let id= 2
+        let user = await User.findOne({
+            where:{id}
+        })
         let cardData = {
             creditcard:data.creditcard,
             expirationMM:data.expireMM,
             expirationYY:data.expireYY,
             secode:data.secode
         }
-        let newCard = await Card.Create(cardData)
-        //la relacion con la pivote?
+        let newCard = await Card.create(cardData)
+        await user.setNewCard(newCard)
         return newCard
     },
-    newAddres:async function(data){
+    newAddress:async function(data){
+        //const User = Address.belongstoMany(usersAddresses)
         let id = data.idUser
         let addressData = {
             city:data.city,
@@ -45,9 +48,9 @@ module.exports={
             zipcode:data.zipcode,
             telephone:data.telephone
         }
-        let newAddress = await Address.Create(addressData)
-        //la relacion con la pivote?
-        return newAddress
+        let newAddress = await Address.create(addressData)
+            await result.setNewAddress(newAddresss)
+        return newAddress,addressPivote
     },
     
     /*one: async function(id){

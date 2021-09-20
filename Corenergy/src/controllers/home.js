@@ -12,7 +12,7 @@ module.exports={
         res.render("home",{
             title:"Home",
             style:"/css/home.css",
-            listOfProducts:4,
+            listOfProducts:4,//bestSellers,como llegar a la data de cada product como nested include
             listOfReviews:bestReviews
         })
         
@@ -25,10 +25,13 @@ module.exports={
             style:"/css/all_products.css",
             listOfProducts:queryResults
         })
-    },//body/ver ruta
+    },//body
 
     prueba: async(req,res)=>{
-        res.send(await homeModel.bestSellers())
+        let products = await homeModel.bestSellers();
+        for (let i = 0 ; i < products.length ; i++){
+            res.send(products[i].product)
+        }
     },
     error:(req,res)=>res.render("error_404",{
         title:"Error 404",
