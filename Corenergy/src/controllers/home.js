@@ -8,11 +8,11 @@ const productModel = require("../models/products")
 module.exports={
     show:async(req,res)=> {
         let bestReviews=await homeModel.bestReviews();
-        //let bestSellers = await homeModel.bestSellers()
+        let bestSellers = await homeModel.bestSellers()
         res.render("home",{
             title:"Home",
             style:"/css/home.css",
-            listOfProducts:4,//bestSellers,como llegar a la data de cada product como nested include
+            listOfProducts:bestSellers,//como llegar a la data de cada product como nested include
             listOfReviews:bestReviews
         })
         
@@ -29,9 +29,7 @@ module.exports={
 
     prueba: async(req,res)=>{
         let products = await homeModel.bestSellers();
-        for (let i = 0 ; i < products.length ; i++){
-            res.send(products[i].product)
-        }
+        res.send(products)
     },
     error:(req,res)=>res.render("error_404",{
         title:"Error 404",

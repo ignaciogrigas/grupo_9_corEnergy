@@ -144,12 +144,7 @@ module.exports= {
     },
     delete:async function(id){
         let productToBeEdited = await Product.findOne({
-            where: {id},
-            include: [
-                {model: Image, as: "image"},
-                {model: db.Category, as: "category"},
-                {model: db.SubCategory, as: "subcategories" }
-            ]
+            where: {id}
         });
         let deletedData={
                 deletedAt: Date.now(),
@@ -173,7 +168,7 @@ module.exports= {
     },
     newReview:async function(data){
         let ReviewData = {
-            titleReview:data.title,
+            titleReview:data.titleReview,
             comments:data.comments,
             stars:5,
             productId:parseInt(data.idProduct)
@@ -188,19 +183,19 @@ module.exports= {
                 productId:id
             }
         })
+        let products=[]
         let otherProducts = await Promise.all(
-            carts.map(async (cart)=>{
+                carts.map(async (cart)=>{
                 let cartId= cart.cartId
                 let productsInCarts = await db.ProductCart.findAll({
                     where:{id:cartId},
                     include:[ {model: Product, as:"product"}]
                 })
-                let products=[]
                 productsInCarts.forEach((product)=> products.push(product.product))
                 return products
             })
-        )
-        return otherProducts
+            )
+        return products
     },
     buy:async function(user){
         let userSessionId =  user //user.id

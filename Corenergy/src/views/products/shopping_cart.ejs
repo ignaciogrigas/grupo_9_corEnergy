@@ -17,8 +17,8 @@
                                     <img src="./images/test.jpg">
                                 </figure>
                                 <div>
-                                    <h3>Dumbbells</h3>
-                                    <p>2 kg weights, covered with high impact silicone</p>
+                                    <h3><%= ProductsBought[i].name%></h3>
+                                    <p><%= ProductsBought[i].description%></p>
                                     <a href="">Delete</a>
                                 </div>
                             </section>
@@ -30,7 +30,7 @@
                                 <i class="fas fa-angle-up"></i> 
                             </div> 
                         </td>
-                        <td class="item-price">$ 1000.00</td>
+                        <td class="item-price"><%= ProductsBought[i].price%></td>
                     </tr>
                     <tr>
                 <%}%>
@@ -40,13 +40,13 @@
                 <select>
                     <option selected value="defualt">Address</option>
                     <% for (let i = 0 ; i< registeredAddress; i ++){%>
-                        <option value="address<%= i%>">address 2</option>  
+                        <option value="<%= registeredAddress[i].id%>"><%= registeredAddress[i].address%></option>  
                     <%}%>
                 </select>               
-                <ul>
+                <!--<ul>
                     <li>Shipping fee</li>
                     <li class="li-price">$3000.00</li>
-                </ul>
+                </ul>-->
                 <ul>
                     <li>Total Price</li>
                     <li class="li-price">$3000.00</li>
@@ -55,7 +55,7 @@
                 <select>
                     <option selected value="default">Credit Card</option>
                     <% for (let i = 0 ; i< registeredCreditCards; i ++){%>
-                        <option value="card<%= i%>">card 2</option>  
+                        <option value="<%= registeredCreditCards[i].id%>"><%= registeredCreditCards[i].creditcard%></option>  
                     <%}%>               
                 </select>
                                

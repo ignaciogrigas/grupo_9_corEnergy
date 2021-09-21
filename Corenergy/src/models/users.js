@@ -17,15 +17,17 @@ module.exports={
         return user
     },
     findByEmail: async function (email){
-        return await User.findOne({
+        let selectedUser = await User.findOne({
             where:{
                 email:email
             }
         })
+        console.log(email)
+        return selectedUser
     },
-    newCard:async function(data){
-        let id= 2
-        let user = await User.findOne({
+    newCard:async function(data,user){
+        let id= user.id
+        let userToChanged = await User.findOne({
             where:{id}
         })
         let cardData = {
@@ -35,7 +37,7 @@ module.exports={
             secode:data.secode
         }
         let newCard = await Card.create(cardData)
-        await user.setNewCard(newCard)
+        await userToChanged.setCards(newCard)
         return newCard
     },
     newAddress:async function(data){

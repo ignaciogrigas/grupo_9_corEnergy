@@ -26,6 +26,6 @@ router.put("/update/:id" ,upload.array("productImages",[6]),productsController.e
 
 router.put ("/delete/:id",productsController.delete);
 
-router.get ("/buy/:id",productsController.customersWhoAlsoBought);
+//router.put ("/buy/:id",productsController.customersWhoAlsoBought);
 
 module.exports = router;
