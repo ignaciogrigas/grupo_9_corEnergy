@@ -22,10 +22,12 @@ router.post("/save",[validationProduct,upload.array("productImages",[6])],produc
 
 router.post("/save-new-review",productsController.newReview)
 
+router.post("/buy/:id",productsController.buy);
+
 router.put("/update/:id" ,upload.array("productImages",[6]),productsController.edit);
 
 router.put ("/delete/:id",productsController.delete);
 
-//router.put ("/buy/:id",productsController.customersWhoAlsoBought);
+router.put("/order-successful",productsController.order)
 
 module.exports = router;

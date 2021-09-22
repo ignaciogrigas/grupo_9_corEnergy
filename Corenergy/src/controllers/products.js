@@ -2,7 +2,9 @@ const express = require("express");
 const router = express.Router();
 const path = require("path");
 const productsModel = require("../models/products");
+const usersModel = require("../models/users");
 const { validationResult } = require('express-validator');
+const users = require("../models/users");
 
 module.exports = {
     byId:async(req,res) => {
@@ -77,22 +79,28 @@ module.exports = {
     },
     newReview:async (req,res)=> {
         let newReview = await productsModel.newReview(req.body);
-        return newReview ? res.redirect("back") : " "
+        return newReview ? res.redirect("back") : res.render("error_404")
     },
-    cart: (req,res)=> {
+    cart:async (req,res)=> {
+        let productsBought = await productsModel.cart(req.session.user)
+        let addresses = await usersModel.getAddresses(req.session.user)
+        let cards = await usersModel.getCards(req.session.user)
         res.render("./products/shopping_cart",{
-        title:"Add",
+        title:"Cart",
         style:"/css/shopping_cart.css",
-        registeredCreditCards:2,
-        registeredAddress:2,
-        ProductsBought:3
+        registeredCreditCards:cards,
+        registeredAddress:addresses,
+        ProductsBought:productsBought
     })},
     buy:async(req,res) =>{
-        let prueba = await productsModel.buy(2)
-        res.send(prueba)
+        let purchase = await productsModel.buy(req.body,req.session.user)
+        return purchase ? res.redirect("/"): res.render("error_404")
     },
     customersWhoAlsoBought:async(req,res) =>{
         let otherProducts = await productsModel.customersWhoAlsoBought(req.params.id)
         res.send(otherProducts)
     },
+    order:async(req,res) => {
+        
+    }
 }

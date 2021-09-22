@@ -77,8 +77,9 @@ module.exports={
 
         return res.redirect("/")
     },
-    newAddress:(req,res) => {
+    newAddress:(req,res) => {        
         const errors = validationResult(req);
+        
 
         if (errors.errors.length > 0) {
             return res.render("./users/profile",{
@@ -87,8 +88,9 @@ module.exports={
                 errors: errors.mapped()
             })
         }
-        usersModel.newAddress(req.body)
 
-        return res.redirect("/") 
-    }
+        usersModel.newAddress(req.body,req.session.user)
+
+        return res.redirect("/")
+    },
 }

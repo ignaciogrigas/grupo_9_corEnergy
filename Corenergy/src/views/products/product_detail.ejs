@@ -20,14 +20,20 @@
         <article>
             <h3><%= singleProduct.name%></h3>
             <p id="code"><%= singleProduct.code%></p>
+            <%if (locals.user && locals.user.categoryUserId == 1){%>
+                <form id="delete_form" action= <%= `/products/delete/${singleProduct.id}?_method=PUT`%> method=POST enctype="multipart/form-data">
+            <%}else{%>
+                <form id = "buy_form" action ="<%= locals.user ? `/products/buy/${singleProduct.id}` : "/users/sign-up" %>"method=POST >
+            <%}%>
             <% if (singleProduct.category == "weights" || singleProduct.category == "elastic-bands" || singleProduct.category == "mats") {%> 
-            <section>
-                    <% if(singleProduct.category == "weights"){%>
-                    <h5>Weight</h5>
-                    <% } else if (singleProduct.category == "elastic-bands" || singleProduct.category == "mats")  { %>
-                    <h5>Color</h5>
-                    <%}%>
-                        <form>
+                    <section>
+                            <% if(singleProduct.category == "weights"){%>
+                            <h5>Weight</h5>
+                            <% } else if (singleProduct.category == "elastic-bands" || singleProduct.category == "mats")  { %>
+                            <h5>Color</h5>
+                            <%}%>
+                    </section>
+                    <section>
                             <ul>
                                 <% for ( let i = 0 ; i<singleProduct.subCategory.length;i++){%>
                                     <li>
@@ -36,25 +42,22 @@
                                     </li>
                                 <%}%>
                             </ul>
-                        </form>
-            </section>
-            <%}%>
-            <p><%= singleProduct.description%></p>
-            <section id="purchase">
-                <h5>$ <%= singleProduct.price%></h5>
-                <% if (locals.user && locals.user.category == "admin"){%>
-                        <a href="/products/edit/<%= singleProduct.id%>"><button type="submit">Edit</button></a>
-                <%}else{%>
-                    <form id = "buy_form" action ="<%= locals.user ? `/products/buy/${singleProduct.id}?_method=PUT` : "/users/sign-up" %>"method=POST enctype="multipart/form-data">
-                        <button type="submit">Buy</button>
-                    </form>
-                <%}%>
-                <% if (locals.user && locals.user.categoryUserId == 1){%>
-                    <form id="delete_form" action= <%= `/products/delete/${singleProduct.id}?_method=PUT`%> method=POST enctype="multipart/form-data">
-                        <button type="submit">Delete</button>
-                    </form>
-                <%}%>
-            </section>
+                    </section>
+                        <%}%>
+                        <p><%= singleProduct.description%></p>
+                    <section id="purchase">
+                        <h5>$ <%= singleProduct.price%></h5>
+                        <% if (locals.user && locals.user.categoryUserId == 1){%>
+                                <a href="/products/edit/<%= singleProduct.id%>"><button type="submit">Edit</button></a>
+                        <%}else{%>
+                                <input hidden type="number" name="idProduct" id="idProduct" value="<%= idProduct%>">
+                                <button type="submit">Add to cart</button>
+                        <%}%>
+                        <% if (locals.user && locals.user.categoryUserId == 1){%>
+                                <button type="submit">Delete</button>
+                        <%}%>
+                    </section>
+               </form>
         </article>   
     </section>
     <h3 class="reviews_title">Reviews</h3>

@@ -80,11 +80,9 @@ module.exports = (Sequelize,DataTypes)=>{
             foreignKey:"UserId",
             timestamps:false
           })
-          User.belongsToMany(models.UserCart,{
+          User.hasMany(models.UserCart,{
             as:"carts",
-            through:"usersCarts",
-            foreignKey:"userId",
-            timestamps:false
+            foreignKey:"userId"
         })
         }
         return User

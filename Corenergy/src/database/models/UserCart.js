@@ -28,17 +28,13 @@ module.exports = (Sequelize,DataTypes)=>{
       });
 
       UserCart.associate=function(models){
-          UserCart.belongsToMany(models.User,{
+          UserCart.belongsTo(models.User,{
               as:"user",
-              through:"usersCarts",
-              foreignKey:"userId",
-              timestamps:false
+              foreignKey:"userId"
           }),
-          UserCart.belongsToMany(models.Cart,{
+          UserCart.belongsTo(models.Cart,{
             as:"cart",
-            through:"usersCarts",
-            foreignKey:"cartId",
-            timestamps:false
+            foreignKey:"cartId"
         })
       }
       return UserCart

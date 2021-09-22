@@ -1,7 +1,7 @@
 const Sequelize = require("sequelize")
 const { Op } = Sequelize;
 const db = require ("../database/models");
-const {Product,Review,Image,UserCart } = db
+const {Product,Review,Image,UserCart,Cart } = db
 
 module.exports= {
     one: async function(id){
@@ -181,7 +181,14 @@ module.exports= {
         let carts = await db.ProductCart.findAll({
             where:{
                 productId:id
-            }
+            },
+            include :[
+                {model: Product, as: "product", include:[
+                    {model: db.Image, as: "image"},
+                    {model: db.Category, as: "category"},
+                    {model: db.SubCategory, as: "subcategories" }
+                ]},
+            ]
         })
         let products=[]
         let otherProducts = await Promise.all(
@@ -197,8 +204,10 @@ module.exports= {
             )
         return products
     },
-    buy:async function(user){
-        let userSessionId =  user //user.id
+    buy:async function(data,user){
+        let userSessionId = user.id
+        let productId = data.idProduct
+        let productData = await Product.findOne({where:{id:productId}})
         let userActiveCart = await UserCart.findOne({
             where:{
                     userId:userSessionId
@@ -208,6 +217,74 @@ module.exports= {
                 {model: db.User, as: "user"}
             ]
         })
-        return userActiveCart
+        if(!userActiveCart || userActiveCart.cart.deletedAt != null){
+            let cartData={
+                totalPrice:0,
+                deletedAt:null
+            }
+            let newCart = await Cart.create(cartData);
+            let UserCartData = {
+                userId:userSessionId,
+                cartId:newCart.id
+            }
+            let userCartInsert = await UserCart.create (UserCartData)
+            let productBoughtData ={
+                productId:productId,
+                cartId:newCart.id,
+                productPrice:productData.price,
+                productQuantity:1,
+                productSubCategoryId:1//??
+            }
+            let productInCart = await db.ProductCart.create(productBoughtData)
+            return newCart,productInCart,userCartInsert
+
+        } else {
+            let productBoughtData ={
+                productId:productId,
+                cartId:userActiveCart.cartId,
+                productPrice:productData.price,
+                productQuantity:1,
+                productSubCategoryId:1//??
+            }
+            let productInCart = await db.ProductCart.create(productBoughtData)
+            return productInCart
+        }
+    },
+    cart:async function(user){//y si no tengo carrito?????
+        let userSessionId = user.id
+        let userActiveCart = await UserCart.findOne({
+            where:{
+                    userId:userSessionId
+            }
+            ,include: [
+                {model: db.Cart, as: "cart"}
+            ]
+        })
+        if(userActiveCart || userActiveCart.cart.deletedAt == null){
+            let productsToBePurchased = await db.ProductCart.findAll({
+                where: {cartId:userActiveCart.cartId},
+                include :[
+                    {model: Product, as: "product", include:[
+                        {model: db.Image, as: "image"},
+                        {model: db.Category, as: "category"},
+                        {model: db.SubCategory, as: "subcategories" }
+                    ]},
+                ]
+            })
+            return productsToBePurchased
+        }
+    },
+    order:async function(data,total,user){
+        let userSessionId = user.id
+        let userActiveCart = await UserCart.findOne({
+            where:{
+                    userId:userSessionId
+            }
+            ,include: [
+                {model: db.Cart, as: "cart"}
+            ]
+        })
+        
+
     }
     }

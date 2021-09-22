@@ -33,9 +33,12 @@ module.exports = {
         type:Sequelize.INTEGER,
         allowNull:false
       },
-      deletedAt:{
-        type:Sequelize.DATE,
-        defaultValue:null
+      productSubCategoryId:{
+        type:Sequelize.INTEGER,
+        references: {
+          model:"subCategories",
+          key:"id"
+        }
       }
     });
   },

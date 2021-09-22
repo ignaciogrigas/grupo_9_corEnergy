@@ -30,11 +30,13 @@ module.exports = (Sequelize,DataTypes)=>{
             type:DataTypes.INTEGER,
             allowNull:false
           },
-          deletedAt:{
-            type:DataTypes.DATE,
-            defaultValue:null
-          }
-      },{
+          productSubCategoryId:{
+            type:DataTypes.INTEGER,
+            references: {
+              model:"subCategories",
+              key:"id"
+            }}
+        },{
         tableName:"productsCarts",
           timestamps:false
       });
@@ -47,7 +49,11 @@ module.exports = (Sequelize,DataTypes)=>{
           ProductCart.belongsTo(models.Cart,{
             as:"cart",
             foreignKey:"cartId"
-        })
+        }),
+        ProductCart.belongsTo(models.SubCategory,{
+          as:"subCategory",
+          foreignKey:"productSubCategoryId"
+      })
       }
       return ProductCart
     }
