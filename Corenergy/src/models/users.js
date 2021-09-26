@@ -17,15 +17,16 @@ module.exports={
         return user
     },
     findByEmail: async function (email){
-        return await User.findOne({
+        let selectedUser = await User.findOne({
             where:{
                 email:email
             }
         })
+        return selectedUser
     },
-    newCard:async function(data){
-        let id= 2
-        let user = await User.findOne({
+    newCard:async function(data,user){
+        let id= user.id
+        let userToChanged = await User.findOne({
             where:{id}
         })
         let cardData = {
@@ -35,29 +36,41 @@ module.exports={
             secode:data.secode
         }
         let newCard = await Card.create(cardData)
-        await user.setNewCard(newCard)
+        await userToChanged.setCards(newCard)
         return newCard
     },
-    newAddress:async function(data){
-        //const User = Address.belongstoMany(usersAddresses)
-        let id = data.idUser
+    newAddress:async function(data,user){
+        let id= user.id
+        let userToChanged = await User.findOne({
+            where:{id}
+        })
         let addressData = {
             city:data.city,
             address:data.address,
             floor:data.floor,
-            zipcode:data.zipcode,
+            zipCode:data.zipcode,
             telephone:data.telephone
         }
         let newAddress = await Address.create(addressData)
-            await result.setNewAddress(newAddresss)
-        return newAddress,addressPivote
+        await userToChanged.setAddresses(newAddress)
+        return newAddress
     },
-    
-    /*one: async function(id){
-        return await User.findOne({
-            where: {id}
-        });
-    }*/
+    getAddresses :async function(user){
+        let id= user.id
+        let userInSession = await User.findOne({
+            where:{id}
+        })
+        let selectedAddresses = await userInSession.getAddresses(Address)
+        return selectedAddresses
+    },
+    getCards :async function(user){
+        let id= user.id
+        let userInSession = await User.findOne({
+            where:{id}
+        })
+        let selectedCards = await userInSession.getCards(Card)
+        return selectedCards
+    }
 
 }
 

@@ -67,7 +67,9 @@ module.exports = (Sequelize,DataTypes)=>{
         }
       },{
           tableName:"products",
-          timestamps:false
+          timestamps:false,
+          /*deletedAt:"deletedAt",
+          paranoid:true*/
       });
       Product.associate = function (models){
         Product.hasMany (models.Image,{
@@ -94,11 +96,9 @@ module.exports = (Sequelize,DataTypes)=>{
           as:"review",
           foreignKey:"productId"
         })
-        Product.belongsToMany(models.ProductCart,{
+        Product.hasMany(models.ProductCart,{
           as:"cart",
-          through:"productscarts",
           foreignKey:"productId",
-          timestamps:false
       })
       Product.belongsToMany(models.SubCategory,{
         as:"subcategories",

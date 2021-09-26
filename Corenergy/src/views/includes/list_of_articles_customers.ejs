@@ -1,0 +1,17 @@
+
+<section class="products">
+    <% for (let i = 0 ; i < listOfProducts.length ; i++){
+        for(let j= 0 ; j < i.length;j++){
+        for(let g= 0 ; g < j.length;g++){%>
+        <article>
+            <figure>
+                <a href="/products/<%= listOfProducts[g].id%>"><img src="<%= listOfProducts[g].image[0]%>"></a>
+            </figure>
+            <section class="description">
+                <a href="/products/<%= listOfProducts[g].id%>"><p><%= listOfProducts[g].name%></p></a>
+                <p class="price"><%= listOfProducts[g].price%></p>
+            </section>
+        </article>
+        <%}}}%>
+</section>
+ 

@@ -17,24 +17,20 @@ module.exports = (Sequelize,DataTypes)=>{
       }
     },{        
         timestamps:false, 
-        tableName:"cart"
+        tableName:"carts"
     });
     Cart.associate = function(models){
       Cart.hasOne(models.Order,{
         as:"order",
         foreignKey:"cartId"
       })
-      Cart.belongsToMany(models.ProductCart,{
+      Cart.hasMany(models.ProductCart,{
         as:"products",
-        through:"productscarts",
-        foreignKey:"cartId",
-        timestamps:false
+        foreignKey:"cartId"
     })
-    Cart.belongsToMany(models.UserCart,{
+    Cart.hasMany(models.UserCart,{
       as:"users",
-      through:"userscarts",
-      foreignKey:"cartId",
-      timestamps:false
+      foreignKey:"cartId"
   })
     }
     return Cart

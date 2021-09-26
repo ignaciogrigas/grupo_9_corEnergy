@@ -22,7 +22,11 @@ module.exports = (Sequelize,DataTypes)=>{
             through:"productsSubCategories",
             foreignKey:"subCategoryId",
             timestamps:false
-          })
+          });
+          SubCategory.hasMany(models.ProductCart,{
+            as:"shopped",
+            foreignKey:"productSubCategoryId"
+        })
         }
         return SubCategory
     }

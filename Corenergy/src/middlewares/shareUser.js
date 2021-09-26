@@ -1,8 +1,9 @@
 const usersModel = require("../models/users")
-  module.exports = (req, res, next) => {
+  module.exports =async (req, res, next) => {
     let user=null
     if(req.cookies != undefined && req.cookies.user!= undefined){
-        user= usersModel.findByEmail(req.cookies.user);
+        user=await usersModel.findByEmail(req.cookies.user);
+        
         req.session.user=user;
     }
     if (req.session != undefined && req.session.user != undefined){

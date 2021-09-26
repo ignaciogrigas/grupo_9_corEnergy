@@ -37,7 +37,7 @@ module.exports={
           }
     },
 
-    access:(req,res) => {
+    access:async(req,res) => {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
           return res.render("./users/log_in",{ 
@@ -47,7 +47,7 @@ module.exports={
               style:"/css/log_in.css"
              });
         }else{
-          let user = usersModel.findByEmail(req.body.email);
+          let user = await usersModel.findByEmail(req.body.email);
           if(req.body.remember){
             res.cookie("user",req.body.email,{maxAge:300000})
           }
@@ -73,12 +73,13 @@ module.exports={
             })
         }
 
-        usersModel.newCard(req.body)
+        usersModel.newCard(req.body,req.session.user)
 
         return res.redirect("/")
     },
-    newAddress:(req,res) => {
+    newAddress:(req,res) => {        
         const errors = validationResult(req);
+        
 
         if (errors.errors.length > 0) {
             return res.render("./users/profile",{
@@ -87,8 +88,9 @@ module.exports={
                 errors: errors.mapped()
             })
         }
-        usersModel.newAddress(req.body)
 
-        return res.redirect("/") 
-    }
+        usersModel.newAddress(req.body,req.session.user)
+
+        return res.redirect("/")
+    },
 }

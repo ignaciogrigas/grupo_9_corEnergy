@@ -20,14 +20,20 @@
         <article>
             <h3><%= singleProduct.name%></h3>
             <p id="code"><%= singleProduct.code%></p>
+            <%if (locals.user && locals.user.categoryUserId == 1){%>
+                <form id="delete_form" action= <%= `/products/delete/${singleProduct.id}?_method=PUT`%> method=POST enctype="multipart/form-data">
+            <%}else{%>
+                <form id = "buy_form" action ="<%= locals.user ? `/products/buy/${singleProduct.id}` : "/users/sign-up" %>"method=POST >
+            <%}%>
             <% if (singleProduct.category == "weights" || singleProduct.category == "elastic-bands" || singleProduct.category == "mats") {%> 
-            <section>
-                    <% if(singleProduct.category == "weights"){%>
-                    <h5>Weight</h5>
-                    <% } else if (singleProduct.category == "elastic-bands" || singleProduct.category == "mats")  { %>
-                    <h5>Color</h5>
-                    <%}%>
-                        <form>
+                    <section>
+                            <% if(singleProduct.category == "weights"){%>
+                            <h5>Weight</h5>
+                            <% } else if (singleProduct.category == "elastic-bands" || singleProduct.category == "mats")  { %>
+                            <h5>Color</h5>
+                            <%}%>
+                    </section>
+                    <section>
                             <ul>
                                 <% for ( let i = 0 ; i<singleProduct.subCategory.length;i++){%>
                                     <li>
@@ -36,23 +42,22 @@
                                     </li>
                                 <%}%>
                             </ul>
-                        </form>
-            </section>
-            <%}%>
-            <p><%= singleProduct.description%></p>
-            <section id="purchase">
-                <h5>$ <%= singleProduct.price%></h5>
-                <% if (locals.user && locals.user.category == "admin"){%>
-                        <a href="/products/edit/<%= singleProduct.id%>"><button type="submit">Edit</button></a>
-                <%}else{%>
-                    <a href=<%= locals.user ? "/" : "/users/sign-up" %>><button type="submit">Buy</button></a>
-                <%}%>
-                <% if (locals.user && locals.user.categoryUserId == 1){%>
-                    <form id="delete_form" action="/products/delete/<%= singleProduct.id%>?_method=PUT" method=POST enctype="multipart/form-data">
-                        <button type="submit">Delete</button>
-                    </form>
-                <%}%>
-            </section>
+                    </section>
+                        <%}%>
+                        <p><%= singleProduct.description%></p>
+                    <section id="purchase">
+                        <h5>$ <%= singleProduct.price%></h5>
+                        <% if (locals.user && locals.user.categoryUserId == 1){%>
+                                <a href="/products/edit/<%= singleProduct.id%>"><button type="submit">Edit</button></a>
+                        <%}else{%>
+                                <input hidden type="number" name="idProduct" id="idProduct" value="<%= idProduct%>">
+                                <button type="submit">Add to cart</button>
+                        <%}%>
+                        <% if (locals.user && locals.user.categoryUserId == 1){%>
+                                <button type="submit">Delete</button>
+                        <%}%>
+                    </section>
+               </form>
         </article>   
     </section>
     <h3 class="reviews_title">Reviews</h3>
@@ -62,9 +67,9 @@
             <h3 class="reviews_title">Add Review +</h3>
             <form action="/products/save-new-review" method="POST">
                 <input hidden type="number" name="idProduct" id="idProduct" value="<%= idProduct%>">
-                <h5><label for="newReviewTitle"></label>Title</label></h5>
-                <input type="text" name="newReviewTitle" id="newReviewTitle">
-                <ul>
+                <h5><label for="titleReview"></label>Title</label></h5>
+                <input type="text" name="titleReview" id="titleReview">
+                <ul>reviewTitle
                     <% for (let i =1 ; i<6 ;i++){%>
                         <label for="star<%= i%>">
                         <i class="far fa-star"></i>
@@ -79,7 +84,7 @@
         </article>
     </section>
         <h3 id="best_seller">Customers who bought this item also bought</h3>
-        <%-include("../includes/list_of_articles")%>
+        <%-include("../includes/list_of_articles_customers",{listOfProducts})%>
     </main>
     <%-include("../includes/footer")%>
 </body>

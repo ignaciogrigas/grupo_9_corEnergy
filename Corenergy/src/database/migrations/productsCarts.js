@@ -25,9 +25,20 @@ module.exports = {
           key:"id"
         }
       },
-      deletedAt:{
-        type:Sequelize.DATE,
-        defaultValue:null
+      productPrice:{
+        type:Sequelize.INTEGER,
+        allowNull:false
+      },
+      productQuantity:{
+        type:Sequelize.INTEGER,
+        allowNull:false
+      },
+      productSubCategoryId:{
+        type:Sequelize.INTEGER,
+        references: {
+          model:"subCategories",
+          key:"id"
+        }
       }
     });
   },

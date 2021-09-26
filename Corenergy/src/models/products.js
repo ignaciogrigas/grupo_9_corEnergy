@@ -1,5 +1,7 @@
+const Sequelize = require("sequelize")
+const { Op } = Sequelize;
 const db = require ("../database/models");
-const {Product,Review,Image } = db
+const {Product,Review,Image,UserCart,Cart } = db
 
 module.exports= {
     one: async function(id){
@@ -142,20 +144,14 @@ module.exports= {
     },
     delete:async function(id){
         let productToBeEdited = await Product.findOne({
-            where: {id},
-            include: [
-                {model: Image, as: "image"},
-                {model: db.Category, as: "category"},
-                {model: db.SubCategory, as: "subcategories" }
-            ]
+            where: {id}
         });
         let deletedData={
                 deletedAt: Date.now(),
                 deletedBy:35,//user.id poner tmb arriba quien esta en seession fslta
         }
         let deletedProduct = await Product.update(deletedData,{
-            where:{id:id}
-        })
+            where:{id:id}})
             const images = await productToBeEdited.getImage();
             const deletedImages = await Promise.all(
                 images.map(async (image) => {
@@ -172,7 +168,7 @@ module.exports= {
     },
     newReview:async function(data){
         let ReviewData = {
-            titleReview:data.title,
+            titleReview:data.titleReview,
             comments:data.comments,
             stars:5,
             productId:parseInt(data.idProduct)
@@ -181,4 +177,114 @@ module.exports= {
         let newReview = await Review.create(ReviewData)
         return newReview
     },
+    customersWhoAlsoBought: async function(id){
+        let carts = await db.ProductCart.findAll({
+            where:{
+                productId:id
+            },
+            include :[
+                {model: Product, as: "product", include:[
+                    {model: db.Image, as: "image"},
+                    {model: db.Category, as: "category"},
+                    {model: db.SubCategory, as: "subcategories" }
+                ]},
+            ]
+        })
+        let products=[]
+        let otherProducts = await Promise.all(
+                carts.map(async (cart)=>{
+                let cartId= cart.cartId
+                let productsInCarts = await db.ProductCart.findAll({
+                    where:{id:cartId},
+                    include:[ {model: Product, as:"product"}]
+                })
+                productsInCarts.forEach((product)=> products.push(product.product))
+                return products
+            })
+            )
+        return products
+    },
+    buy:async function(data,user){
+        let userSessionId = user.id
+        let productId = data.idProduct
+        let productData = await Product.findOne({where:{id:productId}})
+        let userActiveCart = await UserCart.findOne({
+            where:{
+                    userId:userSessionId
+            }
+            ,include: [
+                {model: db.Cart, as: "cart"},
+                {model: db.User, as: "user"}
+            ]
+        })
+        if(!userActiveCart || userActiveCart.cart.deletedAt != null){
+            let cartData={
+                totalPrice:0,
+                deletedAt:null
+            }
+            let newCart = await Cart.create(cartData);
+            let UserCartData = {
+                userId:userSessionId,
+                cartId:newCart.id
+            }
+            let userCartInsert = await UserCart.create (UserCartData)
+            let productBoughtData ={
+                productId:productId,
+                cartId:newCart.id,
+                productPrice:productData.price,
+                productQuantity:1,
+                productSubCategoryId:1//??
+            }
+            let productInCart = await db.ProductCart.create(productBoughtData)
+            return newCart,productInCart,userCartInsert
+
+        } else {
+            let productBoughtData ={
+                productId:productId,
+                cartId:userActiveCart.cartId,
+                productPrice:productData.price,
+                productQuantity:1,
+                productSubCategoryId:1//??
+            }
+            let productInCart = await db.ProductCart.create(productBoughtData)
+            return productInCart
+        }
+    },
+    cart:async function(user){//y si no tengo carrito?????
+        let userSessionId = user.id
+        let userActiveCart = await UserCart.findOne({
+            where:{
+                    userId:userSessionId
+            }
+            ,include: [
+                {model: db.Cart, as: "cart"}
+            ]
+        })
+        if(userActiveCart || userActiveCart.cart.deletedAt == null){
+            let productsToBePurchased = await db.ProductCart.findAll({
+                where: {cartId:userActiveCart.cartId},
+                include :[
+                    {model: Product, as: "product", include:[
+                        {model: db.Image, as: "image"},
+                        {model: db.Category, as: "category"},
+                        {model: db.SubCategory, as: "subcategories" }
+                    ]},
+                ]
+            })
+            return productsToBePurchased
+        }
+    },
+    order:async function(data,total,user){
+        let userSessionId = user.id
+        let userActiveCart = await UserCart.findOne({
+            where:{
+                    userId:userSessionId
+            }
+            ,include: [
+                {model: db.Cart, as: "cart"}
+            ]
+        })
+        
+
+    }
     }

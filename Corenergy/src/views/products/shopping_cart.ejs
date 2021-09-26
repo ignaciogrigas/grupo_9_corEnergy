@@ -1,8 +1,9 @@
-<%-include("./includes/head")%>
+<%-include("../includes/head")%>
 <body>
-    <%-include("./includes/header")%>
+    <%-include("../includes/header")%>
     <main>
             <h1>Your Cart</h1>
+            <form action="/products/order-successful?_method=PUT" method="POST" id="total-price" enctype="multipart/form-data">
             <table>
                 <tr>
                     <th>Product</th>
@@ -17,8 +18,8 @@
                                     <img src="./images/test.jpg">
                                 </figure>
                                 <div>
-                                    <h3>Dumbbells</h3>
-                                    <p>2 kg weights, covered with high impact silicone</p>
+                                    <h3><%= ProductsBought[i].name%></h3>
+                                    <p><%= ProductsBought[i].description%></p>
                                     <a href="">Delete</a>
                                 </div>
                             </section>
@@ -26,36 +27,32 @@
                         <td>
                             <div class="counter">
                                 <i class="fas fa-angle-down"></i>
-                                <input type="number" value="1">
+                                <input type="number"  name="quantity" value="1">
                                 <i class="fas fa-angle-up"></i> 
                             </div> 
                         </td>
-                        <td class="item-price">$ 1000.00</td>
+                        <td class="item-price"><%= ProductsBought[i].price%></td>
                     </tr>
                     <tr>
+                    <!-- <input hidden type="number" name="idProduct" id="idProduct" value="<%= idProduct%>"> -->
                 <%}%>
             </table>
-
-            <form action="" method="POST" id="total-price">
-                <select>
+                <select  name="selectedAddress" id="selectedAddress">
                     <option selected value="defualt">Address</option>
-                    <% for (let i = 0 ; i< registeredAddress){%>
-                        <option value="address<% = i%>">address 2</option>  
+                    <% for (let i = 0 ; i< registeredAddress; i ++){%>
+                        <option value="<%= registeredAddress[i].id%>"><%= registeredAddress[i].address%></option>  
                     <%}%>
                 </select>               
-                <ul>
-                    <li>Shipping fee</li>
-                    <li class="li-price">$3000.00</li>
-                </ul>
+                <!-- COMO MANDO LA DATA DEL TOTAL COMO NUMERO!!-->
                 <ul>
                     <li>Total Price</li>
                     <li class="li-price">$3000.00</li>
                 </ul>
                 
-                <select>
+                <select name="selectedCard" id="selectedCard">
                     <option selected value="default">Credit Card</option>
-                    <% for (let i = 0 ; i< registeredCreditCards){%>
-                        <option value="card<% = i%>">card 2</option>  
+                    <% for (let i = 0 ; i< registeredCreditCards; i ++){%>
+                        <option value="<%= registeredCreditCards[i].id%>"><%= registeredCreditCards[i].creditcard%></option>  
                     <%}%>               
                 </select>
                                
@@ -63,6 +60,6 @@
                 
             </form>
     </main>
-<%-include("./includes/footer")%>      
+<%-include("../includes/footer")%>      
 </body>
 </html>

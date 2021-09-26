@@ -5,254 +5,104 @@ module.exports = {
     
       await queryInterface.bulkInsert('usersCarts', [{
         "id": 1,
-        "userId": 21,
-        "cartId": 30,
-        "deletedAt": null
+        "userId": 1,
+        "cartId": 2,
+        
       }, {
         "id": 2,
-        "userId": 42,
-        "cartId": 8,
-        "deletedAt": null
+        "userId": 2,
+        "cartId": 1,
+        
       }, {
         "id": 3,
         "userId": 6,
         "cartId": 1,
-        "deletedAt": null
+        
       }, {
         "id": 4,
         "userId": 34,
         "cartId": 49,
-        "deletedAt": null
+        
       }, {
         "id": 5,
         "userId": 44,
         "cartId": 43,
-        "deletedAt": null
+        
       }, {
         "id": 6,
         "userId": 21,
         "cartId": 44,
-        "deletedAt": null
+        
       }, {
         "id": 7,
         "userId": 36,
         "cartId": 13,
-        "deletedAt": null
+        
       }, {
         "id": 8,
         "userId": 31,
         "cartId": 32,
-        "deletedAt": null
+        
       }, {
         "id": 9,
         "userId": 39,
         "cartId": 42,
-        "deletedAt": null
+        
       }, {
         "id": 10,
         "userId": 45,
         "cartId": 47,
-        "deletedAt": null
+        
       }, {
         "id": 11,
         "userId": 14,
         "cartId": 28,
-        "deletedAt": null
+        
       }, {
         "id": 12,
         "userId": 4,
         "cartId": 2,
-        "deletedAt": null
+        
       }, {
         "id": 13,
         "userId": 1,
         "cartId": 25,
-        "deletedAt": null
+        
       }, {
         "id": 14,
         "userId": 41,
         "cartId": 23,
-        "deletedAt": null
+        
       }, {
         "id": 15,
         "userId": 7,
         "cartId": 30,
-        "deletedAt": null
+        
       }, {
         "id": 16,
         "userId": 5,
         "cartId": 42,
-        "deletedAt": null
+        
       }, {
         "id": 17,
         "userId": 7,
         "cartId": 22,
-        "deletedAt": null
+        
       }, {
         "id": 18,
         "userId": 5,
         "cartId": 23,
-        "deletedAt": null
+        
       }, {
         "id": 19,
         "userId": 37,
         "cartId": 5,
-        "deletedAt": null
+        
       }, {
         "id": 20,
         "userId": 3,
         "cartId": 37,
-        "deletedAt": null
-      }, {
-        "id": 21,
-        "userId": 2,
-        "cartId": 14,
-        "deletedAt": null
-      }, {
-        "id": 22,
-        "userId": 35,
-        "cartId": 28,
-        "deletedAt": null
-      }, {
-        "id": 23,
-        "userId": 50,
-        "cartId": 46,
-        "deletedAt": null
-      }, {
-        "id": 24,
-        "userId": 7,
-        "cartId": 49,
-        "deletedAt": null
-      }, {
-        "id": 25,
-        "userId": 38,
-        "cartId": 37,
-        "deletedAt": null
-      }, {
-        "id": 26,
-        "userId": 29,
-        "cartId": 11,
-        "deletedAt": null
-      }, {
-        "id": 27,
-        "userId": 40,
-        "cartId": 17,
-        "deletedAt": null
-      }, {
-        "id": 28,
-        "userId": 9,
-        "cartId": 27,
-        "deletedAt": null
-      }, {
-        "id": 29,
-        "userId": 20,
-        "cartId": 10,
-        "deletedAt": null
-      }, {
-        "id": 30,
-        "userId": 30,
-        "cartId": 26,
-        "deletedAt": null
-      }, {
-        "id": 31,
-        "userId": 24,
-        "cartId": 43,
-        "deletedAt": null
-      }, {
-        "id": 32,
-        "userId": 14,
-        "cartId": 6,
-        "deletedAt": null
-      }, {
-        "id": 33,
-        "userId": 30,
-        "cartId": 37,
-        "deletedAt": null
-      }, {
-        "id": 34,
-        "userId": 9,
-        "cartId": 4,
-        "deletedAt": null
-      }, {
-        "id": 35,
-        "userId": 21,
-        "cartId": 34,
-        "deletedAt": null
-      }, {
-        "id": 36,
-        "userId": 9,
-        "cartId": 25,
-        "deletedAt": null
-      }, {
-        "id": 37,
-        "userId": 26,
-        "cartId": 36,
-        "deletedAt": null
-      }, {
-        "id": 38,
-        "userId": 32,
-        "cartId": 5,
-        "deletedAt": null
-      }, {
-        "id": 39,
-        "userId": 46,
-        "cartId": 3,
-        "deletedAt": null
-      }, {
-        "id": 40,
-        "userId": 16,
-        "cartId": 45,
-        "deletedAt": null
-      }, {
-        "id": 41,
-        "userId": 27,
-        "cartId": 1,
-        "deletedAt": null
-      }, {
-        "id": 42,
-        "userId": 50,
-        "cartId": 35,
-        "deletedAt": null
-      }, {
-        "id": 43,
-        "userId": 27,
-        "cartId": 47,
-        "deletedAt": null
-      }, {
-        "id": 44,
-        "userId": 24,
-        "cartId": 11,
-        "deletedAt": null
-      }, {
-        "id": 45,
-        "userId": 15,
-        "cartId": 21,
-        "deletedAt": null
-      }, {
-        "id": 46,
-        "userId": 1,
-        "cartId": 4,
-        "deletedAt": null
-      }, {
-        "id": 47,
-        "userId": 43,
-        "cartId": 25,
-        "deletedAt": null
-      }, {
-        "id": 48,
-        "userId": 7,
-        "cartId": 8,
-        "deletedAt": null
-      }, {
-        "id": 49,
-        "userId": 13,
-        "cartId": 6,
-        "deletedAt": null
-      }, {
-        "id": 50,
-        "userId": 1,
-        "cartId": 32,
-        "deletedAt": null
+        
       }]
       , {});
     

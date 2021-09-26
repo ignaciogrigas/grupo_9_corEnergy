@@ -24,10 +24,11 @@ module.exports = (Sequelize,DataTypes)=>{
       telephone: {
         type: DataTypes.INTEGER,
         allowNull:false
-    },
-        tableName:"addresses",
-        timestamps:false,
-     })
+    }
+     },{
+    tableName:"addresses",
+     timestamps:false
+    })
      Address.associate = function(models){
       Address.belongsToMany(models.User,{
         as:"users",

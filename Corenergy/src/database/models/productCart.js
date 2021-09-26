@@ -22,28 +22,38 @@ module.exports = (Sequelize,DataTypes)=>{
               key:"id"
             }
           },
-          deletedAt:{
-            type:DataTypes.DATE,
-            defaultValue:null
-          }
-      },{
+          productPrice:{
+            type:DataTypes.INTEGER,
+            allowNull:false
+          },
+          productQuantity:{
+            type:DataTypes.INTEGER,
+            allowNull:false
+          },
+          productSubCategoryId:{
+            type:DataTypes.INTEGER,
+            references: {
+              model:"subCategories",
+              key:"id"
+            }}
+        },{
         tableName:"productsCarts",
           timestamps:false
       });
 
       ProductCart.associate=function(models){
-          ProductCart.belongsToMany(models.Product,{
+          ProductCart.belongsTo(models.Product,{
               as:"product",
-              through:"productscarts",
               foreignKey:"productId",
-              timestamps:false
           }),
-          ProductCart.belongsToMany(models.Cart,{
+          ProductCart.belongsTo(models.Cart,{
             as:"cart",
-            through:"productscarts",
-            foreignKey:"cartId",
-            timestamps:false
-        })
+            foreignKey:"cartId"
+        }),
+        ProductCart.belongsTo(models.SubCategory,{
+          as:"subCategory",
+          foreignKey:"productSubCategoryId"
+      })
       }
       return ProductCart
     }

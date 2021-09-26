@@ -5,7 +5,7 @@ module.exports = {
     
      await queryInterface.bulkInsert('carts', [
        
-      {"id":1,"totalPrice":"339.41","deletedAt":"2020/12/15"},
+      {"id":1,"totalPrice":"339.41","deletedAt":null},
       {"id":2,"totalPrice":"143.30","deletedAt":"2021/03/23"},
       {"id":3,"totalPrice":"177.43","deletedAt":"2021/05/06"},
       {"id":4,"totalPrice":"178.75","deletedAt":"2021/04/03"},
