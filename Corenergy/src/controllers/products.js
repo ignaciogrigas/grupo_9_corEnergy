@@ -36,7 +36,7 @@ module.exports = {
         })
     },
     save:async(req,res)=> {
-        let newProduct = await productsModel.new(req.body,req.files)//(req.body,req.files,req.session.user);
+        let newProduct = await productsModel.new(req.body,req.files,req.session.user)//(req.body,req.files,req.session.user);
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
             return res.render("./products/create",{ 
@@ -49,11 +49,12 @@ module.exports = {
           }
     },
     modify:async(req,res)=> {
-        //const id = req.params.id;
-        //const productId = Number(id)
         const productToBeEdited = await productsModel.one(req.params.id)
         if (!productToBeEdited) {
-            res.render("error_404")
+            es.render("error_404",{
+                title:"Error 404",
+                style:"/css/error_404.css"
+            })
         }
         return res.render("./products/create",{
             title:"Update",
@@ -64,7 +65,7 @@ module.exports = {
 
     edit:async(req,res)=>{
         const productToBeEdited = await productsModel.one(req.params.id)
-        let result = await productsModel.edit(req.body,req.files,req.params.id)
+        let result = await productsModel.edit(req.body,req.files,req.params.id,req.session.user)
         return result ? res.redirect("/") : res.render("./products/create",{
             title:"Add",
             style:"/css/create.css",
@@ -74,27 +75,44 @@ module.exports = {
     },
 
     delete:async(req,res)=>{
-        let result = await productsModel.delete(req.params.id);
-        return result ? res.redirect("/") : res.render("error_404")
+        let result = await productsModel.delete(req.params.id,req.session.user);
+        return result ? res.redirect("/") : es.render("error_404",{
+            title:"Error 404",
+            style:"/css/error_404.css"
+        })
     },
     newReview:async (req,res)=> {
         let newReview = await productsModel.newReview(req.body);
-        return newReview ? res.redirect("back") : res.render("error_404")
+        return newReview ? res.redirect("back") : es.render("error_404",{
+            title:"Error 404",
+            style:"/css/error_404.css"
+        })
     },
     cart:async (req,res)=> {
-        let productsBought = await productsModel.cart(req.session.user)
-        let addresses = await usersModel.getAddresses(req.session.user)
-        let cards = await usersModel.getCards(req.session.user)
-        res.render("./products/shopping_cart",{
-        title:"Cart",
-        style:"/css/shopping_cart.css",
-        registeredCreditCards:cards,
-        registeredAddress:addresses,
-        ProductsBought:productsBought
-    })},
+        try{
+            let productsBought = await productsModel.cart(req.session.user)
+            let addresses = await usersModel.getAddresses(req.session.user)
+            let cards = await usersModel.getCards(req.session.user)
+            res.render("./products/shopping_cart",{
+            title:"Cart",
+            style:"/css/shopping_cart.css",
+            registeredCreditCards:cards,
+            registeredAddress:addresses,
+            ProductsBought:productsBought
+        })
+        }catch(err){
+            res.render("error_404",{
+                title:"Error 404",
+                style:"/css/error_404.css"
+            })
+        }
+       },
     buy:async(req,res) =>{
         let purchase = await productsModel.buy(req.body,req.session.user)
-        return purchase ? res.redirect("/"): res.render("error_404")
+        return purchase ? res.redirect("/"): res.render("error_404",{
+        title:"Error 404",
+        style:"/css/error_404.css"
+    })
     },
     customersWhoAlsoBought:async(req,res) =>{
         let otherProducts = await productsModel.customersWhoAlsoBought(req.params.id)

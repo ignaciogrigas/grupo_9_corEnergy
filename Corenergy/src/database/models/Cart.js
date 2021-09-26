@@ -7,17 +7,15 @@ module.exports = (Sequelize,DataTypes)=>{
         unique:true,
         allowNull:false
     },
-      totalPrice:{
-        type:DataTypes.FLOAT(6,2),
-        allowNull:false
-      },
-      deletedAt:{
-        type:DataTypes.DATE,
-        defaultValue:null
-      }
+    totalPrice:{
+      type:DataTypes.FLOAT(6,2),
+      allowNull:false
+    },
     },{        
         timestamps:false, 
-        tableName:"carts"
+        tableName:"carts",
+        deletedAt:"deletedAt",
+        paranoid:true
     });
     Cart.associate = function(models){
       Cart.hasOne(models.Order,{

@@ -12,24 +12,18 @@ module.exports={
         res.render("home",{
             title:"Home",
             style:"/css/home.css",
-            listOfProducts:bestSellers,//como llegar a la data de cada product como nested include
+            listOfProducts:bestSellers,
             listOfReviews:bestReviews
         })
         
     },
     search: async (req,res)=>{
         let queryResults = await homeModel.search(req.query.keywords)
-        console.log(queryResults[0].category)
         res.render("./products/search",{
             title:"Results",
             style:"/css/all_products.css",
             listOfProducts:queryResults
         })
-    },//body
-
-    prueba: async(req,res)=>{
-        let products = await homeModel.bestSellers();
-        res.send(products)
     },
     error:(req,res)=>res.render("error_404",{
         title:"Error 404",

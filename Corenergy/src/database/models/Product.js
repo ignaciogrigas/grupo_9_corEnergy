@@ -32,10 +32,6 @@ module.exports = (Sequelize,DataTypes)=>{
           type:DataTypes.FLOAT(2),
           allowNull:false
         },
-        createdAt:{
-          type:DataTypes.DATE,
-          allowNull:false
-        },
         createdBy:{
           type:DataTypes.INTEGER,
           references: {
@@ -43,19 +39,12 @@ module.exports = (Sequelize,DataTypes)=>{
             key:"id"
           }
         },
-        updatedAt:{
-          type:DataTypes.DATE,
-        },
         updatedBy:{
           type:DataTypes.INTEGER,
           references: {
             model:"users",
             key:"id"
           },
-        },
-        deletedAt:{
-          type:DataTypes.DATE,
-          defaultValue:null
         },
         deletedBy:{
           type:DataTypes.INTEGER,
@@ -67,9 +56,8 @@ module.exports = (Sequelize,DataTypes)=>{
         }
       },{
           tableName:"products",
-          timestamps:false,
-          /*deletedAt:"deletedAt",
-          paranoid:true*/
+          deletedAt:"deletedAt",
+          paranoid:true
       });
       Product.associate = function (models){
         Product.hasMany (models.Image,{

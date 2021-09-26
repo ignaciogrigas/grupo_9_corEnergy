@@ -3,6 +3,10 @@ const bcrypt = require("bcrypt");
 const {User,Card,Address} = db
 
 module.exports={
+    one: async function(id){
+        let usertoBeFound = await User.findOne({where:{id}})
+        return usertoBeFound
+    },
     create:async function(data,file){
         const userData={
         name: data.name,
@@ -26,9 +30,7 @@ module.exports={
     },
     newCard:async function(data,user){
         let id= user.id
-        let userToChanged = await User.findOne({
-            where:{id}
-        })
+        let userToChanged = await this.one(id)
         let cardData = {
             creditcard:data.creditcard,
             expirationMM:data.expireMM,
@@ -41,9 +43,7 @@ module.exports={
     },
     newAddress:async function(data,user){
         let id= user.id
-        let userToChanged = await User.findOne({
-            where:{id}
-        })
+        let userToChanged = await this.one(id)
         let addressData = {
             city:data.city,
             address:data.address,
@@ -57,17 +57,13 @@ module.exports={
     },
     getAddresses :async function(user){
         let id= user.id
-        let userInSession = await User.findOne({
-            where:{id}
-        })
+        let userInSession = await this.one(id)
         let selectedAddresses = await userInSession.getAddresses(Address)
         return selectedAddresses
     },
     getCards :async function(user){
         let id= user.id
-        let userInSession = await User.findOne({
-            where:{id}
-        })
+        let userInSession = await this.one(id)
         let selectedCards = await userInSession.getCards(Card)
         return selectedCards
     }

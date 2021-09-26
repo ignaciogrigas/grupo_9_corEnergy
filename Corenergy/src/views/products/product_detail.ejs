@@ -48,13 +48,11 @@
                     <section id="purchase">
                         <h5>$ <%= singleProduct.price%></h5>
                         <% if (locals.user && locals.user.categoryUserId == 1){%>
-                                <a href="/products/edit/<%= singleProduct.id%>"><button type="submit">Edit</button></a>
+                                <button>Edit</button>
+                                <button type="submit">Delete</button>
                         <%}else{%>
                                 <input hidden type="number" name="idProduct" id="idProduct" value="<%= idProduct%>">
                                 <button type="submit">Add to cart</button>
-                        <%}%>
-                        <% if (locals.user && locals.user.categoryUserId == 1){%>
-                                <button type="submit">Delete</button>
                         <%}%>
                     </section>
                </form>
