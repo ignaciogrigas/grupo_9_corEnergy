@@ -10,16 +10,16 @@
                     <th>Quantity</th>
                     <th>Price</th>
                 </tr>
-                <% for ( let i = 0 ; i < ProductsBought ; i ++){%>
+                <% for ( let i = 0 ; i < ProductsBought.length ; i ++){%>
                     <tr>
                         <td>
                             <section class="cart-info">
                                 <figure>
-                                    <img src="./images/test.jpg">
+                                    <img src="/images/uploads/products/<%= ProductsBought[i].product.image[0]%>">
                                 </figure>
                                 <div>
-                                    <h3><%= ProductsBought[i].name%></h3>
-                                    <p><%= ProductsBought[i].description%></p>
+                                    <h3><%= ProductsBought[i].product.name%></h3>
+                                    <p><%= ProductsBought[i].product.description%></p>
                                     <a href="">Delete</a>
                                 </div>
                             </section>
@@ -27,34 +27,40 @@
                         <td>
                             <div class="counter">
                                 <i class="fas fa-angle-down"></i>
-                                <input type="number"  name="quantity" value="1">
+                                <input type="number"  name="quantity" value=<%= ProductsBought[i].productQuantity%>>
                                 <i class="fas fa-angle-up"></i> 
                             </div> 
                         </td>
-                        <td class="item-price"><%= ProductsBought[i].price%></td>
+                        <td class="item-price">$ <%= ProductsBought[i].product.price%></td>
                     </tr>
                     <tr>
-                    <!-- <input hidden type="number" name="idProduct" id="idProduct" value="<%= idProduct%>"> -->
+                    <!-- <input hidden type="number" name="idProduct" id="idProduct" value=" idProduct%>"> -->
                 <%}%>
-            </table>
-                <select  name="selectedAddress" id="selectedAddress">
-                    <option selected value="defualt">Address</option>
-                    <% for (let i = 0 ; i< registeredAddress; i ++){%>
-                        <option value="<%= registeredAddress[i].id%>"><%= registeredAddress[i].address%></option>  
-                    <%}%>
-                </select>               
+                </table>              
                 <!-- COMO MANDO LA DATA DEL TOTAL COMO NUMERO!!-->
                 <ul>
                     <li>Total Price</li>
                     <li class="li-price">$3000.00</li>
                 </ul>
+                <ul>
+                    <li>Address</li>
+                    <li><select  name="selectedAddress" id="selectedAddress">
+                        <option selected value="defualt">Address</option>
+                        <% for (let i = 0 ; i< registeredAddress.length; i ++){%>
+                            <option value="<%= registeredAddress[i].id%>"><%= registeredAddress[i].address%></option>  
+                        <%}%>
+                    </select></li>
+                </ul>
+                <ul>
+                    <li>Credit Card</li>
+                    <li><select name="selectedCard" id="selectedCard">
+                        <option selected value="default">Credit Card</option>
+                        <% for (let i = 0 ; i< registeredCreditCards.length; i ++){%>
+                            <option value="<%= registeredCreditCards[i].id%>"><%= registeredCreditCards[i].creditcard%></option>  
+                        <%}%>               
+                    </select></li>
+                </ul>
                 
-                <select name="selectedCard" id="selectedCard">
-                    <option selected value="default">Credit Card</option>
-                    <% for (let i = 0 ; i< registeredCreditCards; i ++){%>
-                        <option value="<%= registeredCreditCards[i].id%>"><%= registeredCreditCards[i].creditcard%></option>  
-                    <%}%>               
-                </select>
                                
                 <button type="submit">Checkout</button>
                 

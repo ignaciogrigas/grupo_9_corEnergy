@@ -51,7 +51,6 @@ body{
 #product article h5{
     font-size: 1rem;
     font-weight: 650;
-    padding-bottom: 2vh;
 }
 #product form ul{
     display: flex;
@@ -89,29 +88,32 @@ body{
 #purchase{
     display: flex;
     flex-flow:row wrap;
-    align-items:baseline;
+    align-items:center;
     justify-content: space-between;
 }
-#purchase button,
+#add_to_cart,
+#purchase a,
 #delete_form button{
     height: 100%;
     background-color:#69E4B9;
     color: white;
     font-weight: bold;
     font-size:1rem;
-    padding:0.25rem;
+    padding:0.45rem;
     border: none;
     border-radius: 1.25rem;
+    width:42%
 }
 #purchase a{
-    width:50%
+    padding:0.56rem;
+    font-size:1.28rem;
+    text-align: center;
+    justify-content: center;
 }
 #delete_form {
     width:100%
 }
-#delete_form button{
-    width:100%
-}
+
 .reviews_title{
     color:black;
     font-weight:700;

@@ -37,10 +37,7 @@
         border-bottom: 2px ridge white;     
         }
     td figure{
-            width: 45vw;
-        }
-    td img{
-        width:100%
+        display: none;
     }
     td div{
             padding: 10px; 
@@ -74,16 +71,21 @@
         flex-wrap: wrap;
         align-content: center;
         align-items: center;
-        width: fit-content;
+        justify-content: space-around;
+        width: 22vw;
         height: 1.5rem;    
         background-color:rgb(105, 228, 185);
         border-radius: 1.5rem;
         margin-left: 10px;
     }
+    .counter input{
+        width: 50%;
+        height: 1.5rem;
+    }
+   
     td i{
         font-size: 0.7rem;
-        color: white;
-        background-color:rgb(105, 228, 185); 
+        color: white; 
            
         }    
     td input{
@@ -98,6 +100,8 @@
     tr .item-price{
         font-size: 0.8rem;
         width: 5rem;
+        text-align: right;
+        padding-right: 2vw;
     }
     #total-price{
         display: flex;
@@ -122,14 +126,13 @@
         font-weight: bolder;
     }
     #total-price select{
-        color: rgb(105, 228, 185);
-        font-size: 1rem;
-        appearance:none;
-        -moz-appearance:none;
-        -webkit-appearance:none;
-        border:none;
-        background: url(../img/ico-arrow.png) no-repeat scroll right center transparent;
-        padding-right: 1vw;    
+            appearance:none;
+            -moz-appearance:none;
+            -webkit-appearance:none;
+            border:none;
+            border-radius:1.25rem;
+            padding: 1vh;
+            margin:2vh 0vh;   
     }
     #total-price button{
         border: none;    
@@ -178,6 +181,7 @@
             font-size: 1rem;
         }
         td figure{
+            display: block;
             width: 25vw;
         }
         th{

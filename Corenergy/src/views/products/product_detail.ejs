@@ -48,11 +48,11 @@
                     <section id="purchase">
                         <h5>$ <%= singleProduct.price%></h5>
                         <% if (locals.user && locals.user.categoryUserId == 1){%>
-                                <button>Edit</button>
+                            <a href="/products/edit/<%= singleProduct.id%>">Edit</a>
                                 <button type="submit">Delete</button>
                         <%}else{%>
                                 <input hidden type="number" name="idProduct" id="idProduct" value="<%= idProduct%>">
-                                <button type="submit">Add to cart</button>
+                                <button type="submit" id="add_to_cart">Add to cart</button>
                         <%}%>
                     </section>
                </form>
@@ -67,7 +67,7 @@
                 <input hidden type="number" name="idProduct" id="idProduct" value="<%= idProduct%>">
                 <h5><label for="titleReview"></label>Title</label></h5>
                 <input type="text" name="titleReview" id="titleReview">
-                <ul>reviewTitle
+                <ul>
                     <% for (let i =1 ; i<6 ;i++){%>
                         <label for="star<%= i%>">
                         <i class="far fa-star"></i>
@@ -81,8 +81,10 @@
             </form>
         </article>
     </section>
+    <%if (listOfProducts.length != 0){%>
         <h3 id="best_seller">Customers who bought this item also bought</h3>
-        <%-include("../includes/list_of_articles_customers",{listOfProducts})%>
+        <%-include("../includes/list_of_articles",{listOfProducts})%>
+    <%}%>
     </main>
     <%-include("../includes/footer")%>
 </body>

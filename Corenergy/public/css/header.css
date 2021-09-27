@@ -9,7 +9,9 @@ header{
 #full,
 .log_in,
 #nav_products,
-#icons ul li #second{
+#icons ul li #second,
+#cart,
+.vl{
     display: none;
 }
 
@@ -65,6 +67,24 @@ header form button{
     align-items: center;
     justify-content: center;
 }
+#nav_products #log_in_mobile {
+    width:100%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+#nav_products ul li a{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1rem;
+    color: white; 
+    width: 100%;
+    height: 2rem;
+    transition: all, 0.8s;    
+}
 @media screen and (min-width:769px){
     header{
         padding: 0;
@@ -83,11 +103,14 @@ header form button{
     }
     #full,
     .log_in,
-    #nav_products{
+    #nav_products,
+    #cart,
+    .vl{
         display: block;
     }
     #half,
-    #icons .fa-bars{
+    #icons .fa-bars,
+    #nav_products #log_in_mobile{
         display:none;
     }
     #full{

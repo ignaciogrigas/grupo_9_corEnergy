@@ -192,7 +192,8 @@ module.exports= {
                 let cartId= cart.cartId
                 let productsInCarts = await ProductCart.findAll({
                     where:{id:cartId},
-                    include:[ {model: Product, as:"product"}]
+                    include:[ {model: Product, as:"product",include:[
+                        {model: Image, as: "image"}]}]
                 })
                 productsInCarts.forEach((product)=> products.push(product.product))
                 return products

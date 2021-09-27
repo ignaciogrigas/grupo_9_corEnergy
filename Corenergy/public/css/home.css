@@ -45,4 +45,8 @@ body{
         display: block;
         width: 100%;
     }
+    .products article {
+        width: 24.75vw;
+        height: 24.75vw;
+    }
 }

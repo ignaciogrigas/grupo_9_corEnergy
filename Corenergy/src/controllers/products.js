@@ -36,7 +36,7 @@ module.exports = {
         })
     },
     save:async(req,res)=> {
-        let newProduct = await productsModel.new(req.body,req.files,req.session.user)//(req.body,req.files,req.session.user);
+        let newProduct = await productsModel.new(req.body,req.files,req.session.user)
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
             return res.render("./products/create",{ 
@@ -101,10 +101,12 @@ module.exports = {
             ProductsBought:productsBought
         })
         }catch(err){
-            res.render("error_404",{
+            console.log(err)
+            res.send(err)
+            /*res.render("error_404",{
                 title:"Error 404",
                 style:"/css/error_404.css"
-            })
+            })*/
         }
        },
     buy:async(req,res) =>{

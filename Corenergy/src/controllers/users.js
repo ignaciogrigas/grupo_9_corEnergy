@@ -20,7 +20,7 @@ module.exports={
         style: "/css/profile.css"
     }),
 
-    create:(req,res)=>{
+    create:async (req,res)=>{
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
             return res.render("./users/sign_up",{ 
@@ -30,10 +30,9 @@ module.exports={
                 style:"/css/sign_up.css"
                });
           }else{
-              console.log(req.file, req.body)
-            let newUser = usersModel.create(req.body,req.file)
+            let newUser = await usersModel.create(req.body,req.file)
             req.session.user = newUser; 
-            return res.redirect("/")
+          return res.redirect("/")
           }
     },
 
