@@ -20,12 +20,12 @@ router.get("/sign-up", usersController.signUp);
 
 router.get("/log-out", usersController.logOut);
 
-router.post("/save",[/*validationUser,*/upload.single("profileImage")],usersController.create);
+router.post("/save",[upload.single("profileImage"),validationUser],usersController.create);
 
-router.post("/access"/*,validationLogIn*/,usersController.access);
+router.post("/access",validationLogIn,usersController.access);
 
-router.post("/save-new-card"/*,validationNewCard*/,usersController.newCard);
+router.post("/save-new-card",validationNewCard,usersController.newCard);
 
-router.post("/save-new-address"/*,validationNewAddress*/,usersController.newAddress);
+router.post("/save-new-address",validationNewAddress,usersController.newAddress);
 
 module.exports = router;

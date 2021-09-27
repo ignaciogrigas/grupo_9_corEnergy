@@ -37,14 +37,14 @@ module.exports={
     },
 
     access:async(req,res) => {
-        const errors = validationResult(req);
+        const errors = validationResult(req);        
         if (!errors.isEmpty()) {
           return res.render("./users/log_in",{ 
               errors: errors.mapped(),
               title:"Log In", 
               old:req.body,
               style:"/css/log_in.css"
-             });
+              });
         }else{
           let user = await usersModel.findByEmail(req.body.email);
           if(req.body.remember){

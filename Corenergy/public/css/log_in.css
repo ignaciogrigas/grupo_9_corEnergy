@@ -91,5 +91,11 @@ a{
     h5{
         font-size: 0.8rem;
     }
+    .errorsFront{
+        font-size: 1rem;
+        margin-bottom: 4vh;
+        
+
+    }
     
 }

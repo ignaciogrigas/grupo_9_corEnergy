@@ -1,10 +1,12 @@
 const userModel = require("../models/users");
 const { body } = require("express-validator");
 
-const checkIfUserEmailAlreadyExist = value => {
-    return userModel.findByEmail(value)
-}
 
+const checkIfUserEmailAlreadyExist = async (value) => {
+    let registered = await userModel.findByEmail(value);
+    if (registered) {         
+    return Promise.reject("Email already exists");}        
+    }
 const checkIfPasswordsMatch = (value, { req }) => {
     return value === req.body.password
 }
@@ -12,14 +14,12 @@ const checkIfPasswordsMatch = (value, { req }) => {
 module.exports = [
     // Check name
     body("name")
-    .notEmpty()
-    .withMessage("You must sign up with a name"),
-    // Check email
+    .not().isEmpty().withMessage("You must sign up with an e-mail"),
+    //Check email
     body("email")
     .notEmpty().withMessage("You must sign up with an e-mail")
-    .isEmail().not().withMessage("Invalid e-mail")
-    .custom(checkIfUserEmailAlreadyExist).withMessage("E mail already exists"),
-    // Check password
+    .custom(checkIfUserEmailAlreadyExist),   
+   // Check password
     body("password")
     .notEmpty().withMessage("Invalid password").bail()
     .isLength({ min: 8 }).not().withMessage("Password not strong enough"),
@@ -27,6 +27,21 @@ module.exports = [
     body("conf_password")
     .custom(checkIfPasswordsMatch).withMessage("Passwords should match")
 ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
  /*body("conf_password").custom((value, { req }) => {
         let firstPassword = req.body.password;
