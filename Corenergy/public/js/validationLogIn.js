@@ -1,5 +1,5 @@
 const inputForm = document.getElementById("formLogIn")
-const errorMsg = document.querySelector(".errorsFront");
+const errorMsg = document.querySelector("#errorsFront");
 
 let inputs = Array.from(inputForm.elements).filter(elemento => elemento.getAttribute("type") != undefined)
 
@@ -16,7 +16,7 @@ inputs.forEach(input => {
           errorMsg.innerHTML = "That's not a valid email"
         }else{          
           errorMsg.innerHTML = "Keep going"
-        }
+        }//chau keep
       }
       if(name == "password"){
           const regexPass = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/
@@ -24,7 +24,7 @@ inputs.forEach(input => {
           errorMsg.innerHTML = "Minimum 8 characters, at least one letter and one number"
         }else{        
           errorMsg.innerHTML = "Keep going"
-        }
+        }//chau keep
       }
     }}});
     

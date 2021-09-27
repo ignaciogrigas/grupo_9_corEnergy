@@ -13,7 +13,7 @@ inputs.forEach(input => {
       if(name == "name"){
         const regexName =/^(([A-Za-z]+[\-\']?)*([A-Za-z]+)?\s)+([A-Za-z]+[\-\']?)*([A-Za-z]+)?$/;
         if(!regexName.test(value)){         
-          errorMsg.innerHTML = "Full name required"
+          errorMsg.innerHTML = "Name required"
         }else{          
           errorMsg.innerHTML = "Keep going"
         }

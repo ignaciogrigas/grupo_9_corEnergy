@@ -19,7 +19,7 @@ module.exports =  [
 
   body("productCode")
   .isEmpty().withMessage("Invalid product code").bail()
-  .isLength({ min: 6, max: 6 }).withMessage("The products's code must have 6 digits")
+  .isLength({ min: 6, max: 6 }).withMessage("The products's code must have 6 digits")//tiene q tener 6
 ]
 
 /*addProduct: [

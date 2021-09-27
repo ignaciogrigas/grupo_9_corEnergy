@@ -45,15 +45,6 @@ module.exports= {
         })
         return listOfProducts}catch(err){console.log(err);}       
     },
-    allSubcategories:function(cat){
-        if(cat.includes("weights")){
-            return ["2KG","5KG","10KG","15KG","20KG"]
-        } else if(cat.includes("elastic-bands") ){
-            return ["Red","Blue","Green","Yellow","Black"]
-        } else if(cat.includes("mats")){
-            return ["Red","Blue","Green","Purple","Pink"]
-        } 
-    },
     titleArrange: function(category){
         if(category != "elastic-bands"){
             return category.charAt(0).toUpperCase() + category.slice(1) 
@@ -270,16 +261,16 @@ module.exports= {
             return productsToBePurchased
         }
     },
+    /*deleteProductCart: async function (user,id){
+        try{
+            let userSessionId = user.id
+            let userActiveCart = await this.userActiveCart(userSessionId)
+            let deletedProduct = await ProductCart.destroy({where:{productId:id,cartId:userActiveCart.cartId}})
+            return deletedProduct
+        }catch(err){console.log(err);}
+    },*/
     order:async function(data,total,user){
-        let userSessionId = user.id
-        let userActiveCart = await UserCart.findOne({
-            where:{
-                    userId:userSessionId
-            }
-            ,include: [
-                {model: Cart, as: "cart"}
-            ]
-        })
+        
         
 
     }

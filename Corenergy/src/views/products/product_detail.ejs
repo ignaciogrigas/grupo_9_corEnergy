@@ -25,11 +25,11 @@
             <%}else{%>
                 <form id = "buy_form" action ="<%= locals.user ? `/products/buy/${singleProduct.id}` : "/users/sign-up" %>"method=POST >
             <%}%>
-            <% if (singleProduct.category == "weights" || singleProduct.category == "elastic-bands" || singleProduct.category == "mats") {%> 
+            <% if (singleProduct.category.id == 1|| singleProduct.category.id == 3 || singleProduct.category.id == 4) {%> 
                     <section>
-                            <% if(singleProduct.category == "weights"){%>
+                            <% if(singleProduct.category.id == 1){%>
                             <h5>Weight</h5>
-                            <% } else if (singleProduct.category == "elastic-bands" || singleProduct.category == "mats")  { %>
+                            <% } else if (singleProduct.category.id == 3|| singleProduct.category.id == 4)  { %>
                             <h5>Color</h5>
                             <%}%>
                     </section>

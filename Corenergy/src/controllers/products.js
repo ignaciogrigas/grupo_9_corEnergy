@@ -25,8 +25,7 @@ module.exports = {
             res.render("./products/all_products",{
             style:"/css/all_products.css",
             title:productsModel.titleArrange(req.params.nameCategory),
-            listOfProducts:listOfProducts,
-            listOfSubCategories:productsModel.allSubcategories(req.params.nameCategory) })
+            listOfProducts:listOfProducts })
         
     },
     showCreateTemplate:(req,res)=> {
@@ -101,12 +100,10 @@ module.exports = {
             ProductsBought:productsBought
         })
         }catch(err){
-            console.log(err)
-            res.send(err)
-            /*res.render("error_404",{
+            res.render("error_404",{
                 title:"Error 404",
                 style:"/css/error_404.css"
-            })*/
+            })
         }
        },
     buy:async(req,res) =>{
@@ -115,10 +112,6 @@ module.exports = {
         title:"Error 404",
         style:"/css/error_404.css"
     })
-    },
-    customersWhoAlsoBought:async(req,res) =>{
-        let otherProducts = await productsModel.customersWhoAlsoBought(req.params.id)
-        res.send(otherProducts)
     },
     order:async(req,res) => {
         

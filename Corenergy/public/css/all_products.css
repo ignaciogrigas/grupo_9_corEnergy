@@ -87,7 +87,8 @@ main{
         padding-bottom: 2vw;
     }
     #filters li{
-        margin-bottom: 1vw
+        margin-bottom: 1vw;
+        cursor:pointer
     }
     #filters a{
         text-decoration: none;
