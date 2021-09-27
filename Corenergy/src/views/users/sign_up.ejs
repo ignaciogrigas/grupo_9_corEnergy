@@ -3,10 +3,10 @@
     <%-include("../includes/header")%>
     <main>
         <h1>Create an Account</h1>
-        <form action="/users/save" method="POST" enctype="multipart/form-data">
+        <form action="/users/save" method="POST" enctype="multipart/form-data" id="formSingUp">
             <section id="profile_img">
                     <label for="profileImage">
-                            <img src="/images/default_and_logos/default_avatar.svg"alt="Profile Image">
+                            <img id="avatar" src="/images/default_and_logos/default_avatar.svg"alt="Profile Image">
                     </label>
                 <input type="file" name="profileImage" id="profileImage">
             </section>
@@ -50,11 +50,13 @@
                   <% } %>
 
                 <h6 >Required fields*</h6>
+                <p class="errorsFront"></p>
                 <button class="button" type="submit">Sign up</button>
             </section>
         </form>
             
     </main>
+    <script src="/js/validacionSingUp.js"></script>
     <%-include("../includes/footer")%>
 </body>
 </html>

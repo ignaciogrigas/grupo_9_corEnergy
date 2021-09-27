@@ -4,7 +4,7 @@
     <main>
         <section id="main_section">
             <h1>Log in</h1>
-            <form action="/users/access" method="POST"> 
+            <form action="/users/access" method="POST" id= "formLogIn"> 
                 <label for="email">Username or E-mail<span>*</span></label>
                 <input required type="email" name="email" id="email" value="<%= locals.old && old.email ? old.email : ""%>"> 
                 <% if (locals.errors && errors.email) { %>
@@ -21,6 +21,7 @@
                     </p>
                   <% } %>
                 <h6 >Required fields*</h6>
+                <p class="errorsFront"></p>
                 <article>
                     <input type="checkbox" name="remember" id="remember">
                     <label for="remember">Remember me</label>
@@ -28,6 +29,7 @@
                 <button class="button" type="submit">Log in</button>
             </form>
             <a href="#"><h5>Forgot password</h5></a>
+            
         </section>
         <section id="benefits">
             <h1>Multiple Benefits</h1>
@@ -43,5 +45,6 @@
         </section>
     </main>
     <%-include("../includes/footer")%>
+    <script src="/js/validacionLogIn.js"></script>
 </body>
 </html>
