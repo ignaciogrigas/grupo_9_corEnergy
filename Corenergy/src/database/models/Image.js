@@ -24,20 +24,12 @@ module.exports = (Sequelize,DataTypes)=>{
               key:"id"
             }
           },
-          createdAt:{
-            type:DataTypes.DATE,
-            allowNull:false
-          },
           createdBy:{
             type:DataTypes.INTEGER,
             references: {
               model:"users",
               key:"id"
             },
-          },      
-          deletedAt:{
-            type:DataTypes.DATE,
-            defaultValue:null
           },
           deletedBy:{
             type:DataTypes.INTEGER,
@@ -48,8 +40,11 @@ module.exports = (Sequelize,DataTypes)=>{
             defaultValue:null
           }
     },{        
-        timestamps:false, 
-        tableName:"images"
+        timestamps:true, 
+        tableName:"images",
+        updatedAt:false,
+        deletedAt:"deletedAt",
+        paranoid:true
     });
 
     Image.associate = function (models){

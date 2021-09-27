@@ -117,7 +117,7 @@
                         <h6 >Required fields*</h6>
                         <button class="button" type="submit">Confirm</button>
                 </form>
-                <% if (locals.user && locals.user.category == "admin"){%>
+                <% if (locals.user && locals.user.categoryUserId == 1){%>
                     <a href="/products/create"><button class="button" type="submit">Create Product</button></a>
                 <%}%>
             </article>
