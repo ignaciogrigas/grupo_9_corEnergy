@@ -36,8 +36,7 @@ inputs.forEach(input => {
       }
       if(name == "conf_password"){
         const regexPass = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/
-        const confPassword = inputs.find(input => input.getAttribute("name") == "password")
-        console.log(confPassword.value, "confpassword aca")
+        const confPassword = inputs.find(input => input.getAttribute("name") == "password")        
       if(value != confPassword.value){          
         errorMsg.innerHTML = "Password must match"     
       }else{        
