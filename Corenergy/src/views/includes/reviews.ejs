@@ -2,11 +2,9 @@
         <article>
             <section>
             <h5><%= listOfReviews[i].titleReview%></h5>
+            <% for (let j =0 ; j<listOfReviews[i].stars ;j++){%>
                 <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i> 
+            <%}%>
             </section>
             <p><%= listOfReviews[i].comments%></p>
         </article>

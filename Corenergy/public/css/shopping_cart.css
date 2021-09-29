@@ -143,17 +143,6 @@
         margin-top: 1rem;
         padding: 1.5vh;    
     }
-    @media screen and (min-width:786px){
-        .cart-info a{    
-            padding: 0.3rem;               
-            transition: all 0.8s;
-            }
-        .cart-info a:hover{
-            background-color:rgb(105, 228, 185);
-            color: white;
-            border-radius: 1rem;
-        }  
-    }    
     @media screen and (min-width:369px){
         main{
             padding: 4vw 10vw;    
@@ -193,5 +182,23 @@
             font-weight:normal;
             }
     
+        .counter{
+            width: 12vw;
+            height: 2rem;    
+        }
     }
-    
+    @media screen and (min-width:786px){
+        .counter{
+            width: 5vw;
+            height: 2rem;    
+        }
+        .cart-info a{    
+            padding: 0.3rem;               
+            transition: all 0.8s;
+            }
+        .cart-info a:hover{
+            background-color:rgb(105, 228, 185);
+            color: white;
+            border-radius: 1rem;
+        } 
+    }    

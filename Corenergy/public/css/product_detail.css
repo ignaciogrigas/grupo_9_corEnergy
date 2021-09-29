@@ -51,6 +51,7 @@ body{
 #product article h5{
     font-size: 1rem;
     font-weight: 650;
+    padding-bottom: 2vh;
 }
 #product form ul{
     display: flex;
@@ -231,6 +232,12 @@ main form button{
     padding-top:1.5vw;
     color: #69E4B9;
     font-size: 0.8rem;
+}
+#add form{
+    display: none;
+}
+#show_form2{
+    cursor: pointer;
 }
 @media screen and (min-width:369px){
     .products article{

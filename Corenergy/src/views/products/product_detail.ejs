@@ -25,7 +25,7 @@
             <%}else{%>
                 <form id = "buy_form" action ="<%= locals.user ? `/products/buy/${singleProduct.id}` : "/users/sign-up" %>"method=POST >
             <%}%>
-            <% if (singleProduct.category.id == 1|| singleProduct.category.id == 3 || singleProduct.category.id == 4) {%> 
+            <% if (singleProduct.subcategories) {%> 
                     <section>
                             <% if(singleProduct.category.id == 1){%>
                             <h5>Weight</h5>
@@ -35,10 +35,10 @@
                     </section>
                     <section>
                             <ul>
-                                <% for ( let i = 0 ; i<singleProduct.subCategory.length;i++){%>
+                                <% for ( let i = 0 ; i<singleProduct.subcategories.length;i++){%>
                                     <li>
-                                        <label for="<%= singleProduct.subCategory[i]%>"><%= singleProduct.subCategory[i]%></label>
-                                        <input type="radio" name="choice" id="<%= singleProduct.subCategory[i]%>" value="<%= singleProduct.subCategory[i]%>">
+                                        <label for="<%= singleProduct.subcategories[i].id%>"><%= singleProduct.subcategories[i].name%></label>
+                                        <input type="radio" name="choice" id="<%= singleProduct.subcategories[i].id%>" value="<%= singleProduct.subcategories[i].name%>">
                                     </li>
                                 <%}%>
                             </ul>
@@ -62,8 +62,8 @@
     <section id="reviews">
         <%-include("../includes/reviews")%>
         <article id="add">
-            <h3 class="reviews_title">Add Review +</h3>
-            <form action="/products/save-new-review" method="POST">
+            <h3 class="reviews_title" id="show_form2">Add Review +</h3>
+            <form action="/products/save-new-review" method="POST" id="form_to_show2" >
                 <input hidden type="number" name="idProduct" id="idProduct" value="<%= idProduct%>">
                 <h5><label for="titleReview"></label>Title</label></h5>
                 <input type="text" name="titleReview" id="titleReview">
@@ -87,5 +87,6 @@
     <%}%>
     </main>
     <%-include("../includes/footer")%>
+    <script src="/js/showFormsProduct.js"></script>
 </body>
 </html>
