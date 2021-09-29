@@ -108,6 +108,7 @@ inputs.forEach(input => {
         if(!imgFormat.includes(fileExt)){           
         errorsFrontImg.style.display = "block"
         errorsFrontImg.innerHTML = "Image must be jpg, jpeg, pnp or gif"
+        imgPreview.src ="/images/default_and_logos/default_avatar.svg"
       }else{        
         errorsFrontImg.innerHTML = ""
       }

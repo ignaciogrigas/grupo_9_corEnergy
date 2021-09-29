@@ -39,17 +39,17 @@ inputs.forEach(input => {
           const name = target.getAttribute("name");
           const imgPreview = document.getElementById("CreatePImg")
           const imgFormat = ["jpg","jpeg", "png", "gif"]
-          
-    
-          if(name == "productImages"){
-            const files = target.files
-            const fileExt = files[0].name.split(".").pop()        
+
+          if(name == "productImages"){        
+          const files = target.files
+          const fileExt = files[0].name.split(".").pop()        
             if(files.length > 0){
               imgPreview.src = URL.createObjectURL(files[0]);              
             }
             if(!imgFormat.includes(fileExt)){           
               errorMsgCreatePImg.style.display = "block"
               errorMsgCreatePImg.innerHTML = "Image must be jpg, jpeg, pnp or gif"
+              imgPreview.src ="/images/default_and_logos/default_product.svg"
             }else{        
               errorMsgCreatePImg.innerHTML = ""
             }
