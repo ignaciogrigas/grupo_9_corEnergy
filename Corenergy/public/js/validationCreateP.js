@@ -38,14 +38,23 @@ inputs.forEach(input => {
           const target = evento.target;
           const name = target.getAttribute("name");
           const imgPreview = document.getElementById("CreatePImg")
+          const imgFormat = ["jpg","jpeg", "png", "gif"]
+          
     
           if(name == "productImages"){
-            const files = target.files        
+            const files = target.files
+            const fileExt = files[0].name.split(".").pop()        
             if(files.length > 0){
-              imgPreview.src = URL.createObjectURL(files[0]);
-              
+              imgPreview.src = URL.createObjectURL(files[0]);              
             }
-          }
+            if(!imgFormat.includes(fileExt)){           
+              errorMsgCreatePImg.style.display = "block"
+              errorMsgCreatePImg.innerHTML = "Image must be jpg, jpeg, pnp or gif"
+            }else{        
+              errorMsgCreatePImg.innerHTML = ""
+            }
+          } 
+          
         }
       }
     
