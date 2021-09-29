@@ -53,6 +53,14 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none; 
   margin: 0; 
 }
+#form_to_show,
+#form_to_show1{
+    display: none;
+}
+#show_form,
+#show_form1{
+    cursor:pointer
+}
 @media screen and (min-width:361px){
     main{
         display: flex;

@@ -5,9 +5,9 @@
         <section id="main_section">
             <h1><%= locals.user ? user.name : '' %> <%= locals.user ? user.surname : '' %></h1>
             <h4><%= locals.user ? user.email : '' %></h4>
-            <div class="add"><h4>Add shipping address</h4><h4>+</h4></div>
+            <div class="add"><h4>Add shipping address</h4><h4 id="show_form">+</h4></div>
             <article>
-                <form class="mainform1" action="/users/save-new-address" method="POST">
+                <form class="mainform1" action="/users/save-new-address" method="POST"id="form_to_show" >
                     <input hidden type="number" name="idUser" id="idUser" value="<%= user.id%>"> 
 
                     <label for="city">City<span>*</span></label>
@@ -44,9 +44,9 @@
                     <button class="button" type="submit">Confirm</button>
                 </form>
             </article>
-            <div class="add"><h4>Add credit card</h4><h4>+</h4></div>
+            <div class="add"><h4>Add credit card</h4><h4 id="show_form1">+</h4></div>
             <article>
-                <form action="/users/save-new-card" method="POST">
+                <form action="/users/save-new-card" method="POST" id="form_to_show1">
                     <input hidden type="number" name="idUser" id="idUser" value="<%= user.id%>">
                     <label for="creditcard">Credit Card<span>*</span></label>
                     <input  type="number" name="creditcard" id="creditcard" >
@@ -129,5 +129,6 @@
         </section>
     </main>
     <%-include("../includes/footer")%>
+    <script src="/js/showForms.js"></script>
 </body>
 </html>
