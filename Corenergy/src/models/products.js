@@ -66,7 +66,7 @@ module.exports= {
         }
         let newProduct = await Product.create(newProductData)
 
-        //await newProduct.setSubcategories(Array.from(subcategories))
+        await newProduct.setSubcategories(data.choice)
 
         const images = await Promise.all(
             files.map(async (file) => {
@@ -156,7 +156,7 @@ module.exports= {
         let ReviewData = {
             titleReview:data.titleReview,
             comments:data.comments,
-            stars:5,
+            stars:data.star.pop(),
             productId:parseInt(data.idProduct)
 
         }
@@ -227,7 +227,7 @@ module.exports= {
                 cartId:newCart.id,
                 productPrice:productData.price,
                 productQuantity:1,
-                productSubCategoryId:1//??
+                productSubCategoryId:data.choice
             }
             let productInCart = await ProductCart.create(productBoughtData)
             return newCart,productInCart,userCartInsert
@@ -238,7 +238,7 @@ module.exports= {
                 cartId:userActiveCart.cartId,
                 productPrice:productData.price,
                 productQuantity:1,
-                productSubCategoryId:1//??
+                productSubCategoryId:data.choice
             }
             let productInCart = await ProductCart.create(productBoughtData)
             return productInCart

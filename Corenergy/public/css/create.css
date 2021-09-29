@@ -103,7 +103,7 @@ li label:hover{
     color:white
 }
 
-[type=checkbox],
+/*[type=checkbox],*/
 #choice_weights,
 #choice_elasticBands,
 #choice_mats{

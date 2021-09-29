@@ -22,7 +22,7 @@ router.get("/log-out", usersController.logOut);
 
 router.post("/save",[upload.single("profileImage"),validationUser],usersController.create);
 
-router.post("/access",validationLogIn,usersController.access);
+router.post("/access"/*,validationLogIn*/,usersController.access);
 
 router.post("/save-new-card",validationNewCard,usersController.newCard);
 
