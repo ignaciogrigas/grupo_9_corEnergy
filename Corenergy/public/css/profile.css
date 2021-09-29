@@ -28,7 +28,9 @@ h4{
     align-items: center;
     font-weight: 700;
     color:#69E4B9;
-    font-size:1rem
+}
+.add h4{
+    font-size: 1.25rem;
 }
 main article form{
     display:flex;

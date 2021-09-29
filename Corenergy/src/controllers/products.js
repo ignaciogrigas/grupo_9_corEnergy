@@ -8,7 +8,8 @@ const users = require("../models/users");
 
 module.exports = {
     byId:async(req,res) => {
-        let singleProduct = await productsModel.one(req.params.id)
+        try{
+            let singleProduct = await productsModel.one(req.params.id)
         let listOfReviews = await productsModel.getProductReviews(req.params.id)
         let otherProducts = await productsModel.customersWhoAlsoBought(req.params.id)
         res.render("./products/product_detail",{
@@ -19,13 +20,20 @@ module.exports = {
             listOfReviews:listOfReviews,
             idProduct:req.params.id
         })
+        }catch(err){
+            res.send(err)
+        }
     },
     category:async (req,res)=> {
-        let listOfProducts = await productsModel.byCategory(req.params.nameCategory)
+        try{
+            let listOfProducts = await productsModel.byCategory(req.params.nameCategory)
             res.render("./products/all_products",{
             style:"/css/all_products.css",
             title:productsModel.titleArrange(req.params.nameCategory),
             listOfProducts:listOfProducts })
+        }catch(err){
+            res.send(err)
+        }
         
     },
     showCreateTemplate:(req,res)=> {

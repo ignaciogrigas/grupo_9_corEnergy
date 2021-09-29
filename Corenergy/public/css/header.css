@@ -61,22 +61,25 @@ header form button{
     width: 10%;
     max-width: 60px;
 }
-#icons ul{
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    justify-content: center;
-}
-#nav_products #log_in_mobile {
+
+#nav_products{
     width:100%;
     display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+#log_in_mobile{
+    width:45%;
+    display: flex;
     flex-flow: row wrap;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding-top: 2vh;
 }
 #nav_products ul li a{
     display:flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     text-decoration: none;
     font-size: 1rem;
@@ -85,7 +88,17 @@ header form button{
     height: 2rem;
     transition: all, 0.8s;    
 }
+
 @media screen and (min-width:769px){
+    #nav_products ul li a{
+        justify-content: center;
+    }
+    #icons ul{
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: center;
+    }
     header{
         padding: 0;
         display: flex;

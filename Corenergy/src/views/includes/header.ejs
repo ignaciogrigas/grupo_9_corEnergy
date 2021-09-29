@@ -55,21 +55,6 @@
         </section>
         <nav id="nav_products">
             <ul id ="log_in_mobile">
-                <% if (locals.user){%>
-                    <li id="mobile_cart">
-                        <a href="/products/cart">
-                            <i class="fas fa-shopping-cart"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <div class="vl"></div>
-                    </li>
-                    <%}%>
-                    <li class="log_in">
-                        <a href="/users/log-in">
-                            <i class="fas fa-user-circle"></i>
-                        </a>
-                    </li>
                     <li>
                         <% if (locals.user){%>
                             <a href="/users/profile">
@@ -81,7 +66,18 @@
                             </a>
                         <%}%>
                     </li>
-                </ul> 
+                <% if (locals.user){%>
+                        <li id="mobile_cart">
+                            <a href="/products/cart">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </li>
+
+                    <li>
+                        <a href="/users/log-out"><i class="fas fa-sign-out-alt"></i></a>
+                    </li>
+                <%}%>
+            </ul> 
             <ul>
                 <li><a href="/products/category/weights">Weights</a></li>
                 <li><a href="/products/category/elastic-bands">Elastic Bands</a></li>

@@ -27,7 +27,8 @@ module.exports= {
         }catch(err){console.log(err);}
     },
     byCategory: async function(catName){
-        try{let cat = await Category.findOne({
+        try{
+            let cat = await Category.findOne({
             where:{
                 name:catName
             }
