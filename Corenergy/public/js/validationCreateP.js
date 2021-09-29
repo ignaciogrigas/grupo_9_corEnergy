@@ -17,7 +17,7 @@ inputs.forEach(input => {
       const value = target.value;
       
       if(name == "productName"){ 
-        if(name.value.length < 4){        
+        if(value.length < 4){        
           errorMsgCreatePName.style.display = "block"       
           errorMsgCreatePName.innerHTML = "Pruduct name should be longer"
         }else{
@@ -25,7 +25,7 @@ inputs.forEach(input => {
         }
       }      
       if(name == "description"){          
-        if(name.value.length < 20){ 
+        if(value.length < 20){ 
           errorMsgCreatePDesc.style.display = "block"          
           errorMsgCreatePDesc.innerHTML = "At least 20 characters"
         }else{
