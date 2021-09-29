@@ -9,10 +9,16 @@
                             <img id="avatar" src="/images/default_and_logos/default_avatar.svg"alt="Profile Image">
                     </label>
                 <input type="file" name="profileImage" id="profileImage">
+                <% if (locals.errors && errors.imgError) { %>
+                  <p class="error">
+                    <%= errors.imgError.msg %> 
+                  </p>
+                  <% } %>                
             </section>
             <section id="main_section">
                 <label for="name">Name<span>*</span></label>
                 <input  type="text" name="name" id="name" value="<%= locals.old && old.name ? old.name : ""%>" >
+                <span id="errorsFrontName" class="error"></span>
                 <% if (locals.errors && errors.name) { %>
                     <p class="error">
                       <%= errors.name.msg %> 
@@ -21,9 +27,11 @@
                 
                 <label for="surname">Surname</label>
                 <input  type="text" name="surname" id="surname" value="<%= locals.old && old.surname ? old.surname: ""%>">        
-                
+                <span id="errorsFrontSurname" class="error"></span>
+
                 <label for="email">E-mail<span>*</span></label>
                 <input  type="email" name="email" id="email" value="<%= locals.old && old.email ? old.email : ""%>" >
+                <span id="errorsFrontEmail" class="error"></span>
                 <% if (locals.errors && errors.email) { %>
                     <p class="error">
                       <%= errors.email.msg %> 
@@ -35,6 +43,7 @@
                 
                 <label for="password">Password<span>*</span></label>
                 <input  type="password" name="password" id="password" >
+                <span id="errorsFrontPass" class="error"></span>
                 <% if (locals.errors && errors.password) { %>
                     <p class="error">
                       <%= errors.password.msg %> 
@@ -43,14 +52,14 @@
 
                 <label for="conf_password"> Confirm Password<span>*</span></label>
                 <input  type="password" name="conf_password" id="conf_password" >
+                <span id="errorsFrontConfPass" class="error"></span>
                 <% if (locals.errors && errors.conf_password) { %>
                     <p class="error">
                       <%= errors.conf_password.msg %> 
                     </p>
                   <% } %>
 
-                <h6 >Required fields*</h6>
-                <p class="errorsFront"></p>
+                <h6 >Required fields*</h6>                
                 <button class="button" type="submit">Sign up</button>
             </section>
         </form>

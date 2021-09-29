@@ -1,5 +1,5 @@
 const userModel = require("../models/users");
-const { body } = require("express-validator");
+const { body, check } = require("express-validator");
 
 
 const checkIfUserEmailAlreadyExist = async (value) => {
@@ -7,17 +7,32 @@ const checkIfUserEmailAlreadyExist = async (value) => {
     if (registered) {         
     return Promise.reject("Email already exists");}        
     }
+
 const checkIfPasswordsMatch = (value, { req }) => {
     return value === req.body.password
 }
 
+const checkImgFormat = ((value, {req})=>{
+    let imgFormat = ["jpg","jpeg", "png", "gif"]
+    let imgExt = req.file.mimetype.split("/").pop();     
+    
+    if(!imgFormat.includes(imgExt)){        
+    throw new Error("Image must be jpg, jpeg, pnp or gif")
+}
+return true
+})
+
 module.exports = [
     // Check name
     body("name")
-    .not().isEmpty().withMessage("You must sign up with an e-mail"),
+    .notEmpty().isLength({min:2}).withMessage("Not a valid name"),
+    // Check surname
+    body("surname")
+    .notEmpty().isLength({min:2}).withMessage("Not a valid surname"),
     //Check email
     body("email")
     .notEmpty().withMessage("You must sign up with an e-mail")
+    //.isEmail().not().withMessage("That's not a valid email")//ver esto
     .custom(checkIfUserEmailAlreadyExist),   
    // Check password
     body("password")
@@ -25,11 +40,10 @@ module.exports = [
     .isLength({ min: 8 }).not().withMessage("Password not strong enough"),
     // Check confirm password
     body("conf_password")
-    .custom(checkIfPasswordsMatch).withMessage("Passwords should match")
+    .custom(checkIfPasswordsMatch).withMessage("Passwords should match"),
+    // Check image extension
+    check("imgError").custom(checkImgFormat)
 ]
-
-
-
 
 
 
