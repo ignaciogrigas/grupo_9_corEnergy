@@ -14,7 +14,7 @@ module.exports =  [
   body("choice_mats")
   .notEmpty().withMessage('You have to pick a mat color').bail(),*/
   body("description")
-  .notEmpty().withMessage('You have to price your product')
+  .notEmpty().withMessage('you have to price your product')
   .isLength({min:20}).withMessage('minimum 20 characters'),
 
   body("price")
