@@ -121,7 +121,18 @@ module.exports = {
         style:"/css/error_404.css"
     })
     },
+    deleteProductCart:async(req,res)=>{
+        let deletedProduct = await productsModel.deleteProductCart(req.session.user,req.params.id)
+        return deletedProduct ? res.redirect("back") : res.render("error_404",{
+            title:"Error 404",
+            style:"/css/error_404.css"
+        })
+    },
     order:async(req,res) => {
-        
+        let newOrder = await productsModel.order(req.body,req.session.user)
+        return newOrder ? res.redirect("/") : res.render("error_404",{
+            title:"Error 404",
+            style:"/css/error_404.css"
+        })
     }
 }

@@ -1,7 +1,7 @@
 const Sequelize = require("sequelize")
 const { Op } = Sequelize;
 const db = require ("../database/models");
-const {Product,Review,Image,UserCart,ProductCart,Cart,Category,SubCategory,User } = db
+const {Product,Review,Image,UserCart,ProductCart,Cart,Category,SubCategory,User,Order } = db
 
 module.exports= {
     one: async function(id){
@@ -96,7 +96,7 @@ module.exports= {
             let updatedProduct = await Product.update(updatedData,{
                 where:{id:id}
             })
-            //await result.setSubcategories(Array.from(subcategories))
+            await updatedProduct.setSubcategories(data.choice)
             if (files){
                 const images = await productToBeEdited.getImage();
                 const deletedImages = await Promise.all(
@@ -156,7 +156,7 @@ module.exports= {
         let ReviewData = {
             titleReview:data.titleReview,
             comments:data.comments,
-            stars:data.star.pop(),
+            stars:parseInt(data.star.pop()),
             productId:parseInt(data.idProduct)
 
         }
@@ -262,17 +262,33 @@ module.exports= {
             return productsToBePurchased
         }
     },
-    /*deleteProductCart: async function (user,id){
+    deleteProductCart: async function (user,id){
         try{
             let userSessionId = user.id
             let userActiveCart = await this.userActiveCart(userSessionId)
             let deletedProduct = await ProductCart.destroy({where:{productId:id,cartId:userActiveCart.cartId}})
             return deletedProduct
         }catch(err){console.log(err);}
-    },*/
-    order:async function(data,total,user){
-        
-        
-
+    },
+    order:async function(data,user){
+        try{
+            let userSessionId = user.id
+        let userActiveCart = await this.userActiveCart(userSessionId)
+        let userCartId = userActiveCart.cartId
+        let totalPriceData=parseInt(data.totalPrice.slice(1))
+        let totalPrice  = await Cart.update({
+            totalPrice:totalPriceData 
+        },{
+            where: {id:userCartId}
+        })
+        let orderData ={
+            cartId:userCartId,
+            addressId:data.selectedAddress,
+            cartId:data.selectedCard
+        }
+        let newOrder = await Order.create(orderData)
+        let deletedCart = await Cart.destroy({where:{id:userCartId}})
+        return totalPrice,newOrder,deletedCart //canitdades de producto?//no podemos crear la orden de un cart borrado
+        }catch(err){console.log(err)}
     }
     }

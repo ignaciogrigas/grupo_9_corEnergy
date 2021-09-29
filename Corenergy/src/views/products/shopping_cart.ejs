@@ -2,71 +2,74 @@
 <body>
     <%-include("../includes/header")%>
     <main>
-            <h1>Your Cart</h1>
-            <form action="/products/order-successful?_method=PUT" method="POST" id="total-price" enctype="multipart/form-data">
+        <h1>Your Cart</h1>
+        <div id="total-price">
             <table>
                 <tr>
                     <th>Product</th>
                     <th>Quantity</th>
                     <th>Price</th>
                 </tr>
-                <% for ( let i = 0 ; i < ProductsBought.length ; i ++){%>
-                    <tr>
-                        <td class="cart-info">
-                            <section class="cart-info">
-                                <figure>
-                                    <img src="/images/uploads/products/<%= ProductsBought[i].product.image[0]%>">
-                                </figure>
-                                <div>
-                                    <h3><%= ProductsBought[i].product.name%></h3>
-                                    <p><%= ProductsBought[i].product.description%></p>
-                                    <a href="/delete-product-cart/<%= ProductsBought[i].product.id%>">Delete</a>
-                                </div>
-                            </section>
-                        </td>
-                        <td>
-                            <div class="counter">
-                                <i class="fas fa-angle-down"></i>
-                                <input type="number"  name="quantity" value=<%= ProductsBought[i].productQuantity%>>
-                                <i class="fas fa-angle-up"></i> 
-                            </div> 
-                        </td>
-                        <td class="item-price">$ <%= ProductsBought[i].product.price%></td>
-                    </tr>
-                    <tr>
-                    <!-- <input hidden type="number" name="idProduct" id="idProduct" value=" idProduct%>"> -->
+                    <% for ( let i = 0 ; i < ProductsBought.length ; i ++){%>
+                <tr>
+                <td class="cart-info">
+                        <section class="cart-info">
+                        <figure>
+                            <img src="/images/uploads/products/<%= ProductsBought[i].product.image[0]%>">
+                        </figure>
+                        <div>
+                            <h3><%= ProductsBought[i].product.name%></h3>
+                            <p><%= ProductsBought[i].product.description%></p>
+                            <form action ="/products/delete-product-cart/<%= ProductsBought[i].product.id%>?_method=DELETE" method="POST" enctype="application/x-www-form-urlencoded">
+                                <button type="submit" id ="delete">Delete</button>
+                            </form>
+                        </div>
+                    </section>
+                </td>
+                <td>
+                    <div class="counter">
+                        <i class="fas fa-angle-down"></i>
+                        <input type="number"  name="quantity" class="quantity" value=<%= ProductsBought[i].productQuantity%>>
+                        <i class="fas fa-angle-up"></i> 
+                    </div> 
+                </td>
+                <td class="item-price">$<%= ProductsBought[i].product.price%></td>
+
                 <%}%>
-                </table>              
-                <!-- COMO MANDO LA DATA DEL TOTAL COMO NUMERO!!-->
+            </table>
+            <form action="/products/order-successful?_method=PUT" method="POST" id="total-price" enctype="application/x-www-form-urlencoded">             
                 <ul>
                     <li>Total Price</li>
-                    <li class="li-price">$3000.00</li>
+                    <input type="text" class="li-price" id="total_price_data" readonly name="totalPrice">
                 </ul>
                 <ul>
                     <li>Address</li>
-                    <li><select  name="selectedAddress" id="selectedAddress">
-                        <option selected value="defualt">Address</option>
-                        <% for (let i = 0 ; i< registeredAddress.length; i ++){%>
-                            <option value="<%= registeredAddress[i].id%>"><%= registeredAddress[i].address%></option>  
-                        <%}%>
-                    </select></li>
+                    <li>
+                        <select  name="selectedAddress" id="selectedAddress">
+                            <option selected value="defualt">Address</option>
+                            <% for (let i = 0 ; i< registeredAddress.length; i ++){%>
+                                <option value="<%= registeredAddress[i].id%>"><%= registeredAddress[i].address%></option>  
+                            <%}%>
+                        </select>
+                    </li>
                 </ul>
                 <ul>
                     <li>Credit Card</li>
-                    <li><select name="selectedCard" id="selectedCard">
-                        <option selected value="default">Credit Card</option>
-                        <% for (let i = 0 ; i< registeredCreditCards.length; i ++){%>
-                            <option value="<%= registeredCreditCards[i].id%>"><%= registeredCreditCards[i].creditcard%></option>  
-                        <%}%>               
-                    </select></li>
+                    <li>
+                        <select name="selectedCard" id="selectedCard">
+                            <option selected value="default">Credit Card</option>
+                            <% for (let i = 0 ; i< registeredCreditCards.length; i ++){%>
+                                <option value="<%= registeredCreditCards[i].id%>"><%= registeredCreditCards[i].creditcard%></option>  
+                            <%}%>               
+                        </select>
+                    </li>
                 </ul>
-                
-                               
                 <button type="submit">Checkout</button>
-                
             </form>
+        </div>
     </main>
-<%-include("../includes/footer")%> 
-<script src="/js/frontCart.js"></script>     
+    <%-include("../includes/footer")%> 
+    <script src="/js/frontCart.js"></script>
+    <script src="/js/TotalPrice.js"></script>        
 </body>
 </html>

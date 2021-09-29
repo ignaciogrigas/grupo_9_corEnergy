@@ -2,7 +2,7 @@ const { body } = require("express-validator");
 const bcrypt = require("bcrypt");
 const userModel = require("../models/users");
 module.exports = [
-  body("email").isEmail().not().withMessage("That's not a valid email")
+  body("email")
   .custom( async (value) => {
     let registered = await userModel.findByEmail(value);
     if (!registered) {

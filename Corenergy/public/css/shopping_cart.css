@@ -56,15 +56,27 @@
         align-items: flex-start;
         
         position: relative;
+    }
+    #total-price button{
+        border: none;    
+        color:white;
+        font-size: 1rem;    
+        background-color:rgb(105, 228, 185);
+        border-radius: 1.5rem;
+        margin-top: 1rem;
+        padding: 1.5vh;    
     }   
-    .cart-info a{
+    .cart-info #delete{/*ver vistas*/
         font-size: 0.6rem;
         color:rgb(105, 228, 185);
         text-decoration: none;        
         border-radius: 0.5rem;
         text-decoration: none;
         position: absolute;
-        top: 85%; 
+        top: 85%;
+        background-color:none;
+        margin-top: 0;
+        padding: 0;
         } 
     .counter{
         display: flex;
@@ -133,15 +145,6 @@
             border-radius:1.25rem;
             padding: 1vh;
             margin:2vh 0vh;   
-    }
-    #total-price button{
-        border: none;    
-        color:white;
-        font-size: 1rem;    
-        background-color:rgb(105, 228, 185);
-        border-radius: 1.5rem;
-        margin-top: 1rem;
-        padding: 1.5vh;    
     }
     @media screen and (min-width:369px){
         main{

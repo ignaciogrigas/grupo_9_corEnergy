@@ -18,7 +18,7 @@ router.get("/edit/:id", productsController.modify);
 
 router.get("/category/:nameCategory", productsController.category);
 
-router.post("/save",[upload.array("productImages",[6])/*,validationProduct*/],productsController.save);
+router.post("/save",[upload.array("productImages",[6]),validationProduct],productsController.save);
 
 router.post("/save-new-review",productsController.newReview)
 
@@ -28,6 +28,8 @@ router.put("/update/:id" ,upload.array("productImages",[6]),productsController.e
 
 router.put ("/delete/:id",productsController.delete);
 
-router.put("/order-successful",productsController.order)
+router.put("/order-successful",productsController.order);
+
+router.delete("/delete-product-cart/:id",productsController.deleteProductCart)
 
 module.exports = router;
