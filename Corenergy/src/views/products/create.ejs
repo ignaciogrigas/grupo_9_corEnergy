@@ -3,10 +3,11 @@
     <%- include("../includes/header")%>
     <main>
         <h1><%= locals.product? "Edit Product" : "Add Product" %></h1>
-        <form action=<%=locals.product ? `/products/update/${product.id}?_method=PUT` : "/products/save" %> method="POST" enctype="multipart/form-data">
+        <form id="formCreateP" action=<%=locals.product ? `/products/update/${product.id}?_method=PUT` : "/products/save" %> method="POST" enctype="multipart/form-data">
             <section id="profile_img">
                     <label for="productImages">
-                        <img src="/images/default_and_logos/default_product.svg" alt="Product Images">
+                        <img id="CreatePImg" src="/images/default_and_logos/default_product.svg" alt="Product Images">
+                        <span id="errorsFrontCreatePImg" class="error"></span>
                         <p><%= locals.product ? "Reload product images":"Upload up to 6 photos" %></p>
                     </label>
                 <input type="file" name="productImages" id="productImages" multiple>
@@ -15,6 +16,7 @@
                 
                 <label for="productName">Product name</label>
                 <input  type="text" name="productName" value="<%= locals.product ? product.name : '' %>" id="productName">
+                <span id="errorsFrontCreatePName" class="error"></span>
                 <% if (locals.errors && errors.productName) { %>
                     <p class="error">
                       <%= errors.productName.msg %> 
@@ -23,7 +25,8 @@
 
                 <label for="description">Description</label>
                 <textarea  type="text"  name="description" id="description"><%= locals.product ? product.description : '' %></textarea>
-
+                <span id="errorsFrontCreatePDesc" class="error"></span>    
+                
                 <label for="productCode">Product code</label>
                 <input  type="number" value="<%= locals.product ? product.code : '' %>" name="productCode" id="productName">
                 <% if (locals.errors && errors.productCode) { %>

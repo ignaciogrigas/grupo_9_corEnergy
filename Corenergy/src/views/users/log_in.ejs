@@ -7,6 +7,7 @@
             <form action="/users/access" method="POST" id= "formLogIn"> 
                 <label for="email">Username or E-mail<span>*</span></label>
                 <input required type="email" name="email" id="email" value="<%= locals.old && old.email ? old.email : ""%>"> 
+                <span id="errorsFrontUser" class="error"></span>
                 <% if (locals.errors && errors.email) { %>
                     <p class="error">
                       <%= errors.email.msg %> 
@@ -15,13 +16,13 @@
                 
                 <label for="password">Password<span>*</span></label>
                 <input required type="password" name="password" id="password">
+                <span id="errorsFrontPass" class="error"></span>
                 <% if (locals.errors && errors.password) { %>
                     <p class="error">
                       <%= errors.password.msg %> 
                     </p>
                   <% } %>
-                <h6 >Required fields*</h6>
-                <p id="errorsFront" class="error"></p>
+                <h6 >Required fields*</h6>                
                 <article>
                     <input type="checkbox" name="remember" id="remember">
                     <label for="remember">Remember me</label>
