@@ -1,5 +1,16 @@
-const { body } = require("express-validator");
+const { body, check } = require("express-validator");
 const productModel = require("../models/products")
+
+
+const checkImgFormat = ((value, {req})=>{
+    let imgFormat = ["jpg","jpeg", "png", "gif"]
+    let imgExt = req.file.mimetype.split("/").pop();     
+    
+    if(!imgFormat.includes(imgExt)){        
+    throw new Error("Image must be jpg, jpeg, pnp or gif")
+}
+return true
+})
 
 module.exports =  [
   body("productName")
@@ -22,7 +33,9 @@ module.exports =  [
 
   body("productCode")
   .isEmpty().withMessage("Invalid product code").bail()
-  .isLength({ min: 6, max: 6 }).withMessage("The products's code must have 6 digits")//tiene q tener 6
+  .isLength({ min: 6, max: 6 }).withMessage("The products's code must have 6 digits"),
+  
+  check("imgError").custom(checkImgFormat)
 ]
 
 /*addProduct: [

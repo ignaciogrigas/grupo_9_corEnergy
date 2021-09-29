@@ -11,6 +11,11 @@
                         <p><%= locals.product ? "Reload product images":"Upload up to 6 photos" %></p>
                     </label>
                 <input type="file" name="productImages" id="productImages" multiple>
+                <% if (locals.errors && errors.imgError) { %>
+                    <p class="error">
+                      <%= errors.imgError.msg %> 
+                    </p>
+                  <% } %>
             </section>
             <section id="main_section">
                 

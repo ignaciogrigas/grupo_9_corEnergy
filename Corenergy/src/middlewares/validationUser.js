@@ -17,8 +17,9 @@ const checkImgFormat = ((value, {req})=>{
     let imgExt = req.file.mimetype.split("/").pop();     
     
     if(!imgFormat.includes(imgExt)){        
-    console.log("Image must be jpg, jpeg, pnp or gif")
+    throw new Error("Image must be jpg, jpeg, pnp or gif")
 }
+return true
 })
 
 module.exports = [
@@ -41,7 +42,7 @@ module.exports = [
     body("conf_password")
     .custom(checkIfPasswordsMatch).withMessage("Passwords should match"),
     // Check image extension
-    check().custom(checkImgFormat)
+    check("imgError").custom(checkImgFormat)
 ]
 
 
