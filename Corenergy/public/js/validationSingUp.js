@@ -4,12 +4,14 @@ const errorMsgSurname = document.querySelector("#errorsFrontSurname");
 const errorMsgEmail = document.querySelector("#errorsFrontEmail");
 const errorMsgPass = document.querySelector("#errorsFrontPass");
 const errorMsgConfPass = document.querySelector("#errorsFrontConfPass");
+const errorsFrontImg = document.querySelector("#errorsFrontImg");
 
 errorMsgName.style.display = "none"
 errorMsgSurname.style.display = "none"
 errorMsgEmail.style.display = "none"
 errorMsgPass.style.display = "none"
 errorMsgConfPass.style.display = "none"
+errorsFrontImg.style.display = "none"
 
 let inputs = Array.from(inputForm.elements).filter(elemento => elemento.getAttribute("type") != undefined)
 
@@ -75,6 +77,18 @@ inputs.forEach(input => {
         errorMsgConfPass.innerHTML = "Ready to go =)"
       }
     }
+     //ConfPass Image Extension
+  //     if(name == "file"){  
+  //     const files = target.files
+  //     const imgFormat = ["jpg","jpeg", "png", "gif"]            
+  //     if(!imgFormat.includes(files)){        
+  //       errorsFrontImg.style.display = "block"
+  //       errorsFrontImg.innerHTML = "Image must be jpg, jpeg, pnp or gif"     
+  //   }else{        
+  //     errorMsgConfPass.innerHTML = "Ready to go =)"
+  //   }
+  // }
+
     }
     
     //Img Validation
@@ -83,13 +97,22 @@ inputs.forEach(input => {
       const target = evento.target;
       const name = target.getAttribute("name");
       const imgPreview = document.getElementById("avatar")
+      const imgFormat = ["jpg","jpeg", "png", "gif"]
 
       if(name == "profileImage"){
-        const files = target.files        
+        const files = target.files 
+        const fileExt = files[0].name.split(".").pop()               
         if(files.length > 0){
-          imgPreview.src = URL.createObjectURL(files[0]);
-          
+          imgPreview.src = URL.createObjectURL(files[0])          
         }
+        if(!imgFormat.includes(fileExt)){           
+        errorsFrontImg.style.display = "block"
+        errorsFrontImg.innerHTML = "Image must be jpg, jpeg, pnp or gif"
+      }else{        
+        errorsFrontImg.innerHTML = ""
+      }
+
+
       }
     }
   }

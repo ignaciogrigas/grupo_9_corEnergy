@@ -17,7 +17,7 @@ inputs.forEach(input => {
       const value = target.value;
       
       if(name == "productName"){ 
-        if(name.value.length < 4){        
+        if(value.length < 4){        
           errorMsgCreatePName.style.display = "block"       
           errorMsgCreatePName.innerHTML = "Pruduct name should be longer"
         }else{
@@ -25,7 +25,7 @@ inputs.forEach(input => {
         }
       }      
       if(name == "description"){          
-        if(name.value.length < 20){ 
+        if(value.length < 20){ 
           errorMsgCreatePDesc.style.display = "block"          
           errorMsgCreatePDesc.innerHTML = "At least 20 characters"
         }else{
@@ -38,14 +38,23 @@ inputs.forEach(input => {
           const target = evento.target;
           const name = target.getAttribute("name");
           const imgPreview = document.getElementById("CreatePImg")
+          const imgFormat = ["jpg","jpeg", "png", "gif"]
+          
     
           if(name == "productImages"){
-            const files = target.files        
+            const files = target.files
+            const fileExt = files[0].name.split(".").pop()        
             if(files.length > 0){
-              imgPreview.src = URL.createObjectURL(files[0]);
-              
+              imgPreview.src = URL.createObjectURL(files[0]);              
             }
-          }
+            if(!imgFormat.includes(fileExt)){           
+              errorMsgCreatePImg.style.display = "block"
+              errorMsgCreatePImg.innerHTML = "Image must be jpg, jpeg, pnp or gif"
+            }else{        
+              errorMsgCreatePImg.innerHTML = ""
+            }
+          } 
+          
         }
       }
     
