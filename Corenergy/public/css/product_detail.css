@@ -73,14 +73,6 @@ body{
     background-color:#69E4B9;
     color:white
 }
-#product label:hover{
-    background-color:#69E4B9 ;
-    color:white;
-}
-/*[type=radio],
-[type=checkbox]{
-    display:none
-}*/
 #product article p{
     font-size:1rem;
     font-weight: 200;
@@ -150,7 +142,7 @@ body{
     width: 60%;
 }
 #reviews article p{
-    font: size 0.8rem;
+    font-size:0.8rem;
     text-align:justify;
 }
 #add form{

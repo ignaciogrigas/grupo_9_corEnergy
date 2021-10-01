@@ -9,7 +9,6 @@ module.exports={
     show:async(req,res)=> {
         let bestReviews=await homeModel.bestReviews();
         let bestSellers = await homeModel.bestSellers()
-        //res.send(bestReviews)
         res.render("home",{
             title:"Home",
             style:"/css/home.css",

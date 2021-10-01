@@ -37,7 +37,6 @@ const {Product,Review,ProductCart,Image,SubCategory,Category} = db
             let bestSellers = await ProductCart.findAll({
                 group: "productId",
                 attributes: ["productId",[sequelize.fn("COUNT",sequelize.col("ProductCart.productId")),"count"]],
-                limit: 8,
                 order : [[sequelize.col("count"),"DESC"]],
                 include :[
                     {model: Product, as: "product", include:[
@@ -47,7 +46,8 @@ const {Product,Review,ProductCart,Image,SubCategory,Category} = db
                     ], where:{
                         deletedAt :{[Op.eq]:null}
                     }},
-                ]
+                ],
+                limit: 8
             });
             return bestSellers
          }catch(err){console.log(err);}

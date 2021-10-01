@@ -2,37 +2,55 @@ let categorySelector = document.querySelector("#category")
 let weightsSubCategories = document.querySelector("#choice_weights")
 let elasticBandsSubCategories = document.querySelector("#choice_elasticBands")
 let matsSubCategories = document.querySelector("#choice_mats")
-categorySelector.addEventListener("change",function(){
-    if (this.value == 1){
+let subcategoires =  document.getElementsByName("choice")
+window.addEventListener("load",function(){
+    console.log(categorySelector.selectedIndex)
+    if (this.selectedIndex == 1){
         weightsSubCategories.style.display = "flex"
         elasticBandsSubCategories.style.display = "none"
         matsSubCategories.style.display = "none"
-    } else if ( this.value == 3) {
+    } else if (this.selectedIndex == 3) {
         weightsSubCategories.style.display = "none"
         elasticBandsSubCategories.style.display = "flex"
         matsSubCategories.style.display = "none"
-    } else if (this.value == 4 ){
+    } else if (this.selectedIndex == 4 ){
         weightsSubCategories.style.display = "none"
         elasticBandsSubCategories.style.display = "none"
         matsSubCategories.style.display = "flex"
+    } else if(this.selectedIndex == 2){
+        weightsSubCategories.style.display = "none"
+        elasticBandsSubCategories.style.display = "none"
+        matsSubCategories.style.display = "none"
     }
-})//Como hago para que aparezca en el edit directo cuando ya esta puesto el valor,probe con oad y nada
-    let checkboxes =  document.querySelectorAll('input[type="checkbox"]')
-    checkboxes.forEach(checkbox => 
-        checkbox.addEventListener("change",function(){
-            if(this.checked){
-                this.display="block"
+})
+categorySelector.addEventListener("change",function(){
+    if (this.selectedIndex == 1){
+        weightsSubCategories.style.display = "flex"
+        elasticBandsSubCategories.style.display = "none"
+        matsSubCategories.style.display = "none"
+    } else if (this.selectedIndex == 3) {
+        weightsSubCategories.style.display = "none"
+        elasticBandsSubCategories.style.display = "flex"
+        matsSubCategories.style.display = "none"
+    } else if (this.selectedIndex == 4 ){
+        weightsSubCategories.style.display = "none"
+        elasticBandsSubCategories.style.display = "none"
+        matsSubCategories.style.display = "flex"
+    } else if(this.selectedIndex == 2){
+        weightsSubCategories.style.display = "none"
+        elasticBandsSubCategories.style.display = "none"
+        matsSubCategories.style.display = "none"
+    }
+})
+for(let i = 0 ;  i<subcategoires.length;i++){
+    subcategoires[i].addEventListener("click",function(){
+            if(subcategoires[i].checked){
+                subcategoires[i].labels[0].style.backgroundColor="#69E4B9"
+                subcategoires[i].labels[0].style.color="white"
+            }else if (!subcategoires[i].checked){
+                subcategoires[i].labels[0].style.backgroundColor="white"
+                subcategoires[i].labels[0].style.color="#4D5867"
             }
-        })
-        )//no sale!
-
-    /*let labels = document.getElementsByTagName('label')
-    for (var checkbox in subCategoriesChecked ){
-        labels.forEach(function(label){
-            if (label.htmlFor == checkbox.id)
-            {label.style.backgroundColor = "#69E4B9";
-            label.style.color = "white"}
-        })
-    }*/
-        
+    })
+}       
 

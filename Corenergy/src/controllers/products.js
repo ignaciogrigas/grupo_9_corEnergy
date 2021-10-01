@@ -9,7 +9,7 @@ const users = require("../models/users");
 module.exports = {
     byId:async(req,res) => {
         try{
-            let singleProduct = await productsModel.one(req.params.id)
+        let singleProduct = await productsModel.one(req.params.id)
         let listOfReviews = await productsModel.getProductReviews(req.params.id)
         let otherProducts = await productsModel.customersWhoAlsoBought(req.params.id)
         res.render("./products/product_detail",{
@@ -52,7 +52,10 @@ module.exports = {
                 style:"/css/create.css"
                });
           }else{
-            return newProduct , res.redirect("back");
+            return newProduct , res.redirect("./users/profile",{
+                title:"Profile",
+                style: "/css/profile.css"
+            })
           }
     },
     modify:async(req,res)=> {

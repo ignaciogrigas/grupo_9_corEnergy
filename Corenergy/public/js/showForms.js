@@ -4,7 +4,7 @@ let formToShow1 = document.querySelector("#form_to_show1")
 let plus1 = document.querySelector("#show_form1")
 let error = document.querySelectorAll(".error")
 window.addEventListener("load",function () {
-    if(error.length>0){
+    if(!error){
         formToShow.style.display = "flex";
         formToShow1.style.display = "flex";
     }
