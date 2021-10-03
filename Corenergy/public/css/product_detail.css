@@ -231,6 +231,10 @@ main form button{
 #show_form2{
     cursor: pointer;
 }
+[type=radio],
+[type=checkbox]{
+    display:none
+}
 @media screen and (min-width:369px){
     .products article{
         width: 50vw;

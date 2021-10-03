@@ -3,8 +3,8 @@ let weightsSubCategories = document.querySelector("#choice_weights")
 let elasticBandsSubCategories = document.querySelector("#choice_elasticBands")
 let matsSubCategories = document.querySelector("#choice_mats")
 let subcategoires =  document.getElementsByName("choice")
-window.addEventListener("load",function(){
-    console.log(categorySelector.selectedIndex)
+window.addEventListener("load",function(){//no funca
+    console.log(categorySelector.selectedIndex)//pero si me pasa el log, probe con this.value y nada
     if (this.selectedIndex == 1){
         weightsSubCategories.style.display = "flex"
         elasticBandsSubCategories.style.display = "none"
