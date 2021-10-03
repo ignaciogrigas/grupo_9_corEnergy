@@ -2,8 +2,30 @@
 <body>
 <%-include("../includes/header")%>
     <main>
-        <h3 id="best_seller">Results</h3>
-        <%-include("../includes/list_of_articles")%>
+        <div id="total-price">
+            <table>
+                <tr>
+                    <th>Product</th>
+                </tr>
+                    <% for ( let i = 0 ; i < listOfProducts.length ; i ++){%>
+                <tr>
+                    <td class="cart-info">
+                        <a href="/products/<%= listOfProducts[i].id%>">
+                            <section class="cart-info">
+                                <figure>
+                                    <img src="/images/uploads/products/<%= listOfProducts[i].image[0].name%>">
+                                </figure>
+                                <div>
+                                    <h3><%= listOfProducts[i].name%></h3>
+                                    <p><%= listOfProducts[i].description%></p>
+                                </div>
+                            </section>
+                        </a>
+                    </td>
+
+                <%}%>
+            </table>
+        </div>
     </main>    
     <%-include("../includes/footer")%>
 </body>

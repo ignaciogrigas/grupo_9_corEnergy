@@ -21,7 +21,7 @@ module.exports={
         let queryResults = await homeModel.search(req.query.keywords)
         res.render("./products/search",{
             title:"Results",
-            style:"/css/all_products.css",
+            style:"/css/shopping_cart.css",
             listOfProducts:queryResults
         })
     },

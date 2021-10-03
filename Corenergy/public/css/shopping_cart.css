@@ -35,9 +35,12 @@
         vertical-align:middle;
         padding: 10px 0px;
         border-bottom: 2px ridge white;     
-        }
-    td figure{
-        display: none;
+    }
+    .cart-info img{
+        width:100%;
+    }
+    .cart-info figure{
+        width:10vw;
     }
     td div{
             padding: 10px; 
@@ -66,18 +69,14 @@
         margin-top: 1rem;
         padding: 1.5vh;    
     }   
-    .cart-info #delete{/*ver vistas*/
-        font-size: 0.6rem;
-        color:rgb(105, 228, 185);
-        text-decoration: none;        
-        border-radius: 0.5rem;
-        text-decoration: none;
-        position: absolute;
-        top: 85%;
-        background-color:none;
-        margin-top: 0;
-        padding: 0;
-        } 
+    .cart-info #delete{
+    background-color: #E5E5E5;
+    padding:0rem;
+    color:rgb(77, 88, 103);
+    font-size:0.75rem;
+    margin-bottom: 0vh;
+    margin-top: 7vw;
+    }
     .counter{
         display: flex;
         flex-wrap: wrap;
@@ -138,13 +137,25 @@
         font-weight: bolder;
     }
     #total-price select{
-            appearance:none;
-            -moz-appearance:none;
-            -webkit-appearance:none;
-            border:none;
-            border-radius:1.25rem;
-            padding: 1vh;
-            margin:2vh 0vh;   
+        appearance:none;
+        -moz-appearance:none;
+        -webkit-appearance:none;
+        border:none;
+        border-radius:1.25rem;
+        padding: 1.5vh;
+        margin:2vh 0vh;
+        text-align: end;   
+    }
+    #total_price_data{
+        background-color: #E5E5E5;
+        text-align: end;
+        padding:none;
+        width: 5rem;
+
+    }
+    .fa-angle-up,
+    .fa-angle-down{
+        cursor: pointer;
     }
     @media screen and (min-width:369px){
         main{
@@ -189,19 +200,22 @@
             width: 12vw;
             height: 2rem;    
         }
+        .cart-info #delete{
+            margin-top: 10vw;
+        }
+        #total-price select{
+            padding: 1vh;
+        }
     }
     @media screen and (min-width:786px){
         .counter{
-            width: 5vw;
+            width: 6.5vw;
             height: 2rem;    
         }
-        .cart-info a{    
-            padding: 0.3rem;               
-            transition: all 0.8s;
-            }
-        .cart-info a:hover{
-            background-color:rgb(105, 228, 185);
-            color: white;
-            border-radius: 1rem;
-        } 
+        .cart-info #delete{
+            margin-top: 13vw;
+        }
+        #total-price select{
+            padding: 2vh;
+        }
     }    

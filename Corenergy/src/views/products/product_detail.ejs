@@ -38,7 +38,7 @@
                                 <% for ( let i = 0 ; i<singleProduct.subcategories.length;i++){%>
                                     <li>
                                         <label for="<%= singleProduct.subcategories[i].id%>" ><%= singleProduct.subcategories[i].name%></label>
-                                        <input type="radio" name="choice"  id="<%= singleProduct.subcategories[i].id%>" value="<%= singleProduct.subcategories[i].name%>">
+                                        <input type="radio" name="choice"  id="<%= singleProduct.subcategories[i].id%>" value="<%= singleProduct.subcategories[i].id%>">
                                     </li>
                                 <%}%>
                             </ul>
