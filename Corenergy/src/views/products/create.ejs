@@ -33,7 +33,7 @@
                 <span id="errorsFrontCreatePDesc" class="error"></span>    
                 
                 <label for="productCode">Product code</label>
-                <input  type="number" value="<%= locals.product ? product.code : '' %>" name="productCode" id="productName">
+                <input  type="number" value="<%= locals.product ? product.code : '' %>" name="productCode" id="productCode">
                 <% if (locals.errors && errors.productCode) { %>
                     <p class="error">
                       <%= errors.productCode.msg %> 

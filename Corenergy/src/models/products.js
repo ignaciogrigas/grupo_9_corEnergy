@@ -14,7 +14,7 @@ module.exports= {
                     {model: SubCategory, as: "subcategories" }
                 ]
             });
-        } catch(err){console.log(err);}
+        } catch(err){console.log();}
     },
     getProductReviews: async function(id){
         try{
@@ -24,7 +24,7 @@ module.exports= {
                 },
                 limit:3
             })
-        }catch(err){console.log(err);}
+        }catch(err){console.log();}
     },
     byCategory: async function(catName){
         try{
@@ -44,7 +44,7 @@ module.exports= {
                 {model: Category, as: "category"}
             ]
         })
-        return listOfProducts}catch(err){console.log(err);}       
+        return listOfProducts}catch(err){console.log();}       
     },
     titleArrange: function(category){
         if(category != "elastic-bands"){
@@ -80,7 +80,7 @@ module.exports= {
             })
         )
 
-        return newProduct,images}catch(err){console.log(err);}
+        return newProduct,images}catch(err){console.log();}
     },
     edit: async function(data,files,id,user){
         try{
@@ -127,7 +127,7 @@ module.exports= {
             return newImages,deletedImages
             }
             return updatedProduct
-        }catch(err){console.log(err);}
+        }catch(err){console.log();}
     },
     delete:async function(id,user){
         try{
@@ -150,7 +150,7 @@ module.exports= {
         }))
         let deletedProduct = await Product.destroy({where:{id}})
         return whoDeleted,deletedImages,deletedProduct
-        }catch(err){console.log(err);}
+        }catch(err){console.log();}
     },
     newReview:async function(data){
         let ReviewData = {
@@ -243,7 +243,7 @@ module.exports= {
             let productInCart = await ProductCart.create(productBoughtData)
             return productInCart
         }
-        }catch(err){console.log(err);}
+        }catch(err){console.log();}
     },
     cart:async function(user){
         let userSessionId = user.id
@@ -268,7 +268,7 @@ module.exports= {
             let userActiveCart = await this.userActiveCart(userSessionId)
             let deletedProduct = await ProductCart.destroy({where:{productId:id,cartId:userActiveCart.cartId}})
             return deletedProduct
-        }catch(err){console.log(err);}
+        }catch(err){console.log();}
     },
     order:async function(data,user){
         try{
@@ -289,6 +289,6 @@ module.exports= {
         let newOrder = await Order.create(orderData)
         let deletedCart = await Cart.destroy({where:{id:userCartId}})
         return totalPrice,newOrder,deletedCart //canitdades de producto?//no podemos crear la orden de un cart borrado
-        }catch(err){console.log(err)}
+        }catch(err){console.log()}
     }
     }

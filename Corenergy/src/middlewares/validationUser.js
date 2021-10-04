@@ -32,6 +32,7 @@ module.exports = [
     //Check email
     body("email")
     .notEmpty().withMessage("You must sign up with an e-mail")
+    //.isEmail().not().withMessage("That's not a valid email")
     .custom(checkIfUserEmailAlreadyExist),   
    // Check password
     body("password")
