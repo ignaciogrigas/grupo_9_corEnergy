@@ -6,10 +6,6 @@ let logInInfo = document.querySelector("#nav_products #log_in_mobile")
      if ( navBar.style.display === "none"){
         logInInfo.style.display="block"
         navBar.style.display="flex"
-        /*navBar.style.justifyContent= "center";
-        navBar.style.alignItems= "center";
-        navBar.style.flexFlow= "row wrap";
-        navBar.style.paddingTop= "2vw";*/
      } else {
         logInInfo.style.display="none"
         navBar.style.display="none"

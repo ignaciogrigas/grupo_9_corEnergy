@@ -12,7 +12,7 @@ under30.addEventListener("click",function() {
         }
     })
 })
-from60to30.addEventListener("click",function() {
+from60to30.addEventListener("click",function() {//no funca
     products.forEach(product =>{
         product.style.display ="block"
         let price = product.querySelector(".price")

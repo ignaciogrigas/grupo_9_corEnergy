@@ -8,10 +8,10 @@
                 <img src="/images/uploads/products/<%= singleProduct.image[0].name%>" alt="">
             </figure>
                 <ul id="other_img">
-                    <% for (let i = 1 ; i<singleProduct.image.length ;i++){%>
+                    <% for (let i = 0 ; i<singleProduct.image.length ;i++){%>
                         <li>
                         <figure>
-                            <img src="/images/uploads/products/<%= singleProduct.image[i].name%>">
+                            <img src="/images/uploads/products/<%= singleProduct.image[i].name%>" class="list_item">
                         </figure>
                     </li>
                     <%}%>
@@ -91,6 +91,7 @@
     </main>
     <%-include("../includes/footer")%>
     <script src="/js/checkedLabels.js"></script>
+    <script src="/js/popUp.js"></script>
     <script src="/js/showFormsProduct.js"></script>
 </body>
 </html>
