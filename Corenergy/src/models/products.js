@@ -199,7 +199,7 @@ module.exports= {
                     userId:id
             }
             ,include: [
-                {model: Cart, as: "cart"},
+                {model: Cart, as: "cart",where:{deletedAt:null}},
                 {model: User, as: "user"}
             ]
         })
@@ -246,20 +246,24 @@ module.exports= {
         }catch(err){console.log();}
     },
     cart:async function(user){
-        let userSessionId = user.id
-        let userActiveCart = await this.userActiveCart(userSessionId)
-        if(userActiveCart || userActiveCart.cart.deletedAt == null){
-            let productsToBePurchased = await db.ProductCart.findAll({
-                where: {cartId:userActiveCart.cartId},
-                include :[
-                    {model: Product, as: "product", include:[
-                        {model: Image, as: "image"},
-                        {model: Category, as: "category"},
-                        {model: SubCategory, as: "subcategories" }
-                    ]},
-                ]
-            })
-            return productsToBePurchased
+        try{
+            let userSessionId = user.id
+            let userActiveCart = await this.userActiveCart(userSessionId)
+            if(userActiveCart && userActiveCart.cart.deletedAt == null){
+                let productsToBePurchased = await db.ProductCart.findAll({
+                    where: {cartId:userActiveCart.cartId},
+                    include :[
+                        {model: Product, as: "product", include:[
+                            {model: Image, as: "image"},
+                            {model: Category, as: "category"},
+                            {model: SubCategory, as: "subcategories" }
+                        ]},
+                    ]
+                });
+                return productsToBePurchased
+            }
+        }catch(err){
+            console.log(err);
         }
     },
     deleteProductCart: async function (user,id){
@@ -272,7 +276,7 @@ module.exports= {
     },
     order:async function(data,user){
         try{
-            let userSessionId = user.id
+        let userSessionId = user.id
         let userActiveCart = await this.userActiveCart(userSessionId)
         let userCartId = userActiveCart.cartId
         let totalPriceData=parseInt(data.totalPrice.slice(1))
@@ -287,8 +291,10 @@ module.exports= {
             cartId:data.selectedCard
         }
         let newOrder = await Order.create(orderData)
-        let deletedCart = await Cart.destroy({where:{id:userCartId}})
+        let deletedCart = await Cart.update({
+            deletedAt:Date.now()
+        },{where:{id:userCartId}})
         return totalPrice,newOrder,deletedCart //canitdades de producto?//no podemos crear la orden de un cart borrado
-        }catch(err){console.log()}
+        }catch(err){console.log(err)}
     }
     }

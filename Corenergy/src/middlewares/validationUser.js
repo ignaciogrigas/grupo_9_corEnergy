@@ -13,12 +13,14 @@ const checkIfPasswordsMatch = (value, { req }) => {
 }
 
 const checkImgFormat = ((value, {req})=>{
-    let imgFormat = ["jpg","jpeg", "png", "gif"]
-    let imgExt = req.file.mimetype.split("/").pop();     
-    
-    if(!imgFormat.includes(imgExt)){        
-    throw new Error("Image must be jpg, jpeg, pnp or gif")
-}
+    if(req.file){
+        let imgFormat = ["jpg","jpeg", "png", "gif"]
+        let imgExt = req.file.mimetype.split("/").pop();     
+        
+        if(!imgFormat.includes(imgExt)){        
+        throw new Error("Image must be jpg, jpeg, pnp or gif")
+        }
+    }
 return true
 })
 

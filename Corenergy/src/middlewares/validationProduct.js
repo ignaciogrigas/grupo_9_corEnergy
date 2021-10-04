@@ -6,15 +6,14 @@ const checkImgFormat = ((value, {req})=>{
     let imgFormat = ["jpg","jpeg", "png", "gif"]
     let imgExt = []
     let loadedImages = req.files
-    console.log("imagenes cargadas",loadedImages)
     let Ext = loadedImages.forEach(element => {
     imgExt.push(element.mimetype.split("/").pop())       
     });
    
-    
-    if(!imgFormat.includes(imgExt[0])){  
-        console.log("extension de las imagenes",imgExt)       
-    throw new Error("Image must be jpg, jpeg, png or gif")
+    for(let i = 0 ; i<imgExt.length;i++){
+        if(!imgFormat.includes(imgExt[i])){        
+        throw new Error("Image must be jpg, jpeg, png or gif")
+    }
 }
 return true
 })

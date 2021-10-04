@@ -11,11 +11,13 @@ module.exports = (Sequelize,DataTypes)=>{
       type:DataTypes.FLOAT(6,2),
       allowNull:false
     },
+    deletedAt:{
+      type:DataTypes.DATE,
+      defaultValue:null
+    }
     },{        
         timestamps:false, 
         tableName:"carts",
-        deletedAt:"deletedAt",
-        paranoid:true
     });
     Cart.associate = function(models){
       Cart.hasOne(models.Order,{

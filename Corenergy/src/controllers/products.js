@@ -52,7 +52,7 @@ module.exports = {
                 style:"/css/create.css"
                });
           }else{
-            return newProduct , res.redirect("./users/profile",{
+            return newProduct , res.render("./users/profile",{
                 title:"Profile",
                 style: "/css/profile.css"
             })
@@ -111,6 +111,7 @@ module.exports = {
             ProductsBought:productsBought
         })
         }catch(err){
+            console.log(err);
             res.render("error_404",{
                 title:"Error 404",
                 style:"/css/error_404.css"
