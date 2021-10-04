@@ -29,7 +29,7 @@
                 <td>
                     <div class="counter">
                         <i class="fas fa-angle-down"></i>
-                        <input type="number"  name="quantity" class="quantity" value=<%= ProductsBought[i].productQuantity%> id="input_counter">
+                        <input type="number"  class="quantity" value=<%= ProductsBought[i].productQuantity%>/>
                         <i class="fas fa-angle-up"></i> 
                     </div> 
                 </td>
@@ -38,6 +38,11 @@
                 <%}%>
             </table>
             <form action="/products/order-successful?_method=PUT" method="POST" id="total-price" enctype="application/x-www-form-urlencoded">             
+                <ul>
+                    <% for ( let i = 0 ;  i < ProductsBought.length ; i ++){%>
+                        <input type="number" name="quantity<%= ProductsBought[i].product.id%>" class="quantity_input"/>
+                    <%}%>
+                </ul>
                 <ul>
                     <li>Total Price</li>
                     <input type="text" class="li-price" id="total_price_data" readonly name="totalPrice">

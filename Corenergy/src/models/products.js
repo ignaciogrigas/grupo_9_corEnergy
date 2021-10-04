@@ -288,13 +288,13 @@ module.exports= {
         let orderData ={
             cartId:userCartId,
             addressId:data.selectedAddress,
-            cartId:data.selectedCard
+            cardId:data.selectedCard
         }
         let newOrder = await Order.create(orderData)
         let deletedCart = await Cart.update({
             deletedAt:Date.now()
         },{where:{id:userCartId}})
-        return totalPrice,newOrder,deletedCart //canitdades de producto?//no podemos crear la orden de un cart borrado
+        return totalPrice,newOrder,deletedCart
         }catch(err){console.log(err)}
     }
     }

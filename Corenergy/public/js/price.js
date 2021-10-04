@@ -12,12 +12,12 @@ under30.addEventListener("click",function() {
         }
     })
 })
-from60to30.addEventListener("click",function() {//no funca
+from60to30.addEventListener("click",function() {
     products.forEach(product =>{
         product.style.display ="block"
         let price = product.querySelector(".price")
         let slicedPrice=price.innerText.slice(1)
-        if(parseInt(slicedPrice) > 60 && parseInt(slicedPrice) < 30){
+        if(parseInt(slicedPrice) > 60 || parseInt(slicedPrice) < 30){
             product.style.display ="none"
         }
     })

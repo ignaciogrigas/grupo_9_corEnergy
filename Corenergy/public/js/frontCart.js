@@ -1,23 +1,31 @@
-function increase_by_one(field) {
- nr = parseInt(field.value);
- field.value = nr + 1;
-}
- 
-function decrease_by_one(field) {
- nr = parseInt(field.value);
- if (nr > 0) {
-   if( (nr - 1) > 0) {
-    field.value = nr - 1;
-   }
- }
-}
-let counter = document.querySelectorAll(".quantity");
-let up = document.querySelectorAll(".fa-angle-up");
-let down = document.querySelectorAll(".fa-angle-down");
-//ambas lo hacen apenas carga la pagina y dps no me deja hacerlo mas
-for( let i = 0 ; i<counter.length;i++){
-  up[i].addEventListener("click",increase_by_one(counter[i]))
-}
-for( let i = 0 ; i<counter.length;i++){
-  down[i].addEventListener("click",decrease_by_one(counter[i]))
-}
+const incButton = document.getElementsByClassName("fas fa-angle-up") 
+const decButton = document.getElementsByClassName("fas fa-angle-down")
+let quantityInputs = document.getElementsByClassName("quantity_inputs")
+
+for(let i = 0; i < incButton.length; i++){
+    let button = incButton[i];
+    button.addEventListener("click", function(event){
+        let buttonClicked = event.target;
+        let input = buttonClicked.parentElement.children[1];
+        let inputValue = input.value;
+        let newValue = parseInt(inputValue) + 1;
+        input.value = newValue;
+      })
+    }
+    for(let i = 0; i < decButton.length; i++){
+        let button = decButton[i];
+        button.addEventListener("click", function(event){
+            let buttonClicked = event.target;
+            let input = buttonClicked.parentElement.children[1];
+            let inputValue = input.value;
+            let newValue = parseInt(inputValue) - 1;
+            if(newValue >=0){
+                input.value = newValue
+    
+            }else{
+                input.value = 0
+    
+            }        
+        })
+    }
+console.log("holis", quantityInputs);
