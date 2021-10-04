@@ -4,10 +4,17 @@ const productModel = require("../models/products")
 
 const checkImgFormat = ((value, {req})=>{
     let imgFormat = ["jpg","jpeg", "png", "gif"]
-    let imgExt = req.file.mimetype.split("/").pop();     
+    let imgExt = []
+    let loadedImages = req.files
+    console.log("imagenes cargadas",loadedImages)
+    let Ext = loadedImages.forEach(element => {
+    imgExt.push(element.mimetype.split("/").pop())       
+    });
+   
     
-    if(!imgFormat.includes(imgExt)){        
-    throw new Error("Image must be jpg, jpeg, pnp or gif")
+    if(!imgFormat.includes(imgExt[0])){  
+        console.log("extension de las imagenes",imgExt)       
+    throw new Error("Image must be jpg, jpeg, png or gif")
 }
 return true
 })
@@ -29,10 +36,10 @@ module.exports =  [
   .isLength({min:20}).withMessage('minimum 20 characters'),
 
   body("price")
-  .isEmpty().withMessage('You have to price your product'),
+  .notEmpty().withMessage('You have to price your product'),
 
   body("productCode")
-  .isEmpty().withMessage("Invalid product code").bail()
+  .notEmpty().withMessage("Invalid product code")
   .isLength({ min: 6, max: 6 }).withMessage("The products's code must have 6 digits"),
   
   check("imgError").custom(checkImgFormat)
