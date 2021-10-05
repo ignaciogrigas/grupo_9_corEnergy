@@ -85,7 +85,7 @@ body{
     justify-content: space-between;
 }
 #add_to_cart,
-#purchase a,
+#edit,
 #delete_form button{
     height: 100%;
     background-color:#69E4B9;
@@ -98,6 +98,9 @@ body{
     width:42%
 }
 #purchase a{
+    color:white
+}
+#edit{
     padding:0.56rem;
     font-size:1.28rem;
     text-align: center;

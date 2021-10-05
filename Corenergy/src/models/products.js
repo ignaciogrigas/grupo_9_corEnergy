@@ -294,6 +294,7 @@ module.exports= {
         let deletedCart = await Cart.update({
             deletedAt:Date.now()
         },{where:{id:userCartId}})
+
         return totalPrice,newOrder,deletedCart
         }catch(err){console.log(err)}
     }

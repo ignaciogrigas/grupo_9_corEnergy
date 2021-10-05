@@ -30,13 +30,6 @@ main{
     width: 80vw;
     padding: 2vh 0;
 }
-#sort_by select{
-    padding: 1vh;
-    border: 0;
-    background-color:#E5E5E5;
-    color: rgb(77, 88, 103);
-    font-size: 1rem;    
-}
 #best_seller{
     width: 100%;
    color:white;
@@ -45,6 +38,7 @@ main{
    font-size: 1.125rem;
    text-align: center;
    padding: 1vh 0;
+   margin-bottom: 2vw;
 }
 .products{
     width: 75vw;

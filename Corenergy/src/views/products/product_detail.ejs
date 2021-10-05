@@ -23,7 +23,7 @@
             <%if (locals.user && locals.user.categoryUserId == 1){%>
                 <form id="delete_form" action= <%= `/products/delete/${singleProduct.id}?_method=PUT`%> method=POST enctype="multipart/form-data">
             <%}else{%>
-                <form id = "buy_form" action ="<%= locals.user ? `/products/buy/${singleProduct.id}` : "/users/sign-up" %>"method=POST >
+                <form id = "buy_form" action ="<%= locals.user ? `/products/buy/${singleProduct.id}` : "" %>"method=POST >
             <%}%>
             <% if (singleProduct.subcategories) {%> 
                     <section>
@@ -48,11 +48,13 @@
                     <section id="purchase">
                         <h5>$ <%= singleProduct.price%></h5>
                         <% if (locals.user && locals.user.categoryUserId == 1){%>
-                            <a href="/products/edit/<%= singleProduct.id%>">Edit</a>
+                            <a href="/products/edit/<%= singleProduct.id%>" id="edit">Edit</a>
                                 <button type="submit">Delete</button>
-                        <%}else{%>
+                        <%}else if(locals.user){%>
                                 <input hidden type="number" name="idProduct" id="idProduct" value="<%= idProduct%>">
                                 <button type="submit" id="add_to_cart">Add to cart</button>
+                        <%}else{%>
+                            <button type="submit" id="add_to_cart"><a href="/users/sign-up">Add to cart</a></button>
                         <%}%>
                     </section>
                </form>
