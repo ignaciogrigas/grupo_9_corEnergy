@@ -5,7 +5,7 @@ const methodOverried = require ("method-override");
 const session = require ("express-session");
 const cookie = require ("cookie-parser")
 
-app.set("port",process.env.PORT || 3000)
+app.set("port",process.env.PORT || 3001)
 app.listen(app.get("port"),()=>console.log("Server on http://localhost:" + app.get("port")))
 
 //app settings
@@ -27,4 +27,5 @@ app.use(require("./middlewares/shareUser"));
 app.use(require("./routes/home"));
 app.use("/products",require("./routes/products"));
 app.use("/users",require("./routes/users"));
+app.use("/api",require("./routes/api"));
 
