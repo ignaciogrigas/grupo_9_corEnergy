@@ -6,11 +6,12 @@ const apiModel = require("../models/api")
 module.exports={
     users:async(req,res)=> {
         let totalUsers = await apiModel.allUsers(req.params.page);
+        let users= totalUsers.rows.map((user)=> Object.assign({},{...user.dataValues,link:`http://localhost:3001/api/users/detail/${user.id}`}))
         let foward = parseInt(req.params.page) + 1
         let backwards = parseInt(req.params.page) - 1
         let data = res.status(200).json({
             count:totalUsers.count,
-            users:totalUsers.rows,
+            users:users,
             next:req.params.page != undefined && req.params.page >= 1 ? "http://localhost:3001/api/users/" + foward : undefined,
             back:req.params.page != undefined && req.params.page > 1 ? "http://localhost:3001/api/users/" + backwards : undefined
         })
@@ -23,11 +24,12 @@ module.exports={
     },
     products:async(req,res)=> {
         let totalProducts = await apiModel.allProducts(req.params.page);
+        let products= totalProducts.rows.map((product)=> Object.assign({},{...product.dataValues,link:`http://localhost:3001/api/products/detail/${product.id}`}))
         let countByCategory = await apiModel.countByCategory();
         let foward = parseInt(req.params.page) + 1
         let backwards = parseInt(req.params.page) - 1
         let data = res.status(200).json({count:totalProducts.count,
-            products:totalProducts.rows,
+            products:products,
             countByCategory:countByCategory,
             next:req.params.page != undefined && req.params.page >= 1 ? "http://localhost:3001/api/users/" + foward : undefined,
             back:req.params.page != undefined && req.params.page > 1 ? "http://localhost:3001/api/users/" + backwards : undefined})
