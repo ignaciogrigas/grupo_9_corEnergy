@@ -1,0 +1,31 @@
+*{
+    box-sizing: border-box;
+}
+.total{
+    background-color: white;
+    font-family: "Exo 2";
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 2vw;
+    border-radius: 1.25rem;
+    width:15vw
+}
+div ul{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    width:80%
+}
+div ul li {
+    font-size: 2rem;
+}
+.icon{
+    color:#69E4B9
+}
+div h3{
+    font-size: 2rem;
+    font-weight: 600;
+}

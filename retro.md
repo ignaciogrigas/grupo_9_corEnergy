@@ -50,6 +50,7 @@ Find and reconcile the best and the longest amount of time in order to get toget
 
 
 
+
 **Stop doing**
 
 Don´t leave things and chores to the last minute.
@@ -83,9 +84,8 @@ Start managing time more efficiently in order to have better results.
 
 
 
-
-
 ### **Retrospective: JSON + Métodos HTTP**
+
 
 
 
@@ -127,9 +127,8 @@ Find at least 3 days to get together in order to work more at ease in the proyec
 
 
 
-
-
 ### **Retrospective: Middlewares + Auth**
+
 
 
 
@@ -170,9 +169,7 @@ At the beginning of each sprint, get organized in order to find as much time as 
 
 
 
-
-
-### **Retrospective: Database**
+### **Retrospective: Bases de datos**
 
 
 
@@ -211,41 +208,3 @@ Face each sprint right away so that we have some spare time and we don´t have t
 
 
 
-
-
-
-
-### **Retrospective: Validations**
-
-
-
-
-**Stop doing**
-
-Stop making the proyect overly complex. Instead, we´ll try to make it enough to be fully operational and if we have more time than what we expected, then we´ll try to add new features and things of the sort.
-
-**Do less of**
-
-Nothing to do less of for now. 
-
-**Keep doing**
-
- Keep on finding as much time as we can on each sprint to fully commit to the proyect.
-
- Continue getting to know each other by spending time coding live and sharing points of view.
-
-**Do more of**
-
-Ask professors right away and as much as we need when we find ourselves lost or when we don´t know how to carry on or solve a particular problem.
-
-**Start doing**
-
-Gathering useful information and bringing it to the proyect.
-
-
-
-
-##### Our team conceptboard:
-
-
-![Conceptboard](/Inspirations_and_Wireframes/Starfish_Retrospective6.png)

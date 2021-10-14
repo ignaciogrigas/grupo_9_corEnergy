@@ -1,0 +1,24 @@
+*{
+    box-sizing: border-box;
+}
+.list{
+    background-color: white;
+    font-family: "Exo 2";
+    padding: 2vw;
+    border-radius: 1.25rem;
+    width:50vw;
+    text-align: left;
+}
+h2{
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 2vh;
+}
+:last-child td,
+:last-child th{
+    font-family: "Exo 2";
+    box-shadow: none;
+}
+:last-child th{
+    font-weight: 600;
+}
