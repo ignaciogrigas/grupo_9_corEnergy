@@ -3,6 +3,8 @@ const { sequelize } = require("../database/models")
 const {Op} = Sequelize
 const db = require ("../database/models")
 const {Product,Review,ProductCart,Image,SubCategory,Category,User} = db
+const homeModels = require("./home")
+
  module.exports={
     allUsers: async function(offsetNumber) {
         let totalUsers = await User.findAndCountAll({
@@ -20,7 +22,8 @@ const {Product,Review,ProductCart,Image,SubCategory,Category,User} = db
         return user
     },
     allProducts: async function(offsetNumber) {
-        let totalProducts= await Product.findAndCountAll({
+        try{
+            let totalProducts= await Product.findAndCountAll({
             include:[
                 {model: Category, as: "category",attributes: ["name"]},
                 {model: SubCategory, as: "subcategories",attributes: ["name"],through: {
@@ -31,6 +34,10 @@ const {Product,Review,ProductCart,Image,SubCategory,Category,User} = db
             offset:offsetNumber != undefined ? offsetNumber * 10 : 0
         })
         return totalProducts
+    }catch(err){
+        console.log(err);
+    }
+        
     },
     countByCategory:async function () {
         let countByCategory=await Product.findAll({
@@ -55,4 +62,8 @@ const {Product,Review,ProductCart,Image,SubCategory,Category,User} = db
         })
         return product
     },
+    totalProductsSold:async function(){
+        let productsSold = await ProductCart.findAndCountAll()
+        return productsSold
+    }
  }

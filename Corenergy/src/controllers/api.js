@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const path = require("path");
 const apiModel = require("../models/api")
+const homeModel = require ("../models/home")
 
 module.exports={
     users:async(req,res)=> {
@@ -40,4 +41,24 @@ module.exports={
         let data = res.status(200).json(product)
         return data
     },
+    bestSeller: async(req,res)=>{
+        let bestSellers = await homeModel.bestSellers();
+        let data = res.status(200).json(bestSellers)
+        return data
+    },
+    totalProductsSold:async (req,res)=>{
+        let productsSold = await apiModel.totalProductsSold()
+        let data = res.status(200).json(productsSold)
+        return data
+    },
+    totalRevenue :async (req,res)=>{
+        let productsSold = await apiModel.totalProductsSold()
+        let totalRevenue = 0
+        productsSold.rows.forEach(element => {
+            let actualPrice = parseInt(element.productPrice);
+            totalRevenue = totalRevenue + actualPrice            
+        });
+        let data = res.status(200).json(totalRevenue)
+        return data;
+    }
 }
