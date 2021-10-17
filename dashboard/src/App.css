@@ -4,6 +4,10 @@
 body{
   background-color: #E5E5E5;
 }
+.app{
+  display:flex;
+  flex-flow: row;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

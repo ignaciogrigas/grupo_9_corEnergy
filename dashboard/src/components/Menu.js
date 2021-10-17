@@ -1,27 +1,28 @@
 import * as React from 'react';
-/*import {BrowserRouter,Link,Route,Switch} from "react-router-dom"*/
+import {Link} from "react-router-dom"
 import Divider from '@mui/material/Divider';
 import MenuList from '@mui/material/MenuList';
 import MenuItem from '@mui/material/MenuItem';
 import ListItemText from '@mui/material/ListItemText';
+import '../css/menu.css'
 
 export default function DenseMenu() {
   return (
     
-    <MenuList dense>
+    <MenuList dense className="menu">
         <MenuItem>
-            <ListItemText inset><h1>Corenergy</h1></ListItemText>
+            <Link to="/" exact={true}><ListItemText inset><h1>Corenergy</h1></ListItemText></Link>
         </MenuItem>
         <MenuItem>
-            <ListItemText inset>List of products</ListItemText>
+            <Link to="/list-of-products"><ListItemText inset><p>List of products</p></ListItemText></Link>
         </MenuItem>
-        <Divider />
+        <Divider sx={{bgcolor:"white",margin:2}}/>
         <MenuItem>
-            <ListItemText inset>Products by category</ListItemText>
+            <Link to="/products-by-category"><ListItemText inset><p>Products by category</p></ListItemText></Link>
         </MenuItem>
-        <Divider />
+        <Divider sx={{bgcolor:"white",margin:2}} />
         <MenuItem>
-            <ListItemText inset>Sales</ListItemText>
+            <Link to="/sales"><ListItemText inset><p>Sales</p></ListItemText></Link>
         </MenuItem>
     </MenuList>
   );

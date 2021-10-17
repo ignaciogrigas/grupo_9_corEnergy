@@ -6,7 +6,6 @@
     font-family: "Exo 2";
     padding: 2vw;
     border-radius: 1.25rem;
-    width:50vw;
     text-align: left;
 }
 h2{
@@ -37,7 +36,7 @@ h5{
     font-size:1rem;
     font-weight: 600; 
 }
-p{
+.home p{
     word-break: break-all;
     white-space: normal;
 }

@@ -12,20 +12,20 @@
     border-radius: 1.25rem;
     width:15vw
 }
-div ul{
+.total ul{
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
     width:80%
 }
-div ul li {
+.total ul li {
     font-size: 2rem;
 }
 .icon{
     color:#69E4B9
 }
-div h3{
-    font-size: 2rem;
+.total h3{
+    font-size: 1.25rem;
     font-weight: 600;
 }

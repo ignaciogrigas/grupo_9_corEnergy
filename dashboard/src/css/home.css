@@ -1,0 +1,22 @@
+*{
+    box-sizing: border-box;
+}
+.home{
+    margin:2vw;
+    text-align: center;
+    width: 100%;
+}
+.totals,
+.totals_sales{
+    display:flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2vh;
+}
+.totals_sales div{
+    width: 35vw;
+}
+.home .list{
+    margin:0
+}

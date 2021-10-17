@@ -7,17 +7,17 @@ function PieChartCompo(props) {
   return (
     <section className="pie_chart">
         <article>
-            <figure>
+            <figure id="pie_chart">
                 {<PieChart data={[
             { title: 'Weigths', value:30, color: '#E38627' },
-            { title: 'Bars', value: 23, color: '#C13C37' },
+            { title: 'Bars', value: 20, color: '#C13C37' },
             { title: 'Mats', value: 12, color: '#6A2135' },
-            { title: 'Elastic-Bands', value: 34 , color: '#6A2135' },
+            { title: 'Elastic-Bands', value: 11 , color: '#6A2135' },
         ]}/>}
             </figure>
         </article>
         <article>
-            <ul>
+            <ul className="pie">
                 <li>
                     <h3>Pie Chart per Category</h3>
                 </li>

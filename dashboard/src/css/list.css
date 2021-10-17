@@ -1,13 +1,15 @@
 *{
     box-sizing: border-box;
 }
+
 .list{
     background-color: white;
     font-family: "Exo 2";
     padding: 2vw;
     border-radius: 1.25rem;
-    width:50vw;
-    text-align: left;
+    text-align: Left;
+    width:100%;
+    margin:2vw
 }
 h2{
     font-weight: bold;

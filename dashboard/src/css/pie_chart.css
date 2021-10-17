@@ -1,16 +1,15 @@
 *{
     box-sizing: border-box;
 }
-section{
+.pie_chart{
     display: flex;
     flex-flow: row wrap;
     align-items:flex-start;
-    justify-content: space-between;
+    justify-content: space-evenly;
     background-color: white;
     font-family: "Exo 2";
-    padding: 2vw;
+    padding: 3vw;
     border-radius: 1.25rem;
-    width:50vw;
     text-align: left;
 }
 h3{
@@ -18,9 +17,19 @@ h3{
     font-size: 1.4rem;
     margin-bottom: 2vh;
 }
-ul li p {
+.pie{
+    display: flex;
+    flex-flow: column;
+    width:100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+ul li p{
     display: flex;
     flex-flow: row wrap;
     justify-content: left;
     align-items: center;
+}
+#pie_chart{
+    width:85%
 }
