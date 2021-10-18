@@ -29,7 +29,8 @@ module.exports={
         let countByCategory = await apiModel.countByCategory();
         let foward = parseInt(req.params.page) + 1
         let backwards = parseInt(req.params.page) - 1
-        let data = res.status(200).json({count:totalProducts.count,
+        let data = res.status(200).json({
+            count:totalProducts.count,
             products:products,
             countByCategory:countByCategory,
             next:req.params.page != undefined && req.params.page >= 1 ? "http://localhost:3001/api/users/" + foward : undefined,

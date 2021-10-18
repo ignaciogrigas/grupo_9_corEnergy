@@ -24,14 +24,17 @@ const homeModels = require("./home")
     allProducts: async function(offsetNumber) {
         try{
             let totalProducts= await Product.findAndCountAll({
-            include:[
-                {model: Category, as: "category",attributes: ["name"]},
-                {model: SubCategory, as: "subcategories",attributes: ["name"],through: {
-                attributes: []}}
-            ],
-            attributes: ["id","name","description"],
-            limit:offsetNumber != undefined ? 10 : undefined,
-            offset:offsetNumber != undefined ? offsetNumber * 10 : 0
+                where:{
+                    deletedAt :{[Op.eq]:null}
+                },
+                include:[
+                    {model: Category, as: "category",attributes: ["name"]},
+                    {model: SubCategory, as: "subcategories",attributes: ["name"],through: {
+                    attributes: []}}
+                ],
+                attributes: ["id","name","description","price","code"],
+                limit:offsetNumber != undefined ? 10 : undefined,
+                offset:offsetNumber != undefined ? offsetNumber * 10 : 0
         })
         return totalProducts
     }catch(err){

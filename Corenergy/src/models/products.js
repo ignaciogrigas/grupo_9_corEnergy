@@ -72,7 +72,7 @@ module.exports= {
             files.map(async (file) => {
                 return await Image.create({
                     name:file.filename,
-                    url:file.path,
+                    url:`/images/uploads/products/${file.filename}`,
                     productId:newProduct.id,
                     createdBy: user.id,
                     deletedBy:null
@@ -114,16 +114,16 @@ module.exports= {
                     })
                 )
                 const newImages = await Promise.all(
-                files.map(async (file) => {
-                    return await Image.create({
-                        name:file.filename,
-                        url:file.path,
-                        productId:id,
-                        createdBy: user.id,
-                        deletedBy:null
+                    files.map(async (file) => {
+                        return await Image.create({
+                            name:file.filename,
+                            url:`/images/uploads/products/${file.filename}`,
+                            productId:id,
+                            createdBy: user.id,
+                            deletedBy:null
+                        })
                     })
-                })
-            )
+                )
             return newImages,deletedImages
             }
             return updatedProduct

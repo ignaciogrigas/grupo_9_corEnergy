@@ -15,7 +15,7 @@ module.exports={
           email: String(data.email),
           categoryUserId: String(data.email).includes("@corenergy") ? 1: 2,
           password: bcrypt.hashSync(data.password,10),
-          profileImage: file? `/uploads/users/${file.filename}` : "/default_and_logos/default_avatar.svg" 
+          profileImage: file? `/images/uploads/users/${file.filename}` : "/default_and_logos/default_avatar.svg" 
         }
         const user = await User.create(userData)
         return user
