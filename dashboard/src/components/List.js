@@ -13,7 +13,8 @@ function createData(id,name,code,category,price) {
 
 export default function List(props) {
     const rows = props.data.map(product => createData(product.id,product.name,product.code,product.category,product.price))
-  return (
+    console.log(rows);
+    return (
     <div className="list">
         <h2>{props.title}</h2>
         <TableContainer>
@@ -30,7 +31,7 @@ export default function List(props) {
         <TableBody>
           {rows.map((row) => (
             <TableRow
-              key={row.id}
+              key={row.index}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell component="th" scope="row">

@@ -17,14 +17,14 @@ function App() {
                 const server = await fetch("http://localhost:3001/api/products")
                 const data = await server.json()
                 const totalAmount = setListOfProducts(data.products.map((product,index)=>listOfProducts.push({
-                  index:index,
+                  key:index,
                   id:product.id,
                   name:product.name,
                   category:product.category.name,
                   price:product.price,
                   code:product.code
                 })))
-                console.log(listOfProducts);
+                /*console.log(listOfProducts);*/
                 return totalAmount
             }catch(err){
                 console.log(err);

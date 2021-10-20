@@ -36,25 +36,25 @@ const Sales = () => {
       fetchProductsBought()
   }, [])
   let [bestSellers, setBestSellers] = useState([])
+  const fetchLBestSellers = async () =>{
+    try{
+        const server = await fetch("http://localhost:3001/api/sales/best-sellers")
+        const data = await server.json()
+        const totalAmount = setBestSellers(data.map((product,index)=>bestSellers.push({
+          key:index,
+          id:product.product.id,
+          name:product.product.name,
+          category:product.product.category.name,
+          price:product.product.price,
+          code:product.product.code
+        })))
+        console.log(bestSellers);
+        return totalAmount
+    }catch(err){
+        console.log(err);
+    }
+}
     useEffect( () =>  {
-        const fetchLBestSellers = async () =>{
-            try{
-                const server = await fetch("http://localhost:3001/api/sales/best-sellers")
-                const data = await server.json()
-                const totalAmount = setBestSellers(data.map((product,index)=>bestSellers.push({
-                  index:index,
-                  id:product.product.id,
-                  name:product.product.name,
-                  category:product.product.category.name,
-                  price:product.product.price,
-                  code:product.product.code
-                })))
-                console.log(bestSellers);
-                return totalAmount
-            }catch(err){
-                console.log(err);
-            }
-        }
         fetchLBestSellers()
     }, [])
     return (

@@ -35,7 +35,7 @@ function Home(){
         }
         fetchTotalUsers()
     }, [])
-    let [lastProduct, setLastProduct] = useState(0)
+    /*let [lastProduct, setLastProduct] = useState(0)
     useEffect( () =>  {
         const fetchLastProduct = async () =>{
             try{
@@ -52,7 +52,7 @@ function Home(){
             }
         }
         fetchLastProduct()
-    }, [])
+    }, [])*/
     return(
         <div className="home">
         <div className= "totals">
@@ -61,9 +61,9 @@ function Home(){
             <Total  icon ={<MdCategory/>} title="Categories" amount="4"/>
             <Total  icon ={<MdOutlineCategory/>} title="Subcategories" amount="11"/>
         </div>
-        <LastProduct   code={lastProduct.code} price={lastProduct.price} description={lastProduct.description} name={lastProduct.name} category={lastProduct.category.name}/>
+        <LastProduct/>
         </div>
     )
 }
 export default Home;
-/*<LastProduct image={lastProduct.image[0].url} code={lastProduct.code} price={lastProduct.price} description={lastProduct.description} category={productCategory} name={lastProduct.name}/>*/
+/*<LastProduct image={lastProduct.image[0].url} code={lastProduct.code} price={lastProduct.price} description={lastProduct.description} category={lastProduct.category.name} name={lastProduct.name}/>*/
