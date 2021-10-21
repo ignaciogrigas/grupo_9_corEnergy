@@ -48,7 +48,7 @@ function LastProduct() {
         <section>
             <article>
                 <figure>
-                <img src={`http://localhost:3001${lastProduct.image[0].url}`}/>
+                
                 </figure>
             </article>
             <article>
