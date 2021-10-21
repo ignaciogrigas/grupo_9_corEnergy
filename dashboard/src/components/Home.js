@@ -53,6 +53,28 @@ function Home(){
         }
         fetchLastProduct()
     }, [])*/
+    /* let [listOfProducts, setListOfProducts] = useState([])
+    useEffect( () =>  {
+        const fetchListProducts = async () =>{
+            try{
+                const server = await fetch("http://localhost:3001/api/products")
+                const data = await server.json()
+                const totalAmount = setListOfProducts(data.products.map((product,index)=>listOfProducts.push({
+                  key:index,
+                  id:product.id,
+                  name:product.name,
+                  category:product.category.name,
+                  price:product.price,
+                  code:product.code
+                })))
+                console.log(listOfProducts);
+                return totalAmount
+            }catch(err){
+                console.log(err);
+            }
+        }
+        fetchListProducts()
+    }, [])*/
     return(
         <div className="home">
         <div className= "totals">
@@ -66,4 +88,5 @@ function Home(){
     )
 }
 export default Home;
-/*<LastProduct image={lastProduct.image[0].url} code={lastProduct.code} price={lastProduct.price} description={lastProduct.description} category={lastProduct.category.name} name={lastProduct.name}/>*/
+/*<LastProduct/>
+<LastProduct image={lastProduct.image[0].url} code={lastProduct.code} price={lastProduct.price} description={lastProduct.description} category={lastProduct.category.name} name={lastProduct.name}/>*/
