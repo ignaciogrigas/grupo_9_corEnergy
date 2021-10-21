@@ -7,7 +7,7 @@ import {IoMdFitness} from 'react-icons/io'
 import Total from "./Total"
 import PieChart from "./PieChart"
 import '../css/home.css';
-
+/*COMPONENTE ROTO!!!!*/
 const ProductsByCategory = () => {
     let [byCategory, setByCategory] = useState(0)
     useEffect( () =>  {

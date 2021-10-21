@@ -13,7 +13,7 @@ function createData(id,name,code,category,price) {
 
 export default function List(props) {
     const rows = props.data.map(product => createData(product.id,product.name,product.code,product.category,product.price))
-    console.log(rows);
+    /*console.log(rows);*/
     return (
     <div className="list">
         <h2>{props.title}</h2>
