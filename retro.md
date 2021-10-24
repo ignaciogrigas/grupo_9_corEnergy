@@ -245,7 +245,7 @@ Gathering useful information and bringing it to the proyect.
 ##### Our team conceptboard:
 
 
-![Conceptboard](/Inspirations_and_Wireframes/Starfish_Retrospective6.jpg)
+![Conceptboard](/Inspirations_and_Wireframes/Starfish_Retrospective6.png)
 
 
 
