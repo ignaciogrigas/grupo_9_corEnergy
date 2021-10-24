@@ -273,7 +273,7 @@ Gathering useful information and bringing it to the proyect.
 
 
 
-Here is a brief timeline that shows both the possitive and the negative things that we bumped into throught the course. 
+Here is a brief timeline that shows both the positive and the negative things that we bumped into throught the course. 
 
 
 ![Timeline](/Inspirations_and_Wireframes/TIMELINE.jpg)
