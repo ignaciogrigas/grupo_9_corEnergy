@@ -249,3 +249,35 @@ Gathering useful information and bringing it to the proyect.
 
 
 
+
+
+### **Retrospective: React + APIs**
+
+
+
+
+
+##### Our team conceptboard:
+
+
+![Conceptboard](/Inspirations_and_Wireframes/Starfish_Retrospective7.png)
+
+
+
+
+
+
+
+##### Our team Timeline:
+
+
+
+
+Here is a brief timeline that shows both the possitive and the negative things that we bumped into throught the course. 
+
+
+![Timeline](/Inspirations_and_Wireframes/TIMELINE.jpg)
+
+
+
+
