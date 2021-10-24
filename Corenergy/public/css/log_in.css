@@ -87,6 +87,7 @@ a{
     }
     #benefits li{
         text-align: left;
+        margin-bottom: 0.5rem;
     }
     h5{
         font-size: 0.8rem;

@@ -66,8 +66,6 @@ module.exports= {
         }
         let newProduct = await Product.create(newProductData)
 
-        await newProduct.setSubcategories(data.choice)
-
         const images = await Promise.all(
             files.map(async (file) => {
                 return await Image.create({
@@ -79,6 +77,8 @@ module.exports= {
                 })
             })
         )
+
+        await newProduct.setSubcategories(data.choice)
 
         return newProduct,images}catch(err){console.log();}
     },
@@ -96,7 +96,6 @@ module.exports= {
             let updatedProduct = await Product.update(updatedData,{
                 where:{id:id}
             })
-            await updatedProduct.setSubcategories(data.choice)
             if (files){
                 const images = await productToBeEdited.getImage();
                 const deletedImages = await Promise.all(
@@ -124,6 +123,7 @@ module.exports= {
                         })
                     })
                 )
+                await updatedProduct.setSubcategories(data.choice)
             return newImages,deletedImages
             }
             return updatedProduct

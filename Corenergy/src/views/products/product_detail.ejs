@@ -53,8 +53,8 @@
                         <%}else if(locals.user){%>
                                 <input hidden type="number" name="idProduct" id="idProduct" value="<%= idProduct%>">
                                 <button type="submit" id="add_to_cart">Add to cart</button>
-                        <%}else{%>
-                            <button type="submit" id="add_to_cart"><a href="/users/sign-up">Add to cart</a></button>
+                        <%}else if(!locals.users){%>
+                            <button id="add_to_cart"><a href="/users/log-in">Add to cart</a></button>
                         <%}%>
                     </section>
                </form>

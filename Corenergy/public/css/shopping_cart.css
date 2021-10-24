@@ -23,7 +23,7 @@
     }
     .cart-info{
         display: flex;
-        flex-wrap: wrap;    
+        flex-wrap: row wrap;    
     }
     .cart-info p{
         display: none;       
@@ -34,7 +34,9 @@
     td{
         vertical-align:middle;
         padding: 10px 0px;
-        border-bottom: 2px ridge white;     
+    }
+    tr{ 
+        border-bottom: 1px ridge white 
     }
     .cart-info img{
         width:100%;
@@ -43,7 +45,7 @@
         width:10vw;
     }
     td div{
-            padding: 10px; 
+            padding: 10px;            
         }
     td h3{
         font-size: 1rem;
@@ -92,6 +94,7 @@
     .counter input{
         width: 50%;
         height: 1.5rem;
+        padding: 0;
     }
    
     td i{
@@ -113,6 +116,9 @@
         width: 5rem;
         text-align: right;
         padding-right: 2vw;
+    }
+    .unit-price{
+        display: none
     }
     #total-price{
         display: flex;
@@ -157,7 +163,13 @@
     .fa-angle-down{
         cursor: pointer;
     }
+    .cart-info figure{
+        display:none
+    }
     @media screen and (min-width:369px){
+        .cart-info figure{
+            display:block
+        }
         main{
             padding: 4vw 10vw;    
         }       
@@ -218,4 +230,4 @@
         #total-price select{
             padding: 2vh;
         }
-    }    
+    }

@@ -6,7 +6,9 @@
 }
 .products article{
     width: 80vw;
-    height: 80vw;
+}
+.products figure{
+    width: 100%;
 }
 .products img{
     max-width: 100%;
@@ -31,7 +33,6 @@
 @media screen and (min-width:360px){
     .products article{
         width: 50vw;
-        height: 50vw;
     }
     .products .description{
         font-size: 1.25rem;
@@ -43,6 +44,5 @@
 @media screen and (min-width:769px){
     .products article{
         width: 24vw;
-        height: 24vw;
     }
 }

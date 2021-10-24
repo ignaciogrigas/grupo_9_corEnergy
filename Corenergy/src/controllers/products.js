@@ -86,7 +86,7 @@ module.exports = {
 
     delete:async(req,res)=>{
         let result = await productsModel.delete(req.params.id,req.session.user);
-        return result ? res.redirect("/") : es.render("error_404",{
+        return result ? res.redirect("/") : res.render("error_404",{
             title:"Error 404",
             style:"/css/error_404.css"
         })

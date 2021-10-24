@@ -44,12 +44,12 @@ const homeModels = require("./home")
     },
     countByCategory:async function () {
         let countByCategory=await Product.findAll({
-            group:"categoryId",
             attributes: ["categoryId",[sequelize.fn("COUNT",sequelize.col("Product.categoryId")),"countByCategory"]],
+            group:"categoryId",
             include:[
                 {model: Category, as: "category",attributes: ["name"]},
             ],
-        })//falta la url
+        })
         return countByCategory
     },
     productId: async function(id){
