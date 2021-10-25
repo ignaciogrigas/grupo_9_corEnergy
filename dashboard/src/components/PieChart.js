@@ -9,10 +9,10 @@ function PieChartCompo(props) {
         <article>
             <figure id="pie_chart">
                 {<PieChart data={[
-            { title: 'Weigths', value:30, color: '#E38627' },
-            { title: 'Bars', value: 20, color: '#C13C37' },
-            { title: 'Mats', value: 12, color: '#6A2135' },
-            { title: 'Elastic-Bands', value: 11 , color: '#6A2135' },
+            { title: 'Weigths', value:10, color: '#72EFDD' },
+            { title: 'Bars', value: 11, color: '#5e60ce' },
+            { title: 'Mats', value: 6, color: '#4ea8de' },
+            { title: 'Elastic-Bands', value: 6 , color: '#5390d9' },
         ]}/>}
             </figure>
         </article>
@@ -25,7 +25,7 @@ function PieChartCompo(props) {
                     <p>{<Box sx={{
                                     width: 15,
                                     height: 15,
-                                    bgcolor: '#E38627',
+                                    bgcolor: '#72EFDD',
                                     marginRight:1
                                 }}/>} Weights</p>
                 </li>
@@ -33,7 +33,7 @@ function PieChartCompo(props) {
                     <p>{<Box sx={{
                                     width: 15,
                                     height: 15,
-                                    bgcolor: '#E38627',
+                                    bgcolor: '#5e60ce',
                                     marginRight:1
                                 }}/>} Bars</p>
                 </li>
@@ -41,7 +41,7 @@ function PieChartCompo(props) {
                     <p>{<Box sx={{
                                     width: 15,
                                     height: 15,
-                                    bgcolor: '#E38627',
+                                    bgcolor: '#4ea8de',
                                     marginRight:1
                                 }}/>} Mats</p>
                 </li>
@@ -49,7 +49,7 @@ function PieChartCompo(props) {
                     <p>{<Box sx={{
                                     width: 15,
                                     height: 15,
-                                    bgcolor: '#E38627',
+                                    bgcolor: '#5390d9',
                                     marginRight:1
                                 }}/>} Elastic Bands</p>
                 </li>               

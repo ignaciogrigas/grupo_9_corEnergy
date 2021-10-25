@@ -48,7 +48,7 @@ function LastProduct() {
         <section>
             <article>
                 <figure>
-                
+                <img src="http://localhost:3001/images/uploads/products/productImages1635119285446.jpg"/>
                 </figure>
             </article>
             <article>
@@ -57,7 +57,7 @@ function LastProduct() {
                         <h3>{lastProduct.name}</h3>
                     </li>
                     <li>
-                        <h5>lastProduct.category.name</h5> 
+                        <h5>Mats</h5> 
                     </li>
                     <li>
                         <p>{lastProduct.description}</p>

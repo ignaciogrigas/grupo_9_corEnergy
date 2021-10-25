@@ -26,10 +26,10 @@ const ProductsByCategory = () => {
     return (
         <div className="home">
         <div className= "totals">
-            <Total icon={<IoMdFitness/>} title="Weights" amount={byCategory[0].countByCategory}/>
-            <Total  icon ={<CgLoadbar/>} title="Bars" amount={byCategory[1].countByCategory}/>
-            <Total  icon ={<BiRectangle/>} title="Mats" amount={byCategory[3].countByCategory}/>
-            <Total  icon ={<FaTape/>} title="Elastic Bands" amount={byCategory[2].countByCategory}/>
+            <Total icon={<IoMdFitness/>} title="Weights" amount="10"/>
+            <Total  icon ={<CgLoadbar/>} title="Bars" amount="11"/>
+            <Total  icon ={<BiRectangle/>} title="Mats" amount="6"/>
+            <Total  icon ={<FaTape/>} title="Elastic Bands" amount="6"/>
         </div>
         <PieChart />
         </div>

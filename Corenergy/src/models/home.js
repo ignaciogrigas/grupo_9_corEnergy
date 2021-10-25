@@ -47,7 +47,7 @@ const {Product,Review,ProductCart,Image,SubCategory,Category} = db
                         deletedAt :{[Op.eq]:null}
                     }},
                 ],
-                limit: 8
+                limit: 4
             });
             return bestSellers
          }catch(err){console.log(err);}

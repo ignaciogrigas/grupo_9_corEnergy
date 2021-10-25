@@ -67,7 +67,7 @@ const Sales = () => {
           <Total icon={<HiCurrencyDollar/>} title="Total sales" amount={sales} className=".total_sales"/>
           <Total  icon ={<MdOutlineSell/>} title="Total products sold" amount={productsBought}/>
         </div>
-          <List title="Best Seller" data={bestSellers}/>
+          <List title="Best Sellers" data={bestSellers}/>
       </div>
     )
 }

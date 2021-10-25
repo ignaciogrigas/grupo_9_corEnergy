@@ -78,7 +78,7 @@ function Home(){
     return(
         <div className="home">
         <div className= "totals">
-            <Total icon={<GoPackage/>} title="Products" amount={totalProducts}/>
+            <Total icon={<GoPackage/>} title="Products" amount="34"/>
             <Total  icon ={<FiUsers/>} title="Users" amount={totalUsers}/>
             <Total  icon ={<MdCategory/>} title="Categories" amount="4"/>
             <Total  icon ={<MdOutlineCategory/>} title="Subcategories" amount="11"/>
