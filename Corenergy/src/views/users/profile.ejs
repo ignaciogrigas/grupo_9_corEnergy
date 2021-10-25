@@ -7,11 +7,12 @@
             <h4><%= locals.user ? user.email : '' %></h4>
             <div class="add"><h4>Add shipping address</h4><h4 id="show_form">+</h4></div>
             <article>
-                <form class="mainform1" action="/users/save-new-address" method="POST"id="form_to_show" >
+                <form class="mainform1" action="/users/save-new-address" method="POST" id="form_to_show" >
                     <input hidden type="number" name="idUser" id="idUser" value="<%= user.id%>"> 
 
                     <label for="city">City<span>*</span></label>
                     <input  type="text" name="city" id="city">
+                    <span id="errorsFrontCity" class="error"></span>
                     <% if (locals.errors && errors.city) { %>
                         <p class="error">
                           <%= errors.city.msg %> 
@@ -20,6 +21,7 @@
 
                     <label for="address">Address<span>*</span></label>
                     <input  type="text" name="address" id="address" >
+                    <span id="errorsFrontAddress" class="error"></span>
                     <% if (locals.errors && errors.address) { %>
                         <p class="error">
                           <%= errors.address.msg %> 
@@ -31,6 +33,7 @@
                     
                     <label for="zipcode">Zip Code<span>*</span></label>
                     <input  type="number" name="zipcode" id="zipcode"  maxlength="4" >
+                    <span id="errorsFrontZipcode" class="error"></span>
                     <% if (locals.errors && errors.zipcode) { %>
                         <p class="error">
                           <%= errors.zipcode.msg %> 
@@ -50,6 +53,7 @@
                     <input hidden type="number" name="idUser" id="idUser" value="<%= user.id%>">
                     <label for="creditcard">Credit Card<span>*</span></label>
                     <input  type="number" name="creditcard" id="creditcard" >
+                    <span id="errorsFrontCard" class="error"></span>
                     <%= JSON.stringify(locals.nico) %> 
                     <% if (locals.errors && errors.creditcard) { %>
                         <p class="error">
@@ -101,6 +105,7 @@
 
                         <label for="secode">Security Code<span>*</span></label>
                         <input  type="number" name="secode" id="secode">
+                        <span id="errorsFrontSecode" class="error"></span>
                         <% if (locals.errors && errors.secode) { %>
                             <p class="error">
                               <%= errors.secode.msg %> 
@@ -128,7 +133,9 @@
         </figure>
         </section>
     </main>
-    <%-include("../includes/footer")%>
+    <%-include("../includes/footer")%>    
     <script src="/js/showForms.js"></script>
+    <script src="/js/address.js"></script>
+    <script src="/js/creditCard.js"></script>
 </body>
 </html>
