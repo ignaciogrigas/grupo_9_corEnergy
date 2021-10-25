@@ -169,7 +169,7 @@ At the beginning of each sprint, get organized in order to find as much time as 
 
 
 
-### **Retrospective: Bases de datos**
+### **Retrospective: Database**
 
 
 
@@ -205,6 +205,79 @@ Face each sprint right away so that we have some spare time and we don´t have t
 
 
 ![Conceptboard](/Inspirations_and_Wireframes/Starfish_Retrospective5.jpg)
+
+
+
+
+
+
+### **Retrospective: Validations**
+
+
+
+
+
+**Stop doing**
+
+Stop making the proyect overly complex. Instead, we´ll try to make it enough to be fully operational and if we have more time than what we expected, then we´ll try to add new features and things of the sort.
+
+**Do less of**
+
+Nothing to do less of for now. 
+
+**Keep doing**
+
+ Keep on finding as much time as we can on each sprint to fully commit to the proyect.
+
+ Continue getting to know each other by spending time coding live and sharing points of view.
+
+**Do more of**
+
+Ask professors right away and as much as we need when we find ourselves lost or when we don´t know how to carry on or solve a particular problem.
+
+**Start doing**
+
+Gathering useful information and bringing it to the proyect.
+
+
+
+
+##### Our team conceptboard:
+
+
+![Conceptboard](/Inspirations_and_Wireframes/Starfish_Retrospective6.png)
+
+
+
+
+
+### **Retrospective: React + APIs**
+
+
+
+
+
+##### Our team conceptboard:
+
+
+![Conceptboard](/Inspirations_and_Wireframes/Starfish_Retrospective7.png)
+
+
+
+
+
+
+
+##### Our team Timeline:
+
+
+
+
+Here is a brief timeline that shows both the positive and the negative things that we bumped into throught the course. 
+
+
+![Timeline](/Inspirations_and_Wireframes/TIMELINE.jpg)
+
 
 
 
